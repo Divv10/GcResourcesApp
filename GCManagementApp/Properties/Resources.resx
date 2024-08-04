@@ -1,0 +1,1106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ACBoostFromEnergyPack" xml:space="preserve">
+    <value>AC boost from energy pack</value>
+  </data>
+  <data name="Accessories" xml:space="preserve">
+    <value>Accessories</value>
+  </data>
+  <data name="ACGainedInBossStage" xml:space="preserve">
+    <value>AC gained in boss stage</value>
+  </data>
+  <data name="ACPerRun" xml:space="preserve">
+    <value>AC per run</value>
+  </data>
+  <data name="AdditionalEnergyBoughtWeekly" xml:space="preserve">
+    <value>Additional energy bought weekly:</value>
+  </data>
+  <data name="AdditionalEntries" xml:space="preserve">
+    <value>Additional entries</value>
+  </data>
+  <data name="AdditionalXSECanBeCrafter" xml:space="preserve">
+    <value>Additional {0} Soul Essences can be crafted from Chaser Crystals</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>ADD NEW</value>
+  </data>
+  <data name="AddNewExclusiveWeapon" xml:space="preserve">
+    <value>Add new Exclusive Weapon</value>
+  </data>
+  <data name="AddNewHero" xml:space="preserve">
+    <value>Add new hero</value>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>Ads</value>
+  </data>
+  <data name="Adventure" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="AernasGrace" xml:space="preserve">
+    <value>Aernas Grace</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AllChangesRequiresReboot" xml:space="preserve">
+    <value>All changes requires app to be restarted</value>
+  </data>
+  <data name="AllT1" xml:space="preserve">
+    <value>All T1</value>
+  </data>
+  <data name="AllT2" xml:space="preserve">
+    <value>All T2</value>
+  </data>
+  <data name="AllT3" xml:space="preserve">
+    <value>All T3</value>
+  </data>
+  <data name="AnnihilationCoins" xml:space="preserve">
+    <value>Annihilation coins</value>
+  </data>
+  <data name="AnyT1" xml:space="preserve">
+    <value>Any T1</value>
+  </data>
+  <data name="AnyT2" xml:space="preserve">
+    <value>Any T2</value>
+  </data>
+  <data name="AnyT3" xml:space="preserve">
+    <value>Any T3</value>
+  </data>
+  <data name="ArtifactLevel" xml:space="preserve">
+    <value>Artifact level</value>
+  </data>
+  <data name="ArtifactTier" xml:space="preserve">
+    <value>Artifact tier</value>
+  </data>
+  <data name="ArtifactType" xml:space="preserve">
+    <value>Artifact type</value>
+  </data>
+  <data name="ArtiT1" xml:space="preserve">
+    <value>T1 (Rock of Time)</value>
+  </data>
+  <data name="ArtiT2" xml:space="preserve">
+    <value>T2 (Rock of Soul)</value>
+  </data>
+  <data name="ArtiT3" xml:space="preserve">
+    <value>T3 (Rock of Abyss)</value>
+  </data>
+  <data name="ArtiT4" xml:space="preserve">
+    <value>T4 (Rock of Side)</value>
+  </data>
+  <data name="Assault" xml:space="preserve">
+    <value>Assault</value>
+  </data>
+  <data name="Attribute" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="AwakeningCubes" xml:space="preserve">
+    <value>Awakening Cubes</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BasedOnMyExperienceYouGain" xml:space="preserve">
+    <value>Based on my experience You gain around 900 energy weekly from ads in shop. Edit the value below if You feel You are getting different amount.</value>
+  </data>
+  <data name="BGFromSellingHeroes" xml:space="preserve">
+    <value>BG from selling heroes</value>
+  </data>
+  <data name="Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="BlueAccSet" xml:space="preserve">
+    <value>Blue - Protection of Life</value>
+  </data>
+  <data name="BlueGemPerCubeX" xml:space="preserve">
+    <value>Blue Gem per Cube: {0:F2}</value>
+  </data>
+  <data name="BlueGems" xml:space="preserve">
+    <value>Blue Gems</value>
+  </data>
+  <data name="BlueGemsFrom15PVP" xml:space="preserve">
+    <value>Blue Gems from 15 PvP</value>
+  </data>
+  <data name="BlueGemsFromAC" xml:space="preserve">
+    <value>Blue Gems from AC</value>
+  </data>
+  <data name="BlueGemsFromPVP" xml:space="preserve">
+    <value>Blue Gems from PvP</value>
+  </data>
+  <data name="BlueGemsGainedPerAC" xml:space="preserve">
+    <value>Blue Gems gained per 1 AC</value>
+  </data>
+  <data name="BlueGemsOptions" xml:space="preserve">
+    <value>Blue Gems options</value>
+  </data>
+  <data name="BlueGemsPerCube" xml:space="preserve">
+    <value>Blue Gems per cube</value>
+  </data>
+  <data name="BlueGemsWeekly" xml:space="preserve">
+    <value>Blue Gems weekly</value>
+  </data>
+  <data name="BodyCoreOpen" xml:space="preserve">
+    <value>Body Core open</value>
+  </data>
+  <data name="BonusEnergyFromPack" xml:space="preserve">
+    <value>Bonus energy from pack</value>
+  </data>
+  <data name="BovFromEnergy" xml:space="preserve">
+    <value>BoV from energy</value>
+  </data>
+  <data name="BoVFromLab" xml:space="preserve">
+    <value>BoV from WL</value>
+  </data>
+  <data name="BoVPerRun" xml:space="preserve">
+    <value>BoV per run</value>
+  </data>
+  <data name="BP" xml:space="preserve">
+    <value>BP</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CCFromDefenseMode" xml:space="preserve">
+    <value>CC from Defense mode</value>
+  </data>
+  <data name="CCFromEnergy" xml:space="preserve">
+    <value>CC from energy</value>
+  </data>
+  <data name="CCGainedInBossStage" xml:space="preserve">
+    <value>CC gained in boss stage</value>
+  </data>
+  <data name="CCPerRun" xml:space="preserve">
+    <value>CC per run</value>
+  </data>
+  <data name="Chaser" xml:space="preserve">
+    <value>Chaser</value>
+  </data>
+  <data name="ChaserCostCalculator" xml:space="preserve">
+    <value>Chaser cost calculator</value>
+  </data>
+  <data name="ChaserCrystals" xml:space="preserve">
+    <value>Chaser Crystals</value>
+  </data>
+  <data name="ChaserCubes" xml:space="preserve">
+    <value>Chaser Cubes</value>
+  </data>
+  <data name="ChaserLevel" xml:space="preserve">
+    <value>Chaser level</value>
+  </data>
+  <data name="ChaserTranscendence" xml:space="preserve">
+    <value>Chaser &amp; Transcendence</value>
+  </data>
+  <data name="CL" xml:space="preserve">
+    <value>CL</value>
+  </data>
+  <data name="CL0-19" xml:space="preserve">
+    <value>CL0-19</value>
+  </data>
+  <data name="CL20-24" xml:space="preserve">
+    <value>CL20-24</value>
+  </data>
+  <data name="CL25" xml:space="preserve">
+    <value>CL25</value>
+  </data>
+  <data name="CL25X" xml:space="preserve">
+    <value>CL25: {0}</value>
+  </data>
+  <data name="ClAndSiCosts" xml:space="preserve">
+    <value>Calculators</value>
+  </data>
+  <data name="Class" xml:space="preserve">
+    <value>Class</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Clear filters</value>
+  </data>
+  <data name="ClickHereToSHowFullChaserTable" xml:space="preserve">
+    <value>Click here to show full Chaser cost table</value>
+  </data>
+  <data name="ClickHereToShowFullSITable" xml:space="preserve">
+    <value>Click here to show full Soul Imprint cost table</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CLX" xml:space="preserve">
+    <value>CL{0}</value>
+  </data>
+  <data name="CompactView" xml:space="preserve">
+    <value>Compact View</value>
+  </data>
+  <data name="CopyDetailsToClipboard" xml:space="preserve">
+    <value>Copy details to clipboard</value>
+  </data>
+  <data name="CopyImageToClipboard" xml:space="preserve">
+    <value>Copy image to clipboard</value>
+  </data>
+  <data name="CoreOpen" xml:space="preserve">
+    <value> (Core open)</value>
+    <comment>Space at the beggining</comment>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="CostInSICubes" xml:space="preserve">
+    <value>Cost in SI Cubes</value>
+  </data>
+  <data name="CostOfLevels" xml:space="preserve">
+    <value>Cost of {0} levels:</value>
+  </data>
+  <data name="CostOfSI15InSE" xml:space="preserve">
+    <value>Cost of SI15 in SE</value>
+  </data>
+  <data name="CostX" xml:space="preserve">
+    <value>Cost: {0}</value>
+  </data>
+  <data name="CubesBoughtInBGShop" xml:space="preserve">
+    <value>Cubes bought in BG shop</value>
+  </data>
+  <data name="CubesFromAnni" xml:space="preserve">
+    <value>Cubes from Anni</value>
+  </data>
+  <data name="CubesFromBG" xml:space="preserve">
+    <value>Cubes from BG</value>
+  </data>
+  <data name="CubesFromDD" xml:space="preserve">
+    <value>Cubes from DD</value>
+  </data>
+  <data name="CubesFromEnergy" xml:space="preserve">
+    <value>Cubes from Energy</value>
+  </data>
+  <data name="CurrentChaserLevel" xml:space="preserve">
+    <value>Current Chaser level</value>
+  </data>
+  <data name="CurrentSoulImprintLevel" xml:space="preserve">
+    <value>Current Soul Imprint Level</value>
+  </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="DailyAdventureSpecUp" xml:space="preserve">
+    <value>Daily Adventure Spec-up (500 x 7 = 3500)</value>
+  </data>
+  <data name="DailyColon" xml:space="preserve">
+    <value>Daily:</value>
+  </data>
+  <data name="DailyDefense" xml:space="preserve">
+    <value>Daily Defense</value>
+  </data>
+  <data name="DailyEnergy" xml:space="preserve">
+    <value>Daily Energy</value>
+  </data>
+  <data name="DailyEntryEssentialPackage" xml:space="preserve">
+    <value>Daily Entry Essential Package (+1)</value>
+  </data>
+  <data name="DailyEntryPackage" xml:space="preserve">
+    <value>Daily Entry Package (+3)</value>
+  </data>
+  <data name="DailyEntryPackage1" xml:space="preserve">
+    <value>Daily Entry Package (+1)</value>
+  </data>
+  <data name="DailyGoldIncome" xml:space="preserve">
+    <value>Daily gold income:</value>
+  </data>
+  <data name="DailyLogin" xml:space="preserve">
+    <value>Daily login</value>
+  </data>
+  <data name="DarkTheme" xml:space="preserve">
+    <value>Dark theme</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteSelected" xml:space="preserve">
+    <value>DELETE SELECTED</value>
+  </data>
+  <data name="DesiredChaserLevel" xml:space="preserve">
+    <value>Desired Chaser level</value>
+  </data>
+  <data name="DesiredEwGrowth" xml:space="preserve">
+    <value>Desired EW growth</value>
+  </data>
+  <data name="DesiredSoulImprintLevel" xml:space="preserve">
+    <value>Desired Soul Imprint Level</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="DownloadProgressFromGoogleDrive" xml:space="preserve">
+    <value>Download progress from Google Drive</value>
+  </data>
+  <data name="DoYouLikeTheApp" xml:space="preserve">
+    <value>Do You like the app and find it usefull? Consider supporting :)</value>
+  </data>
+  <data name="DupesSI" xml:space="preserve">
+    <value>Dupes(SI)</value>
+  </data>
+  <data name="Earrings" xml:space="preserve">
+    <value>Earrings</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Empty</value>
+  </data>
+  <data name="EnergyCalculator" xml:space="preserve">
+    <value>Energy Calculator</value>
+  </data>
+  <data name="EnergyFromAdsInMail" xml:space="preserve">
+    <value>Energy from ads in mail</value>
+  </data>
+  <data name="EnergyFromAdsInShop" xml:space="preserve">
+    <value>Energy from ads in shop</value>
+  </data>
+  <data name="EnergyFromGems" xml:space="preserve">
+    <value>Energy from Gems (150 x 10 x 7 = 10500)</value>
+  </data>
+  <data name="EnergyFromNaturalRegen" xml:space="preserve">
+    <value>Energy from natural regen</value>
+  </data>
+  <data name="EnergyPackage" xml:space="preserve">
+    <value>Energy package</value>
+  </data>
+  <data name="EnergyPackageOptions" xml:space="preserve">
+    <value>Energy package options</value>
+  </data>
+  <data name="EnergyPackWithAcBoost" xml:space="preserve">
+    <value>Energy pack with AC boost</value>
+  </data>
+  <data name="EnergyPerRun" xml:space="preserve">
+    <value>Energy per run</value>
+  </data>
+  <data name="EnergySupplyPackage" xml:space="preserve">
+    <value>Energy Supply Package (5200 x 4 = 20800)</value>
+  </data>
+  <data name="EnergySupportPackage" xml:space="preserve">
+    <value>Energy Support Package (600 x 7 = 4200)</value>
+  </data>
+  <data name="EnergySupportPackage2" xml:space="preserve">
+    <value>Energy Support Package 2 (1400 x 7 = 9800)</value>
+  </data>
+  <data name="EnergyUsedInBossStage" xml:space="preserve">
+    <value>Energy used in boss stage</value>
+  </data>
+  <data name="EnoughBGToBuyCC" xml:space="preserve">
+    <value>Enough Blue Gems to buy {0} SI Cubes{1}Can clear SI Cubes shop for {2} weeks{1}Enough Blue Gems to buy {3} Chaser Cubes{1}Can clear Chaser Cubes shop for {4} weeks</value>
+    <comment>{1} is new line</comment>
+  </data>
+  <data name="EnoughCoinsToBuyCC" xml:space="preserve">
+    <value>Enough coins to buy {0} SI Cubes{1}Enough coins to buy {2} Chaser Cubes</value>
+    <comment>{1} is new line</comment>
+  </data>
+  <data name="EnterHowManyVulcanusRanks" xml:space="preserve">
+    <value>Enter how many Vulcanus ranks weekly are You clearing and what Division do You usually end in.</value>
+  </data>
+  <data name="Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="ErrorDownloading" xml:space="preserve">
+    <value>Error downloading</value>
+  </data>
+  <data name="ErrorImportingProfileFromX" xml:space="preserve">
+    <value>Error importing profile from {0}</value>
+  </data>
+  <data name="ErrorOccuredWhileExporting" xml:space="preserve">
+    <value>Error occured while exporting the profile.</value>
+  </data>
+  <data name="ErrorUploading" xml:space="preserve">
+    <value>Error uploading</value>
+  </data>
+  <data name="EWX" xml:space="preserve">
+    <value>EW: {0}</value>
+  </data>
+  <data name="ExclusiveWeapon" xml:space="preserve">
+    <value>Exclusive Weapon</value>
+  </data>
+  <data name="ExclusiveWeaponLevel" xml:space="preserve">
+    <value>Exclusive weapon level</value>
+  </data>
+  <data name="ExclusiveWeaponOwned" xml:space="preserve">
+    <value>Exclusive weapon owned</value>
+  </data>
+  <data name="ExclusiveWeapons" xml:space="preserve">
+    <value>Exclusive Weapons</value>
+  </data>
+  <data name="ExclusiveWeaponsOwned" xml:space="preserve">
+    <value>Exclusive weapons owned:</value>
+  </data>
+  <data name="ExclusiveWeaponsPlans" xml:space="preserve">
+    <value>Exclusive Weapons Plans</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FilterHeroName" xml:space="preserve">
+    <value>Filter Hero name</value>
+  </data>
+  <data name="GainMultiplier" xml:space="preserve">
+    <value>Gain multiplier</value>
+  </data>
+  <data name="GearSlots" xml:space="preserve">
+    <value>Gear slots</value>
+  </data>
+  <data name="Gold" xml:space="preserve">
+    <value>Gold</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Growth" xml:space="preserve">
+    <value>Growth</value>
+  </data>
+  <data name="Healer" xml:space="preserve">
+    <value>Healer</value>
+  </data>
+  <data name="Hero" xml:space="preserve">
+    <value>Hero</value>
+  </data>
+  <data name="Heroes" xml:space="preserve">
+    <value>Heroes</value>
+  </data>
+  <data name="HeroLevel" xml:space="preserve">
+    <value>Hero level</value>
+  </data>
+  <data name="HeroName" xml:space="preserve">
+    <value>Hero name</value>
+  </data>
+  <data name="HeroOwned" xml:space="preserve">
+    <value>Hero owned</value>
+  </data>
+  <data name="HeroPlans" xml:space="preserve">
+    <value>Hero Plans</value>
+  </data>
+  <data name="HeroType" xml:space="preserve">
+    <value>Hero type</value>
+  </data>
+  <data name="ImportFromFile" xml:space="preserve">
+    <value>IMPORT FROM FILE</value>
+  </data>
+  <data name="InvalidFileSelected" xml:space="preserve">
+    <value>Invalid file selected!</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="InventoryColon" xml:space="preserve">
+    <value>Inventory:</value>
+  </data>
+  <data name="Kanavan" xml:space="preserve">
+    <value>Kanavan</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LegendaryBurning" xml:space="preserve">
+    <value>Legendary - Burning</value>
+  </data>
+  <data name="LegendaryCursed" xml:space="preserve">
+    <value>Legendary - Cursed</value>
+  </data>
+  <data name="LegendaryFrozen" xml:space="preserve">
+    <value>Legendary - Frozen</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="LevelPetLevel" xml:space="preserve">
+    <value>Hero level &amp; Pet level</value>
+  </data>
+  <data name="LevelX" xml:space="preserve">
+    <value>Level {0}+:</value>
+  </data>
+  <data name="Ley" xml:space="preserve">
+    <value>Ley</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="LvlX" xml:space="preserve">
+    <value>Lvl{0}</value>
+  </data>
+  <data name="LX" xml:space="preserve">
+    <value>L{0}</value>
+  </data>
+  <data name="Mage" xml:space="preserve">
+    <value>Mage</value>
+  </data>
+  <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
+    <value>Mark if You are buying pack with AC boost</value>
+  </data>
+  <data name="MarkIfYouWantToOverride" xml:space="preserve">
+    <value>Mark if You want to override</value>
+  </data>
+  <data name="MassEdit" xml:space="preserve">
+    <value>Mass Edit</value>
+  </data>
+  <data name="Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="MaterialsNeededToMaxAllSlotsForAllClasses" xml:space="preserve">
+    <value>Materials needed to max all slots for all classes</value>
+  </data>
+  <data name="MaterialsNeededToMaxAllSlotsForThisClass" xml:space="preserve">
+    <value>Materials needed to max all slots for this class</value>
+  </data>
+  <data name="MaterialsNeededToMaxThisSlot" xml:space="preserve">
+    <value>Materials needed to max this slot</value>
+  </data>
+  <data name="MaxTierSets" xml:space="preserve">
+    <value>Max tier sets:</value>
+  </data>
+  <data name="MemoryCoreOpen" xml:space="preserve">
+    <value>Memory Core open</value>
+  </data>
+  <data name="MissingSRHeroBuiltToUnlockThisTHero" xml:space="preserve">
+    <value>Missing SR hero built to unlock this T Hero</value>
+  </data>
+  <data name="Mixed" xml:space="preserve">
+    <value>Mixed</value>
+  </data>
+  <data name="Necklace" xml:space="preserve">
+    <value>Necklace</value>
+  </data>
+  <data name="NewProfile" xml:space="preserve">
+    <value>New Profile</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoArtifact" xml:space="preserve">
+    <value>No Arti</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NoProgressFound" xml:space="preserve">
+    <value>No progress found on Your Google Drive. Upload the progress on any of Your devices first.</value>
+  </data>
+  <data name="Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="NotDone" xml:space="preserve">
+    <value>Not Done</value>
+  </data>
+  <data name="NoticeSIIncludesCost" xml:space="preserve">
+    <value>Notice: SI5, SI10 and SI15 includes Soul Essence's cost of opening all nine traits in each node</value>
+  </data>
+  <data name="NotOwned" xml:space="preserve">
+    <value>Not owned</value>
+  </data>
+  <data name="NumberOfRanksCleared" xml:space="preserve">
+    <value>Number of ranks cleared</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnlyT1" xml:space="preserve">
+    <value>Only T1</value>
+  </data>
+  <data name="OnlyT2" xml:space="preserve">
+    <value>Only T2</value>
+  </data>
+  <data name="OnlyT3" xml:space="preserve">
+    <value>Only T3</value>
+    <comment>****</comment>
+  </data>
+  <data name="Orange" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="OrangeAccSet" xml:space="preserve">
+    <value>Orange - Bloody Oath</value>
+  </data>
+  <data name="OwnedHeroesX" xml:space="preserve">
+    <value>Owned heroes: {0}</value>
+  </data>
+  <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
+    <value>Owned Hero specific SI Cubes</value>
+  </data>
+  <data name="PerformanceMode" xml:space="preserve">
+    <value>Performance mode</value>
+  </data>
+  <data name="PetLevel" xml:space="preserve">
+    <value>Pet level</value>
+  </data>
+  <data name="PetX" xml:space="preserve">
+    <value>Pet: {0}</value>
+  </data>
+  <data name="Planning" xml:space="preserve">
+    <value>Planning</value>
+  </data>
+  <data name="PleaseEnterValueHigherThanX" xml:space="preserve">
+    <value>Please enter value higher than {0}</value>
+  </data>
+  <data name="PleaseEnterValueLowerThanX" xml:space="preserve">
+    <value>Please enter value lower than {0}</value>
+  </data>
+  <data name="Premium" xml:space="preserve">
+    <value>Premium</value>
+  </data>
+  <data name="ProgressDownloaded" xml:space="preserve">
+    <value>Progress downloaded! App will now close. Restart the app to reload the data.</value>
+  </data>
+  <data name="Purple" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="PurpleAccSet" xml:space="preserve">
+    <value>Purple - Determined Strike</value>
+  </data>
+  <data name="PX" xml:space="preserve">
+    <value>P{0}</value>
+  </data>
+  <data name="Ranger" xml:space="preserve">
+    <value>Ranger</value>
+  </data>
+  <data name="Rare" xml:space="preserve">
+    <value>Rare</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="ReadyIn" xml:space="preserve">
+    <value>Ready in</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>RENAME</value>
+  </data>
+  <data name="RenameProfile" xml:space="preserve">
+    <value>Rename profile</value>
+  </data>
+  <data name="ResetWithGems" xml:space="preserve">
+    <value>Reset with gems (+3)</value>
+  </data>
+  <data name="ResetWithGems1" xml:space="preserve">
+    <value>Reset with gems (+1)</value>
+  </data>
+  <data name="RewardFromVulcanus" xml:space="preserve">
+    <value>Reward from Vulcanus</value>
+  </data>
+  <data name="Rin" xml:space="preserve">
+    <value>Rin</value>
+  </data>
+  <data name="Ring" xml:space="preserve">
+    <value>Ring</value>
+  </data>
+  <data name="Rufus" xml:space="preserve">
+    <value>Rufus</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Saved" xml:space="preserve">
+    <value>Saved</value>
+  </data>
+  <data name="SEFromConvertingCC" xml:space="preserve">
+    <value>SE from converting CC</value>
+  </data>
+  <data name="SelectACUpgradeType" xml:space="preserve">
+    <value>Select AC upgrade type</value>
+  </data>
+  <data name="SelectHero" xml:space="preserve">
+    <value>Select Hero</value>
+  </data>
+  <data name="SelectProfile" xml:space="preserve">
+    <value>Select profile</value>
+  </data>
+  <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
+    <value>Select whether You use AC to upgrade S heroes or A heroes.</value>
+  </data>
+  <data name="SellX" xml:space="preserve">
+    <value>Sell: {0}</value>
+  </data>
+  <data name="SetDefault" xml:space="preserve">
+    <value>SET DEFAULT</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ShowNotOwned" xml:space="preserve">
+    <value>Show not owned</value>
+  </data>
+  <data name="SI" xml:space="preserve">
+    <value>SI</value>
+  </data>
+  <data name="SI0-4" xml:space="preserve">
+    <value>SI0-4</value>
+  </data>
+  <data name="SI10-14" xml:space="preserve">
+    <value>SI10-14</value>
+  </data>
+  <data name="SI15" xml:space="preserve">
+    <value>SI15</value>
+  </data>
+  <data name="SI15Cost" xml:space="preserve">
+    <value>SI15 Cost</value>
+  </data>
+  <data name="SI15SRCost" xml:space="preserve">
+    <value>SI15 (SR) Cost</value>
+  </data>
+  <data name="SI15TCost" xml:space="preserve">
+    <value>SI15 (T) Cost</value>
+  </data>
+  <data name="SI15X" xml:space="preserve">
+    <value>SI15: {0}</value>
+  </data>
+  <data name="SI5-9" xml:space="preserve">
+    <value>SI5-9</value>
+  </data>
+  <data name="SIX" xml:space="preserve">
+    <value>SI{0}</value>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="SoulCoreOpen" xml:space="preserve">
+    <value>Soul Core open</value>
+  </data>
+  <data name="SoulEssences" xml:space="preserve">
+    <value>Soul Essences</value>
+  </data>
+  <data name="SoulImprint" xml:space="preserve">
+    <value>Soul Imprint</value>
+  </data>
+  <data name="SoulImprintCostCalculator" xml:space="preserve">
+    <value>Soul Imprint cost calculator</value>
+  </data>
+  <data name="SoulImprintCubes" xml:space="preserve">
+    <value>Soul Imprint Cubes</value>
+  </data>
+  <data name="SoulImprintLevel" xml:space="preserve">
+    <value>Soul Imprint level</value>
+  </data>
+  <data name="SpecialEnergyPackageBasic" xml:space="preserve">
+    <value>Special Energy Package (Basic) (220 x 7 = 1540)</value>
+  </data>
+  <data name="SpecialEnergyPackagePremium" xml:space="preserve">
+    <value>Special Energy Package (Premium) (660 x 7 = 4620)</value>
+  </data>
+  <data name="SR" xml:space="preserve">
+    <value>SR</value>
+  </data>
+  <data name="Sum" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="SumOfAllPrevious" xml:space="preserve">
+    <value>Sum of all previous</value>
+  </data>
+  <data name="SuperCompact" xml:space="preserve">
+    <value>All in One</value>
+  </data>
+  <data name="SwitchToSelected" xml:space="preserve">
+    <value>Switch to selected</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="T15" xml:space="preserve">
+    <value>T15</value>
+  </data>
+  <data name="Tank" xml:space="preserve">
+    <value>Tank</value>
+  </data>
+  <data name="ThankYouText" xml:space="preserve">
+    <value>This app is being developed for over 7 months now and already consists of over 75,000 lines of code.
+
+My goal was always to help as many people as possible and app development takes a significant part of my free time.
+
+If You like using the app and find it usefull, please consider clicking on the Ko-fi button above and support me - it will help and mean a lot! Thank You!</value>
+    <comment>Leave all "&amp;#x0a;" texts - its new line symbols</comment>
+  </data>
+  <data name="ThereWasErrorWhileLoggingIn" xml:space="preserve">
+    <value>There was error while logging in. Try again</value>
+  </data>
+  <data name="ThisIsDefaultProfile" xml:space="preserve">
+    <value>This is default profile - it will be loaded on application start</value>
+  </data>
+  <data name="TotalACFromAdventure" xml:space="preserve">
+    <value>Total AC from adventure</value>
+  </data>
+  <data name="TotalACGainedOverWeek" xml:space="preserve">
+    <value>Total AC gained over week</value>
+  </data>
+  <data name="TotalACWeekly" xml:space="preserve">
+    <value>Total AC weekly</value>
+  </data>
+  <data name="TotalBGGainedOverWeek" xml:space="preserve">
+    <value>Total BG gained over week</value>
+  </data>
+  <data name="TotalBlueGemsWeekly" xml:space="preserve">
+    <value>Total Blue Gems weekly:</value>
+  </data>
+  <data name="TotalCCFromAdventure" xml:space="preserve">
+    <value>Total CC from adventure</value>
+  </data>
+  <data name="TotalCCWeekly" xml:space="preserve">
+    <value>Total CC weekly</value>
+  </data>
+  <data name="TotalEnergyFromPackages" xml:space="preserve">
+    <value>Total energy from packages:</value>
+  </data>
+  <data name="TotalSEWeekly" xml:space="preserve">
+    <value>Total SE weekly</value>
+  </data>
+  <data name="TotalWeekly" xml:space="preserve">
+    <value>Total weekly</value>
+  </data>
+  <data name="Traits" xml:space="preserve">
+    <value>Traits</value>
+  </data>
+  <data name="TraitsOpen" xml:space="preserve">
+    <value>Traits open</value>
+  </data>
+  <data name="Transcendence" xml:space="preserve">
+    <value>Transcendence</value>
+  </data>
+  <data name="TranscendenceLevel" xml:space="preserve">
+    <value>Transcendence level</value>
+  </data>
+  <data name="TX" xml:space="preserve">
+    <value>T{0}</value>
+  </data>
+  <data name="Unique" xml:space="preserve">
+    <value>Unique</value>
+  </data>
+  <data name="Unknownh" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="UploadProgressToGoogleDrive" xml:space="preserve">
+    <value>Upload progress to Google Drive</value>
+  </data>
+  <data name="UseOwnBlueGemsAmount" xml:space="preserve">
+    <value>Use own Blue Gems amount</value>
+  </data>
+  <data name="VerticalVulcaPlanner" xml:space="preserve">
+    <value>Vertical Vulca planner</value>
+  </data>
+  <data name="Vulcanus" xml:space="preserve">
+    <value>Vulcanus</value>
+  </data>
+  <data name="VulcanusDivision" xml:space="preserve">
+    <value>Vulcanus division</value>
+  </data>
+  <data name="WeaponsAlreadyUsedOnCurrentLevel" xml:space="preserve">
+    <value>Weapons already used on current level</value>
+  </data>
+  <data name="WeaponsWithT9" xml:space="preserve">
+    <value>Weapons with T9:</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="WeeklyACFromDefense" xml:space="preserve">
+    <value>Weekly AC from Defense</value>
+  </data>
+  <data name="WeeklyACGain" xml:space="preserve">
+    <value>Weekly Awakening Cubes gain</value>
+  </data>
+  <data name="WeeklyAernasGraceIncome" xml:space="preserve">
+    <value>Weekly Aernas Grace Income:</value>
+  </data>
+  <data name="WeeklyBGGain" xml:space="preserve">
+    <value>Weekly Blue Gems gain</value>
+  </data>
+  <data name="WeeklyBoVGain" xml:space="preserve">
+    <value>Weekly Blessing of Valor gain</value>
+  </data>
+  <data name="WeeklyChaserCrystalsGain" xml:space="preserve">
+    <value>Weekly Chaser Crystals gain</value>
+  </data>
+  <data name="WeeklyColon" xml:space="preserve">
+    <value>Weekly:</value>
+  </data>
+  <data name="WeeklyEnergyGain" xml:space="preserve">
+    <value>Weekly energy gain</value>
+  </data>
+  <data name="WeeklyFromAnnihilation" xml:space="preserve">
+    <value>Weekly from Annihilation</value>
+  </data>
+  <data name="WeeklyMissionsAndLogin" xml:space="preserve">
+    <value>Weekly missions and login</value>
+  </data>
+  <data name="WeeklySoulEssenceGain" xml:space="preserve">
+    <value>Weekly Soul Essence gain</value>
+  </data>
+  <data name="WeeklySoulImprintGain" xml:space="preserve">
+    <value>Weekly Soul Imprint gain</value>
+  </data>
+  <data name="WeeksForFullSI" xml:space="preserve">
+    <value>Weeks for a Full SI</value>
+  </data>
+  <data name="WeeksNeeded" xml:space="preserve">
+    <value>Weeks needed</value>
+  </data>
+  <data name="WelcomeX" xml:space="preserve">
+    <value>Welcome, {0}!</value>
+  </data>
+  <data name="With100CubesFromEvent" xml:space="preserve">
+    <value>With 100 cubes from event</value>
+  </data>
+  <data name="Working" xml:space="preserve">
+    <value>Working</value>
+  </data>
+  <data name="XChaserCrystals" xml:space="preserve">
+    <value>{0} Chaser crystals</value>
+  </data>
+  <data name="XChaserCubes" xml:space="preserve">
+    <value>{0} Chaser cubes</value>
+  </data>
+  <data name="XDays" xml:space="preserve">
+    <value>{0} days</value>
+  </data>
+  <data name="XEnergy" xml:space="preserve">
+    <value>{0} Energy</value>
+  </data>
+  <data name="XGold" xml:space="preserve">
+    <value>{0:#,0} Gold</value>
+  </data>
+  <data name="XHS" xml:space="preserve">
+    <value> ({0} HS)</value>
+    <comment>Space at the beggining (its first letters from Hero Specific SI Cubes)</comment>
+  </data>
+  <data name="XSI" xml:space="preserve">
+    <value> ({0} SI)</value>
+    <comment>Space at the beggining</comment>
+  </data>
+  <data name="XSICubes" xml:space="preserve">
+    <value>{0} Soul Imprint cubes</value>
+  </data>
+  <data name="XSoulEssences" xml:space="preserve">
+    <value>{0} Soul Essences</value>
+  </data>
+  <data name="Yellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="YouHaveAddedTHero" xml:space="preserve">
+    <value>You have added T hero to planning, but You dont have the base SR hero upgraded to T6 and CL20. Do You want to automatically add the base hero to planning?</value>
+  </data>
+</root>

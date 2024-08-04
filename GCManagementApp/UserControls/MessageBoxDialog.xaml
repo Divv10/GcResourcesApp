@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="GCManagementApp.UserControls.MessageBoxDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GCManagementApp.UserControls"
+             xmlns:enums="clr-namespace:GCManagementApp.Enums"
+             xmlns:converters="clr-namespace:GCManagementApp.Converters"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:properties="clr-namespace:GCManagementApp.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400">
+   <Grid Margin="0,0,0,10" Height="200" Width="400">
+      <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+         </Grid.RowDefinitions>
+
+         <TextBlock Margin="15,15,15,0" Grid.Row="1" Text="{Binding DisplayText}" TextWrapping="Wrap" Style="{StaticResource MaterialDesignBody1TextBlockForeground}"/>
+
+         <Button Grid.Row="3" HorizontalAlignment="Left" Margin="15,0" Width="100" Content="{x:Static properties:Resources.No}" Style="{StaticResource MaterialDesignOutlinedButton}" ToolTip="No" Command="{x:Static wpf:DialogHost.CloseDialogCommand}" IsCancel="True">
+            <Button.CommandParameter>
+               <system:Boolean>False</system:Boolean>
+            </Button.CommandParameter>
+         </Button>
+         <Button Grid.Row="3" HorizontalAlignment="Right" Margin="15,0" Width="100" Content="{x:Static properties:Resources.Yes}" Style="{StaticResource MaterialDesignOutlinedButton}" ToolTip="Yes" Command="{x:Static wpf:DialogHost.CloseDialogCommand}" IsDefault="True">
+            <Button.CommandParameter>
+               <system:Boolean>True</system:Boolean>
+            </Button.CommandParameter>
+         </Button>
+      </Grid>
+   </Grid>
+</UserControl>

@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="GCManagementApp.UserControls.GearSlotsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GCManagementApp.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+      <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+         <TabItem>
+            <TabItem.Header>
+               <Image Source="/GCManagementApp;component/Resources/Classes/tank.png" Height="35"/>
+            </TabItem.Header>
+            <local:GearSlotsClassUserControl ClassType="Tank" Margin="30,0,0,0" VerticalAlignment="Center"/>
+         </TabItem>
+         <TabItem>
+            <TabItem.Header>
+               <Image Source="/GCManagementApp;component/Resources/Classes/assault.png" Height="35"/>
+            </TabItem.Header>
+            <local:GearSlotsClassUserControl ClassType="Assault" Margin="30,0,0,0" VerticalAlignment="Center"/>
+         </TabItem>
+         <TabItem>
+            <TabItem.Header>
+               <Image Source="/GCManagementApp;component/Resources/Classes/mage.png" Height="35"/>
+            </TabItem.Header>
+            <local:GearSlotsClassUserControl ClassType="Mage" Margin="30,0,0,0" VerticalAlignment="Center"/>
+         </TabItem>
+         <TabItem>
+            <TabItem.Header>
+               <Image Source="/GCManagementApp;component/Resources/Classes/ranger.png" Height="35"/>
+            </TabItem.Header>
+            <local:GearSlotsClassUserControl ClassType="Ranger" Margin="30,0,0,0" VerticalAlignment="Center"/>
+         </TabItem>
+         <TabItem>
+            <TabItem.Header>
+               <Image Source="/GCManagementApp;component/Resources/Classes/healer.png" Height="35"/>
+            </TabItem.Header>
+            <local:GearSlotsClassUserControl ClassType="Healer" Margin="30,0,0,0" VerticalAlignment="Center"/>
+         </TabItem>
+      </TabControl>
+   </Grid>
+</UserControl>

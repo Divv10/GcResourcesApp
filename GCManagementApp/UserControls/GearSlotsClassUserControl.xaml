@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="GCManagementApp.UserControls.GearSlotsClassUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GCManagementApp.UserControls"
+             xmlns:converter="clr-namespace:GCManagementApp.Converters"
+             xmlns:static="clr-namespace:GCManagementApp.Static"
+             xmlns:properties="clr-namespace:GCManagementApp.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+   <UserControl.Resources>
+      <converter:GearSlotRankToBrushConverter x:Key="GearSlotRankToBrushConverter" />
+      <converter:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+      <converter:GearSlotTypeToImageConverter x:Key="GearSlotTypeToImageConverter" />
+   </UserControl.Resources>
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition />
+         <RowDefinition Height="auto" />
+         <RowDefinition Height="auto" />
+         <RowDefinition Height="auto" />
+         <RowDefinition Height="auto" />
+         <RowDefinition Height="auto" />
+         <RowDefinition />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="auto" />
+         <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+
+
+      <Button Grid.Row="1" Width="90" Height="110" Padding="0" Margin="0" BorderThickness="0" Command="{Binding SelectGearSlotCommand}" CommandParameter="Weapon" Background="Transparent">
+         <Grid>
+            <Border BorderThickness="4,25,4,4" BorderBrush="{Binding GearSlots.Weapon.Rank, Converter={StaticResource GearSlotRankToBrushConverter}}" Margin="10" Background="{Binding ElementName=SelectedSlot, Path=Background}" >
+               <Image Source="/GCManagementApp;component/Resources/Gear/weapon.png" />
+            </Border>
+            <Label Grid.Row="1" Content="{Binding GearSlots.Weapon.UpgradeLevel}" ContentStringFormat='+{0}' Foreground="Black" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Margin="10"/>
+         </Grid>
+      </Button>
+
+      <Button Grid.Row="2" Width="90" Height="110" Padding="0" Margin="0" Background="Transparent" BorderThickness="0" Command="{Binding SelectGearSlotCommand}" CommandParameter="SubWeapon">
+         <Grid>
+            <Border BorderThickness="4,25,4,4" BorderBrush="{Binding GearSlots.SecondaryWeapon.Rank, Converter={StaticResource GearSlotRankToBrushConverter}}" Margin="10" Background="{Binding ElementName=SelectedSlot, Path=Background}" >
+               <Image Source="/GCManagementApp;component/Resources/Gear/subweapon.png" />
+            </Border>
+            <Label Grid.Row="2"  Content="{Binding GearSlots.SecondaryWeapon.UpgradeLevel}" ContentStringFormat='+{0}' Foreground="Black" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Margin="10"/>
+         </Grid>
+      </Button>
+
+      <Button Grid.Row="3" Width="90" Height="110" Padding="0" Margin="0" Background="Transparent" BorderThickness="0" Command="{Binding SelectGearSlotCommand}" CommandParameter="Armor" >
+         <Grid>
+            <Border BorderThickness="4,25,4,4" BorderBrush="{Binding GearSlots.Armor.Rank, Converter={StaticResource GearSlotRankToBrushConverter}}" Margin="10" Background="{Binding ElementName=SelectedSlot, Path=Background}">
+               <Image Source="/GCManagementApp;component/Resources/Gear/armor.png" />
+            </Border>
+            <Label Grid.Row="3"  Content="{Binding GearSlots.Armor.UpgradeLevel}" ContentStringFormat='+{0}' Foreground="Black" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Margin="10"/>
+         </Grid>
+      </Button>
+
+      <Button Grid.Row="4" Width="90" Height="110" Padding="0" Margin="0" Background="Transparent" BorderThickness="0" Command="{Binding SelectGearSlotCommand}" CommandParameter="SubArmor1" >
+         <Grid>
+            <Border BorderThickness="4,25,4,4" BorderBrush="{Binding GearSlots.SecondaryArmorOne.Rank, Converter={StaticResource GearSlotRankToBrushConverter}}" Margin="10" Background="{Binding ElementName=SelectedSlot, Path=Background}">
+               <Image Source="/GCManagementApp;component/Resources/Gear/subarmor.png" />
+            </Border>
+            <Label Grid.Row="4"  Content="{Binding GearSlots.SecondaryArmorOne.UpgradeLevel}" ContentStringFormat='+{0}' Foreground="Black" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Margin="10"/>
+         </Grid>
+      </Button>
+
+      <Button Grid.Row="5" Width="90" Height="110" Padding="0" Margin="0" Background="Transparent" BorderThickness="0" Command="{Binding SelectGearSlotCommand}" CommandParameter="SubArmor2" >
+         <Grid>
+            <Border BorderThickness="4,25,4,4" BorderBrush="{Binding GearSlots.SecondaryArmorTwo.Rank, Converter={StaticResource GearSlotRankToBrushConverter}}" Margin="10" Background="{Binding ElementName=SelectedSlot, Path=Background}">
+               <Image Source="/GCManagementApp;component/Resources/Gear/subarmor.png" />
+            </Border>
+            <Label Grid.Row="5"  Content="{Binding GearSlots.SecondaryArmorTwo.UpgradeLevel}" ContentStringFormat='+{0}' Foreground="Black" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Margin="10"/>
+         </Grid>
+      </Button>
+
+      <Border x:Name="SelectedSlot" Grid.Column="1" Grid.Row="1" BorderThickness="4,25,4,4" Background="Transparent" BorderBrush="{Binding SelectedGearSlot.Rank, Converter={StaticResource GearSlotRankToBrushConverter}}" Margin="0" HorizontalAlignment="Center" Width="90" >
+         <Image Source="{Binding SelectedSlotType, Converter={StaticResource GearSlotTypeToImageConverter}}" />
+      </Border>
+      <Label Grid.Column="1" Grid.Row="1"  Content="{Binding SelectedGearSlot.UpgradeLevel}" ContentStringFormat='+{0}' Foreground="Black" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0"/>
+
+      <ComboBox Grid.Column="1" Grid.Row="2" Width="300" HorizontalAlignment="Center"
+                  ItemsSource="{Binding GearSlotRankValues}"
+                  SelectedItem="{Binding SelectedGearSlot.Rank, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+         <ComboBox.ItemTemplate>
+            <DataTemplate>
+               <Grid>
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="20"/>
+                     <ColumnDefinition/>
+                  </Grid.ColumnDefinitions>
+                  <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource GearSlotRankToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
+                  <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
+               </Grid>
+            </DataTemplate>
+         </ComboBox.ItemTemplate>
+      </ComboBox>
+      <Grid Grid.Column="1" Grid.Row="3" Width="300">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto"/>
+         </Grid.ColumnDefinitions>
+         <Label Content="+0" Margin="0,0,15,0"/>
+         <Slider Grid.Column="1" TickPlacement="BottomRight" Maximum="{x:Static static:StaticValues.MaxGearSlotUpgrade}" Value="{Binding SelectedGearSlot.UpgradeLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <Label Grid.Column="2" Content="{x:Static static:StaticValues.MaxGearSlotUpgrade}" ContentStringFormat="+{0}" Margin="15,0,0,0"/>
+      </Grid>
+
+      <Grid Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" HorizontalAlignment="Center">
+         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+         </Grid.RowDefinitions>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+         </Grid.ColumnDefinitions>
+         <Label Content="{x:Static properties:Resources.MaterialsNeededToMaxThisSlot}" VerticalAlignment="Center" />
+         <Label Grid.Row="1" Content="{x:Static properties:Resources.MaterialsNeededToMaxAllSlotsForThisClass}" VerticalContentAlignment="Center"/>
+         <Label Grid.Row="2" Content="{x:Static properties:Resources.MaterialsNeededToMaxAllSlotsForAllClasses}" VerticalContentAlignment="Center" Margin="0,0,40,0"/>
+
+         <Image Grid.Column="1" Source="/GCManagementApp;component/Resources/Gear/raidMaterial.png" Width="50" />
+         <Image Grid.Column="1" Grid.Row="1" Source="/GCManagementApp;component/Resources/Gear/raidMaterial.png" Width="50" />
+         <Image Grid.Column="1" Grid.Row="2" Source="/GCManagementApp;component/Resources/Gear/raidMaterial.png" Width="50" />
+
+         <Label Grid.Column="2" Content="{Binding CurrentSlotCost.RaidMatsCost}" VerticalAlignment="Center" />
+         <Label Grid.Column="2" Grid.Row="1" Content="{Binding CurrentClassSlotCost.RaidMatsCost}" VerticalContentAlignment="Center"/>
+         <Label Grid.Column="2" Grid.Row="2" Content="{Binding TotalCost.RaidMatsCost}" VerticalContentAlignment="Center" Margin="0,0,40,0"/>
+
+         <Image Grid.Column="3" Source="/GCManagementApp;component/Resources/Gear/blueStone.png" Width="50" />
+         <Image Grid.Column="3" Grid.Row="1" Source="/GCManagementApp;component/Resources/Gear/blueStone.png" Width="50" />
+         <Image Grid.Column="3" Grid.Row="2" Source="/GCManagementApp;component/Resources/Gear/blueStone.png" Width="50" />
+
+         <Label Grid.Column="4" Content="{Binding CurrentSlotCost.BlueStonesCost}" VerticalAlignment="Center" />
+         <Label Grid.Column="4" Grid.Row="1" Content="{Binding CurrentClassSlotCost.BlueStonesCost}" VerticalContentAlignment="Center"/>
+         <Label Grid.Column="4" Grid.Row="2" Content="{Binding TotalCost.BlueStonesCost}" VerticalContentAlignment="Center" Margin="0,0,40,0"/>
+      </Grid>
+
+   </Grid>
+</UserControl>

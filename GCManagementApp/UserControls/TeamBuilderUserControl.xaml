@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="GCManagementApp.UserControls.TeamBuilderUserControl" x:Name="TeamBuilderUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GCManagementApp.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:lib="http://schemas.thinkpixellab.com/2011/xaml/presentation"
+             xmlns:converters="clr-namespace:GCManagementApp.Converters"
+             xmlns:enums="clr-namespace:GCManagementApp.Enums"
+             xmlns:static="clr-namespace:GCManagementApp.Static"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:behaviors="clr-namespace:GCManagementApp.Behaviors"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:properties="clr-namespace:GCManagementApp.Properties"
+             xmlns:dd="urn:gong-wpf-dragdrop"
+             mc:Ignorable="d"
+             d:DesignHeight="960" d:DesignWidth="1920">
+   <UserControl.Resources>
+      <converters:HeroToImageConverter x:Key="HeroToImageConverter"/>
+      <converters:ClassToImageConverter x:Key="ClassToImageConverter"/>
+      <converters:AttributeToImageConverter x:Key="AttributeToImageConverter"/>
+      <converters:LevelToProgressValueConverter x:Key="LevelToProgressValueConverter"/>
+      <converters:ElementToColorConverter x:Key="ElementToColorConverter"/>
+      <converters:ElementToImageConverter x:Key="ElementToImageConverter"/>
+      <materialDesign:BooleanToVisibilityConverter TrueValue="Hidden" FalseValue="Visible" x:Key="InverterBooleanToVisibilityConverter" />
+
+      <DataTemplate x:Key="DragAdorner">
+         <Image Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="40" Height="40" />
+      </DataTemplate>
+   </UserControl.Resources>
+   <Grid>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="*"/>
+         <ColumnDefinition Width="auto" />
+         <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="500"/>
+         <RowDefinition Height="5"/>
+         <RowDefinition Height="auto"/>
+         <RowDefinition/>
+         <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <ScrollViewer Margin="10" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" x:Name="ContentTeamsScroller">
+         <Grid HorizontalAlignment="Center" Width="760" x:Name="ContentTeams" Background="{DynamicResource MaterialDesignPaper}" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+               <RowDefinition Height="auto"/>
+               <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+               <Label HorizontalAlignment="Right" Content="Content:" Margin="5" FontSize="16"/>
+               <TextBox Grid.Column="1" Text="{Binding ContentText}" Margin="5" Width="200" HorizontalContentAlignment="Stretch" FontSize="16"/>
+            </StackPanel>
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding ContentTeams}">
+               <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                     <Grid Margin="5" Height="100" Width="750" HorizontalAlignment="Left">
+                        <Grid.ColumnDefinitions>
+                           <ColumnDefinition Width="80" />
+                           <ColumnDefinition />
+                           <ColumnDefinition Width="30" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.ColumnSpan="1" Background="{Binding Element, Converter={StaticResource ElementToColorConverter}}" />
+                        <Border BorderBrush="{Binding Element, Converter={StaticResource ElementToColorConverter}}" Grid.ColumnSpan="2" BorderThickness="5" />
+                        <ComboBox Text="Rank 7" HorizontalAlignment="Stretch" FontSize="15" Margin="5,10,5,0" VerticalAlignment="Top" SelectedItem="{Binding Element}" ItemsSource="{Binding DataContext.Elements, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                        <Image Source="{Binding Element, Converter={StaticResource ElementToImageConverter}}" Width="40" Margin="0,35,0,0"/>
+
+                        <ListBox Grid.Column="1" Background="{DynamicResource MaterialDesignPaper}" Margin="0,5,5,5" ItemsSource="{Binding Heroes}"                        
+                                         dd:DragDrop.IsDragSource="True"
+                                         dd:DragDrop.IsDropTarget="True"
+                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
+                                         dd:DragDrop.DropHandler="{Binding DataContext, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
+                           <ListBox.ItemsPanel>
+                              <ItemsPanelTemplate>
+                                 <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                              </ItemsPanelTemplate>
+                           </ListBox.ItemsPanel>
+                           <ListBox.ItemTemplate>
+                              <DataTemplate>
+                                 <Grid>
+                                    <Grid.ColumnDefinitions>
+                                       <ColumnDefinition Width="35" />
+                                       <ColumnDefinition Width="70" />
+                                       <ColumnDefinition Width="35" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                       <RowDefinition Height="35" />
+                                       <RowDefinition Height="35"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                                    <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
+
+                                    <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
+                                    <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                                    <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
+                                    <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                                 </Grid>
+                              </DataTemplate>
+                           </ListBox.ItemTemplate>
+                        </ListBox>
+                        <Grid Grid.Column="2" >
+                           <Grid.RowDefinitions>
+                              <RowDefinition/>
+                              <RowDefinition/>
+                           </Grid.RowDefinitions>
+                           <Button Command="{Binding DataContext.RemoveTeamCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Remove team" Visibility="{Binding DataContext.IsPrintMode, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource InverterBooleanToVisibilityConverter}}">
+                              <materialDesign:PackIcon Kind="TrashCanOutline"/>
+                           </Button>
+                           <Button Grid.Row="1" Command="{Binding DataContext.ClearRankCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding DataContext.IsPrintMode, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource InverterBooleanToVisibilityConverter}}">
+                              <materialDesign:PackIcon Kind="Refresh"/>
+                           </Button>
+                        </Grid>
+                     </Grid>
+                  </DataTemplate>
+               </ItemsControl.ItemTemplate>
+            </ItemsControl>     
+         </Grid>
+      </ScrollViewer>
+
+      <GridSplitter Grid.Row="1" Height="5" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+      <Border Grid.ColumnSpan="3" Grid.Row="2" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="{StaticResource MaterialDesignBody}" Margin="25,0,25,0"/>
+      <TextBlock Grid.ColumnSpan="3" Grid.Row="2" Text="Available heroes (Drag and drop on any team):" FontSize="15" Margin="25,10" HorizontalAlignment="Left" Background="{DynamicResource MaterialDesignPaper}" Padding="10,0" />
+
+      <!-- Heroes -->
+      <ListBox Grid.ColumnSpan="3" Grid.Row="3" Margin="15,0,15,15" ItemsSource="{Binding HeroesView}"                        
+                                         dd:DragDrop.IsDragSource="True"
+                                         dd:DragDrop.IsDropTarget="True"
+                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
+                                         dd:DragDrop.DropHandler="{Binding}"
+                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
+         <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+               <WrapPanel IsItemsHost="True"/>
+            </ItemsPanelTemplate>
+         </ListBox.ItemsPanel>
+         <ListBox.ItemTemplate>
+            <DataTemplate>
+               <Grid>
+                  <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="35" />
+                     <ColumnDefinition Width="70" />
+                     <ColumnDefinition Width="35" />
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                     <RowDefinition Height="35" />
+                     <RowDefinition Height="35"/>
+                  </Grid.RowDefinitions>
+
+                  <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                  <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
+
+                  <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
+                  <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                  <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
+                  <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+               </Grid>
+            </DataTemplate>
+         </ListBox.ItemTemplate>
+      </ListBox>
+
+      <StackPanel Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+         <Button Content="Save" Command="{Binding SaveCommand}" />
+         <Button Content="Add new team" Command="{Binding AddNewTeamCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
+         <Button Content="Remove all teams" Command="{Binding RemoveAllCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
+         <Button Content="Save to clipboard" Command="{Binding SaveToClipboardCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}" CommandParameter="{Binding ElementName=ContentTeams}"/>
+      </StackPanel>
+   </Grid>
+</UserControl>

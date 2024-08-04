@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="DivideGT.StarsDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DivideGT"
+             mc:Ignorable="d" x:Name="StarsD"
+             d:DesignHeight="30" d:DesignWidth="54" >
+    <Grid>
+      <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="18"/>
+         <ColumnDefinition Width="18"/>
+         <ColumnDefinition Width="18"/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="30" />
+      </Grid.RowDefinitions>
+      <Label Grid.Row="1" Margin="0" Padding="0" Content="&#xE735;" FontFamily="Segoe MDL2 Assets" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red">
+         <Label.Style>
+            <Style TargetType="Label">
+               <Setter Property="Visibility" Value="Collapsed"/>
+               <Style.Triggers>
+                  <DataTrigger Binding="{Binding OneStar, ElementName=StarsD}" Value="True">
+                     <Setter Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+               </Style.Triggers>
+            </Style>
+         </Label.Style>
+      </Label>
+      <Label Grid.Row="1" Grid.Column="1" Margin="0" Padding="0" Content="&#xE735;" FontFamily="Segoe MDL2 Assets" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red">
+         <Label.Style>
+            <Style TargetType="Label">
+               <Setter Property="Visibility" Value="Collapsed"/>
+               <Style.Triggers>
+                  <DataTrigger Binding="{Binding TwoStar, ElementName=StarsD}" Value="True">
+                     <Setter Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+               </Style.Triggers>
+            </Style>
+         </Label.Style>
+      </Label>
+      <Label Grid.Row="1" Grid.Column="2" Margin="0" Padding="0" Content="&#xE735;" FontFamily="Segoe MDL2 Assets" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red">
+         <Label.Style>
+            <Style TargetType="Label">
+               <Setter Property="Visibility" Value="Collapsed"/>
+               <Style.Triggers>
+                  <DataTrigger Binding="{Binding ThreeStar, ElementName=StarsD}" Value="True">
+                     <Setter Property="Visibility" Value="Visible" />
+                  </DataTrigger>
+               </Style.Triggers>
+            </Style>
+         </Label.Style>
+      </Label>
+
+
+      <Label Grid.Column="0" Margin="0" Padding="0" Content="&#xE735;" FontFamily="Segoe MDL2 Assets" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" Opacity="0.2" Visibility="{Binding ZeroStars, ElementName=StarsD}"/>
+      <Label Grid.Column="1" Margin="0" Padding="0" Content="&#xE735;" FontFamily="Segoe MDL2 Assets" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" Opacity="0.2" Visibility="{Binding ZeroStars, ElementName=StarsD}"/>
+      <Label Grid.Column="2" Margin="0" Padding="0" Content="&#xE735;" FontFamily="Segoe MDL2 Assets" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Red" Opacity="0.2" Visibility="{Binding ZeroStars, ElementName=StarsD}"/>
+      <Label Content="No attack" Grid.ColumnSpan="3" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding NoAttacks, ElementName=StarsD}"/>
+
+   </Grid>
+</UserControl>

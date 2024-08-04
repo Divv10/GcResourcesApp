@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="GCManagementApp.UserControls.MaterialsInventoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:GCManagementApp.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:GCManagementApp.UserControls"
+             xmlns:converters="clr-namespace:GCManagementApp.Converters"
+             xmlns:properties="clr-namespace:GCManagementApp.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="850" d:DesignWidth="1000">
+   <UserControl.Resources>
+      <converters:GoldToShortNumberConverter x:Key="GoldToShortNumberConverter"/>
+   </UserControl.Resources>
+   <ScrollViewer HorizontalScrollBarVisibility="Auto">
+      <Grid Margin="10" KeyboardNavigation.TabNavigation="Cycle">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+         </Grid.ColumnDefinitions>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+         </Grid.RowDefinitions>
+         <Label Grid.Row="0" Grid.ColumnSpan="5" Margin="10,10" Style="{StaticResource MaterialDesignHeadline6Label}" Content="{x:Static properties:Resources.Material}" />
+         <uc:MeterialsItemInput Grid.Row="1" Title="{x:Static properties:Resources.ChaserCubes}" ImageSource="/GCManagementApp;component/Resources/Materials/ChaserCube.png" ItemCount="{Binding Inventory.ChaserCubes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="1" Grid.Column="1" Title="{x:Static properties:Resources.SoulImprintCubes}" ImageSource="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" ItemCount="{Binding Inventory.SiCubes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="1" Grid.Column="2" Title="{x:Static properties:Resources.AnnihilationCoins}" ImageSource="/GCManagementApp;component/Resources/Materials/anni_coin.png" ItemCount="{Binding Inventory.AnniCoins, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <materialDesign:PackIcon Kind="HelpCircle" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="20" ToolTip="{Binding Inventory.AnniCoinsToolTip}"/>
+         <uc:MeterialsItemInput Grid.Row="1" Grid.Column="3" Title="{x:Static properties:Resources.BlueGems}" ImageSource="/GCManagementApp;component/Resources/Materials/BlueGem.png" ItemCount="{Binding Inventory.BlueGems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <materialDesign:PackIcon Kind="HelpCircle" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" Margin="20" ToolTip="{Binding Inventory.BlueGemsToolTip}"/>
+         <uc:MeterialsItemInputString Grid.Row="1" Grid.Column="4" Title="{x:Static properties:Resources.Gold}" ImageSource="/GCManagementApp;component/Resources/Materials/Gold.png" ItemCount="{Binding Inventory.GoldFormatted, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+         <uc:MeterialsItemInput Grid.Row="1" Grid.Column="5" Title="{x:Static properties:Resources.AernasGrace}" ImageSource="/GCManagementApp;component/Resources/Materials/EwMats.png" ItemCount="{Binding Inventory.EwMats, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <Label Grid.Row="2" Grid.ColumnSpan="5" Margin="10,10" Style="{StaticResource MaterialDesignHeadline6Label}" Content="{x:Static properties:Resources.SoulEssences}" />
+         <uc:MeterialsItemInput Grid.Row="3" Grid.Column="0" Title="{x:Static properties:Resources.Assault}" ImageSource="/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png" ItemCount="{Binding Inventory.AssaultSE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="3" Grid.Column="1" Title="{x:Static properties:Resources.Ranger}" ImageSource="/GCManagementApp;component/Resources/Materials/SoulEssenceRanger.png" ItemCount="{Binding Inventory.RangerSE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="3" Grid.Column="2" Title="{x:Static properties:Resources.Tank}" ImageSource="/GCManagementApp;component/Resources/Materials/SoulEssenceTank.png" ItemCount="{Binding Inventory.TankSE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="3" Grid.Column="3" Title="{x:Static properties:Resources.Healer}" ImageSource="/GCManagementApp;component/Resources/Materials/SoulEssenceHealer.png" ItemCount="{Binding Inventory.HealerSE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="3" Grid.Column="4" Title="{x:Static properties:Resources.Mage}" ImageSource="/GCManagementApp;component/Resources/Materials/SoulEssenceMage.png" ItemCount="{Binding Inventory.MageSE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <Label Grid.Row="4" Grid.ColumnSpan="5" Margin="10,10" Style="{StaticResource MaterialDesignHeadline6Label}" Content="{x:Static properties:Resources.ChaserCrystals}" />
+         <uc:MeterialsItemInput Grid.Row="5" Grid.Column="0" Title="{x:Static properties:Resources.Assault}" ImageSource="/GCManagementApp;component/Resources/Materials/ChaserCrystalAssault.png" ItemCount="{Binding Inventory.AssaultCC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="5" Grid.Column="1" Title="{x:Static properties:Resources.Ranger}" ImageSource="/GCManagementApp;component/Resources/Materials/ChaserCrystalRanger.png" ItemCount="{Binding Inventory.RangerCC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="5" Grid.Column="2" Title="{x:Static properties:Resources.Tank}" ImageSource="/GCManagementApp;component/Resources/Materials/ChaserCrystalTank.png" ItemCount="{Binding Inventory.TankCC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="5" Grid.Column="3" Title="{x:Static properties:Resources.Healer}" ImageSource="/GCManagementApp;component/Resources/Materials/ChaserCrystalHealer.png" ItemCount="{Binding Inventory.HealerCC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="5" Grid.Column="4" Title="{x:Static properties:Resources.Mage}" ImageSource="/GCManagementApp;component/Resources/Materials/ChaserCrystalMage.png" ItemCount="{Binding Inventory.MageCC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <Label Grid.Row="6" Grid.ColumnSpan="5" Margin="10,10" Style="{StaticResource MaterialDesignHeadline6Label}" Content="{x:Static properties:Resources.AwakeningCubes}" />
+         <uc:MeterialsItemInput Grid.Row="7" Grid.Column="0" Title="{x:Static properties:Resources.Assault}" ImageSource="/GCManagementApp;component/Resources/Materials/AwakeningCubeAssault.png" ItemCount="{Binding Inventory.AssaultAC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="7" Grid.Column="1" Title="{x:Static properties:Resources.Ranger}" ImageSource="/GCManagementApp;component/Resources/Materials/AwakeningCubeRanger.png" ItemCount="{Binding Inventory.RangerAC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="7" Grid.Column="2" Title="{x:Static properties:Resources.Tank}" ImageSource="/GCManagementApp;component/Resources/Materials/AwakeningCubeTank.png" ItemCount="{Binding Inventory.TankAC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="7" Grid.Column="3" Title="{x:Static properties:Resources.Healer}" ImageSource="/GCManagementApp;component/Resources/Materials/AwakeningCubeHealer.png" ItemCount="{Binding Inventory.HealerAC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+         <uc:MeterialsItemInput Grid.Row="7" Grid.Column="4" Title="{x:Static properties:Resources.Mage}" ImageSource="/GCManagementApp;component/Resources/Materials/AwakeningCubeMage.png" ItemCount="{Binding Inventory.MageAC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+      </Grid>
+   </ScrollViewer>
+</UserControl>

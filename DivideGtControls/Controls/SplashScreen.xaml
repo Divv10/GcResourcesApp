@@ -1,0 +1,28 @@
+﻿<Window x:Class="DivideGT.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DivideGT"
+        mc:Ignorable="d"
+        Title="" Height="250" Width="400" WindowStyle="None" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+   <Window.Resources>
+      <ResourceDictionary>
+         <ResourceDictionary.MergedDictionaries>
+            <!-- you only need bring this resource in if you want to specify the circular style statically -->
+            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ProgressBar.xaml"/>
+         </ResourceDictionary.MergedDictionaries>
+      </ResourceDictionary>
+   </Window.Resources>
+    <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition />
+         <RowDefinition />
+      </Grid.RowDefinitions>
+      <Label Content="Getting tournament data from server..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" FontWeight="DemiBold"/>
+      <ProgressBar Grid.Row="1" Height="50" Width="50" VerticalAlignment="Top"
+           Style="{StaticResource MaterialDesignCircularProgressBar}"
+           Value="0"
+           IsIndeterminate="True" />
+   </Grid>
+</Window>
