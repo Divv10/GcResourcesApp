@@ -50,5 +50,6 @@ namespace GCManagementApp.Models
         Mayden,
         Bastet,
         Brammashell,
+        Deia,
     }
 }

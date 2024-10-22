@@ -10,9 +10,5 @@ namespace DivideGT
     public static class AppStatic
     {
         public static Logger logger { get; set; }
-
-        public static ITournamentProvider TournamentProvider { get; set; }
-
-        public static TournamentDate TournamentDate { get; set; }
     }
 }

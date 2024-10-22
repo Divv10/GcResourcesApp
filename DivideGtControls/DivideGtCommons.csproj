@@ -108,50 +108,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\AttackHistory.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\FullAttackDisplay.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\AttackDisplay.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\AttackSummary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\DataInputWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\DefenseDisplay.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\DefenseHistory.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\FullInfoView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\SplashScreen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\StarsDisplay.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\TournamentViewer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Themes\Converters.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -166,47 +122,7 @@
     <Compile Include="Classes\Attack.cs" />
     <Compile Include="Classes\Defense.cs" />
     <Compile Include="Classes\EnumDropDown.cs" />
-    <Compile Include="Classes\ExtensionMethods.cs" />
-    <Compile Include="Classes\ITournamentProvider.cs" />
     <Compile Include="Classes\StarsDropDown.cs" />
-    <Compile Include="Classes\TournamentCollection.cs" />
-    <Compile Include="Classes\TournamentDate.cs" />
-    <Compile Include="Classes\TournamentProviderGDrive.cs" />
-    <Compile Include="Classes\TournamentProviderMock.cs" />
-    <Compile Include="Classes\TournamentRecord.cs" />
-    <Compile Include="Controls\AttackHistory.xaml.cs">
-      <DependentUpon>AttackHistory.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\FullAttackDisplay.xaml.cs">
-      <DependentUpon>FullAttackDisplay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\AttackDisplay.xaml.cs">
-      <DependentUpon>AttackDisplay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\AttackSummary.xaml.cs">
-      <DependentUpon>AttackSummary.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DataInputWindow.xaml.cs">
-      <DependentUpon>DataInputWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DefenseDisplay.xaml.cs">
-      <DependentUpon>DefenseDisplay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\DefenseHistory.xaml.cs">
-      <DependentUpon>DefenseHistory.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\FullInfoView.xaml.cs">
-      <DependentUpon>FullInfoView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SplashScreen.xaml.cs">
-      <DependentUpon>SplashScreen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\StarsDisplay.xaml.cs">
-      <DependentUpon>StarsDisplay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TournamentViewer.xaml.cs">
-      <DependentUpon>TournamentViewer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\PetToImageConverter.cs" />
     <Compile Include="Converters\HeroToImageConverter.cs" />
     <Compile Include="Enums\GuildEnum.cs" />
@@ -245,190 +161,15 @@
       <Name>GcProcessingLib</Name>
     </ProjectReference>
   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="Heroes\Icons\*.png" />
+   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Heroes\Icons\AmySR.png" />
-    <Resource Include="Heroes\Icons\AmyT.png" />
-    <Resource Include="Heroes\Icons\ArmeSR.png" />
-    <Resource Include="Heroes\Icons\ArmeT.png" />
-    <Resource Include="Heroes\Icons\AsinSR.png" />
-    <Resource Include="Heroes\Icons\CallistoSR.png" />
-    <Resource Include="Heroes\Icons\CindySR.png" />
-    <Resource Include="Heroes\Icons\DecaneeSR.png" />
-    <Resource Include="Heroes\Icons\DioSR.png" />
-    <Resource Include="Heroes\Icons\EdelSR.png" />
-    <Resource Include="Heroes\Icons\EdelT.png" />
-    <Resource Include="Heroes\Icons\ElesisSR.png" />
-    <Resource Include="Heroes\Icons\ElesisT.png" />
-    <Resource Include="Heroes\Icons\EuropaSR.png" />
-    <Resource Include="Heroes\Icons\GanymedeSR.png" />
-    <Resource Include="Heroes\Icons\GrandielSR.png" />
-    <Resource Include="Heroes\Icons\HarpeSR.png" />
-    <Resource Include="Heroes\Icons\HarpeT.png" />
-    <Resource Include="Heroes\Icons\HwarinSR.png" />
-    <Resource Include="Heroes\Icons\IoSR.png" />
-    <Resource Include="Heroes\Icons\IoT.png" />
-    <Resource Include="Heroes\Icons\JinSR.png" />
-    <Resource Include="Heroes\Icons\JinT.png" />
-    <Resource Include="Heroes\Icons\KanavanSR.png" />
-    <Resource Include="Heroes\Icons\LapisSR.png" />
-    <Resource Include="Heroes\Icons\LassSR.png" />
-    <Resource Include="Heroes\Icons\LassT.png" />
-    <Resource Include="Heroes\Icons\LeySR.png" />
-    <Resource Include="Heroes\Icons\LeyT.png" />
-    <Resource Include="Heroes\Icons\LimeSR.png" />
-    <Resource Include="Heroes\Icons\LimeT.png" />
-    <Resource Include="Heroes\Icons\LireSR.png" />
-    <Resource Include="Heroes\Icons\LireT.png" />
-    <Resource Include="Heroes\Icons\MariSR.png" />
-    <Resource Include="Heroes\Icons\MariT.png" />
-    <Resource Include="Heroes\Icons\MystSR.png" />
-    <Resource Include="Heroes\Icons\NeliaSR.png" />
-    <Resource Include="Heroes\Icons\RagnarSR.png" />
-    <Resource Include="Heroes\Icons\RinSR.png" />
-    <Resource Include="Heroes\Icons\RonanSR.png" />
-    <Resource Include="Heroes\Icons\RonanT.png" />
-    <Resource Include="Heroes\Icons\RufusSR.png" />
-    <Resource Include="Heroes\Icons\RyanSR.png" />
-    <Resource Include="Heroes\Icons\SerdinSR.png" />
-    <Resource Include="Heroes\Icons\SerdinT.png" />
-    <Resource Include="Heroes\Icons\SieghartSR.png" />
-    <Resource Include="Heroes\Icons\SieghartT.png" />
-    <Resource Include="Heroes\Icons\SolSR.png" />
-    <Resource Include="Heroes\Icons\TiaSR.png" />
-    <Resource Include="Heroes\Icons\VeigasSR.png" />
-    <Resource Include="Heroes\Icons\WernerSR.png" />
-    <Resource Include="Heroes\Icons\ZeroSR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\KanavanT.png" />
-    <Resource Include="Heroes\Icons\LapisT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\AiSR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\EuropaT.png" />
-    <Resource Include="Heroes\Icons\WernerT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\AiSR.png" />
-    <Resource Include="Heroes\PetIcons\AmySR.png" />
-    <Resource Include="Heroes\PetIcons\AmyT.png" />
-    <Resource Include="Heroes\PetIcons\ArmeSR.png" />
-    <Resource Include="Heroes\PetIcons\ArmeT.png" />
-    <Resource Include="Heroes\PetIcons\AsinSR.png" />
-    <Resource Include="Heroes\PetIcons\CallistoSR.png" />
-    <Resource Include="Heroes\PetIcons\CindySR.png" />
-    <Resource Include="Heroes\PetIcons\DecaneeSR.png" />
-    <Resource Include="Heroes\PetIcons\DioSR.png" />
-    <Resource Include="Heroes\PetIcons\EdelSR.png" />
-    <Resource Include="Heroes\PetIcons\EdelT.png" />
-    <Resource Include="Heroes\PetIcons\ElesisSR.png" />
-    <Resource Include="Heroes\PetIcons\ElesisT.png" />
-    <Resource Include="Heroes\PetIcons\EuropaSR.png" />
-    <Resource Include="Heroes\PetIcons\EuropaT.png" />
-    <Resource Include="Heroes\PetIcons\GanymedeSR.png" />
-    <Resource Include="Heroes\PetIcons\GrandielSR.png" />
-    <Resource Include="Heroes\PetIcons\HarpeSR.png" />
-    <Resource Include="Heroes\PetIcons\HarpeT.png" />
-    <Resource Include="Heroes\PetIcons\HwarinSR.png" />
-    <Resource Include="Heroes\PetIcons\IoSR.png" />
-    <Resource Include="Heroes\PetIcons\IoT.png" />
-    <Resource Include="Heroes\PetIcons\JinSR.png" />
-    <Resource Include="Heroes\PetIcons\JinT.png" />
-    <Resource Include="Heroes\PetIcons\KanavanSR.png" />
-    <Resource Include="Heroes\PetIcons\KanavanT.png" />
-    <Resource Include="Heroes\PetIcons\LapisSR.png" />
-    <Resource Include="Heroes\PetIcons\LapisT.png" />
-    <Resource Include="Heroes\PetIcons\LassSR.png" />
-    <Resource Include="Heroes\PetIcons\LassT.png" />
-    <Resource Include="Heroes\PetIcons\LeySR.png" />
-    <Resource Include="Heroes\PetIcons\LeyT.png" />
-    <Resource Include="Heroes\PetIcons\LimeSR.png" />
-    <Resource Include="Heroes\PetIcons\LimeT.png" />
-    <Resource Include="Heroes\PetIcons\LireSR.png" />
-    <Resource Include="Heroes\PetIcons\LireT.png" />
-    <Resource Include="Heroes\PetIcons\MariSR.png" />
-    <Resource Include="Heroes\PetIcons\MariT.png" />
-    <Resource Include="Heroes\PetIcons\MystSR.png" />
-    <Resource Include="Heroes\PetIcons\NeliaSR.png" />
-    <Resource Include="Heroes\PetIcons\RagnarSR.png" />
-    <Resource Include="Heroes\PetIcons\RinSR.png" />
-    <Resource Include="Heroes\PetIcons\RonanSR.png" />
-    <Resource Include="Heroes\PetIcons\RonanT.png" />
-    <Resource Include="Heroes\PetIcons\RufusSR.png" />
-    <Resource Include="Heroes\PetIcons\RyanSR.png" />
-    <Resource Include="Heroes\PetIcons\SerdinSR.png" />
-    <Resource Include="Heroes\PetIcons\SerdinT.png" />
-    <Resource Include="Heroes\PetIcons\SieghartSR.png" />
-    <Resource Include="Heroes\PetIcons\SieghartT.png" />
-    <Resource Include="Heroes\PetIcons\SolSR.png" />
-    <Resource Include="Heroes\PetIcons\TiaSR.png" />
-    <Resource Include="Heroes\PetIcons\VeigasSR.png" />
-    <Resource Include="Heroes\PetIcons\WernerSR.png" />
-    <Resource Include="Heroes\PetIcons\WernerT.png" />
-    <Resource Include="Heroes\PetIcons\ZeroSR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\UnknownSR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\UnknownSR.png" />
+    <Resource Include="Heroes\PetIcons\*.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\banner.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\HwarinT.png" />
-    <Resource Include="Heroes\Icons\MaydenSR.png" />
-    <Resource Include="Heroes\Icons\RagnarT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\customSR.png" />
-    <Resource Include="Heroes\Icons\customT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\RufusT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\HwarinT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\RagnarT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\ElesisS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\RufusT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\BastetSR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\CallistoT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\ZeroT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\BrammashellSR.png" />
-    <Resource Include="Heroes\Icons\RinT.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\BastetSR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\AsinT.png" />
-    <Resource Include="Heroes\Icons\NeliaT.png" />
-    <Resource Include="Heroes\Icons\VeigasT.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets'))" />
-  </Target>
 </Project>
