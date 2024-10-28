@@ -17,5 +17,7 @@ namespace GCManagementApp.Enums
         Rare,
         [Description("Unique")]
         Unique,
+        [Description("Legendary")]
+        Legendary
     }
 }

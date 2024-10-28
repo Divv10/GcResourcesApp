@@ -12,7 +12,7 @@
    <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
       <TabItem>
          <TabItem.Header>
-            <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Height="45"/>
+         <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="45"/>
          </TabItem.Header>
          <ScrollViewer>
             <Grid Margin="10">
@@ -58,35 +58,35 @@
                         </TextBox>
                         <TextBlock Grid.Row="2" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Cost.Level, StringFormat='{x:Static properties:Resources.CostOfLevels}'}" />
                         <StackPanel Grid.Row="3" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Height="40"/>
-                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Cost.ChaserCubesCost, StringFormat='{x:Static properties:Resources.XChaserCubes}'}" VerticalAlignment="Center" />
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalAssault.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Cost.ChaserCrystalsCost, StringFormat='{x:Static properties:Resources.XChaserCrystals}'}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="40"/>
+                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Cost.GrowthCubesCost, StringFormat='{x:Static properties:Resources.XGrowthCubes}'}" VerticalAlignment="Center" />
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Cost.GrowthEssencesCost, StringFormat='{x:Static properties:Resources.XGrowthEssences}'}" VerticalAlignment="Center"/>
                            <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="40"/>
                            <TextBlock Margin="20,5" Width="250" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Cost.GoldCost, StringFormat='{x:Static properties:Resources.XGold}'}" VerticalAlignment="Center"/>
                         </StackPanel>
                         <TextBlock Grid.Row="4" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{x:Static properties:Resources.Inventory}" />
                         <StackPanel Grid.Row="5" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Height="40"/>
-                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.ChaserCubes, StringFormat='{x:Static properties:Resources.XChaserCubes}'}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalAssault.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.AssaultCC}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalRanger.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.RangerCC}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalTank.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.TankCC}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalHealer.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.HealerCC}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalMage.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.MageCC}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="40"/>
+                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.GrowthCubes, StringFormat='{x:Static properties:Resources.XGrowthCubes}'}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.AssaultGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceRanger.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.RangerGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceTank.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.TankGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceHealer.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.HealerGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceMage.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.MageGE}" VerticalAlignment="Center"/>
                         </StackPanel>
                      </Grid>
                      <Expander HorizontalAlignment="Stretch" Header="{x:Static properties:Resources.ClickHereToSHowFullChaserTable}">
                         <DataGrid CanUserAddRows="False" CanUserSortColumns="False" IsReadOnly="True" ItemsSource="{Binding ChaserCostsTable}" MaxHeight="400" MaxWidth="550" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto">
                            <DataGrid.Columns>
                               <DataGridTextColumn Header="{x:Static properties:Resources.CL}" Binding="{Binding Level}" Width="auto"/>
-                              <DataGridTextColumn Header="{x:Static properties:Resources.ChaserCubes}" Binding="{Binding ChaserCubesCost}" Width="*"/>
-                              <DataGridTextColumn Header="{x:Static properties:Resources.ChaserCrystals}" Binding="{Binding ChaserCrystalsCost}" Width="*"/>
+                              <DataGridTextColumn Header="{x:Static properties:Resources.GrowthCubes}" Binding="{Binding GrowthCubesCost}" Width="*"/>
+                              <DataGridTextColumn Header="{x:Static properties:Resources.GrowthEssence}" Binding="{Binding GrowthEssencesCost}" Width="*"/>
                               <DataGridTextColumn Header="{x:Static properties:Resources.Gold}" Binding="{Binding GoldCost, StringFormat='{}{0:#,0}'}" Width="*"/>
                            </DataGrid.Columns>
                         </DataGrid>
@@ -98,7 +98,7 @@
       </TabItem>
       <TabItem>
          <TabItem.Header>
-            <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="60"/>
+            <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60"/>
          </TabItem.Header>
 
          <ScrollViewer>
@@ -146,29 +146,28 @@
                         </TextBox>
                         <TextBlock Grid.Row="2" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.Level, StringFormat='{x:Static properties:Resources.CostOfLevels}'}" />
                         <StackPanel Grid.Row="3" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.SiCubesCost, StringFormat='{x:Static properties:Resources.XSICubes}'}" VerticalAlignment="Center" />
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.SeCost, StringFormat='{x:Static properties:Resources.XSoulEssences}'}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.GrowthCubesCost, StringFormat='{x:Static properties:Resources.XGrowthCubes}'}" VerticalAlignment="Center" />
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.GeCost, StringFormat='{x:Static properties:Resources.XGrowthEssences}'}" VerticalAlignment="Center"/>
                            <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="40"/>
-                           <TextBlock Margin="20,5" Width="250" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.GoldCost, StringFormat='{x:Static properties:Resources.Gold}'}" VerticalAlignment="Center"/>
+                           <TextBlock Margin="20,5" Width="250" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding SiCost.GoldCost, StringFormat='{x:Static properties:Resources.XGold}'}" VerticalAlignment="Center"/>
                         </StackPanel>
                         <TextBlock Grid.Row="4" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{x:Static properties:Resources.Inventory}" />
                         <StackPanel Grid.Row="5" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.SiCubes, StringFormat='{x:Static properties:Resources.XSICubes}'}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.AssaultSE}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceRanger.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.RangerSE}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceTank.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.TankSE}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceHealer.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.HealerSE}" VerticalAlignment="Center"/>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceMage.png" Height="50"/>
-                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.MageSE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.GrowthCubes, StringFormat='{x:Static properties:Resources.XGrowthCubes}'}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.AssaultGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceRanger.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.RangerGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceTank.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.TankGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceHealer.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.HealerGE}" VerticalAlignment="Center"/>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceMage.png" Height="50"/>
+                           <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.MageGE}" VerticalAlignment="Center"/>
                         </StackPanel>
-                        <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" Margin="90,5,0,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding CraftableSoulEssences, StringFormat='{x:Static properties:Resources.AdditionalXSECanBeCrafter}'}" />
                      </Grid>
                      <Expander HorizontalAlignment="Stretch" Header="{x:Static properties:Resources.ClickHereToShowFullSITable}">
                         <Grid>
@@ -180,8 +179,8 @@
                            <DataGrid Grid.Row="1" CanUserAddRows="False" CanUserSortColumns="False" IsReadOnly="True" ItemsSource="{Binding SiCostsTable}" MaxHeight="400" MaxWidth="550" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto">
                               <DataGrid.Columns>
                                  <DataGridTextColumn Header="{x:Static properties:Resources.SI}" Binding="{Binding Level}" Width="auto"/>
-                                 <DataGridTextColumn Header="{x:Static properties:Resources.SoulImprintCubes}" Binding="{Binding SiCubesCost}" Width="*"/>
-                                 <DataGridTextColumn Header="{x:Static properties:Resources.SoulEssences}" Binding="{Binding SeCost}" Width="*"/>
+                                 <DataGridTextColumn Header="{x:Static properties:Resources.GrowthCubes}" Binding="{Binding GrowthCubesCost}" Width="*"/>
+                                 <DataGridTextColumn Header="{x:Static properties:Resources.GrowthEssence}" Binding="{Binding GeCost}" Width="*"/>
                                  <DataGridTextColumn Header="{x:Static properties:Resources.Gold}" Binding="{Binding GoldCost, StringFormat='{}{0:#,0}'}" Width="*"/>
                               </DataGrid.Columns>
                            </DataGrid>

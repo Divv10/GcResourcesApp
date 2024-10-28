@@ -11,6 +11,6 @@ namespace GCManagementApp.Static
     {
         public static Point HeroPortraitOffset => new Point(60, 80);
         public static Point GoBackButton => new Point(55, 40);
-        public static Point PetsButton => new Point(65, 280);
+        public static Point PetsButton => new Point(65, 335);
     }
 }

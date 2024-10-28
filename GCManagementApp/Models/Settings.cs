@@ -145,11 +145,11 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _isDailyEntryPackageEssentialBought, value);
         }
 
-        private AwakeningCubesUpgradeTypeEnum _awakeningCubesUpgradeType;
-        public AwakeningCubesUpgradeTypeEnum AwakeningCubesUpgradeType
+        private SellRarityTypeEnum _sellRarityType;
+        public SellRarityTypeEnum RaritySellUpgradeType
         {
-            get => _awakeningCubesUpgradeType;
-            set => SetProperty(ref _awakeningCubesUpgradeType, value);
+            get => _sellRarityType;
+            set => SetProperty(ref _sellRarityType, value);
         }
 
         private int _dailyGoldIncome;

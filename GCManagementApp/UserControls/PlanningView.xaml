@@ -12,10 +12,8 @@
              d:DesignHeight="450" d:DesignWidth="1200">
    <UserControl.Resources>
       <converters:HeroToImageConverter x:Key="HeroToImageConverter" />
-      <converters:ClassToAcImageConverter x:Key="ClassToAcImageConverter"/>
-      <converters:ClassToCcImageConverter x:Key="ClassToCcImageConverter"/>
-      <converters:ClassToSeImageConverter x:Key="ClassToSeImageConverter"/>
-      <converters:DaysLeftToForegroundConverter x:Key="DaysLeftToForegroundConverter"/>
+        <converters:ClassToGeImageConverter x:Key="ClassToGeImageConverter"/>
+        <converters:DaysLeftToForegroundConverter x:Key="DaysLeftToForegroundConverter"/>
       <converters:DaysLeftToStringConverter x:Key="DaysLeftToStringConverter"/>
       <converters:GoldToShortNumberConverter x:Key="GoldToShortNumberConverter"/>
    </UserControl.Resources>
@@ -34,16 +32,12 @@
                </Grid.RowDefinitions>
                <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
                   <TextBlock Margin="10,5" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.InventoryColon}" />
-                  <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="45"/>
-                  <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.SiCubes}" />
-                  <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SiCubesFromBg, StringFormat=' ( +{0}'}" />
+                  <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="45"/>
+                  <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.GrowthCubes}" />
+                  <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GrowthCubesFromBg, StringFormat=' ( +{0}'}" />
                   <Image Source="/GCManagementApp;component/Resources/Materials/BlueGem.png" Height="40"/>
-                  <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SiCubesFromAnni, StringFormat=' , +{0}'}" />
-                  <Image Source="/GCManagementApp;component/Resources/Materials/anni_coin.png" Height="40"/>
                   <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text=")" />
-                  <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Height="35" Margin="20,0,10,0"/>
-                  <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.ChaserCubes}" />
-                  <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalAssault.png" Height="45" Margin="10,0,0,0"/>
+                  <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="45" Margin="10,0,0,0"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                      <materialDesign:PopupBox StaysOpen="True">
                         <Grid Width="120" Margin="8,8,8,8">
@@ -58,87 +52,29 @@
                               <ColumnDefinition Width="auto"/>
                               <ColumnDefinition Width="*"/>
                            </Grid.ColumnDefinitions>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalAssault.png" Height="45" />
-                           <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.AssaultCC}" />
-                           <Image Grid.Row="1" Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalRanger.png" Height="45" />
-                           <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.RangerCC}" />
-                           <Image Grid.Row="2" Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalTank.png" Height="45" />
-                           <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.TankCC}" />
-                           <Image Grid.Row="3" Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalHealer.png" Height="45" />
-                           <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.HealerCC}" />
-                           <Image Grid.Row="4" Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalMage.png" Height="45" />
-                           <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.MageCC}" />
+                           <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="45" />
+                           <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.AssaultGE}" />
+                           <Image Grid.Row="1" Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceRanger.png" Height="45" />
+                           <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.RangerGE}" />
+                           <Image Grid.Row="2" Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceTank.png" Height="45" />
+                           <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.TankGE}" />
+                           <Image Grid.Row="3" Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceHealer.png" Height="45" />
+                           <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.HealerGE}" />
+                           <Image Grid.Row="4" Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceMage.png" Height="45" />
+                           <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.MageGE}" />
                         </Grid>
                      </materialDesign:PopupBox>
                   </StackPanel>
-                  <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png" Height="45" Margin="0,0,0,0"/>
-                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                     <materialDesign:PopupBox StaysOpen="True">
-                        <Grid Width="120" Margin="8,8,8,8">
-                           <Grid.RowDefinitions>
-                              <RowDefinition Height="auto" />
-                              <RowDefinition Height="auto" />
-                              <RowDefinition Height="auto" />
-                              <RowDefinition Height="auto" />
-                              <RowDefinition Height="auto" />
-                           </Grid.RowDefinitions>
-                           <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="auto"/>
-                              <ColumnDefinition Width="*"/>
-                           </Grid.ColumnDefinitions>
-                           <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png" Height="45" />
-                           <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.AssaultSE}" />
-                           <Image Grid.Row="1" Source="/GCManagementApp;component/Resources/Materials/SoulEssenceRanger.png" Height="45" />
-                           <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.RangerSE}" />
-                           <Image Grid.Row="2" Source="/GCManagementApp;component/Resources/Materials/SoulEssenceTank.png" Height="45" />
-                           <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.TankSE}" />
-                           <Image Grid.Row="3" Source="/GCManagementApp;component/Resources/Materials/SoulEssenceHealer.png" Height="45" />
-                           <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.HealerSE}" />
-                           <Image Grid.Row="4" Source="/GCManagementApp;component/Resources/Materials/SoulEssenceMage.png" Height="45" />
-                           <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.MageSE}" />
-                        </Grid>
-                     </materialDesign:PopupBox>
-                  </StackPanel>
-                  <Image Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeAssault.png" Height="45" Margin="0,0,0,0"/>
-                  <materialDesign:PopupBox StaysOpen="True">
-                     <Grid Width="120" Margin="8,8,8,8">
-                        <Grid.RowDefinitions>
-                           <RowDefinition Height="auto" />
-                           <RowDefinition Height="auto" />
-                           <RowDefinition Height="auto" />
-                           <RowDefinition Height="auto" />
-                           <RowDefinition Height="auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                           <ColumnDefinition Width="auto"/>
-                           <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeAssault.png" Height="45" Margin="0,5"/>
-                        <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.AssaultAC}" />
-                        <Image Grid.Row="1" Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeRanger.png" Height="45" Margin="0,5"/>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.RangerAC}" />
-                        <Image Grid.Row="2" Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeTank.png" Height="45" Margin="0,5" />
-                        <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.TankAC}" />
-                        <Image Grid.Row="3" Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeHealer.png" Height="45" Margin="0,5" />
-                        <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.HealerAC}" />
-                        <Image Grid.Row="4" Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeMage.png" Height="45" Margin="0,5" />
-                        <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.MageAC}" />
-                     </Grid>
-                  </materialDesign:PopupBox>
                   <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="35" Margin="0,0,0,0"/>
                   <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.Gold, Converter={StaticResource GoldToShortNumberConverter}}" Margin="0,0,30,0"/>
 
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                      <TextBlock Margin="10,5" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.DailyColon}" />
-                     <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="45" />
-                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SIGain}" />
-                     <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCrystalAssault.png" Height="45" Margin="20,0,10,0"/>
-                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding CCGain}" />
-                     <Image Source="/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png" Height="45" Margin="20,0,10,0"/>
-                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding SEGain}" />
-                     <Image Source="/GCManagementApp;component/Resources/Materials/AwakeningCubeAssault.png" Height="45" Margin="20,0,10,0"/>
-                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ACGain}" />
-                     <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="35" Margin="20,0,10,0"/>
+                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="45" />
+                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GCGain}" />
+                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="45" Margin="20,0,10,0"/>
+                            <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GEGain}" />
+                            <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="35" Margin="20,0,10,0"/>
                      <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DailyGoldIncome, Converter={StaticResource GoldToShortNumberConverter}}" />
                      <materialDesign:PopupBox StaysOpen="True">
                         <Grid Width="300" Margin="8,8,8,8">
@@ -226,49 +162,23 @@
                            
                            <!-- -->
                            <TextBlock Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Text="{x:Static properties:Resources.Cost}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                           <Image Grid.Row="1" Grid.Column="7" Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToAcImageConverter}}" Margin="0"/>
-                           <TextBlock Grid.Row="1" Grid.Column="8" Text="{Binding TCost.AwakeningCubesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                           <Image Grid.Row="1" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="3"/>
+                           <TextBlock Grid.Row="1" Grid.Column="8" Text="{Binding SiLevelCost.GrowthCubesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            <Image Grid.Row="1" Grid.Column="9" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Margin="2"/>
                            <StackPanel Grid.Row="1" Grid.Column="10" Orientation="Horizontal">
                               <TextBlock Text="{Binding TCost.DupesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                               <TextBlock Text="{Binding DesiredGrowth.DupesForSi, StringFormat='{x:Static properties:Resources.XSI}'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            </StackPanel>
-                           <Image Grid.Row="2" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Margin="3"/>
-                           <TextBlock Grid.Row="2" Grid.Column="8" Text="{Binding ClLevelCost.ChaserCubesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                           <Image Grid.Row="2" Grid.Column="9" Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToCcImageConverter}}" />
-                           <TextBlock Grid.Row="2" Grid.Column="10" Text="{Binding ClLevelCost.ChaserCrystalsCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                           <Image Grid.Row="3" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" />
-                           <StackPanel Grid.Row="3" Grid.Column="8"  Orientation="Horizontal">
-                              <TextBlock Text="{Binding SiLevelCost.SiCubesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                              <TextBlock Text="{Binding DesiredGrowth.HeroSpecificSiCubesOwned, StringFormat='{x:Static properties:Resources.XHS}'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                              <!--<TextBlock Text="{Binding DesiredGrowth.DupesForSi, StringFormat='({0}ds)'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />-->
-                           </StackPanel>
-                           <Image Grid.Row="3" Grid.Column="9" Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToSeImageConverter}}" />
-                           <TextBlock Grid.Row="3" Grid.Column="10" Text="{Binding SiLevelCost.SeCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                           <Image Grid.Row="4" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/gold.png" />
-                           <TextBlock Grid.Row="4" Grid.Column="8" Grid.ColumnSpan="3" Text="{Binding GoldCost, StringFormat={}{0:N0}}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                            <Image Grid.Row="2" Grid.Column="7" Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToGeImageConverter}}" />
+                           <TextBlock Grid.Row="2" Grid.Column="8" Text="{Binding SiLevelCost.GeCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                           <Image Grid.Row="2" Grid.Column="9" Source="/GCManagementApp;component/Resources/Materials/gold.png" />
+                           <TextBlock Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="3" Text="{Binding GoldCost, StringFormat={}{0:N0}}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            
                            <!-- -->
                            <TextBlock Grid.Row="0" Grid.Column="12" Text="{x:Static properties:Resources.ReadyIn}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
 
                            <StackPanel Grid.Row="1" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
-                              <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Margin="4"/>
-                              <TextBlock x:Name="DaysForChaserCubes" Text="{Binding DaysForChaserCubes, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForChaserCubes, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
-                              <TextBlock Text="{Binding ChaserCubesNeeded, StringFormat='({0})'}" Margin="0,0" VerticalAlignment="Center" Foreground="{Binding DaysForChaserCubes, Converter={StaticResource DaysLeftToForegroundConverter}}">
-                                 <TextBlock.Style>
-                                    <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlockForeground}">
-                                       <Setter Property="Visibility" Value="Visible"/>
-                                       <Style.Triggers>
-                                          <DataTrigger Binding="{Binding Text, ElementName=DaysForChaserCubes}" Value="{x:Static properties:Resources.Ready}">
-                                             <Setter Property="Visibility" Value="Hidden"/>
-                                          </DataTrigger>
-                                       </Style.Triggers>
-                                    </Style>
-                                 </TextBlock.Style>
-                              </TextBlock>
-                           </StackPanel>
-                           <StackPanel Grid.Row="1" Grid.Column="13" HorizontalAlignment="Left" Orientation="Horizontal" Margin="15,0,0,0">
-                              <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" />
+                              <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" />
                               <TextBlock x:Name="DaysForSi" Text="{Binding DaysForSi, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForSi, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
                               <TextBlock Text="{Binding SiNeeded, StringFormat='({0})'}" Margin="0,0" VerticalAlignment="Center" Foreground="{Binding DaysForSi, Converter={StaticResource DaysLeftToForegroundConverter}}">
                                  <TextBlock.Style>
@@ -284,14 +194,14 @@
                               </TextBlock>
                            </StackPanel>
                            <StackPanel Grid.Row="2" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
-                              <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToCcImageConverter}}" />
-                              <TextBlock x:Name="DaysForCC" Text="{Binding DaysForCC, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForCC, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
-                              <TextBlock Text="{Binding CcNeeded, StringFormat='({0})'}" Margin="00,0" VerticalAlignment="Center" Foreground="{Binding DaysForCC, Converter={StaticResource DaysLeftToForegroundConverter}}">
+                              <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToGeImageConverter}}" />
+                              <TextBlock x:Name="DaysForGE" Text="{Binding DaysForGE, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForGE, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
+                                        <TextBlock Text="{Binding GeNeeded, StringFormat='({0})'}" Margin="00,0" VerticalAlignment="Center" Foreground="{Binding DaysForGE, Converter={StaticResource DaysLeftToForegroundConverter}}">
                                  <TextBlock.Style>
                                     <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlockForeground}">
                                        <Setter Property="Visibility" Value="Visible"/>
                                        <Style.Triggers>
-                                          <DataTrigger Binding="{Binding Text, ElementName=DaysForCC}" Value="{x:Static properties:Resources.Ready}">
+                                             <DataTrigger Binding="{Binding Text, ElementName=DaysForGE}" Value="{x:Static properties:Resources.Ready}">
                                              <Setter Property="Visibility" Value="Hidden"/>
                                           </DataTrigger>
                                        </Style.Triggers>
@@ -299,39 +209,7 @@
                                  </TextBlock.Style>
                               </TextBlock>
                            </StackPanel>
-                           <StackPanel Grid.Row="2" Grid.Column="13" HorizontalAlignment="Left" Orientation="Horizontal" Margin="15,0,0,0">
-                              <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToSeImageConverter}}" />
-                              <TextBlock x:Name="DaysForSE" Text="{Binding DaysForSE, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForSE, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
-                              <TextBlock Text="{Binding SeNeeded, StringFormat='({0})'}" Margin="00,0" VerticalAlignment="Center" Foreground="{Binding DaysForSE, Converter={StaticResource DaysLeftToForegroundConverter}}">
-                                 <TextBlock.Style>
-                                    <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlockForeground}">
-                                       <Setter Property="Visibility" Value="Visible"/>
-                                       <Style.Triggers>
-                                          <DataTrigger Binding="{Binding Text, ElementName=DaysForSE}" Value="{x:Static properties:Resources.Ready}">
-                                             <Setter Property="Visibility" Value="Hidden"/>
-                                          </DataTrigger>
-                                       </Style.Triggers>
-                                    </Style>
-                                 </TextBlock.Style>
-                              </TextBlock>
-                           </StackPanel>
-                           <StackPanel Grid.Row="3" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
-                              <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToAcImageConverter}}" Margin="0"/>
-                              <TextBlock x:Name="DaysForAC" Text="{Binding DaysForAC, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForAC, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
-                              <TextBlock Text="{Binding AcNeeded, StringFormat='({0})'}" Margin="0,0" VerticalAlignment="Center" Foreground="{Binding DaysForAC, Converter={StaticResource DaysLeftToForegroundConverter}}">
-                                 <TextBlock.Style>
-                                    <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlockForeground}">
-                                       <Setter Property="Visibility" Value="Visible"/>
-                                       <Style.Triggers>
-                                          <DataTrigger Binding="{Binding Text, ElementName=DaysForAC}" Value="{x:Static properties:Resources.Ready}">
-                                             <Setter Property="Visibility" Value="Hidden"/>
-                                          </DataTrigger>
-                                       </Style.Triggers>
-                                    </Style>
-                                 </TextBlock.Style>
-                              </TextBlock>
-                           </StackPanel>
-                           <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
+                           <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
                               <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Margin="0"/>
                               <TextBlock x:Name="DaysForGold" Text="{Binding DaysForGold, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForGold, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
                               <TextBlock Text="{Binding GoldNeeded, StringFormat='({0:N0})'}" Margin="0,0" VerticalAlignment="Center" Foreground="{Binding DaysForGold, Converter={StaticResource DaysLeftToForegroundConverter}}">

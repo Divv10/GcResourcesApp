@@ -106,13 +106,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _tCost, value);
         }
 
-        private double _daysForCC;
+        private double _daysForGE;
         [XmlIgnore]
         [JsonIgnore]
-        public double DaysForCC
+        public double DaysForGE
         {
-            get => _daysForCC;
-            set => SetProperty(ref _daysForCC, value);
+            get => _daysForGE;
+            set => SetProperty(ref _daysForGE, value);
         }
 
         private double _daysForSi;
@@ -133,13 +133,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _daysForSE, value);
         }
 
-        private int _ccNeeded;
+        private int _geNeeded;
         [XmlIgnore]
         [JsonIgnore]
-        public int CcNeeded
+        public int GeNeeded
         {
-            get => _ccNeeded;
-            set => SetProperty(ref _ccNeeded, value);
+            get => _geNeeded;
+            set => SetProperty(ref _geNeeded, value);
         }
 
         private int _siNeeded;
@@ -176,24 +176,6 @@ namespace GCManagementApp.Models
         {
             get => _seNeeded;
             set => SetProperty(ref _seNeeded, value);
-        }
-
-        private int _acNeeded;
-        [XmlIgnore]
-        [JsonIgnore]
-        public int AcNeeded
-        {
-            get => _acNeeded;
-            set => SetProperty(ref _acNeeded, value);
-        }
-
-        private double _daysForAC;
-        [XmlIgnore]
-        [JsonIgnore]
-        public double DaysForAC
-        {
-            get => _daysForAC;
-            set => SetProperty(ref _daysForAC, value);
         }
 
         private int _goldCost;

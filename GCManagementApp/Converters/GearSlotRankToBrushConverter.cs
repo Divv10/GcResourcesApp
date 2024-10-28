@@ -22,6 +22,8 @@ namespace GCManagementApp.Converters
                         return new SolidColorBrush(Color.FromArgb(255, 78, 172, 237)); //#4EACED
                     case GearSlotRankEnum.Unique:
                         return new SolidColorBrush(Color.FromArgb(255, 175, 91, 240)); //#AF5BF0
+                    case GearSlotRankEnum.Legendary:
+                        return new SolidColorBrush(Color.FromArgb(255, 255, 73, 73)); //#FF3333
                     default:
                         return new SolidColorBrush(Colors.Gray);
                 }

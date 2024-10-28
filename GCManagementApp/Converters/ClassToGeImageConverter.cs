@@ -8,15 +8,15 @@ using System.Windows.Data;
 
 namespace GCManagementApp.Converters
 {
-    internal class ClassToSeImageConverter : IValueConverter
+    internal class ClassToGeImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value is HeroClass className)
             {
-                return $"/GCManagementApp;component/Resources/Materials/SoulEssence{className}.png";
+                return $"/GCManagementApp;component/Resources/Materials/GrowthEssence{className}.png";
             }
-            return "/GCManagementApp;component/Resources/Materials/SoulEssenceAssault.png";
+            return "/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png";
         }
 
 

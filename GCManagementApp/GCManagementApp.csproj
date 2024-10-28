@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <AssemblyVersion>4.1.3</AssemblyVersion>
-    <FileVersion>4.1.3</FileVersion>
+    <AssemblyVersion>4.1.4</AssemblyVersion>
+    <FileVersion>4.1.4</FileVersion>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
@@ -80,6 +80,12 @@
     <None Remove="Resources\Materials\EW.png" />
     <None Remove="Resources\Materials\EwMats.png" />
     <None Remove="Resources\Materials\gold.png" />
+    <None Remove="Resources\Materials\GrowthCube.png" />
+    <None Remove="Resources\Materials\GrowthEssenceAssault.png" />
+    <None Remove="Resources\Materials\GrowthEssenceHealer.png" />
+    <None Remove="Resources\Materials\GrowthEssenceMage.png" />
+    <None Remove="Resources\Materials\GrowthEssenceRanger.png" />
+    <None Remove="Resources\Materials\GrowthEssenceTank.png" />
     <None Remove="Resources\Materials\LabTicket.png" />
     <None Remove="Resources\Materials\SoulEssenceAssault.png" />
     <None Remove="Resources\Materials\SoulEssenceHealer.png" />
@@ -148,6 +154,12 @@
     <Resource Include="Resources\Materials\EW.png" />
     <Resource Include="Resources\Materials\EwMats.png" />
     <Resource Include="Resources\Materials\gold.png" />
+    <Resource Include="Resources\Materials\GrowthCube.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceAssault.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceHealer.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceMage.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceRanger.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceTank.png" />
     <Resource Include="Resources\Materials\LabTicket.png" />
     <Resource Include="Resources\Materials\SoulEssenceAssault.png" />
     <Resource Include="Resources\Materials\SoulEssenceHealer.png" />

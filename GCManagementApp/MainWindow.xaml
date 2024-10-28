@@ -131,7 +131,7 @@
             <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
                <TabItem>
                   <TabItem.Header>
-                     <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="60"/>
+                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60"/>
                   </TabItem.Header>
                   <uc:PlanningView />
                </TabItem>

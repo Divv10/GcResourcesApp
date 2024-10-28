@@ -30,8 +30,10 @@ namespace GCManagementApp.Models
                 if (value && Hero.HeroType == Enums.HeroType.T)
                 {
                     Level = Math.Max(100, Level);
-                    TranscendenceLevel = Math.Max(6, TranscendenceLevel);
                     ChaserLevel = Math.Max(20, ChaserLevel);
+                } else if (value && Hero.HeroType == Enums.HeroType.S)
+                {
+                    ChaserLevel = Math.Max(25, ChaserLevel);
                 }
             }
         }

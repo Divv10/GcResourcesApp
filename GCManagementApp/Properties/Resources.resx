@@ -123,8 +123,8 @@
   <data name="Accessories" xml:space="preserve">
     <value>Accessories</value>
   </data>
-  <data name="ACGainedInBossStage" xml:space="preserve">
-    <value>AC gained in boss stage</value>
+  <data name="GEGainedInBossStage" xml:space="preserve">
+    <value>GE gained in boss stage</value>
   </data>
   <data name="ACPerRun" xml:space="preserve">
     <value>AC per run</value>
@@ -249,8 +249,8 @@
   <data name="BlueGemsOptions" xml:space="preserve">
     <value>Blue Gems options</value>
   </data>
-  <data name="BlueGemsPerCube" xml:space="preserve">
-    <value>Blue Gems per cube</value>
+  <data name="BlueGemsPerSoldHero" xml:space="preserve">
+    <value>Blue Gems Per Sold Hero</value>
   </data>
   <data name="BlueGemsWeekly" xml:space="preserve">
     <value>Blue Gems weekly</value>
@@ -276,29 +276,23 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="CCFromDefenseMode" xml:space="preserve">
-    <value>CC from Defense mode</value>
+  <data name="BGFromDefenseMode" xml:space="preserve">
+    <value>BG from Defense Mode</value>
   </data>
   <data name="CCFromEnergy" xml:space="preserve">
     <value>CC from energy</value>
   </data>
-  <data name="CCGainedInBossStage" xml:space="preserve">
-    <value>CC gained in boss stage</value>
+  <data name="BoVGainedInBossStage" xml:space="preserve">
+    <value>BoV gained in boss stage</value>
   </data>
-  <data name="CCPerRun" xml:space="preserve">
-    <value>CC per run</value>
+  <data name="GEPerRun" xml:space="preserve">
+    <value>GE per run</value>
   </data>
   <data name="Chaser" xml:space="preserve">
     <value>Chaser</value>
   </data>
   <data name="ChaserCostCalculator" xml:space="preserve">
-    <value>Chaser cost calculator</value>
-  </data>
-  <data name="ChaserCrystals" xml:space="preserve">
-    <value>Chaser Crystals</value>
-  </data>
-  <data name="ChaserCubes" xml:space="preserve">
-    <value>Chaser Cubes</value>
+    <value>Chaser Cost Calculator</value>
   </data>
   <data name="ChaserLevel" xml:space="preserve">
     <value>Chaser level</value>
@@ -358,14 +352,14 @@
   <data name="Cost" xml:space="preserve">
     <value>Cost</value>
   </data>
-  <data name="CostInSICubes" xml:space="preserve">
-    <value>Cost in SI Cubes</value>
+  <data name="CostInGECubes" xml:space="preserve">
+    <value>Cost in GE Cubes</value>
   </data>
   <data name="CostOfLevels" xml:space="preserve">
     <value>Cost of {0} levels:</value>
   </data>
-  <data name="CostOfSI15InSE" xml:space="preserve">
-    <value>Cost of SI15 in SE</value>
+  <data name="CostOfSI15InGE" xml:space="preserve">
+    <value>Cost of SI15 in GE</value>
   </data>
   <data name="CostX" xml:space="preserve">
     <value>Cost: {0}</value>
@@ -736,8 +730,8 @@
   <data name="OwnedHeroesX" xml:space="preserve">
     <value>Owned heroes: {0}</value>
   </data>
-  <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
-    <value>Owned Hero specific SI Cubes</value>
+  <data name="OwnedHeroSpecificGCCubes" xml:space="preserve">
+    <value>Owned Hero Specific GC Cubes</value>
   </data>
   <data name="PerformanceMode" xml:space="preserve">
     <value>Performance mode</value>
@@ -820,8 +814,8 @@
   <data name="SEFromConvertingCC" xml:space="preserve">
     <value>SE from converting CC</value>
   </data>
-  <data name="SelectACUpgradeType" xml:space="preserve">
-    <value>Select AC upgrade type</value>
+  <data name="SelectRarityHeroUpgradeType" xml:space="preserve">
+    <value>Select A/S Hero Rarity</value>
   </data>
   <data name="SelectHero" xml:space="preserve">
     <value>Select Hero</value>
@@ -829,8 +823,8 @@
   <data name="SelectProfile" xml:space="preserve">
     <value>Select profile</value>
   </data>
-  <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
-    <value>Select whether You use AC to upgrade S heroes or A heroes.</value>
+  <data name="SelectWhetherYouUseASToUpgrade" xml:space="preserve">
+    <value>Select whether You use S heroes or A heroes to sell.</value>
   </data>
   <data name="SellX" xml:space="preserve">
     <value>Sell: {0}</value>
@@ -880,8 +874,8 @@
   <data name="SoulCoreOpen" xml:space="preserve">
     <value>Soul Core open</value>
   </data>
-  <data name="SoulEssences" xml:space="preserve">
-    <value>Soul Essences</value>
+  <data name="GrowthEssence" xml:space="preserve">
+    <value>Growth Essences</value>
   </data>
   <data name="SoulImprint" xml:space="preserve">
     <value>Soul Imprint</value>
@@ -889,8 +883,8 @@
   <data name="SoulImprintCostCalculator" xml:space="preserve">
     <value>Soul Imprint cost calculator</value>
   </data>
-  <data name="SoulImprintCubes" xml:space="preserve">
-    <value>Soul Imprint Cubes</value>
+  <data name="GrowthCubes" xml:space="preserve">
+    <value>Growth Cubes</value>
   </data>
   <data name="SoulImprintLevel" xml:space="preserve">
     <value>Soul Imprint level</value>
@@ -919,8 +913,8 @@
   <data name="T" xml:space="preserve">
     <value>T</value>
   </data>
-  <data name="T15" xml:space="preserve">
-    <value>T15</value>
+  <data name="T6" xml:space="preserve">
+    <value>T6</value>
   </data>
   <data name="Tank" xml:space="preserve">
     <value>Tank</value>
@@ -957,8 +951,8 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="TotalCCFromAdventure" xml:space="preserve">
     <value>Total CC from adventure</value>
   </data>
-  <data name="TotalCCWeekly" xml:space="preserve">
-    <value>Total CC weekly</value>
+  <data name="TotalGEWeekly" xml:space="preserve">
+    <value>Total GE weekly</value>
   </data>
   <data name="TotalEnergyFromPackages" xml:space="preserve">
     <value>Total energy from packages:</value>
@@ -1065,11 +1059,8 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="Working" xml:space="preserve">
     <value>Working</value>
   </data>
-  <data name="XChaserCrystals" xml:space="preserve">
-    <value>{0} Chaser crystals</value>
-  </data>
-  <data name="XChaserCubes" xml:space="preserve">
-    <value>{0} Chaser cubes</value>
+  <data name="XGrowthCubes" xml:space="preserve">
+    <value>{0} Growth Cubes</value>
   </data>
   <data name="XDays" xml:space="preserve">
     <value>{0} days</value>
@@ -1088,11 +1079,8 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value> ({0} SI)</value>
     <comment>Space at the beggining</comment>
   </data>
-  <data name="XSICubes" xml:space="preserve">
-    <value>{0} Soul Imprint cubes</value>
-  </data>
-  <data name="XSoulEssences" xml:space="preserve">
-    <value>{0} Soul Essences</value>
+  <data name="XGrowthEssences" xml:space="preserve">
+    <value>{0} Growth Essences</value>
   </data>
   <data name="Yellow" xml:space="preserve">
     <value>Yellow</value>
@@ -1102,5 +1090,59 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="YouHaveAddedTHero" xml:space="preserve">
     <value>You have added T hero to planning, but You dont have the base SR hero upgraded to T6 and CL20. Do You want to automatically add the base hero to planning?</value>
+  </data>
+  <data name="BlueGemsFromWeeklyMission" xml:space="preserve">
+    <value>BG from Weekly Mission</value>
+  </data>
+  <data name="BlueGemsPerCube" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GEFromDefenseMode" xml:space="preserve">
+    <value>GE from Defense Mode</value>
+  </data>
+  <data name="SelectACUpgradeType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BlueGemsFromDailyMission" xml:space="preserve">
+    <value>BG from Daily Mission</value>
+  </data>
+  <data name="CL25Cost" xml:space="preserve">
+    <value>CL25 Cost</value>
+  </data>
+  <data name="CostOfCL25InGE" xml:space="preserve">
+    <value>Cost of CL25 in GE</value>
+  </data>
+  <data name="WeeksForFullCS" xml:space="preserve">
+    <value>Weeks for a Full CS</value>
+  </data>
+  <data name="CL25SRCost" xml:space="preserve">
+    <value>CL25 (SR) Cost</value>
+  </data>
+  <data name="CL25TCost" xml:space="preserve">
+    <value>CL25 (T) Cost</value>
+  </data>
+  <data name="ACGainedInBossStage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCFromDefenseMode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCGainedInBossStage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPerRun" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CostInSICubes" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CostOfSI15InSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TotalCCWeekly" xml:space="preserve">
+    <value />
   </data>
 </root>

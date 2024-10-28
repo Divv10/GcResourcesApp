@@ -282,12 +282,6 @@
   <data name="ChaserCostCalculator" xml:space="preserve">
     <value>Calculadora de custo do Chaser</value>
   </data>
-  <data name="ChaserCrystals" xml:space="preserve">
-    <value>Cristal Chaser</value>
-  </data>
-  <data name="ChaserCubes" xml:space="preserve">
-    <value>Cubo de Chaser</value>
-  </data>
   <data name="ChaserLevel" xml:space="preserve">
     <value>Nível do Chaser</value>
   </data>
@@ -858,7 +852,7 @@
   <data name="SoulCoreOpen" xml:space="preserve">
     <value>Núcleo da Alma aberto</value>
   </data>
-  <data name="SoulEssences" xml:space="preserve">
+  <data name="GrowthEssence" xml:space="preserve">
     <value>Essência da Alma</value>
   </data>
   <data name="SoulImprint" xml:space="preserve">
@@ -867,7 +861,7 @@
   <data name="SoulImprintCostCalculator" xml:space="preserve">
     <value>Calculadora de custo do Selo da Alma</value>
   </data>
-  <data name="SoulImprintCubes" xml:space="preserve">
+  <data name="GrowthCubes" xml:space="preserve">
     <value>Cubo de Selo da Alma</value>
   </data>
   <data name="SoulImprintLevel" xml:space="preserve">
@@ -1029,10 +1023,7 @@
   <data name="Working" xml:space="preserve">
     <value>Trabalhando</value>
   </data>
-  <data name="XChaserCrystals" xml:space="preserve">
-    <value>{0} Cristal Chaser</value>
-  </data>
-  <data name="XChaserCubes" xml:space="preserve">
+  <data name="XGrowthCubes" xml:space="preserve">
     <value>{0} Cubo Chase</value>
   </data>
   <data name="XDays" xml:space="preserve">
@@ -1050,10 +1041,7 @@
   <data name="XSI" xml:space="preserve">
     <value>({0} SI)</value>
   </data>
-  <data name="XSICubes" xml:space="preserve">
-    <value>{0} Cubos do Selo da Alma</value>
-  </data>
-  <data name="XSoulEssences" xml:space="preserve">
+  <data name="XGrowthEssences" xml:space="preserve">
     <value>{0} Essências da Alma</value>
   </data>
   <data name="Yellow" xml:space="preserve">

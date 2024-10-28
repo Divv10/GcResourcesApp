@@ -43,7 +43,7 @@ namespace GCManagementApp.UserControls
                                 
                 if (value == WizardStep.Second && SelectedHero.HeroType == Enums.HeroType.T)
                 {
-                    SelectedHeroDetails.TranscendenceLevel = Math.Max(6, SelectedHeroDetails.TranscendenceLevel);
+                    SelectedHeroDetails.TranscendenceLevel = Math.Max(0, SelectedHeroDetails.TranscendenceLevel);
                     SelectedHeroDetails.ChaserLevel = Math.Max(20, SelectedHeroDetails.ChaserLevel);
                     SelectedHeroDetails.Level = Math.Max(100, SelectedHeroDetails.Level);
                     OnPropertyChanged(SelectedHero.DisplayName);
@@ -117,7 +117,7 @@ namespace GCManagementApp.UserControls
 
                 if (SelectedHero.HeroType == Enums.HeroType.T)
                 {
-                    SelectedHeroDetails.TranscendenceLevel = Math.Max(6, SelectedHeroDetails.TranscendenceLevel);
+                    SelectedHeroDetails.TranscendenceLevel = Math.Max(0, SelectedHeroDetails.TranscendenceLevel);
                     SelectedHeroDetails.ChaserLevel = Math.Max(20, SelectedHeroDetails.ChaserLevel);
                     SelectedHeroDetails.Level = Math.Max(100, SelectedHeroDetails.Level);
                 }
@@ -163,7 +163,7 @@ namespace GCManagementApp.UserControls
             {
                 if (SelectedHeroDetails?.SiLevel == null)
                     return 0;
-                return SiLevelingCosts.CalculateCost(SelectedHeroDetails.SiLevel, HeroPlan.DesiredGrowth.SiLevel).SiCubesCost / 250;
+                return SiLevelingCosts.CalculateCost(SelectedHeroDetails.SiLevel, HeroPlan.DesiredGrowth.SiLevel).GrowthCubesCost / 250;
             }
         }
 
