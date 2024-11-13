@@ -79,24 +79,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AC gained in boss stage.
-        /// </summary>
-        public static string ACGainedInBossStage {
-            get {
-                return ResourceManager.GetString("ACGainedInBossStage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AC per run.
-        /// </summary>
-        public static string ACPerRun {
-            get {
-                return ResourceManager.GetString("ACPerRun", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Additional energy bought weekly:.
         /// </summary>
         public static string AdditionalEnergyBoughtWeekly {
@@ -340,15 +322,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Awakening Cubes.
-        /// </summary>
-        public static string AwakeningCubes {
-            get {
-                return ResourceManager.GetString("AwakeningCubes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {
@@ -366,6 +339,26 @@ namespace GCManagementApp.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to BG from Defense Mode.
+        /// </summary>
+        public static string BGFromDefenseMode {
+            get {
+                return ResourceManager.GetString("BGFromDefenseMode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to BG from Energy.
+        /// </summary>
+        public static string BGFromEnergy
+        {
+            get
+            {
+                return ResourceManager.GetString("BGFromEnergy", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to BG from selling heroes.
         /// </summary>
@@ -394,15 +387,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue Gem per Cube: {0:F2}.
-        /// </summary>
-        public static string BlueGemPerCubeX {
-            get {
-                return ResourceManager.GetString("BlueGemPerCubeX", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Blue Gems.
         /// </summary>
         public static string BlueGems {
@@ -421,11 +405,20 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue Gems from AC.
+        ///   Looks up a localized string similar to Blue Gems from Arena.
         /// </summary>
-        public static string BlueGemsFromAC {
+        public static string BlueGemsFromArena {
             get {
-                return ResourceManager.GetString("BlueGemsFromAC", resourceCulture);
+                return ResourceManager.GetString("BlueGemsFromArena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BG from Daily Mission.
+        /// </summary>
+        public static string BlueGemsFromDailyMission {
+            get {
+                return ResourceManager.GetString("BlueGemsFromDailyMission", resourceCulture);
             }
         }
         
@@ -439,11 +432,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue Gems gained per 1 AC.
+        ///   Looks up a localized string similar to BG from Weekly Mission.
         /// </summary>
-        public static string BlueGemsGainedPerAC {
+        public static string BlueGemsFromWeeklyMission {
             get {
-                return ResourceManager.GetString("BlueGemsGainedPerAC", resourceCulture);
+                return ResourceManager.GetString("BlueGemsFromWeeklyMission", resourceCulture);
             }
         }
         
@@ -457,11 +450,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blue Gems per cube.
+        ///   Looks up a localized string similar to Blue Gems Per Sold Hero.
         /// </summary>
-        public static string BlueGemsPerCube {
+        public static string BlueGemsPerSoldHero {
             get {
-                return ResourceManager.GetString("BlueGemsPerCube", resourceCulture);
+                return ResourceManager.GetString("BlueGemsPerSoldHero", resourceCulture);
             }
         }
         
@@ -511,6 +504,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BoV gained in boss stage.
+        /// </summary>
+        public static string BoVGainedInBossStage {
+            get {
+                return ResourceManager.GetString("BoVGainedInBossStage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BoV per run.
         /// </summary>
         public static string BoVPerRun {
@@ -538,42 +540,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CC from Defense mode.
-        /// </summary>
-        public static string CCFromDefenseMode {
-            get {
-                return ResourceManager.GetString("CCFromDefenseMode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CC from energy.
-        /// </summary>
-        public static string CCFromEnergy {
-            get {
-                return ResourceManager.GetString("CCFromEnergy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CC gained in boss stage.
-        /// </summary>
-        public static string CCGainedInBossStage {
-            get {
-                return ResourceManager.GetString("CCGainedInBossStage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CC per run.
-        /// </summary>
-        public static string CCPerRun {
-            get {
-                return ResourceManager.GetString("CCPerRun", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Chaser.
         /// </summary>
         public static string Chaser {
@@ -583,29 +549,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chaser cost calculator.
+        ///   Looks up a localized string similar to Chaser Cost Calculator.
         /// </summary>
         public static string ChaserCostCalculator {
             get {
                 return ResourceManager.GetString("ChaserCostCalculator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chaser Crystals.
-        /// </summary>
-        public static string ChaserCrystals {
-            get {
-                return ResourceManager.GetString("ChaserCrystals", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chaser Cubes.
-        /// </summary>
-        public static string ChaserCubes {
-            get {
-                return ResourceManager.GetString("ChaserCubes", resourceCulture);
             }
         }
         
@@ -660,6 +608,33 @@ namespace GCManagementApp.Properties {
         public static string CL25 {
             get {
                 return ResourceManager.GetString("CL25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CL25 Cost.
+        /// </summary>
+        public static string CL25Cost {
+            get {
+                return ResourceManager.GetString("CL25Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CL25 (SR) Cost.
+        /// </summary>
+        public static string CL25SRCost {
+            get {
+                return ResourceManager.GetString("CL25SRCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CL25 (T) Cost.
+        /// </summary>
+        public static string CL25TCost {
+            get {
+                return ResourceManager.GetString("CL25TCost", resourceCulture);
             }
         }
         
@@ -781,11 +756,29 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cost in SI Cubes.
+        ///   Looks up a localized string similar to Cost in GE Cubes.
+        /// </summary>
+        public static string CostInGECubes {
+            get {
+                return ResourceManager.GetString("CostInGECubes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string CostInSICubes {
             get {
                 return ResourceManager.GetString("CostInSICubes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost of CL25 in GE.
+        /// </summary>
+        public static string CostOfCL25InGE {
+            get {
+                return ResourceManager.GetString("CostOfCL25InGE", resourceCulture);
             }
         }
         
@@ -799,7 +792,16 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cost of SI15 in SE.
+        ///   Looks up a localized string similar to Cost of SI15 in GE.
+        /// </summary>
+        public static string CostOfSI15InGE {
+            get {
+                return ResourceManager.GetString("CostOfSI15InGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string CostOfSI15InSE {
             get {
@@ -1159,11 +1161,12 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Energy pack with AC boost.
+        ///   Looks up a localized string similar to Energy pack with BG boost.
         /// </summary>
-        public static string EnergyPackWithAcBoost {
+        public static string EnergyPackWithBGBoost
+        {
             get {
-                return ResourceManager.GetString("EnergyPackWithAcBoost", resourceCulture);
+                return ResourceManager.GetString("EnergyPackWithBGBoost", resourceCulture);
             }
         }
         
@@ -1213,20 +1216,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enough Blue Gems to buy {0} SI Cubes{1}Can clear SI Cubes shop for {2} weeks{1}Enough Blue Gems to buy {3} Chaser Cubes{1}Can clear Chaser Cubes shop for {4} weeks.
+        ///   Looks up a localized string similar to Enough Blue Gems to buy {0} Growth Cubes{1}Can clear Growth Cubes shop for {2} weeks.
         /// </summary>
-        public static string EnoughBGToBuyCC {
+        public static string EnoughBGToBuyGC {
             get {
-                return ResourceManager.GetString("EnoughBGToBuyCC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enough coins to buy {0} SI Cubes{1}Enough coins to buy {2} Chaser Cubes.
-        /// </summary>
-        public static string EnoughCoinsToBuyCC {
-            get {
-                return ResourceManager.GetString("EnoughCoinsToBuyCC", resourceCulture);
+                return ResourceManager.GetString("EnoughBGToBuyGC", resourceCulture);
             }
         }
         
@@ -1384,6 +1378,44 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to GE from Defense Mode.
+        /// </summary>
+        public static string GEFromDefenseMode {
+            get {
+                return ResourceManager.GetString("GEFromDefenseMode", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to GE from Energy.
+        /// </summary>
+        public static string GEFromEnergy
+        {
+            get
+            {
+                return ResourceManager.GetString("GEFromEnergy", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to GE gained in boss stage.
+        /// </summary>
+        public static string GEGainedInBossStage {
+            get {
+                return ResourceManager.GetString("GEGainedInBossStage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GE per run.
+        /// </summary>
+        public static string GEPerRun {
+            get {
+                return ResourceManager.GetString("GEPerRun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gold.
         /// </summary>
         public static string Gold {
@@ -1407,6 +1439,24 @@ namespace GCManagementApp.Properties {
         public static string Growth {
             get {
                 return ResourceManager.GetString("Growth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Growth Cubes.
+        /// </summary>
+        public static string GrowthCubes {
+            get {
+                return ResourceManager.GetString("GrowthCubes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Growth Essences.
+        /// </summary>
+        public static string GrowthEssence {
+            get {
+                return ResourceManager.GetString("GrowthEssence", resourceCulture);
             }
         }
         
@@ -1636,11 +1686,12 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mark if You are buying pack with AC boost.
+        ///   Looks up a localized string similar to Mark if You are buying pack with BG boost.
         /// </summary>
-        public static string MarkIfYouAreBuyingPackWithAcBoost {
+        public static string MarkIfYouAreBuyingPackWithBGBoost
+        {
             get {
-                return ResourceManager.GetString("MarkIfYouAreBuyingPackWithAcBoost", resourceCulture);
+                return ResourceManager.GetString("MarkIfYouAreBuyingPackWithBGBoost", resourceCulture);
             }
         }
         
@@ -1906,7 +1957,16 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Owned Hero specific SI Cubes.
+        ///   Looks up a localized string similar to Owned Hero Specific GC Cubes.
+        /// </summary>
+        public static string OwnedHeroSpecificGCCubes {
+            get {
+                return ResourceManager.GetString("OwnedHeroSpecificGCCubes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string OwnedHeroSpecificSICubes {
             get {
@@ -2158,7 +2218,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select AC upgrade type.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string SelectACUpgradeType {
             get {
@@ -2185,11 +2245,29 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select whether You use AC to upgrade S heroes or A heroes..
+        ///   Looks up a localized string similar to Select A/S Hero Rarity.
+        /// </summary>
+        public static string SelectRarityHeroUpgradeType {
+            get {
+                return ResourceManager.GetString("SelectRarityHeroUpgradeType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string SelectWhetherYouUseACToUpgrade {
             get {
                 return ResourceManager.GetString("SelectWhetherYouUseACToUpgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select whether You use S heroes or A heroes to sell..
+        /// </summary>
+        public static string SelectWhetherYouUseASToUpgrade {
+            get {
+                return ResourceManager.GetString("SelectWhetherYouUseASToUpgrade", resourceCulture);
             }
         }
         
@@ -2338,15 +2416,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Soul Essences.
-        /// </summary>
-        public static string SoulEssences {
-            get {
-                return ResourceManager.GetString("SoulEssences", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Soul Imprint.
         /// </summary>
         public static string SoulImprint {
@@ -2361,15 +2430,6 @@ namespace GCManagementApp.Properties {
         public static string SoulImprintCostCalculator {
             get {
                 return ResourceManager.GetString("SoulImprintCostCalculator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Soul Imprint Cubes.
-        /// </summary>
-        public static string SoulImprintCubes {
-            get {
-                return ResourceManager.GetString("SoulImprintCubes", resourceCulture);
             }
         }
         
@@ -2455,11 +2515,20 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T15.
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string T15 {
             get {
                 return ResourceManager.GetString("T15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T6.
+        /// </summary>
+        public static string T6 {
+            get {
+                return ResourceManager.GetString("T6", resourceCulture);
             }
         }
         
@@ -2513,24 +2582,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total AC gained over week.
-        /// </summary>
-        public static string TotalACGainedOverWeek {
-            get {
-                return ResourceManager.GetString("TotalACGainedOverWeek", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total AC weekly.
-        /// </summary>
-        public static string TotalACWeekly {
-            get {
-                return ResourceManager.GetString("TotalACWeekly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Total BG gained over week.
         /// </summary>
         public static string TotalBGGainedOverWeek {
@@ -2549,29 +2600,20 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total CC from adventure.
-        /// </summary>
-        public static string TotalCCFromAdventure {
-            get {
-                return ResourceManager.GetString("TotalCCFromAdventure", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total CC weekly.
-        /// </summary>
-        public static string TotalCCWeekly {
-            get {
-                return ResourceManager.GetString("TotalCCWeekly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Total energy from packages:.
         /// </summary>
         public static string TotalEnergyFromPackages {
             get {
                 return ResourceManager.GetString("TotalEnergyFromPackages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total GE weekly.
+        /// </summary>
+        public static string TotalGEWeekly {
+            get {
+                return ResourceManager.GetString("TotalGEWeekly", resourceCulture);
             }
         }
         
@@ -2738,15 +2780,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weekly Awakening Cubes gain.
-        /// </summary>
-        public static string WeeklyACGain {
-            get {
-                return ResourceManager.GetString("WeeklyACGain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Weekly Aernas Grace Income:.
         /// </summary>
         public static string WeeklyAernasGraceIncome {
@@ -2837,6 +2870,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Weeks for a Full CS.
+        /// </summary>
+        public static string WeeksForFullCS {
+            get {
+                return ResourceManager.GetString("WeeksForFullCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Weeks for a Full SI.
         /// </summary>
         public static string WeeksForFullSI {
@@ -2882,24 +2924,6 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} Chaser crystals.
-        /// </summary>
-        public static string XChaserCrystals {
-            get {
-                return ResourceManager.GetString("XChaserCrystals", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} Chaser cubes.
-        /// </summary>
-        public static string XChaserCubes {
-            get {
-                return ResourceManager.GetString("XChaserCubes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {0} days.
         /// </summary>
         public static string XDays {
@@ -2927,6 +2951,24 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Growth Cubes.
+        /// </summary>
+        public static string XGrowthCubes {
+            get {
+                return ResourceManager.GetString("XGrowthCubes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Growth Essences.
+        /// </summary>
+        public static string XGrowthEssences {
+            get {
+                return ResourceManager.GetString("XGrowthEssences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  ({0} HS).
         /// </summary>
         public static string XHS {
@@ -2941,24 +2983,6 @@ namespace GCManagementApp.Properties {
         public static string XSI {
             get {
                 return ResourceManager.GetString("XSI", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} Soul Imprint cubes.
-        /// </summary>
-        public static string XSICubes {
-            get {
-                return ResourceManager.GetString("XSICubes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} Soul Essences.
-        /// </summary>
-        public static string XSoulEssences {
-            get {
-                return ResourceManager.GetString("XSoulEssences", resourceCulture);
             }
         }
         

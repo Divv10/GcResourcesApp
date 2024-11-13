@@ -28,162 +28,161 @@
       <materialDesign:BooleanToVisibilityConverter TrueValue="Collapsed" FalseValue="Visible" x:Key="TrueConv" />
       <materialDesign:BooleanToVisibilityConverter TrueValue="Visible" FalseValue="Collapsed" x:Key="FalseConv" />
    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
-   <Grid>
-      <Grid.RowDefinitions>
-         <RowDefinition Height="32" />
-         <RowDefinition />
-      </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon Margin="5 0 0 0" Kind="MonitorEdit" Height="22" Width="22" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"/>
+            <TextBlock Grid.Column="1" Margin="4 0 0 0" VerticalAlignment="Center" FontSize="16" Text="{Binding Title}" FontWeight="Medium" >
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="False">
+                                <Setter Property="Foreground" Value="{DynamicResource WindowTitleBarInactiveText}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
 
-      <Grid>
-         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-         </Grid.ColumnDefinitions>
-         <materialDesign:PackIcon Margin="5 0 0 0" Kind="MonitorEdit" Height="22" Width="22" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"/>
-         <TextBlock Grid.Column="1" Margin="4 0 0 0" VerticalAlignment="Center" FontSize="16" Text="{Binding Title}" FontWeight="Medium" >
-            <TextBlock.Style>
-               <Style TargetType="TextBlock">
-                  <Style.Triggers>
-                     <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="False">
-                        <Setter Property="Foreground" Value="{DynamicResource WindowTitleBarInactiveText}" />
-                     </DataTrigger>
-                  </Style.Triggers>
-               </Style>
-            </TextBlock.Style>
-         </TextBlock>
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <Button Command="{Binding OpenProfileWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="AccountCircleOutline"/>
+                </Button>
+                <TextBlock Text="{Binding CurrentProfileName}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="16"/>
+                <Button Command="{Binding ShowDataSyncWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="Sync"/>
+                </Button>
+                <Button Command="{Binding CheckUpdateCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="Download"/>
+                </Button>
+                <Button Command="{Binding ShowGoogleDriveWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="GoogleDrive"/>
+                </Button>
+                <Button Command="{Binding ShowSettingsWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="Cog"/>
+                </Button>
+                <Button Command="{Binding ShowHelpDocCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="HelpCircle"/>
+                </Button>
+                <Button Command="{Binding OpenDonateWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0,-5,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                    <materialDesign:PackIcon Kind="AttachMoney"/>
+                </Button>
+                <Button Command="{Binding OpenDonateWindowCommand}" Width="90" Content="{x:Static properties:Resources.Donate}" Style="{StaticResource MaterialDesignFlatButton}" Margin="-25,0,0,0" WindowChrome.IsHitTestVisibleInChrome="True"/>
+                <Border BorderBrush="{DynamicResource MaterialDesignBody}" Width="1" Height="20" BorderThickness="1" Margin="5,0,15,0"/>
+                <TextBlock Text="{Binding AppVersion, StringFormat='  v{0}'}" VerticalAlignment="Center" Margin="0" FontSize="16"/>
+                <TextBlock Text="  © Div / FallenTaco" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="16"/>
+                <Border BorderBrush="{DynamicResource MaterialDesignBody}" Width="1" Height="20" BorderThickness="1" Margin="5,0,15,0"/>
+            </StackPanel>
 
-         <StackPanel Grid.Column="2" Orientation="Horizontal">
-            <Button Command="{Binding OpenProfileWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="AccountCircleOutline"/>
+            <Button Grid.Column="3" Click="OnMinimizeButtonClick" RenderOptions.EdgeMode="Aliased"	Style="{StaticResource TitleBarButtonStyle}" Height="32" Width="45" WindowChrome.IsHitTestVisibleInChrome="True">
+                <Path Width="46" Height="32" Data="M 18,15 H 28" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
             </Button>
-            <TextBlock Text="{Binding CurrentProfileName}" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="16"/>
-            <Button Command="{Binding ShowDataSyncWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="Sync"/>
+            <Button Name="maximizeButton" Grid.Column="4" Click="OnMaximizeRestoreButtonClick" Style="{StaticResource TitleBarButtonStyle}" Height="32" Width="45" WindowChrome.IsHitTestVisibleInChrome="True">
+                <Path Width="46" Height="32" Data="M 18.5,10.5 H 27.5 V 19.5 H 18.5 Z" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
             </Button>
-            <Button Command="{Binding CheckUpdateCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="Download"/>
+            <Button Name="restoreButton" Grid.Column="4" Click="OnMaximizeRestoreButtonClick" Style="{StaticResource TitleBarButtonStyle}" Height="32" Width="45" WindowChrome.IsHitTestVisibleInChrome="True">
+                <Path Width="46" Height="32" Data="M 18.5,12.5 H 25.5 V 19.5 H 18.5 Z M 20.5,12.5 V 10.5 H 27.5 V 17.5 H 25.5"	Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
             </Button>
-            <Button Command="{Binding ShowGoogleDriveWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="GoogleDrive"/>
+            <Button Grid.Column="5" Click="OnCloseButtonClick" Style="{StaticResource TitleBarCloseButtonStyle}" Height="32" Width="45" Margin="0,0,15,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                <Path	Width="46" Height="32" Data="M 18,11 27,20 M 18,20 27,11" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
             </Button>
-            <Button Command="{Binding ShowSettingsWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="Cog"/>
-            </Button>
-            <Button Command="{Binding ShowHelpDocCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="HelpCircle"/>
-            </Button>
-            <Button Command="{Binding OpenDonateWindowCommand}" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="5,0,-5,0" WindowChrome.IsHitTestVisibleInChrome="True">
-               <materialDesign:PackIcon Kind="AttachMoney"/>
-            </Button>
-            <Button Command="{Binding OpenDonateWindowCommand}" Width="90" Content="{x:Static properties:Resources.Donate}" Style="{StaticResource MaterialDesignFlatButton}" Margin="-25,0,0,0" WindowChrome.IsHitTestVisibleInChrome="True"/>
-            <Border BorderBrush="{DynamicResource MaterialDesignBody}" Width="1" Height="20" BorderThickness="1" Margin="5,0,15,0"/>
-            <TextBlock Text="{Binding AppVersion, StringFormat='  v{0}'}" VerticalAlignment="Center" Margin="0" FontSize="16"/>
-            <TextBlock Text="  © Div" VerticalAlignment="Center" Margin="0,0,5,0" FontSize="16"/>
-            <Border BorderBrush="{DynamicResource MaterialDesignBody}" Width="1" Height="20" BorderThickness="1" Margin="5,0,15,0"/>
-         </StackPanel>
+        </Grid>
 
-         <Button Grid.Column="3" Click="OnMinimizeButtonClick" RenderOptions.EdgeMode="Aliased"	Style="{StaticResource TitleBarButtonStyle}" Height="32" Width="45" WindowChrome.IsHitTestVisibleInChrome="True">
-            <Path Width="46" Height="32" Data="M 18,15 H 28" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
-         </Button>
-         <Button Name="maximizeButton" Grid.Column="4" Click="OnMaximizeRestoreButtonClick" Style="{StaticResource TitleBarButtonStyle}" Height="32" Width="45" WindowChrome.IsHitTestVisibleInChrome="True"> 
-            <Path Width="46" Height="32" Data="M 18.5,10.5 H 27.5 V 19.5 H 18.5 Z" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
-         </Button>
-         <Button Name="restoreButton" Grid.Column="4" Click="OnMaximizeRestoreButtonClick" Style="{StaticResource TitleBarButtonStyle}" Height="32" Width="45" WindowChrome.IsHitTestVisibleInChrome="True">
-            <Path Width="46" Height="32" Data="M 18.5,12.5 H 25.5 V 19.5 H 18.5 Z M 20.5,12.5 V 10.5 H 27.5 V 17.5 H 25.5"	Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />            
-         </Button>
-         <Button Grid.Column="5" Click="OnCloseButtonClick" Style="{StaticResource TitleBarCloseButtonStyle}" Height="32" Width="45" Margin="0,0,15,0" WindowChrome.IsHitTestVisibleInChrome="True">
-            <Path	Width="46" Height="32" Data="M 18,11 27,20 M 18,20 27,11" Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}" StrokeThickness="1" />
-         </Button>
-      </Grid>
-
-      <TabControl x:Name="Tabs" materialDesign:ColorZoneAssist.Mode="PrimaryLight" Grid.Row="1">
-         <TabItem Header="{x:Static properties:Resources.Heroes}" >
-            <uc:HeroGrowthView x:Name="HeroTab"/>
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.MassEdit}" >
-            <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
-               <TabItem>
-                  <TabItem.Header>
-                     <materialDesign:PackIcon Kind="AccountDetails" Height="40" Width="40"/>
-                  </TabItem.Header>
-                  <uc:MassEditUserControl/>
-               </TabItem>
-               <TabItem >
-                  <TabItem.Header>
-                     <materialDesign:PackIcon Kind="AccountMultipleMinus" Height="40" Width="40"/>
-                  </TabItem.Header>
-                  <uc:MultipleMassEffectUserControl />
-               </TabItem>
-            </TabControl>
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.Inventory}">
-            <uc:MaterialsInventoryView/>
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.EnergyCalculator}">
-            <uc:EnergyCalculatorView/>
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.Planning}">
-            <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
-               <TabItem>
-                  <TabItem.Header>
-                     <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="60"/>
-                  </TabItem.Header>
-                  <uc:PlanningView />
-               </TabItem>
-               <TabItem >
-                  <TabItem.Header>
-                     <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Height="60"/>
-                  </TabItem.Header>
-                  <uc:ExclusiveWeaponPlanningView />
-               </TabItem>
-            </TabControl>
-         </TabItem>
-         <TabItem Header="Team builders">
-            <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
-               <TabItem ToolTip="Vulcanus team builder">
-                  <TabItem.Header>
-                     <materialDesign:PackIcon Kind="Fire" Height="40" Width="40"/>
-                  </TabItem.Header>
-                  <Grid>
-                     <uc:VulcanusPlannerVertUserControl Visibility="{Binding IsVerticalVulcaEnabled, Converter={StaticResource FalseConv}, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                     <uc:VulcanusPlannerUserControl Visibility="{Binding IsVerticalVulcaEnabled, Converter={StaticResource TrueConv}, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                  </Grid>
-               </TabItem>
-               <TabItem ToolTip="Any content team builder">
-                  <TabItem.Header>
-                     <materialDesign:PackIcon Kind="AccountGroup" Height="40" Width="40"/>
-                  </TabItem.Header>
-                  <uc:TeamBuilderUserControl />
-               </TabItem>
-               <TabItem ToolTip="Tier list builder">
-                  <TabItem.Header>
-                     <materialDesign:PackIcon Kind="AccountDetails" Height="40" Width="40"/>
-                  </TabItem.Header>
-                  <uc:TierListBuilderUserControl />
-               </TabItem>
-            </TabControl>
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.ClAndSiCosts}">
-            <uc:ClAndSiCalculatorView/>
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.CompactView}">
-            <uc:TierListView />
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.Accessories}">
-            <uc:AccessoryGrowthView />
-         </TabItem>
-         <TabItem Header="{x:Static properties:Resources.GearSlots}">
-            <uc:GearSlotsUserControl />
-         </TabItem>
-         <!--<TabItem Header="Equipment">
+        <TabControl x:Name="Tabs" materialDesign:ColorZoneAssist.Mode="PrimaryLight" Grid.Row="1">
+            <TabItem Header="{x:Static properties:Resources.Heroes}" >
+                <uc:HeroGrowthView x:Name="HeroTab"/>
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.MassEdit}" >
+                <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+                    <TabItem>
+                        <TabItem.Header>
+                            <materialDesign:PackIcon Kind="AccountDetails" Height="40" Width="40"/>
+                        </TabItem.Header>
+                        <uc:MassEditUserControl/>
+                    </TabItem>
+                    <TabItem >
+                        <TabItem.Header>
+                            <materialDesign:PackIcon Kind="AccountMultipleMinus" Height="40" Width="40"/>
+                        </TabItem.Header>
+                        <uc:MultipleMassEffectUserControl />
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.Inventory}">
+                <uc:MaterialsInventoryView/>
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.EnergyCalculator}">
+                <uc:EnergyCalculatorView/>
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.Planning}">
+                <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+                    <TabItem>
+                        <TabItem.Header>
+                            <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60"/>
+                        </TabItem.Header>
+                        <uc:PlanningView />
+                    </TabItem>
+                    <TabItem >
+                        <TabItem.Header>
+                            <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Height="60"/>
+                        </TabItem.Header>
+                        <uc:ExclusiveWeaponPlanningView />
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="Team builders">
+                <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+                    <TabItem ToolTip="Vulcanus team builder">
+                        <TabItem.Header>
+                            <materialDesign:PackIcon Kind="Fire" Height="40" Width="40"/>
+                        </TabItem.Header>
+                        <Grid>
+                            <uc:VulcanusPlannerVertUserControl Visibility="{Binding IsVerticalVulcaEnabled, Converter={StaticResource FalseConv}, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                            <uc:VulcanusPlannerUserControl Visibility="{Binding IsVerticalVulcaEnabled, Converter={StaticResource TrueConv}, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem ToolTip="Any content team builder">
+                        <TabItem.Header>
+                            <materialDesign:PackIcon Kind="AccountGroup" Height="40" Width="40"/>
+                        </TabItem.Header>
+                        <uc:TeamBuilderUserControl />
+                    </TabItem>
+                    <TabItem ToolTip="Tier list builder">
+                        <TabItem.Header>
+                            <materialDesign:PackIcon Kind="AccountDetails" Height="40" Width="40"/>
+                        </TabItem.Header>
+                        <uc:TierListBuilderUserControl />
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.ClAndSiCosts}">
+                <uc:ClAndSiCalculatorView/>
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.CompactView}">
+                <uc:TierListView />
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.Accessories}">
+                <uc:AccessoryGrowthView />
+            </TabItem>
+            <TabItem Header="{x:Static properties:Resources.GearSlots}">
+                <uc:GearSlotsUserControl />
+            </TabItem>
+            <!--<TabItem Header="Equipment">
             <uc:EquipmentGrowthView />
          </TabItem>-->
-      </TabControl>
-      <materialDesign:Snackbar Grid.Row="1" x:Name="SnackbarFour" MessageQueue="{Binding MainWindowSnackbarMessageQueue}" HorizontalAlignment="Center" />
-   </Grid>
+        </TabControl>
+        <materialDesign:Snackbar Grid.Row="1" x:Name="SnackbarFour" MessageQueue="{Binding MainWindowSnackbarMessageQueue}" HorizontalAlignment="Center" />
+    </Grid>
 </Window>

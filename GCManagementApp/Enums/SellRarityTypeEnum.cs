@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GCManagementApp.Enums
 {
-    public enum AwakeningCubesUpgradeTypeEnum
+    public enum SellRarityTypeEnum
     {
         S,
         A,

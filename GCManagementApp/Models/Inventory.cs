@@ -17,130 +17,68 @@ namespace GCManagementApp.Models
     {
         public override string ToString()
         {
-            return $"SI={SiCubes},CC={ChaserCubes} | AC={AssaultAC}A, {RangerAC}R, {TankAC}T, {HealerAC}H, {MageAC}M | CC= {AssaultCC}A, {RangerCC}R, {TankCC}T, {HealerCC}H, {MageCC}M | SE= {AssaultSE}A, {RangerSE}R, {TankSE}T, {HealerSE}H, {MageSE}M";
+            return $"GC={GrowthCubes} | GE= {AssaultGE}A, {RangerGE}R, {TankGE}T, {HealerGE}H, {MageGE}M";
         }
 
-        private int _chaserCubes;
-        public int ChaserCubes
+        private int _growthCubes;
+        public int GrowthCubes
         {
-            get => _chaserCubes;
-            set => SetProperty(ref _chaserCubes, value);
+            get => _growthCubes;
+            set => SetProperty(ref _growthCubes, value);
         }
 
-        private int _assaultCC;
-        public int AssaultCC
+        private int _assaultGE;
+        public int AssaultGE
         {
-            get => _assaultCC;
+            get => _assaultGE;
             set
             {
-                SetProperty(ref _assaultCC, value);
-                OnPropertyChanged(nameof(ChaserCrystalsOwned));
+                SetProperty(ref _assaultGE, value);
+                OnPropertyChanged(nameof(GrowthEssencesOwned));
             }
         }
 
-        private int _mageCC;
-        public int MageCC
+        private int _mageGE;
+        public int MageGE
         {
-            get => _mageCC;
+            get => _mageGE;
             set
             {
-                SetProperty(ref _mageCC, value);
-                OnPropertyChanged(nameof(ChaserCrystalsOwned));
+                SetProperty(ref _mageGE, value);
+                OnPropertyChanged(nameof(GrowthEssencesOwned));
             }
         }
 
-        private int _rangerCC;
-        public int RangerCC
+        private int _rangerGE;
+        public int RangerGE
         {
-            get => _rangerCC;
+            get => _rangerGE;
             set
             {
-                SetProperty(ref _rangerCC, value);
-                OnPropertyChanged(nameof(ChaserCrystalsOwned));
+                SetProperty(ref _rangerGE, value);
+                OnPropertyChanged(nameof(GrowthEssencesOwned));
             }
         }
 
-        private int _healerCC;
-        public int HealerCC
+        private int _healerGE;
+        public int HealerGE
         {
-            get => _healerCC;
+            get => _healerGE;
             set
             {
-                SetProperty(ref _healerCC, value);
-                OnPropertyChanged(nameof(ChaserCrystalsOwned));
+                SetProperty(ref _healerGE, value);
+                OnPropertyChanged(nameof(GrowthEssencesOwned));
             }
         }
 
-        private int _tankCC;
-        public int TankCC
+        private int _tankGE;
+        public int TankGE
         {
-            get => _tankCC;
+            get => _tankGE;
             set
             {
-                SetProperty(ref _tankCC, value);
-                OnPropertyChanged(nameof(ChaserCrystalsOwned));
-            }
-        }
-
-        private int _siCubes;
-        public int SiCubes
-        {
-            get => _siCubes;
-            set => SetProperty(ref _siCubes, value);
-        }
-
-        private int _assaultSE;
-        public int AssaultSE
-        {
-            get => _assaultSE;
-            set
-            {
-                SetProperty(ref _assaultSE, value);
-                OnPropertyChanged(nameof(SoulEssencesOwned));
-            }
-        }
-
-        private int _mageSE;
-        public int MageSE
-        {
-            get => _mageSE;
-            set
-            {
-                SetProperty(ref _mageSE, value);
-                OnPropertyChanged(nameof(SoulEssencesOwned));
-            }
-        }
-
-        private int _rangerSE;
-        public int RangerSE
-        {
-            get => _rangerSE;
-            set
-            {
-                SetProperty(ref _rangerSE, value);
-                OnPropertyChanged(nameof(SoulEssencesOwned));
-            }
-        }
-
-        private int _healerSE;
-        public int HealerSE
-        {
-            get => _healerSE;
-            set
-            {
-                SetProperty(ref _healerSE, value);
-                OnPropertyChanged(nameof(SoulEssencesOwned));
-            }
-        }
-
-        private int _tankSE;
-        public int TankSE
-        {
-            get => _tankSE;
-            set 
-            {
-                SetProperty(ref _tankSE, value); 
-                OnPropertyChanged(nameof(SoulEssencesOwned));
+                SetProperty(ref _tankGE, value);
+                OnPropertyChanged(nameof(GrowthEssencesOwned));
             }
         }
 
@@ -153,41 +91,6 @@ namespace GCManagementApp.Models
                 SetProperty(ref _blueGems, value);
                 OnPropertyChanged(nameof(BlueGemsToolTip));
             }
-        }
-
-        private int _healerAC;
-        public int HealerAC
-        {
-            get => _healerAC;
-            set => SetProperty(ref _healerAC, value);
-        }
-
-        private int _tankAC;
-        public int TankAC
-        {
-            get => _tankAC;
-            set => SetProperty(ref _tankAC, value);
-        }
-
-        private int _rangerAC;
-        public int RangerAC
-        {
-            get => _rangerAC;
-            set => SetProperty(ref _rangerAC, value);
-        }
-
-        private int _mageAC;
-        public int MageAC
-        {
-            get => _mageAC;
-            set => SetProperty(ref _mageAC, value);
-        }
-
-        private int _assaultAC;
-        public int AssaultAC
-        {
-            get => _assaultAC;
-            set => SetProperty(ref _assaultAC, value);
         }
 
         private long _gold;
@@ -220,25 +123,9 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _ewMats, value);
         }
 
-        private int _anniCoins;
-        public int AnniCoins
-        {
-            get => _anniCoins;
-            set 
-            { 
-                SetProperty(ref _anniCoins, value);
-                OnPropertyChanged(nameof(AnniCoinsToolTip));
-            }
-        }
-
-        public string ChaserCrystalsOwned => $"Assault: {AssaultCC} CC, Mage: {MageCC} CC, Ranger: {RangerCC} CC, Healer: {HealerCC} CC, Tank: {TankCC} CC";
-        public string SoulEssencesOwned => $"Assault: {AssaultSE} SE, Mage: {MageSE} SE, Ranger: {RangerSE} SE, Healer: {HealerSE} SE, Tank: {TankSE} SE";
-        public string BlueGemsToolTip => string.Format(Properties.Resources.EnoughBGToBuyCC, Math.Floor(BlueGems / 120d), Environment.NewLine, Math.Round((BlueGems / 120d) / 600, 2), Math.Floor(BlueGems / 60d), Math.Round((BlueGems / 60d) / 600, 2));
-        public string AnniCoinsToolTip => string.Format(Properties.Resources.EnoughCoinsToBuyCC, Math.Floor(AnniCoins / 20d), Environment.NewLine, Math.Floor(AnniCoins / 10d));
-        public int SiCubesFromBlueGems => (int)Math.Floor(BlueGems / 120d);
-        public int SiCubesFromAnniCoins => (int)Math.Floor(AnniCoins / 20d);
-
-        public int CraftableSoulEssences => Math.Max((new[] { AssaultCC, MageCC, RangerCC, HealerCC, TankCC }).Min(), 0);
+        public string GrowthEssencesOwned => $"Assault: {AssaultGE} GE, Mage: {MageGE} GE, Ranger: {RangerGE} GE, Healer: {HealerGE} GE, Tank: {TankGE} GE";
+        public string BlueGemsToolTip => string.Format(Properties.Resources.EnoughBGToBuyGC, Math.Floor(BlueGems / 120d), Environment.NewLine, Math.Round((BlueGems / 120d) / 1200, 2));
+        public int GrowthCubesFromBlueGems => (int)Math.Floor(BlueGems / 120d);
 
         public int this[InventoryType type]
         {
@@ -249,41 +136,31 @@ namespace GCManagementApp.Models
                     case HeroClass.Healer:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: return HealerAC;
-                            case MaterialType.CC: return HealerCC;
-                            case MaterialType.SE: return HealerSE;
+                            case MaterialType.GE: return HealerGE;
                             default: return 0;
                         }
                     case HeroClass.Ranger:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: return RangerAC;
-                            case MaterialType.CC: return RangerCC;
-                            case MaterialType.SE: return RangerSE;
+                            case MaterialType.GE: return RangerGE;
                             default: return 0;
                         }
                     case HeroClass.Assault:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: return AssaultAC;
-                            case MaterialType.CC: return AssaultCC;
-                            case MaterialType.SE: return AssaultSE;
+                            case MaterialType.GE: return AssaultGE;
                             default: return 0;
                         }
                     case HeroClass.Tank:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: return TankAC;
-                            case MaterialType.CC: return TankCC;
-                            case MaterialType.SE: return TankSE;
+                            case MaterialType.GE: return TankGE;
                             default: return 0;
                         }
                     default:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: return MageAC;
-                            case MaterialType.CC: return MageCC;
-                            case MaterialType.SE: return MageSE;
+                            case MaterialType.GE: return MageGE;
                             default: return 0;
                         }
                 }
@@ -295,41 +172,31 @@ namespace GCManagementApp.Models
                     case HeroClass.Healer:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: HealerAC = value; break;
-                            case MaterialType.CC: HealerCC = value; break;
-                            case MaterialType.SE: HealerSE = value; break;
+                            case MaterialType.GE: HealerGE = value; break;
                         }
                         return;
                     case HeroClass.Ranger:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: RangerAC = value; break;
-                            case MaterialType.CC: RangerCC = value; break;
-                            case MaterialType.SE: RangerSE = value; break;
+                            case MaterialType.GE: RangerGE = value; break;
                         }
                         return;
                     case HeroClass.Assault:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: AssaultAC = value; break;
-                            case MaterialType.CC: AssaultCC = value; break;
-                            case MaterialType.SE: AssaultSE = value; break;
+                            case MaterialType.GE: AssaultGE = value; break;
                         }
                         return;
                     case HeroClass.Tank:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: TankAC = value; break;
-                            case MaterialType.CC: TankCC = value; break;
-                            case MaterialType.SE: TankSE = value; break;
+                            case MaterialType.GE: TankGE = value; break;
                         }
                         return;
                     default:
                         switch (type.materialType)
                         {
-                            case MaterialType.AC: MageAC = value; break;
-                            case MaterialType.CC: MageCC = value; break;
-                            case MaterialType.SE: MageSE = value; break;
+                            case MaterialType.GE: MageGE = value; break;
                         }
                         return;
                 }
@@ -388,8 +255,6 @@ namespace GCManagementApp.Models
 
     public enum MaterialType
     {
-        AC,
-        SE,
-        CC,
+        GE
     }
 }

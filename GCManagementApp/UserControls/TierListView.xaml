@@ -24,9 +24,9 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=ScList}"/>
          </Grid>
       </TabItem>
-      <TabItem >
-         <TabItem.Header>
-            <Image Source="/GCManagementApp;component/Resources/Materials/SoulImprintCube.png" Height="60"/>
+        <TabItem Background="Yellow">
+            <TabItem.Header>
+                <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60" />
          </TabItem.Header>
          <Grid Margin="10">
             <Grid.RowDefinitions>
@@ -39,9 +39,9 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=SiList}"/>
          </Grid>
       </TabItem>
-      <TabItem  >
+        <TabItem Background="Purple">
          <TabItem.Header>
-            <Image Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Height="45"/>
+            <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60"/>
          </TabItem.Header>
          <Grid Margin="10">
             <Grid.RowDefinitions>
@@ -54,7 +54,22 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=ClList}"/>
          </Grid>
       </TabItem>
-      <TabItem  >
+       <!-- <TabItem>
+            <TabItem.Header>
+                <materialDesign:PackIcon Kind="AccountArrowUp" Height="40" Width="40"/>
+            </TabItem.Header>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer>
+                    <local:TierListControl VerticalAlignment="Top" x:Name="TransList" Labels="{Binding TransLabels, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}" Collections="{Binding TransCollections, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}"/>
+                </ScrollViewer>
+                <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=ClList}"/>
+            </Grid>
+        </TabItem>-->
+        <TabItem>
          <TabItem.Header>
             <materialDesign:PackIcon Kind="Necklace" Height="40" Width="40"/>
          </TabItem.Header>

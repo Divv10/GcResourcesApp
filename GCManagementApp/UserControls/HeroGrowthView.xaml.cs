@@ -112,7 +112,7 @@ namespace GCManagementApp.UserControls
         public int HeroesOwned => Heroes.Count(h => h.IsOwned);
         public int HeroesSi15 => Heroes.Count(h => h.SiLevel == 15);
         public int HeroesCl25 => Heroes.Count(h => h.ChaserLevel == 25);
-        public int HeroesLevel175 => Heroes.Count(h => h.Level >= StaticValues.MaxLevel - 5);
+        public int HeroesLevel215 => Heroes.Count(h => h.Level >= StaticValues.MaxLevel - 5);
         public int TotalHeroes => Heroes.Count();
         public int MaxEquipTierLevel => (int)StaticValues.MaxLevel - 5;
 
@@ -143,7 +143,9 @@ namespace GCManagementApp.UserControls
             InitializeComponent();
             DataContext = this;
 
+
             Heroes = new ObservableCollection<HeroGrowth>(ProfileGrowth.Heroes);
+
             using (HeroesView.DeferRefresh())
             {
                 HeroesView.Filter = new Predicate<object>(h => Filter(h as HeroGrowth));
@@ -411,7 +413,7 @@ namespace GCManagementApp.UserControls
             OnPropertyChanged(nameof(HeroesCl25));
             OnPropertyChanged(nameof(HeroesSi15));
             OnPropertyChanged(nameof(HeroesOwned));
-            OnPropertyChanged(nameof(HeroesLevel175));
+            OnPropertyChanged(nameof(HeroesLevel215));
         }
 
         private void RefreshCollection(object sender, DependencyPropertyChangedEventArgs e)

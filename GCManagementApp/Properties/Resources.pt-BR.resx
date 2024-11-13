@@ -123,20 +123,11 @@
   <data name="Accessories" xml:space="preserve">
     <value>Acessórios</value>
   </data>
-  <data name="ACGainedInBossStage" xml:space="preserve">
-    <value>Cubo de Despertar adquirida no estágio de chefe</value>
-  </data>
-  <data name="ACPerRun" xml:space="preserve">
-    <value>Cubo de Despertar por ida ao calabouço</value>
-  </data>
   <data name="AdditionalEnergyBoughtWeekly" xml:space="preserve">
     <value>Energia adicional comprada semanalmente:</value>
   </data>
   <data name="AdditionalEntries" xml:space="preserve">
     <value>Entradas adicionais</value>
-  </data>
-  <data name="AdditionalXSECanBeCrafter" xml:space="preserve">
-    <value>{0} Essências adicionais de Soul podem ser criadas a partir de Cristais Chaser</value>
   </data>
   <data name="AddNew" xml:space="preserve">
     <value>ADICIONAR NOVO</value>
@@ -170,9 +161,6 @@
   </data>
   <data name="AllT3" xml:space="preserve">
     <value>T3</value>
-  </data>
-  <data name="AnnihilationCoins" xml:space="preserve">
-    <value>Moeda de Extermínio</value>
   </data>
   <data name="AnyT1" xml:space="preserve">
     <value>T1</value>
@@ -210,9 +198,6 @@
   <data name="Attribute" xml:space="preserve">
     <value>Atributo</value>
   </data>
-  <data name="AwakeningCubes" xml:space="preserve">
-    <value>Cubo de Despertar</value>
-  </data>
   <data name="Back" xml:space="preserve">
     <value>Voltar</value>
   </data>
@@ -228,29 +213,17 @@
   <data name="BlueAccSet" xml:space="preserve">
     <value>Azul - Proteção da Vida</value>
   </data>
-  <data name="BlueGemPerCubeX" xml:space="preserve">
-    <value>Gema Azul por Cubo: {0:F2}</value>
-  </data>
   <data name="BlueGems" xml:space="preserve">
     <value>Gema Azul</value>
   </data>
   <data name="BlueGemsFrom15PVP" xml:space="preserve">
     <value>Gemas Azuis de 15 PvP</value>
   </data>
-  <data name="BlueGemsFromAC" xml:space="preserve">
-    <value>Gemas Azuis de Cubo de Despertar</value>
-  </data>
   <data name="BlueGemsFromPVP" xml:space="preserve">
     <value>Gemas Azuis de PvP</value>
   </data>
-  <data name="BlueGemsGainedPerAC" xml:space="preserve">
-    <value>Gemas Azuis ganhas por 1 Cubo de Despertar</value>
-  </data>
   <data name="BlueGemsOptions" xml:space="preserve">
     <value>Opções de Gemas Azuis</value>
-  </data>
-  <data name="BlueGemsPerCube" xml:space="preserve">
-    <value>Gemas Azuis por cubo</value>
   </data>
   <data name="BlueGemsWeekly" xml:space="preserve">
     <value>Gemas Azuis semanalmente</value>
@@ -264,29 +237,11 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
-  <data name="CCFromDefenseMode" xml:space="preserve">
-    <value>CC do modo Defesa</value>
-  </data>
-  <data name="CCFromEnergy" xml:space="preserve">
-    <value>CC de energia</value>
-  </data>
-  <data name="CCGainedInBossStage" xml:space="preserve">
-    <value>CC ganho em fase de chefe</value>
-  </data>
-  <data name="CCPerRun" xml:space="preserve">
-    <value>CC por ida ao calabouço</value>
-  </data>
   <data name="Chaser" xml:space="preserve">
     <value>Chaser</value>
   </data>
   <data name="ChaserCostCalculator" xml:space="preserve">
     <value>Calculadora de custo do Chaser</value>
-  </data>
-  <data name="ChaserCrystals" xml:space="preserve">
-    <value>Cristal Chaser</value>
-  </data>
-  <data name="ChaserCubes" xml:space="preserve">
-    <value>Cubo de Chaser</value>
   </data>
   <data name="ChaserLevel" xml:space="preserve">
     <value>Nível do Chaser</value>
@@ -345,14 +300,8 @@
   <data name="Cost" xml:space="preserve">
     <value>Custo</value>
   </data>
-  <data name="CostInSICubes" xml:space="preserve">
-    <value>Custo em Cubos de SI</value>
-  </data>
   <data name="CostOfLevels" xml:space="preserve">
     <value>Custo dos níveis de {0}:</value>
-  </data>
-  <data name="CostOfSI15InSE" xml:space="preserve">
-    <value>Custo do SI15 em Essência da Alma</value>
   </data>
   <data name="CostX" xml:space="preserve">
     <value>Custo: {0}</value>
@@ -486,11 +435,8 @@
   <data name="EnergyUsedInBossStage" xml:space="preserve">
     <value>Energia usada no calabouço de chefe</value>
   </data>
-  <data name="EnoughBGToBuyCC" xml:space="preserve">
-    <value>Gemas azuis suficientes para comprar {0} Cubos de SI {1} Pode limpar a loja de Cubos de SI por {2} semanas {1} Gemas azuis suficientes para comprar {3} Cubos de Chaser  {1} Pode limpar a loja Cubos de Chaser por {4} semanas</value>
-  </data>
-  <data name="EnoughCoinsToBuyCC" xml:space="preserve">
-    <value>Moedas suficientes para comprar {0} Cubos SI {1} Moedas suficientes para comprar {2} Cubos Chaser</value>
+  <data name="EnoughBGToBuyGC" xml:space="preserve">
+    <value>Gemas azuis suficientes para comprar {0} Cubos de Growth {1} Pode limpar a loja de Cubos de Growth por {2} semanas</value>
   </data>
   <data name="EnterHowManyVulcanusRanks" xml:space="preserve">
     <value>Digite quantos níveis de Vulcanos semanalmente você está limpando e em qual classificação você geralmente termina. </value>
@@ -717,9 +663,6 @@
   <data name="OwnedHeroesX" xml:space="preserve">
     <value>Heróis de propriedade: {0}</value>
   </data>
-  <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
-    <value>Cubos SI específicos do herói</value>
-  </data>
   <data name="PerformanceMode" xml:space="preserve">
     <value>Modo de desempenho</value>
   </data>
@@ -795,20 +738,11 @@
   <data name="Saved" xml:space="preserve">
     <value>Salvo</value>
   </data>
-  <data name="SEFromConvertingCC" xml:space="preserve">
-    <value>Cristal Chaser na Criação de Essência da alma</value>
-  </data>
-  <data name="SelectACUpgradeType" xml:space="preserve">
-    <value>Selecione o tipo de atualização CA</value>
-  </data>
   <data name="SelectHero" xml:space="preserve">
     <value>Selecione Herói</value>
   </data>
   <data name="SelectProfile" xml:space="preserve">
     <value>Selecione o perfil</value>
-  </data>
-  <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
-    <value>Selecione se você usa Cubos de Despertar para atualizar heróis A e S.</value>
   </data>
   <data name="SellX" xml:space="preserve">
     <value>Vendo: {0}</value>
@@ -858,7 +792,7 @@
   <data name="SoulCoreOpen" xml:space="preserve">
     <value>Núcleo da Alma aberto</value>
   </data>
-  <data name="SoulEssences" xml:space="preserve">
+  <data name="GrowthEssence" xml:space="preserve">
     <value>Essência da Alma</value>
   </data>
   <data name="SoulImprint" xml:space="preserve">
@@ -867,7 +801,7 @@
   <data name="SoulImprintCostCalculator" xml:space="preserve">
     <value>Calculadora de custo do Selo da Alma</value>
   </data>
-  <data name="SoulImprintCubes" xml:space="preserve">
+  <data name="GrowthCubes" xml:space="preserve">
     <value>Cubo de Selo da Alma</value>
   </data>
   <data name="SoulImprintLevel" xml:space="preserve">
@@ -897,9 +831,6 @@
   <data name="T" xml:space="preserve">
     <value>T</value>
   </data>
-  <data name="T15" xml:space="preserve">
-    <value>T15</value>
-  </data>
   <data name="Tank" xml:space="preserve">
     <value>Guard</value>
   </data>
@@ -915,23 +846,11 @@
   <data name="TotalACFromAdventure" xml:space="preserve">
     <value>Total de Cubos de Despertar da Aventura</value>
   </data>
-  <data name="TotalACGainedOverWeek" xml:space="preserve">
-    <value>Total de Cubos de Despertar ganho ao longo da semana</value>
-  </data>
-  <data name="TotalACWeekly" xml:space="preserve">
-    <value>Total de Cubos de Despertar semanal</value>
-  </data>
   <data name="TotalBGGainedOverWeek" xml:space="preserve">
     <value>Total ganho de Gemas Azuis ao longo da semana</value>
   </data>
   <data name="TotalBlueGemsWeekly" xml:space="preserve">
     <value>Total Gemas Azuis semanalmente:</value>
-  </data>
-  <data name="TotalCCFromAdventure" xml:space="preserve">
-    <value>Total ganho de Cristal Chaser na aventura</value>
-  </data>
-  <data name="TotalCCWeekly" xml:space="preserve">
-    <value>Total de Cristal Chaser  semanais</value>
   </data>
   <data name="TotalEnergyFromPackages" xml:space="preserve">
     <value>Energia total dos pacotes:</value>
@@ -984,9 +903,6 @@
   <data name="WeeklyACFromDefense" xml:space="preserve">
     <value>Cubos de Despertar semanal da Defesa</value>
   </data>
-  <data name="WeeklyACGain" xml:space="preserve">
-    <value>Ganho semanal de Cubos de Despertar</value>
-  </data>
   <data name="WeeklyAernasGraceIncome" xml:space="preserve">
     <value>Ganho semanal Graça de Ernas:</value>
   </data>
@@ -1029,10 +945,7 @@
   <data name="Working" xml:space="preserve">
     <value>Trabalhando</value>
   </data>
-  <data name="XChaserCrystals" xml:space="preserve">
-    <value>{0} Cristal Chaser</value>
-  </data>
-  <data name="XChaserCubes" xml:space="preserve">
+  <data name="XGrowthCubes" xml:space="preserve">
     <value>{0} Cubo Chase</value>
   </data>
   <data name="XDays" xml:space="preserve">
@@ -1050,10 +963,7 @@
   <data name="XSI" xml:space="preserve">
     <value>({0} SI)</value>
   </data>
-  <data name="XSICubes" xml:space="preserve">
-    <value>{0} Cubos do Selo da Alma</value>
-  </data>
-  <data name="XSoulEssences" xml:space="preserve">
+  <data name="XGrowthEssences" xml:space="preserve">
     <value>{0} Essências da Alma</value>
   </data>
   <data name="Yellow" xml:space="preserve">
@@ -1064,5 +974,27 @@
   </data>
   <data name="YouHaveAddedTHero" xml:space="preserve">
     <value>Você adicionou T hero ao planejamento, mas não tem o herói SR básico atualizado para T6 e CL20. Deseja adicionar automaticamente o herói base ao planejamento?</value>
+  </data>
+  <data name="SelectACUpgradeType" xml:space="preserve">
+    <value>Selecione o tipo de atualização CA</value>
+  </data>
+  <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
+    <value>Selecione se você usa Cubos de Despertar para atualizar heróis A e S.</value>
+  </data>
+  <data name="CostOfSI15InSE" xml:space="preserve">
+    <value>Custo do SI15 em Essência da Alma</value>
+  </data>
+  <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
+    <value>Cubos SI específicos do herói</value>
+  </data>
+  <data name="T15" xml:space="preserve">
+    <value>T15</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BlueGemsFromArena" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="GEFromEnergy" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
 </root>

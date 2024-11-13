@@ -11,7 +11,7 @@ namespace GCManagementApp.Helpers
         public static string JsonContent =>
             @"put your own auth json here";
 
-        public static string BuildsSheetName => "Builds";
+        public static string BuildsSheetName => "All-In-One";
         public static string ContentKeysSheetName => "Content Keys";
         public static string EquipmentSheetName => "Equipment";
 

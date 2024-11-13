@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <AssemblyVersion>4.1.3</AssemblyVersion>
-    <FileVersion>4.1.3</FileVersion>
+    <AssemblyVersion>4.1.4</AssemblyVersion>
+    <FileVersion>4.1.4</FileVersion>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
@@ -80,6 +80,12 @@
     <None Remove="Resources\Materials\EW.png" />
     <None Remove="Resources\Materials\EwMats.png" />
     <None Remove="Resources\Materials\gold.png" />
+    <None Remove="Resources\Materials\GrowthCube.png" />
+    <None Remove="Resources\Materials\GrowthEssenceAssault.png" />
+    <None Remove="Resources\Materials\GrowthEssenceHealer.png" />
+    <None Remove="Resources\Materials\GrowthEssenceMage.png" />
+    <None Remove="Resources\Materials\GrowthEssenceRanger.png" />
+    <None Remove="Resources\Materials\GrowthEssenceTank.png" />
     <None Remove="Resources\Materials\LabTicket.png" />
     <None Remove="Resources\Materials\SoulEssenceAssault.png" />
     <None Remove="Resources\Materials\SoulEssenceHealer.png" />
@@ -110,7 +116,6 @@
     <Resource Include="Resources\Gear\subweapon.png" />
     <Resource Include="Resources\Gear\weapon.png" />
     <Resource Include="Resources\Materials\AernasisHammer.png" />
-    <Resource Include="Resources\Materials\AwakeningCubeRanger.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -130,31 +135,20 @@
     <Resource Include="Resources\Classes\ranger.png" />
     <Resource Include="Resources\Classes\tank.png" />
     <Resource Include="Resources\gc_logo.png" />
-    <Resource Include="Resources\Materials\anni_coin.png" />
-    <Resource Include="Resources\Materials\AwakeningCubeAssault.png" />
-    <Resource Include="Resources\Materials\AwakeningCubeHealer.png" />
-    <Resource Include="Resources\Materials\AwakeningCubeMage.png" />
-    <Resource Include="Resources\Materials\AwakeningCubeTank.png" />
     <Resource Include="Resources\Materials\BlessingOfValor.png" />
     <Resource Include="Resources\Materials\BlueGem.png" />
-    <Resource Include="Resources\Materials\ChaserCrystalAssault.png" />
-    <Resource Include="Resources\Materials\ChaserCrystalHealer.png" />
-    <Resource Include="Resources\Materials\ChaserCrystalMage.png" />
-    <Resource Include="Resources\Materials\ChaserCrystalRanger.png" />
-    <Resource Include="Resources\Materials\ChaserCrystalTank.png" />
-    <Resource Include="Resources\Materials\ChaserCube.png" />
     <Resource Include="Resources\Materials\energy.png" />
     <Resource Include="Resources\Materials\EvoCube.png" />
     <Resource Include="Resources\Materials\EW.png" />
     <Resource Include="Resources\Materials\EwMats.png" />
     <Resource Include="Resources\Materials\gold.png" />
+    <Resource Include="Resources\Materials\GrowthCube.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceAssault.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceHealer.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceMage.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceRanger.png" />
+    <Resource Include="Resources\Materials\GrowthEssenceTank.png" />
     <Resource Include="Resources\Materials\LabTicket.png" />
-    <Resource Include="Resources\Materials\SoulEssenceAssault.png" />
-    <Resource Include="Resources\Materials\SoulEssenceHealer.png" />
-    <Resource Include="Resources\Materials\SoulEssenceMage.png" />
-    <Resource Include="Resources\Materials\SoulEssenceRanger.png" />
-    <Resource Include="Resources\Materials\SoulEssenceTank.png" />
-    <Resource Include="Resources\Materials\SoulImprintCube.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -639,10 +633,16 @@
     <None Update="Images_kr\HeroNames\Arme.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Images_kr\HeroNames\ArmeS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\ArmeT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Asin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\AsinT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Bastet.png">
@@ -661,6 +661,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Decanee.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\Deia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Dio.png">
@@ -688,6 +691,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Ganymede.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\GanymedeT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Grandiel.png">
@@ -765,6 +771,9 @@
     <None Update="Images_kr\HeroNames\Nelia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Images_kr\HeroNames\NeliaT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Ragnar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -772,6 +781,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Rin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\RinT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Ronan.png">
@@ -787,6 +799,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Ryan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\RyanT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Serdin.png">
@@ -807,7 +822,19 @@
     <None Update="Images_kr\HeroNames\Tia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Images_kr\HeroNames\TiaT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\Urara.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\UraraSR.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Veigas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images_kr\HeroNames\VeigasT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Werner.png">

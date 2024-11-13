@@ -35,5 +35,12 @@ namespace GCManagementApp.Enums
         T41 = 41,
         [Description("T44")]
         T44 = 44,
+        [Description("T47")]
+        T47 = 47,
+        [Description("T50")]
+        T50 = 50,
+        [Description("T53")]
+        T53 = 53,
+ 
     }
 }

@@ -40,12 +40,9 @@ namespace GCManagementApp.UserControls
 
         public Inventory Inventory => ProfileGrowth.Profile.MaterialsInventory;
 
-        public int SIGain => SoulImprintCubes.CubesTotalWeekly / 7;
-        public int ACGain => AwakeningCubes.TotalCubesWeekly / 7;
-        public int SEGain => SoulEssences.SoulEssencesTotalWeekly / 7 ;
-        public int CCGain => ChaserCrystals.ChaserCrystalsTotalWeekly / 7 ;
-        public int SiCubesFromBg => Inventory.SiCubesFromBlueGems;
-        public int SiCubesFromAnni => Inventory.SiCubesFromAnniCoins;
+        public int GCGain => GrowthCubes.CubesTotalWeekly / 7;
+        public int GEGain => GrowthEssences.GrowthEssenceTotalWeekly / 7 ;
+        public int GrowthCubesFromBg => Inventory.GrowthCubesFromBlueGems;
 
         private ObservableCollection<HeroPlan> _heroPlans;
         public ObservableCollection<HeroPlan> HeroPlans
@@ -93,7 +90,7 @@ namespace GCManagementApp.UserControls
 
                 if (hp.Hero.HeroType == Enums.HeroType.T)
                 {
-                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(6, hp.CurrentGrowth.TranscendenceLevel);
+                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(0, hp.CurrentGrowth.TranscendenceLevel);
                     hp.CurrentGrowth.ChaserLevel = Math.Max(20, hp.CurrentGrowth.ChaserLevel);
                 }
                 else if (hp.Hero.HeroType == Enums.HeroType.S)
@@ -109,7 +106,7 @@ namespace GCManagementApp.UserControls
                 //hp.SiLevelCost = SiLevelingCosts.CalculateCost(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
-                RecalculateSiCubesCost(hp, phg);
+                RecalculateGrowthCubesCost(hp, phg);
 
                 HeroPlans.Add(hp);
             }
@@ -118,12 +115,9 @@ namespace GCManagementApp.UserControls
 
             this.IsVisibleChanged += (_, _) => 
             {
-                OnPropertyChanged(nameof(ACGain));
-                OnPropertyChanged(nameof(SEGain));
-                OnPropertyChanged(nameof(SIGain));
-                OnPropertyChanged(nameof(CCGain)); 
-                OnPropertyChanged(nameof(SiCubesFromAnni));
-                OnPropertyChanged(nameof(SiCubesFromBg));
+                OnPropertyChanged(nameof(GEGain));
+                OnPropertyChanged(nameof(GCGain));
+                OnPropertyChanged(nameof(GrowthCubesFromBg));
                 ReloadCurrentHeroGrowth();
                 RecalculateDaysReady();
             };
@@ -145,7 +139,7 @@ namespace GCManagementApp.UserControls
 
                     if (hp.Hero.HeroType == Enums.HeroType.T)
                     {
-                        hp.CurrentGrowth.TranscendenceLevel = Math.Max(6, hp.CurrentGrowth.TranscendenceLevel);
+                        hp.CurrentGrowth.TranscendenceLevel = Math.Max(0, hp.CurrentGrowth.TranscendenceLevel);
                         hp.CurrentGrowth.ChaserLevel = Math.Max(20, hp.CurrentGrowth.ChaserLevel);
                     }
                     else if (hp.Hero.HeroType == Enums.HeroType.S)
@@ -160,7 +154,10 @@ namespace GCManagementApp.UserControls
                     hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                     hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
-                    RecalculateSiCubesCost(hp, phg);
+                    hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
+                    hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+
+                    RecalculateGrowthCubesCost(hp, phg);
 
                     HeroPlans.Add(hp);
                 }
@@ -192,7 +189,7 @@ namespace GCManagementApp.UserControls
                 var ownedHeroGrowth = ProfileGrowth.Heroes.FirstOrDefault(h => h.Hero.HeroName == hp.HeroName && h.Hero.HeroType == hp.HeroType);
                 hp.CurrentGrowth = new GrowthPlan()
                 {
-                    TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 6),
+                    TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 0),
                     ChaserLevel = ownedHeroGrowth?.ChaserLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 20),
                     SiLevel = ownedHeroGrowth?.SiLevel ?? 0,
                     TraitsOpen = ownedHeroGrowth?.TraitsOpen ?? 0,
@@ -202,7 +199,7 @@ namespace GCManagementApp.UserControls
                 if (hp.HeroType == Enums.HeroType.T)
                 {
                     hp.CurrentGrowth.ChaserLevel = Math.Max(20, hp.CurrentGrowth.ChaserLevel);
-                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(6, hp.CurrentGrowth.TranscendenceLevel);
+                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(0, hp.CurrentGrowth.TranscendenceLevel);
                 }
                 else if (hp.Hero.HeroType == Enums.HeroType.S)
                 {
@@ -229,7 +226,10 @@ namespace GCManagementApp.UserControls
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
-                RecalculateSiCubesCost(hp, ownedHeroGrowth);
+                hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
+                hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+
+                RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Add(hp);
 
@@ -242,7 +242,7 @@ namespace GCManagementApp.UserControls
                     }
                     else
                     {
-                        hp.BaseHeroNeedToBeBuilt = baseHero.TranscendenceLevel < 6 || baseHero.ChaserLevel < 20;
+                        hp.BaseHeroNeedToBeBuilt = baseHero.ChaserLevel < 20;
                         if (hp.BaseHeroNeedToBeBuilt && HeroPlans.FirstOrDefault(x => x.Hero.HeroName == hp.HeroName && x.Hero.HeroType == HeroType.SR) is HeroPlan baseHeroPlan && baseHeroPlan != null)
                         {
                             hp.BaseHeroNeedToBeBuilt = HeroPlans.IndexOf(baseHeroPlan) > HeroPlans.IndexOf(hp);
@@ -263,19 +263,16 @@ namespace GCManagementApp.UserControls
                         ownedHeroGrowth = ProfileGrowth.Heroes.FirstOrDefault(h => h.Hero.HeroName == heroPlan.HeroName && h.Hero.HeroType == heroPlan.HeroType);
                         heroPlan.CurrentGrowth = new GrowthPlan()
                         {
-                            TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (heroPlan.HeroType == Enums.HeroType.SR ? 0 : 6),
+                            TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (heroPlan.HeroType == Enums.HeroType.SR ? 0 : 0),
                             ChaserLevel = ownedHeroGrowth?.ChaserLevel ?? (heroPlan.HeroType == Enums.HeroType.SR ? 0 : 20),
                             SiLevel = ownedHeroGrowth?.SiLevel ?? 0,
                         };
                         heroPlan.DesiredGrowth = new GrowthPlan()
                         {
-                            TranscendenceLevel = 6,
+                            TranscendenceLevel = 0,
                             ChaserLevel = 20,
                             SiLevel = heroPlan.CurrentGrowth.SiLevel,
                         };
-
-                        if (heroPlan.DesiredGrowth.TranscendenceLevel < heroPlan.CurrentGrowth.TranscendenceLevel)
-                            heroPlan.DesiredGrowth.TranscendenceLevel = heroPlan.CurrentGrowth.TranscendenceLevel;
 
                         if (heroPlan.DesiredGrowth.ChaserLevel < heroPlan.CurrentGrowth.ChaserLevel)
                             heroPlan.DesiredGrowth.ChaserLevel = heroPlan.CurrentGrowth.ChaserLevel;
@@ -283,6 +280,9 @@ namespace GCManagementApp.UserControls
                         heroPlan.TCost = TranscendingCosts.CalculateCost(heroPlan.CurrentGrowth.TranscendenceLevel, heroPlan.DesiredGrowth.TranscendenceLevel);
                         heroPlan.ClLevelCost = ChaserLevelingCosts.CalculateCost(heroPlan.CurrentGrowth.ChaserLevel, heroPlan.DesiredGrowth.ChaserLevel);
                         heroPlan.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(heroPlan.CurrentGrowth.SiLevel, heroPlan.DesiredGrowth.SiLevel, heroPlan.CurrentGrowth.TraitsOpen, heroPlan.DesiredGrowth.TraitsOpen, heroPlan.CurrentGrowth.IsCoreOpen, heroPlan.DesiredGrowth.IsCoreOpen);
+
+                        heroPlan.SiLevelCost.GrowthCubesCost += heroPlan.ClLevelCost.GrowthCubesCost;
+                        heroPlan.SiLevelCost.GeCost += heroPlan.ClLevelCost.GrowthEssencesCost;
 
                         HeroPlans.Insert(HeroPlans.IndexOf(hp), heroPlan);
                     }
@@ -356,7 +356,7 @@ namespace GCManagementApp.UserControls
                 if (hp.HeroType == Enums.HeroType.T)
                 {
                     hp.CurrentGrowth.ChaserLevel = Math.Max(20, hp.CurrentGrowth.ChaserLevel);
-                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(6, hp.CurrentGrowth.TranscendenceLevel);
+                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(0, hp.CurrentGrowth.TranscendenceLevel);
                 }
                 else if (hp.Hero.HeroType == Enums.HeroType.S)
                 {
@@ -379,7 +379,11 @@ namespace GCManagementApp.UserControls
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
-                RecalculateSiCubesCost(hp, ownedHeroGrowth);
+                // This is right
+                hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
+                hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+
+                RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Insert(HeroPlans.IndexOf(heroPlan), hp);
                 HeroPlans.Remove(heroPlan);
@@ -388,17 +392,17 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        private void RecalculateSiCubesCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
+        private void RecalculateGrowthCubesCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
         {
             if (hp.HeroType == Enums.HeroType.T && (ownedHeroGrowth?.IsOwned == false || hp.HeroName == HeroEnum.Custom))
             {
-                hp.SiLevelCost.SiCubesCost += 250;
+                hp.SiLevelCost.GrowthCubesCost += 250;
             }
 
-            hp.SiLevelCost.SiCubesCost = hp.SiLevelCost.SiCubesCost - (hp.DesiredGrowth.DupesForSi * 250) - hp.DesiredGrowth.HeroSpecificSiCubesOwned;
-            if (hp.SiLevelCost.SiCubesCost < 0)
+            hp.SiLevelCost.GrowthCubesCost = hp.SiLevelCost.GrowthCubesCost - (hp.DesiredGrowth.DupesForSi * 250) - hp.DesiredGrowth.HeroSpecificSiCubesOwned;
+            if (hp.SiLevelCost.GrowthCubesCost < 0)
             {
-                hp.SiLevelCost.SiCubesCost = 0;
+                hp.SiLevelCost.GrowthCubesCost = 0;
             }
 
             if ((hp.DesiredGrowth.SiLevel > hp.CurrentGrowth.SiLevel && (new[] { 5, 10 }).Any(l => l == hp.DesiredGrowth.SiLevel) && hp.DesiredGrowth.IsCoreOpen) ||
@@ -412,7 +416,7 @@ namespace GCManagementApp.UserControls
                 //hp.SiLevelCost.SiCubesCost -= 250;
             }
 
-            hp.SiLevelCost = new SiLevelCost(hp.SiLevelCost.Level, hp.SiLevelCost.SiCubesCost < 0 ? 0 : hp.SiLevelCost.SiCubesCost, hp.SiLevelCost.SeCost, hp.SiLevelCost.GoldCost);
+            hp.SiLevelCost = new SiLevelCost(hp.SiLevelCost.Level, hp.SiLevelCost.GrowthCubesCost < 0 ? 0 : hp.SiLevelCost.GrowthCubesCost, hp.SiLevelCost.GeCost, hp.SiLevelCost.GoldCost);
         }
 
         private void DeleteHeroPlan(object param)
@@ -447,7 +451,7 @@ namespace GCManagementApp.UserControls
 
                 if (hp.Hero.HeroType == Enums.HeroType.T)
                 {
-                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(6, phg.TranscendenceLevel);
+                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(0, phg.TranscendenceLevel);
                     hp.CurrentGrowth.ChaserLevel = Math.Max(20, phg.ChaserLevel);
                 }
                 else if (hp.Hero.HeroType == Enums.HeroType.S)
@@ -461,8 +465,11 @@ namespace GCManagementApp.UserControls
                 hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel);
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
+                
+                hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
+                hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
 
-                RecalculateSiCubesCost(hp, phg);
+                RecalculateGrowthCubesCost(hp, phg);
             }
         }
 
@@ -471,32 +478,18 @@ namespace GCManagementApp.UserControls
             var profileInventory = ProfileGrowth.Profile.MaterialsInventory;
             var currentInventory = new Inventory()
             {
-                ChaserCubes = profileInventory.ChaserCubes,
-                AssaultCC = profileInventory.AssaultCC,
-                RangerCC = profileInventory.RangerCC,
-                MageCC = profileInventory.MageCC,
-                TankCC = profileInventory.TankCC,
-                HealerCC = profileInventory.HealerCC,
-
-                SiCubes = profileInventory.SiCubes + profileInventory.SiCubesFromBlueGems + profileInventory.SiCubesFromAnniCoins,
-                AssaultSE = profileInventory.AssaultSE,
-                RangerSE = profileInventory.RangerSE,
-                MageSE = profileInventory.MageSE,
-                TankSE = profileInventory.TankSE,
-                HealerSE = profileInventory.HealerSE,
-
-                AssaultAC = profileInventory.AssaultAC,
-                RangerAC = profileInventory.RangerAC,
-                MageAC = profileInventory.MageAC,
-                TankAC = profileInventory.TankAC,
-                HealerAC = profileInventory.HealerAC,
+                GrowthCubes = profileInventory.GrowthCubes + profileInventory.GrowthCubesFromBlueGems,
+                AssaultGE = profileInventory.AssaultGE,
+                RangerGE = profileInventory.RangerGE,
+                MageGE = profileInventory.MageGE,
+                TankGE = profileInventory.TankGE,
+                HealerGE = profileInventory.HealerGE,
 
                 Gold = profileInventory.Gold,
             };
 
-            double ccAndSiCubesLootingDays = 0;
-            double acLootingDays = 0;
-            double ccAndSeLootingDays = 0;
+            double GrowthCubesLootingDays = 0;
+            double GeLootingDays = 0;
 
             calcLog = new StringBuilder();
 
@@ -511,7 +504,7 @@ namespace GCManagementApp.UserControls
                     }
                     else
                     {
-                        hp.BaseHeroNeedToBeBuilt = baseHero.TranscendenceLevel < 6 || baseHero.ChaserLevel < 20;
+                        hp.BaseHeroNeedToBeBuilt = baseHero.ChaserLevel < 20;
                         if (hp.BaseHeroNeedToBeBuilt && HeroPlans.FirstOrDefault(x => x.Hero.HeroName == hp.HeroName && x.Hero.HeroType == HeroType.SR) is HeroPlan baseHeroPlan && baseHeroPlan != null)
                         {
                             hp.BaseHeroNeedToBeBuilt = HeroPlans.IndexOf(baseHeroPlan) > HeroPlans.IndexOf(hp);
@@ -523,96 +516,48 @@ namespace GCManagementApp.UserControls
                 calcLog.AppendLine($"Doing calculations for: {hp.ToString()}\r\n");
 
                 calcLog.AppendLine("Inventory Before:");
-                calcLog.AppendLine($"Chaser Cubes: {currentInventory.ChaserCubes}\r\n");
+                calcLog.AppendLine($"Growth Cubes: {currentInventory.GrowthCubes}\r\n");
 
-                calcLog.AppendLine($"SI Cubes: {currentInventory.SiCubes}\r\n");
+                double daysForGCBase = currentInventory.GrowthCubes >= 0 ? 0 : -1 * currentInventory.GrowthCubes / ((double)GrowthCubes.CubesTotalWeekly / 7);
 
-                calcLog.AppendLine($"Awakening Cubes: \t\t\tAssault: {currentInventory.AssaultAC} \t\t\tRanger: {currentInventory.RangerAC} \t\t\tMage: {currentInventory.MageAC} \t\t\tTank: {currentInventory.TankAC} \t\t\tHealer: {currentInventory.HealerAC}\r\n");
-
-                calcLog.AppendLine($"Chaser Crystals: \t\t\tAssault: {currentInventory.AssaultCC} \t\t\tRanger: {currentInventory.RangerCC} \t\t\tMage: {currentInventory.MageCC} \t\t\tTank: {currentInventory.TankCC} \t\t\tHealer: {currentInventory.HealerCC}\r\n");
-
-                calcLog.AppendLine($"Soul Essence: \t\t\tAssault: {currentInventory.AssaultSE} \t\t\tRanger: {currentInventory.RangerSE} \t\t\tMage: {currentInventory.MageSE} \t\t\tTank: {currentInventory.TankSE} \t\t\tHealer: {currentInventory.HealerSE}\r\n");
-
-                currentInventory.ChaserCubes -= hp.ClLevelCost.ChaserCubesCost;
-                hp.ChaserCubesNeeded = currentInventory.ChaserCubes;
-
-                double daysForCCBase = currentInventory.ChaserCubes >= 0 ? 0 : -1 * currentInventory.ChaserCubes / ((double)ChaserCubes.TotalCubesWeekly / 7);
-                if (hp.ClLevelCost.ChaserCubesCost > 0 && hp.ClLevelCost.ChaserCubesCost > currentInventory.ChaserCubes)
-                    hp.DaysForChaserCubes = daysForCCBase + ccAndSiCubesLootingDays;
-                else
-                    hp.DaysForChaserCubes = 0;
-
-
-                calcLog.AppendLine($"Chaser Cubes cost: {hp.ClLevelCost.ChaserCubesCost}. Chaser Cubes owned: {currentInventory.ChaserCubes}");
-                if (hp.ClLevelCost.ChaserCubesCost - currentInventory.ChaserCubes <= 0)
-                {
-                    calcLog.AppendLine("Chaser Cubes ready!\r\n");
-                    //hp.DaysForChaserCubes = 0;
-                }
-                else
-                {
-                    calcLog.AppendLine($"Chaser Cubes days to farm: {hp.ClLevelCost.ChaserCubesCost} / {(double)ChaserCubes.TotalCubesWeekly / 7} = {daysForCCBase} (+ CC and SI days from prev heroes ({ccAndSiCubesLootingDays}): {daysForCCBase + ccAndSiCubesLootingDays}\r\n");
-                }
-
-
-                if (hp.SiLevelCost?.SiCubesCost > 0 && hp.SiLevelCost?.SiCubesCost > currentInventory.SiCubes)
-                    hp.DaysForSi = (double)(hp.SiLevelCost.SiCubesCost - currentInventory.SiCubes) / ((double)SoulImprintCubes.CubesTotalWeekly / 7) + (daysForCCBase < 0 ? 0 : daysForCCBase);
+                if (hp.SiLevelCost?.GrowthCubesCost > 0 && hp.SiLevelCost?.GrowthCubesCost > currentInventory.GrowthCubes)
+                    hp.DaysForSi = (double)(hp.SiLevelCost.GrowthCubesCost - currentInventory.GrowthCubes) / ((double)GrowthCubes.CubesTotalWeekly / 7) + (daysForGCBase < 0 ? 0 : daysForGCBase);
                 else
                     hp.DaysForSi = 0;
                 
-                calcLog.AppendLine($"SI Cubes cost: {hp.SiLevelCost?.SiCubesCost}. SI Cubes owned: {currentInventory.SiCubes}");
-                if (hp.SiLevelCost?.SiCubesCost - currentInventory.SiCubes <= 0)
+                calcLog.AppendLine($"Growth Cubes cost: {hp.SiLevelCost?.GrowthCubesCost}. Growth Cubes owned: {currentInventory.GrowthCubes}");
+                if (hp.SiLevelCost?.GrowthCubesCost - currentInventory.GrowthCubes <= 0)
                 {
-                    calcLog.AppendLine("SI Cubes ready!\r\n");
+                    calcLog.AppendLine("Growth Cubes ready!\r\n");
                 }
                 else
                 {
-                    calcLog.AppendLine($"SI Cubes days to farm: {hp.SiLevelCost.SiCubesCost} - {currentInventory.SiCubes} / {(double)SoulImprintCubes.CubesTotalWeekly / 7} = {hp.DaysForSi} (+ Chaser cubes days: {(daysForCCBase < 0 ? 0 : daysForCCBase)})\r\n");
+                    calcLog.AppendLine($"Growth Cubes days to farm: {hp.SiLevelCost.GrowthCubesCost} - {currentInventory.GrowthCubes} / {(double)GrowthCubes.CubesTotalWeekly / 7} = {hp.DaysForSi})\r\n");
                 }
 
-                currentInventory.SiCubes -= hp.SiLevelCost?.SiCubesCost ?? 0;
-                hp.SiNeeded = currentInventory.SiCubes;
+                currentInventory.GrowthCubes -= hp.SiLevelCost?.GrowthCubesCost ?? 0;
+                hp.SiNeeded = currentInventory.GrowthCubes;
 
                 hp.GoldCost = hp.TCost.GoldCost + hp.SiLevelCost.GoldCost + hp.ClLevelCost.GoldCost;
                 hp.DaysForGold = (double)(hp.GoldCost - currentInventory.Gold) / ((double)DailyGoldIncome);
                 currentInventory.Gold -= hp.GoldCost;
                 hp.GoldNeeded = currentInventory.Gold;
 
-                var SeNeeded = 0;
-                Calculate(hp, ref currentInventory, ref SeNeeded, hp.Hero.HeroClass);
+                var GeNeeded = 0;
+                Calculate(hp, ref currentInventory, ref GeNeeded, hp.Hero.HeroClass);
 
                 calcLog.AppendLine("Inventory After:");
-                calcLog.AppendLine($"SI Cubes: {currentInventory.SiCubes}\r\n");
+                calcLog.AppendLine($"Growth Cubes: {currentInventory.GrowthCubes}\r\n");
 
-                calcLog.AppendLine($"Awakening Cubes: \t\t\tAssault: {currentInventory.AssaultAC} \t\t\tRanger: {currentInventory.RangerAC} \t\t\tMage: {currentInventory.MageAC} \t\t\tTank: {currentInventory.TankAC} \t\t\tHealer: {currentInventory.HealerAC}\r\n");
+                calcLog.AppendLine($"Growth Essence: \t\t\tAssault: {currentInventory.AssaultGE} \t\t\tRanger: {currentInventory.RangerGE} \t\t\tMage: {currentInventory.MageGE} \t\t\tTank: {currentInventory.TankGE} \t\t\tHealer: {currentInventory.HealerGE}\r\n");
 
-                calcLog.AppendLine($"Chaser Crystals: \t\t\tAssault: {currentInventory.AssaultCC} \t\t\tRanger: {currentInventory.RangerCC} \t\t\tMage: {currentInventory.MageCC} \t\t\tTank: {currentInventory.TankCC} \t\t\tHealer: {currentInventory.HealerCC}\r\n");
-
-                calcLog.AppendLine($"Soul Essence: \t\t\tAssault: {currentInventory.AssaultSE} \t\t\tRanger: {currentInventory.RangerSE} \t\t\tMage: {currentInventory.MageSE} \t\t\tTank: {currentInventory.TankSE} \t\t\tHealer: {currentInventory.HealerSE}\r\n");
-
-                if (hp.DaysForAC > 0)
-                {
-                    hp.DaysForAC += acLootingDays;
-                }
-
-                acLootingDays = hp.DaysForAC;
-                calcLog.AppendLine($"AC will be ready after: {acLootingDays}\r\n");
-
-                if (hp.DaysForCC > 0)
-                {
-                    hp.DaysForCC += ccAndSeLootingDays;
-                }
-
-                if (hp.DaysForSE > 0)
-                    hp.DaysForSE += hp.DaysForCC > 0 ? hp.DaysForCC : ccAndSeLootingDays;
-
-                ccAndSeLootingDays = Math.Max(Math.Max(hp.DaysForSE, hp.DaysForCC), ccAndSeLootingDays);
-                calcLog.AppendLine($"CC & SE will be ready after: {ccAndSeLootingDays}\r\n");
+                GeLootingDays = Math.Max(hp.DaysForGE, GeLootingDays);
+                calcLog.AppendLine($"GE will be ready after: {GeLootingDays}\r\n");
 
                 if (hp.DaysForSi > 0)
-                    ccAndSiCubesLootingDays = hp.DaysForSi;
+                    GrowthCubesLootingDays = hp.DaysForSi;
 
-                calcLog.AppendLine($"C & SI cubes will be ready after: {ccAndSiCubesLootingDays}\r\n");
+                calcLog.AppendLine($"Growth cubes will be ready after: {GrowthCubesLootingDays}\r\n");
             }
 
             ProfileGrowth.Profile.HeroPlans = new List<HeroPlan>(HeroPlans);
@@ -621,89 +566,25 @@ namespace GCManagementApp.UserControls
             CalculationLog = calcLog.ToString();
         }
 
-        private void Calculate(HeroPlan hp, ref Inventory currentInventory, ref int SeNeeded, HeroClass heroClass)
+        private void Calculate(HeroPlan hp, ref Inventory currentInventory, ref int GENeeded, HeroClass heroClass)
         {
-            hp.DaysForAC = (double)(hp.TCost.AwakeningCubesCost - Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.AC }], 0)) / ((double)AwakeningCubes.TotalCubesWeekly / 7);
 
-            calcLog.AppendLine($"AC cost: {hp.TCost.AwakeningCubesCost}. AC owned: {Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.AC }], 0)}");
-            if (hp.TCost.AwakeningCubesCost - Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.AC }], 0) <= 0)
+            hp.DaysForGE = (double)(hp.SiLevelCost.GeCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }]) / ((double)GrowthEssences.GrowthEssenceTotalWeekly / 7);
+
+            calcLog.AppendLine($"GE cost: {hp.SiLevelCost.GeCost}. GE owned: {Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }], 0)}");
+            if (hp.SiLevelCost.GeCost - Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }], 0) <= 0)
             {
-                calcLog.AppendLine("AC ready!\r\n");
+                calcLog.AppendLine("GE ready!\r\n");
             }
             else
             {
-                calcLog.AppendLine($"AC days to farm: {hp.TCost.AwakeningCubesCost} - {Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.AC }], 0)} / {(double)AwakeningCubes.TotalCubesWeekly / 7} = {hp.DaysForAC}\r\n");
+                calcLog.AppendLine($"GE days to farm: {hp.SiLevelCost.GeCost} - {currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }]} / {(double)GrowthEssences.GrowthEssenceTotalWeekly / 7} = {hp.DaysForGE}\r\n");
             }
 
-            currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.AC}] -= hp.TCost.AwakeningCubesCost;
-            hp.AcNeeded = currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.AC }];
+            currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }] -= hp.SiLevelCost.GeCost;
+            hp.GeNeeded = currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }];
 
-            hp.DaysForCC =(double)(hp.ClLevelCost.ChaserCrystalsCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.CC }]) / ((double)ChaserCrystals.ChaserCrystalsTotalWeekly / 7);
 
-            calcLog.AppendLine($"CC cost: {hp.ClLevelCost.ChaserCrystalsCost}. CC owned: {currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.CC }]}");
-            if (hp.ClLevelCost.ChaserCrystalsCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.CC }] <= 0)
-            {
-                calcLog.AppendLine("CC ready!\r\n");
-            }
-            else
-            {
-                calcLog.AppendLine($"CC days to farm: {hp.ClLevelCost.ChaserCrystalsCost} - {currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.CC }]} / {(double)ChaserCrystals.ChaserCrystalsTotalWeekly / 7} = {hp.DaysForCC}\r\n");
-            }
-
-            currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.CC }] -= hp.ClLevelCost.ChaserCrystalsCost;
-            hp.CcNeeded = currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.CC }];
-
-            SeNeeded = hp.SiLevelCost.SeCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }];
-            calcLog.AppendLine($"SE cost: {hp.SiLevelCost.SeCost}. SE owned: {currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }]}");
-            if (SeNeeded > 0)
-            {
-                calcLog.AppendLine($"Need {SeNeeded} SE");
-                int seAvailable = currentInventory.CraftableSoulEssences > SeNeeded ? SeNeeded : currentInventory.CraftableSoulEssences;
-
-                calcLog.AppendLine($"Available {seAvailable} SE from CC craft");
-
-                currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }] += seAvailable;
-
-                currentInventory.AssaultCC = Math.Max(currentInventory.AssaultCC - seAvailable, 0);
-                currentInventory.RangerCC = Math.Max(currentInventory.RangerCC - seAvailable, 0);
-                currentInventory.MageCC = Math.Max(currentInventory.MageCC - seAvailable, 0);
-                currentInventory.TankCC = Math.Max(currentInventory.TankCC - seAvailable, 0);
-                currentInventory.HealerCC = Math.Max(currentInventory.HealerCC - seAvailable, 0);
-
-                calcLog.AppendLine($"Chaser Crystals after crafting SE: \t\t\tAssault: {currentInventory.AssaultCC} \t\t\tRanger: {currentInventory.RangerCC} \t\t\tMage: {currentInventory.MageCC} \t\t\tTank: {currentInventory.TankCC} \t\t\tHealer: {currentInventory.HealerCC}\r\n");
-            }
-
-            var seToCraft = Math.Max(hp.SiLevelCost.SeCost - Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }], 0), 0);
-            calcLog.AppendLine($"Remaining SE to farm: {seToCraft}");
-            
-            var totalCcToFarm = 0;
-            if (seToCraft > 0)
-            {
-                var cc = new[] { currentInventory.AssaultCC, currentInventory.RangerCC, currentInventory.MageCC, currentInventory.TankCC, currentInventory.HealerCC };
-                for (int i = 0; i < cc.Length; i++)
-                {
-                    cc[i] -= seToCraft;
-                    if (cc[i] < 0)
-                    {
-                        totalCcToFarm += Math.Abs(cc[i]);
-                        cc[i] = 0;
-                    }
-                }
-
-                currentInventory.AssaultCC = cc[0];
-                currentInventory.RangerCC = cc[1];
-                currentInventory.MageCC = cc[2];
-                currentInventory.TankCC = cc[3];
-                currentInventory.HealerCC = cc[4];
-            }
-
-            calcLog.AppendLine($"Needed CC to farm: {totalCcToFarm}");
-
-            hp.DaysForSE = (double)totalCcToFarm / ((double)ChaserCrystals.ChaserCrystalsTotalWeekly / 7d);
-            //hp.DaysForSE = (int)Math.Ceiling((double)(hp.SiLevelCost.SeCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }]) / ((double)SoulEssences.SoulEssencesTotalWeekly / 7));
-            currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }] -= hp.SiLevelCost.SeCost;
-            hp.SeNeeded = currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.SE }];
-            calcLog.AppendLine($"SE days to farm: {totalCcToFarm} / {(double)ChaserCrystals.ChaserCrystalsTotalWeekly / 7d} = {hp.DaysForSE}\r\n");
         }
 
         private void ReorderListBox_ReorderRequested(object sender, ReorderEventArgs e)

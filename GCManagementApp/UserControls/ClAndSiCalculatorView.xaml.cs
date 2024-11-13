@@ -69,8 +69,6 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        public int CraftableSoulEssences => Inventory.CraftableSoulEssences;
-
         public ChaserLevelCost Cost { get; set; }
 
         public SiLevelCost SiCost { get; set; }
@@ -87,7 +85,7 @@ namespace GCManagementApp.UserControls
             DataContext = this;
             CalculateCost();
             CalculateSiCost();
-            Inventory.PropertyChanged += (s, o) => { OnPropertyChanged(nameof(CraftableSoulEssences)); };
+            //Inventory.PropertyChanged += (s, o) => { OnPropertyChanged(nameof(CraftableSoulEssences)); };
         }
 
         private void CalculateCost()

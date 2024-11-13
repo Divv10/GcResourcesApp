@@ -156,12 +156,12 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        public AwakeningCubesUpgradeTypeEnum AcUpgradeType
+        public SellRarityTypeEnum SellRarityType
         {
-            get => ProfileGrowth.Profile.Settings.AwakeningCubesUpgradeType;
+            get => ProfileGrowth.Profile.Settings.RaritySellUpgradeType;
             set
             {
-                ProfileGrowth.Profile.Settings.AwakeningCubesUpgradeType = value;
+                ProfileGrowth.Profile.Settings.RaritySellUpgradeType = value;
                 OnPropertyChanged(string.Empty);
             }
         }
@@ -256,12 +256,12 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        public int AdditionalSICubes
+        public int AdditionalGCCubes
         {
-            get => ProfileGrowth.Profile.Settings.WeeklyAdditionalSICubes;
+            get => ProfileGrowth.Profile.Settings.WeeklyAdditionalGCCubes;
             set
             {
-                ProfileGrowth.Profile.Settings.WeeklyAdditionalSICubes = value;
+                ProfileGrowth.Profile.Settings.WeeklyAdditionalGCCubes = value;
                 OnPropertyChanged(string.Empty);
             }
         }
@@ -302,29 +302,28 @@ namespace GCManagementApp.UserControls
         public double PurpleCrystals => Math.Round(AHOres * 0.0026, 2);
         public double BlueCrystals => Math.Round(AHOres * 0.4029, 2);
         public double GreenCrystals => Math.Round(AHOres * 0.5947, 2);
-        public double AwakeningCubesMultiplier => AwakeningCubes.EnergyPackCubesMultiplier;
-        public int AwakeningCubesFromEnergy => AwakeningCubes.CubesFromEnergy;
-        public int AwakeningCubesFromDD => AwakeningCubes.CubesFromDefenseMode;
-        public int AwakeningCubesTotalWeekly => AwakeningCubes.TotalCubesWeekly;
         public int BoVFromEnergy => BoV.BoVFromEnergy;
         public int BoVFromLab => BoV.BoVFromLab;
         // Just for binding purposes (displaying the value in the textbox)
         public int BoVFromItemShop => BoV.BoVFromItemShop;
         public int BoVTotalWeekly => BoV.TotalBoVWeekly;
-        public int ChaserCrystalsFromEnergy => ChaserCrystals.ChaserCrystalsFromEnergy;
-        public int ChaserCrystalsFromDD => ChaserCrystals.ChaserCrystalsFromDefenceMode; 
-        public int ChaserCrystalsTotalWeekly => ChaserCrystals.ChaserCrystalsTotalWeekly;
-        public int SoulEssencesTotalWeekly => SoulEssences.SoulEssencesTotalWeekly;
-        public double SoulEssencesWeeksNeeded => SoulEssences.WeeksForFullSi;
-        public int BlueGemsFromAc => BlueGems.BlueGemsFromAC;
+        public int GrowthEssenceFromEnergy => GrowthEssences.GrowthEssenceFromEnergy;
+        public int GrowthEssenceFromDefenceMode => GrowthEssences.GrowthEssenceFromDefenceMode; 
+        public int GrowthEssencesTotalWeekly => GrowthEssences.GrowthEssenceTotalWeekly;
+        public double SoulEssencesSIWeeksNeeded => GrowthEssences.WeeksForFullSi;
+        public double SoulEssencesCSWeeksNeeded => GrowthEssences.WeeksForFullChaser;
+        public int BGFromDefenseMode => BlueGems.BlueGemsFromDefenceMode;
+        public int BGFromEnergy => BlueGems.BlueGemsFromEnergy;
         public int BlueGemsWeeklyTotal => OverrideBlueGems ? CustomBlueGems : BlueGems.BlueGemsWeeklyTotal;
-        public double BlueGemsPerCube => BlueGems.AwakeningCubeUpgrades.FirstOrDefault(t => t.Type == AcUpgradeType)?.BlueGemPerCube ?? 0;
-        public int SiCubesFromBg => SoulImprintCubes.CubesFromBlueGems;
-        public int SiCubesFromAnni => SoulImprintCubes.CubesFromAnni;
-        public int SiCubesTotalWeekly => SoulImprintCubes.CubesTotalWeekly;
-        public double SiCubesWeeksNeeded => SoulImprintCubes.WeeksForFullSi;
-        public double SiCubesSrWeeksNeeded => SoulImprintCubes.WeeksForFullSiSr;
-        public double SiCubesNoEventWeeksNeeded => SoulImprintCubes.WeeksForFullSiNoEvent;
+        public double BGFromSellingHeroes => BlueGems.SellRarityTypes.FirstOrDefault(t => t.Type == SellRarityType)?.Sell ?? 0;
+        public int GrowthCubesFromBg => GrowthCubes.CubesFromBlueGems;
+        public int GrowthCubesFromAnni => GrowthCubes.CubesFromAnni;
+        public int GrowthCubesTotalWeekly => GrowthCubes.CubesTotalWeekly;
+        public double GrowthCubesCSSrWeeksNeeded => GrowthCubes.WeeksForFullChaser;
+        public double GrowthCubesCSNoEventWeeksNeeded => GrowthCubes.WeeksForFullChaserSr;
+        public double GrowthCubesSIWeeksNeeded => GrowthCubes.WeeksForFullSi;
+        public double GrowthCubesSISrWeeksNeeded => GrowthCubes.WeeksForFullSiSr;
+        public double GrowthCubesSINoEventWeeksNeeded => GrowthCubes.WeeksForFullSiNoEvent;
 
         public EnergyCalculatorView()
         {

@@ -725,7 +725,7 @@ namespace GCManagementApp.UserControls
             for (int i = 0; i < 3; i++)
             {
                 var transString = TesseractOperations.ReadText(transImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
-                if (int.TryParse(transString, out trans) && trans > 0 && trans <= StaticValues.MaxTranscendenceLevel)
+                if (int.TryParse(transString, out trans) && trans >= 0 && trans <= StaticValues.MaxTranscendenceLevel)
                 {
                     result.Trans = trans;
                     break;
