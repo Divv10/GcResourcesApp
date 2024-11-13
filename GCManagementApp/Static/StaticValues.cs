@@ -11,7 +11,7 @@ namespace GCManagementApp.Static
         public static readonly double MaxSiLevel = 15;
         public static readonly double MaxClLevel = 25;
         public static readonly double MaxPetLevel = 80;
-        public static readonly double MaxLevel = 220;
+        public static readonly double MaxLevel = 230;
         public static readonly double MaxTranscendenceLevel = 6;
 
         public static readonly double MaxAccessoryLevel = 9;

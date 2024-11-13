@@ -1,5 +1,6 @@
 ﻿using GCManagementApp.Enums;
 using GCManagementApp.Models;
+using GCManagementApp.Static;
 using PixelLab.Common;
 using System;
 using System.Collections.Generic;
@@ -22,161 +23,161 @@ namespace GCManagementApp.Helpers
 
         public static void GetRecommendedBuilds()
         {
-            GetContentKeys();
+            //GetContentKeys();
             //GetEquipment();
             GetBuilds();
         }
 
         public static RecommendedBuild GetBuildForHero(Tuple<HeroEnum, HeroType> hero)
         {
-            ContentKeys.TryGetValue(hero, out var ck);
-            RecommendedEquipments.TryGetValue(hero, out var re);
+            //ContentKeys.TryGetValue(hero, out var ck);
+            //RecommendedEquipments.TryGetValue(hero, out var re);
             Builds.TryGetValue(hero, out var build);
 
-            return new RecommendedBuild() { ContentKeys = ck, HeroBuild = build, RecommendedEquips = re };
+            return new RecommendedBuild() { HeroBuild = build };
         }
 
-        private static void GetContentKeys()
-        {
-            ContentKeys = new Dictionary<Tuple<HeroEnum, HeroType>, List<ContentKey>>();
+        // private static void GetContentKeys()
+        // {
+        //    ContentKeys = new Dictionary<Tuple<HeroEnum, HeroType>, List<ContentKey>>();
 
-            var gsh = new GoogleSheetsHelper(GoogleAuth.DatabaseSheetId, GoogleAuth.ContentKeysSheetName);
-            var gsp = new GoogleSheetParameters() { RangeColumnStart = 2, RangeRowStart = 1, RangeColumnEnd = 8, RangeRowEnd = 100, FirstRowIsHeaders = false, SheetName = gsh.SheetName };
-            var values = gsh.GetDataFromSheet(gsp);
+        //    var gsh = new GoogleSheetsHelper(GoogleAuth.DatabaseSheetId, GoogleAuth.ContentKeysSheetName);
+        //    var gsp = new GoogleSheetParameters() { RangeColumnStart = 2, RangeRowStart = 1, RangeColumnEnd = 8, RangeRowEnd = 100, FirstRowIsHeaders = false, SheetName = gsh.SheetName };
+        //    var values = gsh.GetDataFromSheet(gsp);
 
-            string lastName = null;
-            foreach (IDictionary<string, object> contentKey in values)
-            {
-                var name = contentKey["Column0"] as string;
-                var key = contentKey["Column6"] as string;
+        //    string lastName = null;
+        //    foreach (IDictionary<string, object> contentKey in values)
+        //    {
+        //        var name = contentKey["Column0"] as string;
+        //        var key = contentKey["Column6"] as string;
 
-                if (string.IsNullOrWhiteSpace(key))
-                    continue;
+        //        if (string.IsNullOrWhiteSpace(key))
+        //            continue;
 
-                if (string.IsNullOrWhiteSpace(name))
-                    name = lastName;
-                else
-                    lastName = name;
+        //        if (string.IsNullOrWhiteSpace(name))
+        //            name = lastName;
+        //        else
+        //            lastName = name;
 
-                var index = key.IndexOf("V1_");
-                var ck = new ContentKey() { Name = name, Key = key.Substring(index + 3), Heroes = new List<string>() };
+        //        var index = key.IndexOf("V1_");
+        //        var ck = new ContentKey() { Name = name, Key = key.Substring(index + 3), Heroes = new List<string>() };
 
-                var heroes = key.Split('_', StringSplitOptions.RemoveEmptyEntries).Take(4);
-                foreach (var hero in heroes)
-                {
-                    Tuple<HeroEnum, HeroType> contentHero = null;
-                    if (hero.Contains("(T)"))
-                    {
-                        var heroName = hero.Replace("(T)", "").Replace("MyungHwarin", "Hwarin");
-                        if (Enum.TryParse<HeroEnum>(heroName, true, out var h))
-                        {
-                            contentHero = new Tuple<HeroEnum, HeroType>(h, HeroType.T);
-                        }
-                    }
-                    else if (hero.Contains("(S)"))
-                    {
-                        var heroName = hero.Replace("(S)", "").Replace("MyungHwarin", "Hwarin");
-                        if (Enum.TryParse<HeroEnum>(heroName, true, out var h))
-                        {
-                            contentHero = new Tuple<HeroEnum, HeroType>(h, HeroType.S);
-                        }
-                    }
-                    else
-                    {
-                        if (Enum.TryParse<HeroEnum>(hero.Replace("MyungHwarin", "Hwarin"), true, out var h))
-                        {
-                            contentHero = new Tuple<HeroEnum, HeroType>(h, HeroType.SR);
-                        }
-                    }
+        //        var heroes = key.Split('_', StringSplitOptions.RemoveEmptyEntries).Take(4);
+        //        foreach (var hero in heroes)
+        //        {
+        //            Tuple<HeroEnum, HeroType> contentHero = null;
+        //            if (hero.Contains("(T)"))
+        //            {
+        //                var heroName = hero.Replace("(T)", "").Replace("MyungHwarin", "Hwarin");
+        //                if (Enum.TryParse<HeroEnum>(heroName, true, out var h))
+        //                {
+        //                    contentHero = new Tuple<HeroEnum, HeroType>(h, HeroType.T);
+        //                }
+        //            }
+        //            else if (hero.Contains("(S)"))
+        //            {
+        //                var heroName = hero.Replace("(S)", "").Replace("MyungHwarin", "Hwarin");
+        //                if (Enum.TryParse<HeroEnum>(heroName, true, out var h))
+        //                {
+        //                    contentHero = new Tuple<HeroEnum, HeroType>(h, HeroType.S);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                if (Enum.TryParse<HeroEnum>(hero.Replace("MyungHwarin", "Hwarin"), true, out var h))
+        //                {
+        //                    contentHero = new Tuple<HeroEnum, HeroType>(h, HeroType.SR);
+        //                }
+        //            }
 
-                    if (contentHero != null )
-                    {
-                        ck.Heroes.Add($"{contentHero.Item1}{contentHero.Item2}");
-                        if (ContentKeys.TryGetValue(contentHero, out var keysList))
-                        {
-                            keysList.Add(ck);
-                        }
-                        else
-                        {
-                            ContentKeys.Add(contentHero, new List<ContentKey> { ck });
-                        }
-                    }
-                }
-            }
-        }
+        //            if (contentHero != null )
+        //            {
+        //                ck.Heroes.Add($"{contentHero.Item1}{contentHero.Item2}");
+        //                if (ContentKeys.TryGetValue(contentHero, out var keysList))
+        //                {
+        //                    keysList.Add(ck);
+        //                }
+        //                else
+        //                {
+        //                    ContentKeys.Add(contentHero, new List<ContentKey> { ck });
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
-        private static void GetEquipment()
-        {
-            RecommendedEquipments = new Dictionary<Tuple<HeroEnum, HeroType>, List<RecommendedEquipment>>();
+        //private static void GetEquipment()
+        //{
+        //    RecommendedEquipments = new Dictionary<Tuple<HeroEnum, HeroType>, List<RecommendedEquipment>>();
 
-            var gsh = new GoogleSheetsHelper(GoogleAuth.DatabaseSheetId, GoogleAuth.EquipmentSheetName);
-            var gsp = new GoogleSheetParameters() { RangeColumnStart = 1, RangeRowStart = 1, RangeColumnEnd = 4, RangeRowEnd = 100, FirstRowIsHeaders = false, SheetName = gsh.SheetName };
-            var values = gsh.GetDataFromSheet(gsp);
+        //    var gsh = new GoogleSheetsHelper(GoogleAuth.DatabaseSheetId, GoogleAuth.EquipmentSheetName);
+        //    var gsp = new GoogleSheetParameters() { RangeColumnStart = 1, RangeRowStart = 1, RangeColumnEnd = 25, RangeRowEnd = 145, FirstRowIsHeaders = false, SheetName = gsh.SheetName };
+        //    var values = gsh.GetDataFromSheet(gsp, true);
 
-            List<string[]> vals = new List<string[]>();
-            foreach (IDictionary<string, object> eq in values)
-            {
-                var entry = new string[] { eq["Column0"] as string, eq["Column1"] as string, eq["Column2"] as string, eq["Column3"] as string };
-                for (int i = 0; i < entry.Length; i++)
-                {
-                    if (entry[i]?.IsNullOrWhiteSpace() == true)
-                    {
-                        entry[i] = vals.Last()[i];
-                    }
-                }
+        //    List<string[]> vals = new List<string[]>();
+        //    foreach (IDictionary<string, object> eq in values)
+        //    {
+        //        var entry = new string[] { eq["Column0"] as string, eq["Column1"] as string, eq["Column2"] as string, eq["Column3"] as string };
+        //        for (int i = 0; i < entry.Length; i++)
+        //        {
+        //            if (entry[i]?.IsNullOrWhiteSpace() == true)
+        //            {
+        //                entry[i] = vals.Last()[i];
+        //            }
+        //        }
 
-                vals.Add(entry);
+        //        vals.Add(entry);
 
-                var equipment = new RecommendedEquipment() { SubStat = entry[1], Description = entry[3] };
-                switch (entry[0])
-                {
-                    case "Blue + Red":
-                        equipment.SetColor = GearSet.RedBlue; break;
-                    case "Red":
-                        equipment.SetColor = GearSet.Red; break;
-                    case "Pink":
-                        equipment.SetColor = GearSet.Purple; break;
-                    case "Orange":
-                        equipment.SetColor = GearSet.Orange; break;
-                    case "Green":
-                        equipment.SetColor = GearSet.Green; break;
-                }
+        //        var equipment = new RecommendedEquipment() { SubStat = entry[1], Description = entry[3] };
+        //        switch (entry[0])
+        //        {
+        //            case "Blue + Red":
+        //                equipment.SetColor = GearSet.RedBlue; break;
+        //            case "Red":
+        //                equipment.SetColor = GearSet.Red; break;
+        //            case "Pink":
+        //                equipment.SetColor = GearSet.Purple; break;
+        //            case "Orange":
+        //                equipment.SetColor = GearSet.Orange; break;
+        //            case "Green":
+        //                equipment.SetColor = GearSet.Green; break;
+        //        }
 
-                var heroes = entry[2].Split(',', StringSplitOptions.RemoveEmptyEntries);
-                foreach (var h in heroes)
-                {
-                    Tuple<HeroEnum, HeroType> contentHero = null;
-                    var name = h.Replace("[?]", "").Replace(" ", "").Trim();
-                    if (name.EndsWith("T"))
-                    {
-                        name = name.Replace("T", "");
-                        if (Enum.TryParse<HeroEnum>(name, true, out var heroEnum))
-                        {
-                            contentHero = new Tuple<HeroEnum, HeroType>(heroEnum, HeroType.T);
-                        }
-                    }
-                    else
-                    {
-                        if (Enum.TryParse<HeroEnum>(name, true, out var heroEnum))
-                        {
-                            contentHero = new Tuple<HeroEnum, HeroType>(heroEnum, HeroType.SR);
-                        }
-                    }
+        //        var heroes = entry[2].Split(',', StringSplitOptions.RemoveEmptyEntries);
+        //        foreach (var h in heroes)
+        //        {
+        //            Tuple<HeroEnum, HeroType> contentHero = null;
+        //            var name = h.Replace("[?]", "").Replace(" ", "").Trim();
+        //            if (name.EndsWith("T"))
+        //            {
+        //                name = name.Replace("T", "");
+        //                if (Enum.TryParse<HeroEnum>(name, true, out var heroEnum))
+        //                {
+        //                    contentHero = new Tuple<HeroEnum, HeroType>(heroEnum, HeroType.T);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                if (Enum.TryParse<HeroEnum>(name, true, out var heroEnum))
+        //                {
+        //                    contentHero = new Tuple<HeroEnum, HeroType>(heroEnum, HeroType.SR);
+        //                }
+        //            }
 
-                    if (contentHero != null)
-                    {
-                        if (RecommendedEquipments.TryGetValue(contentHero, out var equips))
-                        {
-                            equips.Add(equipment);
-                        }
-                        else
-                        {
-                            RecommendedEquipments.Add(contentHero, new List<RecommendedEquipment> { equipment });
-                        }
-                    }
-                }
-            }
-        }
+        //            if (contentHero != null)
+        //            {
+        //                if (RecommendedEquipments.TryGetValue(contentHero, out var equips))
+        //                {
+        //                    equips.Add(equipment);
+        //                }
+        //                else
+        //                {
+        //                    RecommendedEquipments.Add(contentHero, new List<RecommendedEquipment> { equipment });
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         private static void GetBuilds()
         {
@@ -188,35 +189,47 @@ namespace GCManagementApp.Helpers
 
             foreach (IDictionary<string, object> build in values)
             {
-                var name = build["Column0"] as string;
-                var lb1 = build["Column1"] as string;
-                var lb2 = build["Column2"] as string;
-                var sets = build["Column3"] as string;
-                var enchant1 = build["Column4"] as string;
-                var substat1 = build["Column5"] as string;
-                var enchant2 = build["Column6"] as string;
-                var enchant3 = build["Column7"] as string;
-                var cs1 = build["Column8"] as string;
-                var cs2 = build["Column9"] as string;
-                var cs3 = build["Column10"] as string;
-                var cs4 = build["Column11"] as string;
-                var cs5 = build["Column12"] as string;
-                var trait1 = build["Column13"] as string;
-                var trait2 = build["Column14"] as string;
-                var trait3 = build["Column15"] as string;
-                var trait4 = build["Column16"] as string;
-                var acc1 = build["Column17"] as string;
-                var acc2 = build["Column18"] as string;
-                var acc3 = build["Column19"] as string;
+                var name = build["Column2"] as string;
+                //var sets = build["Column3"] as string;
+                //var enchant1 = build["Column4"] as string;
+                //var substat1 = build["Column5"] as string;
+                //var enchant2 = build["Column6"] as string;
+                //var enchant3 = build["Column7"] as string;
+                var cs1 = build["Column3"] as string;
+                var cs2 = build["Column4"] as string;
+                var cs3 = build["Column5"] as string;
+                var cs4 = build["Column6"] as string;
+                var cs5 = build["Column7"] as string;
+                var trait1 = build["Column8"] as string;
+                var trait2 = build["Column9"] as string;
+                var trait3 = build["Column10"] as string;
+                var trait4 = build["Column11"] as string;
+                var acc1 = build["Column12"] as string;
+                var acc2 = build["Column13"] as string;
+                var acc3 = build["Column14"] as string;
 
                 Tuple<HeroEnum, HeroType> contentHero = null;
-                name = name.Replace("[?]", "").Replace(" ", "").Trim();
+                name = name.Replace(" ", "").Trim();
                 if (name.EndsWith("T"))
                 {
-                    name = name.Replace("T", "");
+                    if (name != "TiaT")
+                    {
+                        name = name.Replace("T", "");
+                    } else
+                    {
+                        name = "Tia";
+                    }
                     if (Enum.TryParse<HeroEnum>(name, true, out var heroEnum))
                     {
                         contentHero = new Tuple<HeroEnum, HeroType>(heroEnum, HeroType.T);
+                    }
+                }
+                else if (name.EndsWith("S"))
+                {
+                    name = name.Replace("S", "");
+                    if (Enum.TryParse<HeroEnum>(name, true, out var heroEnum))
+                    {
+                        contentHero = new Tuple<HeroEnum, HeroType>(heroEnum, HeroType.S);
                     }
                 }
                 else
@@ -229,7 +242,7 @@ namespace GCManagementApp.Helpers
 
                 if (contentHero != null)
                 {
-                    var b = new HeroBuild() { LimitBreaks = new string[] { lb1, lb2 }, Sets = new List<GearSet>(), Accessories = new string[] { acc1, acc2, acc3 }, CsTraits = new Dictionary<ChaserTraitEnum, int>() };
+                    var b = new HeroBuild() { Accessories = new string[] { acc1, acc2, acc3 }, CsTraits = new Dictionary<ChaserTraitEnum, int>() };
                     Regex rg = new Regex(lookupRegex);
                     for (int i = 0; i < 3; i++)
                     {
@@ -237,32 +250,32 @@ namespace GCManagementApp.Helpers
                         b.Accessories[i] = stat.ToUpperFirstLetter().Replace("2", "");
                     }
 
-                    foreach (var set in sets.Split("/", StringSplitOptions.TrimEntries))
-                    {
-                        GearSet setEnum = GearSet.None;
-                        switch (set)
-                        {
-                            case "R": setEnum = GearSet.Red; break;
-                            case "2R2B": setEnum = GearSet.RedBlue; break;
-                            case "G": setEnum = GearSet.Green; break;
-                            case "O": setEnum = GearSet.Orange; break;
-                            case "P": setEnum = GearSet.Purple; break;
-                        }
+                    //foreach (var set in sets.Split("/", StringSplitOptions.TrimEntries))
+                    //{
+                    //    GearSet setEnum = GearSet.None;
+                    //    switch (set)
+                    //    {
+                    //        case "R": setEnum = GearSet.Red; break;
+                    //        case "2R2B": setEnum = GearSet.RedBlue; break;
+                    //        case "G": setEnum = GearSet.Green; break;
+                    //        case "O": setEnum = GearSet.Orange; break;
+                    //        case "P": setEnum = GearSet.Purple; break;
+                    //    }
 
-                        if (setEnum != GearSet.None)
-                        {
-                            b.Sets.Add(setEnum);
-                            var equipment = new RecommendedEquipment() { SubStat = enchant2, SetColor = setEnum };
-                            if (RecommendedEquipments.TryGetValue(contentHero, out var equips))
-                            {
-                                equips.Add(equipment);
-                            }
-                            else
-                            {
-                                RecommendedEquipments.Add(contentHero, new List<RecommendedEquipment> { equipment });
-                            }
-                        }
-                    }
+                    //    if (setEnum != GearSet.None)
+                    //    {
+                    //        b.Sets.Add(setEnum);
+                    //        var equipment = new RecommendedEquipment() { SubStat = enchant2, SetColor = setEnum };
+                    //        if (RecommendedEquipments.TryGetValue(contentHero, out var equips))
+                    //        {
+                    //            equips.Add(equipment);
+                    //        }
+                    //        else
+                    //        {
+                    //            RecommendedEquipments.Add(contentHero, new List<RecommendedEquipment> { equipment });
+                    //        }
+                    //    }
+                    //}
 
                     foreach (var cs in new[] {cs1, cs2, cs3, cs4, cs5})
                     {

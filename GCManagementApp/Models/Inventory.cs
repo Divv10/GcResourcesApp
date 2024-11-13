@@ -124,8 +124,7 @@ namespace GCManagementApp.Models
         }
 
         public string GrowthEssencesOwned => $"Assault: {AssaultGE} GE, Mage: {MageGE} GE, Ranger: {RangerGE} GE, Healer: {HealerGE} GE, Tank: {TankGE} GE";
-        public string BlueGemsToolTip => string.Format(Properties.Resources.EnoughBGToBuyCC, Math.Floor(BlueGems / 120d), Environment.NewLine, Math.Round((BlueGems / 120d) / 600, 2), Math.Floor(BlueGems / 60d), Math.Round((BlueGems / 60d) / 600, 2));
-        //public string AnniCoinsToolTip => string.Format(Properties.Resources.EnoughCoinsToBuyCC, Math.Floor(AnniCoins / 20d), Environment.NewLine, Math.Floor(AnniCoins / 10d));
+        public string BlueGemsToolTip => string.Format(Properties.Resources.EnoughBGToBuyGC, Math.Floor(BlueGems / 120d), Environment.NewLine, Math.Round((BlueGems / 120d) / 1200, 2));
         public int GrowthCubesFromBlueGems => (int)Math.Floor(BlueGems / 120d);
 
         public int this[InventoryType type]

@@ -256,12 +256,12 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        public int AdditionalSICubes
+        public int AdditionalGCCubes
         {
-            get => ProfileGrowth.Profile.Settings.WeeklyAdditionalSICubes;
+            get => ProfileGrowth.Profile.Settings.WeeklyAdditionalGCCubes;
             set
             {
-                ProfileGrowth.Profile.Settings.WeeklyAdditionalSICubes = value;
+                ProfileGrowth.Profile.Settings.WeeklyAdditionalGCCubes = value;
                 OnPropertyChanged(string.Empty);
             }
         }
@@ -307,12 +307,13 @@ namespace GCManagementApp.UserControls
         // Just for binding purposes (displaying the value in the textbox)
         public int BoVFromItemShop => BoV.BoVFromItemShop;
         public int BoVTotalWeekly => BoV.TotalBoVWeekly;
-        public int ChaserCrystalsFromEnergy => GrowthEssences.GrowthEssenceFromEnergy;
+        public int GrowthEssenceFromEnergy => GrowthEssences.GrowthEssenceFromEnergy;
         public int GrowthEssenceFromDefenceMode => GrowthEssences.GrowthEssenceFromDefenceMode; 
         public int GrowthEssencesTotalWeekly => GrowthEssences.GrowthEssenceTotalWeekly;
         public double SoulEssencesSIWeeksNeeded => GrowthEssences.WeeksForFullSi;
         public double SoulEssencesCSWeeksNeeded => GrowthEssences.WeeksForFullChaser;
         public int BGFromDefenseMode => BlueGems.BlueGemsFromDefenceMode;
+        public int BGFromEnergy => BlueGems.BlueGemsFromEnergy;
         public int BlueGemsWeeklyTotal => OverrideBlueGems ? CustomBlueGems : BlueGems.BlueGemsWeeklyTotal;
         public double BGFromSellingHeroes => BlueGems.SellRarityTypes.FirstOrDefault(t => t.Type == SellRarityType)?.Sell ?? 0;
         public int GrowthCubesFromBg => GrowthCubes.CubesFromBlueGems;

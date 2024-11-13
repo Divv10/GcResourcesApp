@@ -36,6 +36,8 @@ using System.Windows.Threading;
 using System.Security.Policy;
 using System.Threading;
 using GCManagementApp.Enums;
+using GCManagementApp.UserControls;
+using System.Collections.ObjectModel;
 
 namespace GCManagementApp
 {
@@ -114,6 +116,12 @@ namespace GCManagementApp
 
             InitializeApp();
 
+            if (ProfileGrowth.Heroes.Any(x => x.TranscendenceLevel > 6))
+            {
+                TransUpdateCheck();
+                ProfileGrowth.SaveToFile();
+            }
+
             InitializeComponent();
 
             if (Properties.Settings.Default.DarkTheme)
@@ -184,6 +192,61 @@ namespace GCManagementApp
             catch (Exception ex)
             {
                 Log.Logger.Error(ex, "Error during builds download");
+            }
+        }
+
+        private void TransUpdateCheck()
+        {
+            var result = MessageBox.Show("Due to the recent update of Transcendence Levels being changed. Would you like for the app to auto-adjust for you?", "Update Adjustment", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                ProfileGrowth.Heroes.ForEach(h =>
+                {
+                    switch (h.TranscendenceLevel)
+                    {
+                        case 15:
+                            h.TranscendenceLevel = 6;
+                            break;
+
+                        case 14:
+                            h.TranscendenceLevel = 5;
+                            break;
+
+                        case 13:
+                            h.TranscendenceLevel = 5;
+                            break;
+
+                        case 12:
+                            h.TranscendenceLevel = 4;
+                            break;
+
+                        case 11:
+                            h.TranscendenceLevel = 4;
+                            break;
+
+                        case 10:
+                            h.TranscendenceLevel = 3;
+                            break;
+
+                        case 9:
+                            h.TranscendenceLevel = 3;
+                            break;
+
+                        case 8:
+                            h.TranscendenceLevel = 2;
+                            break;
+
+                        case 7:
+                            h.TranscendenceLevel = 1;
+                            break;
+
+
+                        case 6:
+                            h.TranscendenceLevel = 0;
+                            break;
+                    }
+                });
             }
         }
 

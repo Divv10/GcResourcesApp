@@ -13,7 +13,7 @@ namespace GCManagementApp.Static
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageBought ? 3 : 0) +
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageEssentialBought ? 1 : 0)) * 7;
         public static int CubesFromBlueGems => Math.Min(1200, ProfileGrowth.Profile.Settings.OverrideBlueGems ? (ProfileGrowth.Profile.Settings.CustomBlueGems / 120) : (BlueGems.BlueGemsWeeklyTotal / 120));
-        public static int AdditionalCubesWeekly => ProfileGrowth.Profile.Settings.WeeklyAdditionalSICubes;
+        public static int AdditionalCubesWeekly => ProfileGrowth.Profile.Settings.WeeklyAdditionalGCCubes;
         public static int CubesTotalWeekly => CubesFromAnni + CubesFromBlueGems + AdditionalCubesWeekly;
         public static int CubesForFullSi => 3150;
         public static int CubesForFullSiSr => 3000;

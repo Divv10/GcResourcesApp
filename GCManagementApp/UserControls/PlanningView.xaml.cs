@@ -106,7 +106,7 @@ namespace GCManagementApp.UserControls
                 //hp.SiLevelCost = SiLevelingCosts.CalculateCost(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
-                RecalculateSiCubesCost(hp, phg);
+                RecalculateGrowthCubesCost(hp, phg);
 
                 HeroPlans.Add(hp);
             }
@@ -157,7 +157,7 @@ namespace GCManagementApp.UserControls
                     hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                     hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
 
-                    RecalculateSiCubesCost(hp, phg);
+                    RecalculateGrowthCubesCost(hp, phg);
 
                     HeroPlans.Add(hp);
                 }
@@ -189,7 +189,7 @@ namespace GCManagementApp.UserControls
                 var ownedHeroGrowth = ProfileGrowth.Heroes.FirstOrDefault(h => h.Hero.HeroName == hp.HeroName && h.Hero.HeroType == hp.HeroType);
                 hp.CurrentGrowth = new GrowthPlan()
                 {
-                    TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 6),
+                    TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 0),
                     ChaserLevel = ownedHeroGrowth?.ChaserLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 20),
                     SiLevel = ownedHeroGrowth?.SiLevel ?? 0,
                     TraitsOpen = ownedHeroGrowth?.TraitsOpen ?? 0,
@@ -229,7 +229,7 @@ namespace GCManagementApp.UserControls
                 hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                 hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
 
-                RecalculateSiCubesCost(hp, ownedHeroGrowth);
+                RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Add(hp);
 
@@ -242,7 +242,7 @@ namespace GCManagementApp.UserControls
                     }
                     else
                     {
-                        hp.BaseHeroNeedToBeBuilt = baseHero.TranscendenceLevel < 1 || baseHero.ChaserLevel < 20;
+                        hp.BaseHeroNeedToBeBuilt = baseHero.ChaserLevel < 20;
                         if (hp.BaseHeroNeedToBeBuilt && HeroPlans.FirstOrDefault(x => x.Hero.HeroName == hp.HeroName && x.Hero.HeroType == HeroType.SR) is HeroPlan baseHeroPlan && baseHeroPlan != null)
                         {
                             hp.BaseHeroNeedToBeBuilt = HeroPlans.IndexOf(baseHeroPlan) > HeroPlans.IndexOf(hp);
@@ -269,13 +269,10 @@ namespace GCManagementApp.UserControls
                         };
                         heroPlan.DesiredGrowth = new GrowthPlan()
                         {
-                            TranscendenceLevel = 6,
+                            TranscendenceLevel = 0,
                             ChaserLevel = 20,
                             SiLevel = heroPlan.CurrentGrowth.SiLevel,
                         };
-
-                        if (heroPlan.DesiredGrowth.TranscendenceLevel < heroPlan.CurrentGrowth.TranscendenceLevel)
-                            heroPlan.DesiredGrowth.TranscendenceLevel = heroPlan.CurrentGrowth.TranscendenceLevel;
 
                         if (heroPlan.DesiredGrowth.ChaserLevel < heroPlan.CurrentGrowth.ChaserLevel)
                             heroPlan.DesiredGrowth.ChaserLevel = heroPlan.CurrentGrowth.ChaserLevel;
@@ -283,6 +280,9 @@ namespace GCManagementApp.UserControls
                         heroPlan.TCost = TranscendingCosts.CalculateCost(heroPlan.CurrentGrowth.TranscendenceLevel, heroPlan.DesiredGrowth.TranscendenceLevel);
                         heroPlan.ClLevelCost = ChaserLevelingCosts.CalculateCost(heroPlan.CurrentGrowth.ChaserLevel, heroPlan.DesiredGrowth.ChaserLevel);
                         heroPlan.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(heroPlan.CurrentGrowth.SiLevel, heroPlan.DesiredGrowth.SiLevel, heroPlan.CurrentGrowth.TraitsOpen, heroPlan.DesiredGrowth.TraitsOpen, heroPlan.CurrentGrowth.IsCoreOpen, heroPlan.DesiredGrowth.IsCoreOpen);
+
+                        heroPlan.SiLevelCost.GrowthCubesCost += heroPlan.ClLevelCost.GrowthCubesCost;
+                        heroPlan.SiLevelCost.GeCost += heroPlan.ClLevelCost.GrowthEssencesCost;
 
                         HeroPlans.Insert(HeroPlans.IndexOf(hp), heroPlan);
                     }
@@ -383,7 +383,7 @@ namespace GCManagementApp.UserControls
                 hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                 hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
 
-                RecalculateSiCubesCost(hp, ownedHeroGrowth);
+                RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Insert(HeroPlans.IndexOf(heroPlan), hp);
                 HeroPlans.Remove(heroPlan);
@@ -392,7 +392,7 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        private void RecalculateSiCubesCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
+        private void RecalculateGrowthCubesCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
         {
             if (hp.HeroType == Enums.HeroType.T && (ownedHeroGrowth?.IsOwned == false || hp.HeroName == HeroEnum.Custom))
             {
@@ -451,7 +451,7 @@ namespace GCManagementApp.UserControls
 
                 if (hp.Hero.HeroType == Enums.HeroType.T)
                 {
-                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(6, phg.TranscendenceLevel);
+                    hp.CurrentGrowth.TranscendenceLevel = Math.Max(0, phg.TranscendenceLevel);
                     hp.CurrentGrowth.ChaserLevel = Math.Max(20, phg.ChaserLevel);
                 }
                 else if (hp.Hero.HeroType == Enums.HeroType.S)
@@ -469,7 +469,7 @@ namespace GCManagementApp.UserControls
                 hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                 hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
 
-                RecalculateSiCubesCost(hp, phg);
+                RecalculateGrowthCubesCost(hp, phg);
             }
         }
 
@@ -504,7 +504,7 @@ namespace GCManagementApp.UserControls
                     }
                     else
                     {
-                        hp.BaseHeroNeedToBeBuilt = baseHero.TranscendenceLevel < 6 || baseHero.ChaserLevel < 20;
+                        hp.BaseHeroNeedToBeBuilt = baseHero.ChaserLevel < 20;
                         if (hp.BaseHeroNeedToBeBuilt && HeroPlans.FirstOrDefault(x => x.Hero.HeroName == hp.HeroName && x.Hero.HeroType == HeroType.SR) is HeroPlan baseHeroPlan && baseHeroPlan != null)
                         {
                             hp.BaseHeroNeedToBeBuilt = HeroPlans.IndexOf(baseHeroPlan) > HeroPlans.IndexOf(hp);
@@ -517,8 +517,6 @@ namespace GCManagementApp.UserControls
 
                 calcLog.AppendLine("Inventory Before:");
                 calcLog.AppendLine($"Growth Cubes: {currentInventory.GrowthCubes}\r\n");
-
-                hp.ChaserCubesNeeded = currentInventory.GrowthCubes;
 
                 double daysForGCBase = currentInventory.GrowthCubes >= 0 ? 0 : -1 * currentInventory.GrowthCubes / ((double)GrowthCubes.CubesTotalWeekly / 7);
 

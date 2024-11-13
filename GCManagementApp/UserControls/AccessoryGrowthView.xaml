@@ -110,7 +110,7 @@
                            <materialDesign:Flipper.FrontContent>
                               <Grid Width="300" Height="200" Margin="10" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
                                  <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="110" />
+                                    <ColumnDefinition Width="120" />
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="*" />
                                  </Grid.ColumnDefinitions>

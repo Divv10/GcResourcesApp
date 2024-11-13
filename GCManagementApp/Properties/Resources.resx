@@ -126,17 +126,11 @@
   <data name="GEGainedInBossStage" xml:space="preserve">
     <value>GE gained in boss stage</value>
   </data>
-  <data name="ACPerRun" xml:space="preserve">
-    <value>AC per run</value>
-  </data>
   <data name="AdditionalEnergyBoughtWeekly" xml:space="preserve">
     <value>Additional energy bought weekly:</value>
   </data>
   <data name="AdditionalEntries" xml:space="preserve">
     <value>Additional entries</value>
-  </data>
-  <data name="AdditionalXSECanBeCrafter" xml:space="preserve">
-    <value>Additional {0} Soul Essences can be crafted from Chaser Crystals</value>
   </data>
   <data name="AddNew" xml:space="preserve">
     <value>ADD NEW</value>
@@ -170,9 +164,6 @@
   </data>
   <data name="AllT3" xml:space="preserve">
     <value>All T3</value>
-  </data>
-  <data name="AnnihilationCoins" xml:space="preserve">
-    <value>Annihilation coins</value>
   </data>
   <data name="AnyT1" xml:space="preserve">
     <value>Any T1</value>
@@ -210,9 +201,6 @@
   <data name="Attribute" xml:space="preserve">
     <value>Attribute</value>
   </data>
-  <data name="AwakeningCubes" xml:space="preserve">
-    <value>Awakening Cubes</value>
-  </data>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -228,23 +216,14 @@
   <data name="BlueAccSet" xml:space="preserve">
     <value>Blue - Protection of Life</value>
   </data>
-  <data name="BlueGemPerCubeX" xml:space="preserve">
-    <value>Blue Gem per Cube: {0:F2}</value>
-  </data>
   <data name="BlueGems" xml:space="preserve">
     <value>Blue Gems</value>
   </data>
   <data name="BlueGemsFrom15PVP" xml:space="preserve">
     <value>Blue Gems from 15 PvP</value>
   </data>
-  <data name="BlueGemsFromAC" xml:space="preserve">
-    <value>Blue Gems from AC</value>
-  </data>
   <data name="BlueGemsFromPVP" xml:space="preserve">
     <value>Blue Gems from PvP</value>
-  </data>
-  <data name="BlueGemsGainedPerAC" xml:space="preserve">
-    <value>Blue Gems gained per 1 AC</value>
   </data>
   <data name="BlueGemsOptions" xml:space="preserve">
     <value>Blue Gems options</value>
@@ -278,9 +257,6 @@
   </data>
   <data name="BGFromDefenseMode" xml:space="preserve">
     <value>BG from Defense Mode</value>
-  </data>
-  <data name="CCFromEnergy" xml:space="preserve">
-    <value>CC from energy</value>
   </data>
   <data name="BoVGainedInBossStage" xml:space="preserve">
     <value>BoV gained in boss stage</value>
@@ -478,8 +454,8 @@
   <data name="EnergyPackageOptions" xml:space="preserve">
     <value>Energy package options</value>
   </data>
-  <data name="EnergyPackWithAcBoost" xml:space="preserve">
-    <value>Energy pack with AC boost</value>
+  <data name="EnergyPackWithBGBoost" xml:space="preserve">
+    <value>Energy pack with BG boost</value>
   </data>
   <data name="EnergyPerRun" xml:space="preserve">
     <value>Energy per run</value>
@@ -496,12 +472,8 @@
   <data name="EnergyUsedInBossStage" xml:space="preserve">
     <value>Energy used in boss stage</value>
   </data>
-  <data name="EnoughBGToBuyCC" xml:space="preserve">
-    <value>Enough Blue Gems to buy {0} SI Cubes{1}Can clear SI Cubes shop for {2} weeks{1}Enough Blue Gems to buy {3} Chaser Cubes{1}Can clear Chaser Cubes shop for {4} weeks</value>
-    <comment>{1} is new line</comment>
-  </data>
-  <data name="EnoughCoinsToBuyCC" xml:space="preserve">
-    <value>Enough coins to buy {0} SI Cubes{1}Enough coins to buy {2} Chaser Cubes</value>
+  <data name="EnoughBGToBuyGC" xml:space="preserve">
+    <value>Enough Blue Gems to buy {0} Growth Cubes{1}Can clear Growth Cubes shop for {2} weeks</value>
     <comment>{1} is new line</comment>
   </data>
   <data name="EnterHowManyVulcanusRanks" xml:space="preserve">
@@ -639,8 +611,8 @@
   <data name="Mage" xml:space="preserve">
     <value>Mage</value>
   </data>
-  <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
-    <value>Mark if You are buying pack with AC boost</value>
+  <data name="MarkIfYouAreBuyingPackWithBGBoost" xml:space="preserve">
+    <value>Mark if You are buying pack with BG boost</value>
   </data>
   <data name="MarkIfYouWantToOverride" xml:space="preserve">
     <value>Mark if You want to override</value>
@@ -811,9 +783,6 @@
   <data name="Saved" xml:space="preserve">
     <value>Saved</value>
   </data>
-  <data name="SEFromConvertingCC" xml:space="preserve">
-    <value>SE from converting CC</value>
-  </data>
   <data name="SelectRarityHeroUpgradeType" xml:space="preserve">
     <value>Select A/S Hero Rarity</value>
   </data>
@@ -936,20 +905,11 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="TotalACFromAdventure" xml:space="preserve">
     <value>Total AC from adventure</value>
   </data>
-  <data name="TotalACGainedOverWeek" xml:space="preserve">
-    <value>Total AC gained over week</value>
-  </data>
-  <data name="TotalACWeekly" xml:space="preserve">
-    <value>Total AC weekly</value>
-  </data>
   <data name="TotalBGGainedOverWeek" xml:space="preserve">
     <value>Total BG gained over week</value>
   </data>
   <data name="TotalBlueGemsWeekly" xml:space="preserve">
     <value>Total Blue Gems weekly:</value>
-  </data>
-  <data name="TotalCCFromAdventure" xml:space="preserve">
-    <value>Total CC from adventure</value>
   </data>
   <data name="TotalGEWeekly" xml:space="preserve">
     <value>Total GE weekly</value>
@@ -1010,9 +970,6 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="WeeklyACFromDefense" xml:space="preserve">
     <value>Weekly AC from Defense</value>
-  </data>
-  <data name="WeeklyACGain" xml:space="preserve">
-    <value>Weekly Awakening Cubes gain</value>
   </data>
   <data name="WeeklyAernasGraceIncome" xml:space="preserve">
     <value>Weekly Aernas Grace Income:</value>
@@ -1094,9 +1051,6 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="BlueGemsFromWeeklyMission" xml:space="preserve">
     <value>BG from Weekly Mission</value>
   </data>
-  <data name="BlueGemsPerCube" xml:space="preserve">
-    <value />
-  </data>
   <data name="GEFromDefenseMode" xml:space="preserve">
     <value>GE from Defense Mode</value>
   </data>
@@ -1124,25 +1078,22 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="CL25TCost" xml:space="preserve">
     <value>CL25 (T) Cost</value>
   </data>
-  <data name="ACGainedInBossStage" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CCFromDefenseMode" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CCGainedInBossStage" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CCPerRun" xml:space="preserve">
-    <value />
-  </data>
-  <data name="CostInSICubes" xml:space="preserve">
-    <value />
-  </data>
   <data name="CostOfSI15InSE" xml:space="preserve">
     <value />
   </data>
-  <data name="TotalCCWeekly" xml:space="preserve">
+  <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value />
+  </data>
+  <data name="T15" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BlueGemsFromArena" xml:space="preserve">
+    <value>Blue Gems from Arena</value>
+  </data>
+  <data name="GEFromEnergy" xml:space="preserve">
+    <value>GE from Energy</value>
+  </data>
+  <data name="BGFromEnergy" xml:space="preserve">
+    <value>Blue Gems from Energy</value>
   </data>
 </root>

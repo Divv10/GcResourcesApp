@@ -264,6 +264,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _weeklyAdditionalEC, value);
         }
 
+        private bool _isBGBoostActive;
+        public bool IsBGBoostActive
+        {
+            get => _isBGBoostActive;
+            set => SetProperty(ref _isBGBoostActive, value);
+        }
+
         private bool _isECBoostActive;
         public bool IsECBoostActive
         {
@@ -271,11 +278,11 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _isECBoostActive, value);
         }
 
-        private int _weeklyAdditionalSICubes;
-        public int WeeklyAdditionalSICubes
+        private int _weeklyAdditionalGCCubes;
+        public int WeeklyAdditionalGCCubes
         {
-            get => _weeklyAdditionalSICubes;
-            set => SetProperty(ref _weeklyAdditionalSICubes, value);
+            get => _weeklyAdditionalGCCubes;
+            set => SetProperty(ref _weeklyAdditionalGCCubes, value);
         }
 
         //Adding entry here makes it that this value will be saved into profile file, and remembered between app restars

@@ -49,7 +49,7 @@
                <materialDesign:Chip Content="{Binding Build.HeroBuild.LimitBreaks[1]}" Icon="T6" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center"/>
             </StackPanel>-->
 
-            <Label Grid.Row="2" Grid.RowSpan="1" Content="Sets" VerticalAlignment="Center" Margin="0,10,10,10"/>
+                <!--<Label Grid.Row="2" Grid.RowSpan="1" Content="Sets" VerticalAlignment="Center" Margin="0,10,10,10"/>
             <ItemsControl Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Build.RecommendedEquips}">
                <ItemsControl.ItemContainerStyle>
                   <Style>
@@ -90,16 +90,16 @@
                      </Grid>
                   </DataTemplate>
                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            </ItemsControl>-->
 
 
-            <Label Grid.Row="3" Grid.RowSpan="1" Content="Chaser traits" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <Label Grid.Row="1" Grid.RowSpan="1" Content="Chaser traits" VerticalAlignment="Center" Margin="0,10,10,10"/>
             <!--<Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Build.HeroBuild.CsTraits[(enums:ChaserTraitEnum)SoulHelper]}" />-->
-            <local:ChaserTreeUserControl Grid.Row="3" Grid.Column="1" ChaserTraits="{Binding Build.HeroBuild.CsTraits, RelativeSource={RelativeSource AncestorType=local:RecommendedBuildsUserControl}}" HorizontalAlignment="Left" Margin="0,10"/>
+            <local:ChaserTreeUserControl Grid.Row="1" BorderBrush="Black" Grid.Column="1" ChaserTraits="{Binding Build.HeroBuild.CsTraits, RelativeSource={RelativeSource AncestorType=local:RecommendedBuildsUserControl}}" HorizontalAlignment="Left" Margin="0,10"/>
 
-            <Label Grid.Row="4" Grid.RowSpan="1" Content="Accessories" VerticalAlignment="Center" Margin="0,10,10,10"/>
-            <StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-               <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[0]}">
+            <Label Grid.Row="2" Grid.RowSpan="1" Content="Accessories" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+               <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[0]}">
                   <materialDesign:Chip.Icon>
                      <materialDesign:PackIcon Kind="Ring" />
                   </materialDesign:Chip.Icon>
@@ -109,15 +109,15 @@
                      <materialDesign:PackIcon Kind="Necklace" />
                   </materialDesign:Chip.Icon>
                </materialDesign:Chip>
-               <materialDesign:Chip Grid.Column="2" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[2]}">
+               <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[2]}">
                   <materialDesign:Chip.Icon>
                      <materialDesign:PackIcon Kind="GlobeLightOutline" />
                   </materialDesign:Chip.Icon>
                </materialDesign:Chip>
             </StackPanel>
 
-            <Label Grid.Row="5" Grid.RowSpan="1" Content="Used in" VerticalAlignment="Center" Margin="0,10,10,10"/>
-            <ItemsControl Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Build.ContentKeys}">
+            <!--<Label Grid.Row="4" Grid.RowSpan="1" Content="Used in" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <ItemsControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Build.ContentKeys}">
                <ItemsControl.ItemContainerStyle>
                   <Style>
                      <Setter Property="FrameworkElement.Margin" Value="0,5"/>
@@ -149,7 +149,7 @@
                      </Grid>
                   </DataTemplate>
                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            </ItemsControl>-->
          </Grid>
       </ScrollViewer>
       <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
