@@ -137,6 +137,7 @@ namespace GCManagementApp.Models
             new Hero(HeroEnum.Arme, HeroType.S, HeroClass.Mage, HeroAttribute.Blue),
             new Hero(HeroEnum.Deia, HeroType.SR, HeroClass.Ranger, HeroAttribute.Yellow),
             new Hero(HeroEnum.Tia, HeroType.T, HeroClass.Assault, HeroAttribute.Red),
+            new Hero(HeroEnum.Ryan, HeroType.T, HeroClass.Mage, HeroAttribute.Red),
             new Hero(HeroEnum.Urara, HeroType.SR, HeroClass.Healer, HeroAttribute.Green),
             new Hero(HeroEnum.Ganymede, HeroType.T, HeroClass.Ranger, HeroAttribute.Blue)
         };
