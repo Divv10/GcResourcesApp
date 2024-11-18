@@ -110,7 +110,7 @@ namespace GCManagementApp.UserControls
             Sweeps.CollectionChanged += OnSweepsChanged;
         }
 
-        private void OnSweepsChanged(object? sender, NotifyCollectionChangedEventArgs e)
+        private void OnSweepsChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             Save(null);
         }

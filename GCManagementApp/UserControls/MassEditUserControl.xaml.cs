@@ -186,7 +186,7 @@ namespace GCManagementApp.UserControls
 
         #endregion
 
-        private void HeroesPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        private void HeroesPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             ProfileGrowth.SaveToFile();
         }

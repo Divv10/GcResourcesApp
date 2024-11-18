@@ -29,10 +29,10 @@ namespace GCManagementApp.Models
         public GoogleLoginStatus GoogleLoginStatus { get; set; }
         [XmlIgnore]
         [JsonIgnore]
-        public UserCredential? GoogleUserCredentials { get; set; }
+        public UserCredential GoogleUserCredentials { get; set; }
         [XmlIgnore]
         [JsonIgnore]
-        public DriveService? GoogleDriveService { get; set; }
+        public DriveService GoogleDriveService { get; set; }
         [XmlIgnore]
         [JsonIgnore]
         public string GoogleDisplayName { get; set; }

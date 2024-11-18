@@ -56,7 +56,6 @@ namespace GCManagementApp.UserControls
         }
 
         public string CalculationLog { get; set; }
-        private StringBuilder calcLog;
 
         public ExclusiveWeaponPlanningView()
         {

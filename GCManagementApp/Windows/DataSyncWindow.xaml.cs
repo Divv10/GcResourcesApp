@@ -63,7 +63,7 @@ namespace GCManagementApp.Windows
             }
         }
 
-        private void OnWindowClosing(object? sender, CancelEventArgs e)
+        private void OnWindowClosing(object sender, CancelEventArgs e)
         {
             Closing -= OnWindowClosing;
             if (CloseAction != null)

@@ -44,7 +44,7 @@ namespace GCManagementApp.Windows
             }
         }
 
-        private void ShowRegionWindow_Closing(object? sender, CancelEventArgs e)
+        private void ShowRegionWindow_Closing(object sender, CancelEventArgs e)
         {
             var thisWindow = EmulatorConnectionInfo.RegionWindowList.FirstOrDefault(w => w == this);
             if (thisWindow != null)

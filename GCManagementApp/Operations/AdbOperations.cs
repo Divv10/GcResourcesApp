@@ -129,7 +129,7 @@ namespace GCManagementApp.Operations
             return ToImage(fm);
         }
 
-        public static Bitmap? ToImage(byte[] buffer, Framebuffer fb)
+        public static Bitmap ToImage(byte[] buffer, Framebuffer fb)
         {
             // This happens, for example, when DRM is enabled. In that scenario, no screenshot is taken on the device and an empty
             // framebuffer is returned; we'll just return null.
@@ -248,7 +248,7 @@ namespace GCManagementApp.Operations
             throw new NotSupportedException($"Pixel depths of {fb.Header.Bpp} are not supported");
         }
 
-        public static Bitmap? ToImage(Framebuffer fb)
+        public static Bitmap ToImage(Framebuffer fb)
         {
             return fb.Data == null ? throw new InvalidOperationException($"Call {nameof(fb.Refresh)} first") : ToImage(fb.Data, fb);
         }

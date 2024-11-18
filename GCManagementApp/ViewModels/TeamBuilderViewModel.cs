@@ -127,7 +127,7 @@ namespace GCManagementApp.ViewModels
             ContentTeams.Clear();
         }
 
-        private async void SaveToClipboard(object param)
+        private void SaveToClipboard(object param)
         {
             //VulcaTeamScroller.ScrollToHome();
             //await Task.Delay(1000);

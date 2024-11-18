@@ -256,7 +256,7 @@ namespace GCManagementApp
             HeroTab.EditHero(character, true);
         }
 
-        private void TaskScheduler_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
+        private void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {
             Log.Error(e.Exception, "TaskScheduler Unhandled exception");
         }

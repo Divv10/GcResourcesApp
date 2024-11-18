@@ -181,7 +181,7 @@ namespace GCManagementApp.Windows
                 {
                     profile = Profile.LoadFromStreamJson(stream);
                 }
-                catch (JsonReaderException ex)
+                catch (JsonReaderException)
                 {
                     cts = new CancellationTokenSource();
                     cts.CancelAfter(TimeSpan.FromSeconds(15));
