@@ -200,7 +200,7 @@ namespace GCManagementApp.UserControls
             };
         }
 
-        private void HeroPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        private void HeroPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             ProfileGrowth.SaveToFile();
             RefreshCollections();

@@ -253,7 +253,7 @@ namespace GCManagementApp.UserControls
                     dssw.Activate();
                 }
             }
-            catch (ScanningCanceledException e)
+            catch (ScanningCanceledException)
             {
                 IsRunning = false;
                 MessageBox.Show("Scanning has been manually stopped");
@@ -332,7 +332,7 @@ namespace GCManagementApp.UserControls
             await AdbOperations.Swipe(swipeToPoint, midPoint, 1500, EmulatorConnectionInfo.UseBatchCmdToSwipe);
         }
 
-        private Hero? GetHeroFromNameWithOCR(Bitmap img, Rectangle nameArea)
+        private Hero GetHeroFromNameWithOCR(Bitmap img, Rectangle nameArea)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -360,7 +360,7 @@ namespace GCManagementApp.UserControls
             return null;
         }
 
-        private Hero? GetHeroFromNameWithIR(Bitmap img, Rectangle nameArea)
+        private Hero GetHeroFromNameWithIR(Bitmap img, Rectangle nameArea)
         {
             var nameImg = img.CropImage(nameArea);
             //nameImg.ToImageSource().DisplayImage();
@@ -391,7 +391,7 @@ namespace GCManagementApp.UserControls
             return null;
         }
 
-        private Hero? GetHeroFromNamePrecise(Bitmap img, Rectangle nameArea)
+        private Hero GetHeroFromNamePrecise(Bitmap img, Rectangle nameArea)
         {
             Dictionary<string, double> values = new Dictionary<string, double>();
 

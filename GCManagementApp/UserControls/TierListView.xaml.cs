@@ -85,10 +85,10 @@ namespace GCManagementApp.UserControls
 
             CopyToClipboardCommand = new RelayCommand(CopyToClipboard);
 
-            SiList.IsVisibleChanged += IsVisibleChanged;
-            ClList.IsVisibleChanged += IsVisibleChanged;
-            AccList.IsVisibleChanged += IsVisibleChanged;
-            EwList.IsVisibleChanged += IsVisibleChanged;
+            SiList.IsVisibleChanged += IsVisibleChangedDep;
+            ClList.IsVisibleChanged += IsVisibleChangedDep;
+            AccList.IsVisibleChanged += IsVisibleChangedDep;
+            EwList.IsVisibleChanged += IsVisibleChangedDep;
         }
 
         private void RefreshCollections()
@@ -177,7 +177,7 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        private void IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void IsVisibleChangedDep(object sender, DependencyPropertyChangedEventArgs e)
         {
             if ((bool)e.NewValue)
             {

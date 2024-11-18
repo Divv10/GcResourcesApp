@@ -156,12 +156,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GrandChaseRepo\GcProcessingLib\GcProcessingLib.csproj">
-      <Project>{E62E0584-C92F-4403-9BFB-CC35449BBA58}</Project>
-      <Name>GcProcessingLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Heroes\Icons\*.png" />
   </ItemGroup>
   <ItemGroup>
