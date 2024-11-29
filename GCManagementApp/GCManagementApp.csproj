@@ -6,8 +6,8 @@
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <AssemblyVersion>4.1.4</AssemblyVersion>
-    <FileVersion>4.1.4</FileVersion>
+    <AssemblyVersion>4.2.1</AssemblyVersion>
+    <FileVersion>4.2.1</FileVersion>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
