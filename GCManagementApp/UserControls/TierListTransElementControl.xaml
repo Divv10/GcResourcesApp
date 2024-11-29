@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="GCManagementApp.UserControls.TierListTransElementControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GCManagementApp.UserControls"
+             xmlns:converters="clr-namespace:GCManagementApp.Converters"
+             xmlns:enums="clr-namespace:GCManagementApp.Enums"
+             mc:Ignorable="d"
+             d:DesignHeight="70" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:HeroCollectionToCountConverter x:Key="HeroCollectionToCountConverter" />
+        <converters:HeroToImageConverter x:Key="HeroToImageConverter" />
+        <converters:LevelToProgressValueConverter x:Key="LevelToProgressValueConverter" />
+    </UserControl.Resources>
+    <Grid Margin="0,0,0,10" Background="{DynamicResource MaterialDesignCardBackground}">
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Setter Property="Visibility" Value="Visible" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Collection, Converter={StaticResource HeroCollectionToCountConverter}}" Value="0">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Border Background="{Binding LabelBackground}" />
+        <TextBlock Text="{Binding LabelText}" Grid.Column="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,10,0" TextWrapping="Wrap"/>
+        <ItemsControl ItemsSource="{Binding Collection}" Grid.Column="2">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel ItemHeight="90" ItemWidth="135"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Cursor="Hand">
+                        <Grid.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding EditHeroCommand}" CommandParameter="{Binding}"/>
+                        </Grid.InputBindings>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="70" Height="70"/>
+
+                        <ProgressBar Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="40" Height="40" VerticalAlignment="Center" Foreground="{StaticResource TranscendenceBrush}" Value="{Binding TranscendenceLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Transcendence}}"/>
+                        <Label Grid.Column="1" Grid.RowSpan="2" Content="{Binding TranscendenceLevel}" ContentStringFormat="{}T{0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Text="{Binding Collection, Converter={StaticResource HeroCollectionToCountConverter}}" FontSize="16" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,15,0" />
+        <Border Background="{Binding LabelBackground}" Grid.Column="4"/>
+    </Grid>
+</UserControl>
