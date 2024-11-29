@@ -36,6 +36,7 @@ namespace GCManagementApp.UserControls
 
         public string[] ClLabels { get; set; } = new string[] { Properties.Resources.CL25, String.Format(Properties.Resources.CLX, "20+"), String.Format(Properties.Resources.CLX, "20"), String.Format(Properties.Resources.CLX, "0+"), String.Format(Properties.Resources.CLX, "0"), Properties.Resources.NotOwned};
 
+        public string[] TransLabels { get; set; } = new string[] { "T6", "T5", "T4", "T3", "T2", "T1", "T0", Properties.Resources.NotOwned };
         public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT2, Properties.Resources.AnyT2, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
 
         public string[] EWLabels { get; set; } = new string[] { "+10 - +9" ,"+8", "+5 - +7", "+4", "+0 - +3", Properties.Resources.NotOwned};
@@ -54,6 +55,13 @@ namespace GCManagementApp.UserControls
         {
             get => _clCollections;
             set => SetProperty(ref _clCollections, value);
+        }
+
+        private ObservableCollection<HeroGrowth>[] _transCollections;
+        public ObservableCollection<HeroGrowth>[] TransCollections
+        {
+            get => _transCollections;
+            set => SetProperty(ref _transCollections, value);
         }
 
         private ObservableCollection<HeroGrowth>[] _accessoryCollections;
@@ -111,6 +119,18 @@ namespace GCManagementApp.UserControls
             var clNO = new ObservableCollection<HeroGrowth>(heroes.Where(x => !x.IsOwned).OrderBy(x => x.DisplayName));
 
             ClCollections = new ObservableCollection<HeroGrowth>[] { cl25, cl20p, cl20, cl0p, cl0, clNO };
+
+            var trans6 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 6).OrderByDescending(x => x.DisplayName));
+            var trans5 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 5).OrderByDescending(x => x.DisplayName));
+            var trans4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 4).OrderByDescending(x => x.DisplayName));
+            var trans3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 3).OrderByDescending(x => x.DisplayName));
+            var trans2 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 2).OrderByDescending(x => x.DisplayName));
+            var trans1 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 1).OrderByDescending(x => x.DisplayName));
+            var trans0 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.TranscendenceLevel == 0).OrderBy(x => x.DisplayName));
+            var transNO = new ObservableCollection<HeroGrowth>(heroes.Where(x => !x.IsOwned).OrderBy(x => x.DisplayName));
+
+            TransCollections = new ObservableCollection<HeroGrowth>[] { trans6, trans5, trans4, trans3, trans2, trans1, trans0, transNO};
+
 
             var allT3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T3)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var anyT3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T3)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));

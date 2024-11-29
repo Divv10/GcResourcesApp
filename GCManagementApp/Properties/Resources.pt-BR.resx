@@ -417,9 +417,6 @@
   <data name="EnergyPackageOptions" xml:space="preserve">
     <value>Opções de pacotes de energia</value>
   </data>
-  <data name="EnergyPackWithAcBoost" xml:space="preserve">
-    <value>Pacote de energia com boost de Cubo de Despertar </value>
-  </data>
   <data name="EnergyPerRun" xml:space="preserve">
     <value>Energia por Entrada</value>
   </data>
@@ -572,9 +569,6 @@
   </data>
   <data name="Mage" xml:space="preserve">
     <value>Mago</value>
-  </data>
-  <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
-    <value>Marque se você está comprando pacote com boost de Cubos de Despertar</value>
   </data>
   <data name="MarkIfYouWantToOverride" xml:space="preserve">
     <value>Marque se quiser substituir</value>
@@ -987,14 +981,17 @@
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value>Cubos SI específicos do herói</value>
   </data>
-  <data name="T15" xml:space="preserve">
-    <value>T15</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BlueGemsFromArena" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="GEFromEnergy" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
+  </data>
+  <data name="EnergyPackWithAcBoost" xml:space="preserve">
+    <value>Pacote de energia com boost de Cubo de Despertar </value>
+  </data>
+  <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
+    <value>Marque se você está comprando pacote com boost de Cubos de Despertar</value>
   </data>
 </root>

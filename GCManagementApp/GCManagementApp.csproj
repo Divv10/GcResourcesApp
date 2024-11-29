@@ -238,6 +238,12 @@
     <Compile Update="UserControls\TierListEWControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+	<Compile Update="UserControls\TierListTransControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+	<Compile Update="UserControls\TierListTransElementControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\TierListAccessoryElementControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

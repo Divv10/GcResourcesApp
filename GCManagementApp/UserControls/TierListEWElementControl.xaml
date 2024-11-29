@@ -58,7 +58,7 @@
                   </Grid.RowDefinitions>
                   <Image Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="70" Height="70"/>
 
-                  <ProgressBar Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="40" Height="40" VerticalAlignment="Center" Value="{Binding Equipment.ExclusiveWeaponUpgrade, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.ExclusiveWeapon}}" Visibility="{Binding Equipment.IsExclusiveWeaponOwned,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                  <ProgressBar Grid.Column="1" Grid.RowSpan= "2" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="40" Height="40" VerticalAlignment="Center" Value="{Binding Equipment.ExclusiveWeaponUpgrade, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.ExclusiveWeapon}}" Visibility="{Binding Equipment.IsExclusiveWeaponOwned,Converter={StaticResource BooleanToVisibilityConverter}}"/>
                   <Label Grid.Column="1" Grid.RowSpan="2" Content="{Binding Equipment.ExclusiveWeaponUpgrade}" ContentStringFormat="{}EW +{0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="9" Visibility="{Binding Equipment.IsExclusiveWeaponOwned,Converter={StaticResource BooleanToVisibilityConverter}}"/>
                </Grid>
             </DataTemplate>

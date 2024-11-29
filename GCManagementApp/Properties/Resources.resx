@@ -1084,9 +1084,6 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value />
   </data>
-  <data name="T15" xml:space="preserve">
-    <value />
-  </data>
   <data name="BlueGemsFromArena" xml:space="preserve">
     <value>Blue Gems from Arena</value>
   </data>
@@ -1095,5 +1092,11 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="BGFromEnergy" xml:space="preserve">
     <value>Blue Gems from Energy</value>
+  </data>
+  <data name="EnergyPackWithAcBoost" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
+    <value />
   </data>
 </root>
