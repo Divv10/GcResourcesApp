@@ -140,7 +140,7 @@ namespace GCManagementApp
                 ThemeManager.Current.ChangeTheme(this, "Light.Blue");
             }
 
-            _sparkle = new SparkleUpdater(Properties.Settings.Default.UpdateCheckEndpoint, new Ed25519Checker(SecurityMode.Unsafe, "put Your own sparkle key here"))
+            _sparkle = new SparkleUpdater(Properties.Settings.Default.UpdateCheckEndpoint, new Ed25519Checker(SecurityMode.Unsafe))
             {
                 UIFactory = new NetSparkleUpdater.UI.WPF.UIFactory(),
                 RelaunchAfterUpdate = true,
