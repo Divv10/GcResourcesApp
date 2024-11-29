@@ -115,12 +115,9 @@ namespace GCManagementApp
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
 
             InitializeApp();
-
-            if (ProfileGrowth.Heroes.Any(x => x.TranscendenceLevel > 6))
-            {
-                TransUpdateCheck();
-                ProfileGrowth.SaveToFile();
-            }
+            // Check on start, and the hookup on event
+            CheckProfileForTransUpgrade(null, null);
+            ProfileManager.ProfileChanged += CheckProfileForTransUpgrade;
 
             InitializeComponent();
 
@@ -192,6 +189,15 @@ namespace GCManagementApp
             catch (Exception ex)
             {
                 Log.Logger.Error(ex, "Error during builds download");
+            }
+        }
+
+        private void CheckProfileForTransUpgrade(object sender, EventArgs e)
+        {
+            if (ProfileGrowth.Heroes.Any(x => x.TranscendenceLevel > 6))
+            {
+                TransUpdateCheck();
+                ProfileGrowth.SaveToFile();
             }
         }
 
