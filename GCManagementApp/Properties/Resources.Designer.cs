@@ -196,6 +196,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All T4.
+        /// </summary>
+        public static string AllT4 {
+            get {
+                return ResourceManager.GetString("AllT4", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Any T1.
         /// </summary>
         public static string AnyT1 {
@@ -222,6 +231,15 @@ namespace GCManagementApp.Properties {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to Any T4.
+        /// </summary>
+        public static string AnyT4 {
+            get {
+                return ResourceManager.GetString("AnyT4", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Artifact level.
         /// </summary>
@@ -282,6 +300,15 @@ namespace GCManagementApp.Properties {
         public static string ArtiT4 {
             get {
                 return ResourceManager.GetString("ArtiT4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T5 (Rock of Eternity).
+        /// </summary>
+        public static string ArtiT5 {
+            get {
+                return ResourceManager.GetString("ArtiT5", resourceCulture);
             }
         }
         
@@ -2635,6 +2662,15 @@ namespace GCManagementApp.Properties {
         public static string TranscendenceLevel {
             get {
                 return ResourceManager.GetString("TranscendenceLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transcendence %.
+        /// </summary>
+        public static string TransPercentage {
+            get {
+                return ResourceManager.GetString("TransPercentage", resourceCulture);
             }
         }
         

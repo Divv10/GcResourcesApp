@@ -51,6 +51,7 @@ namespace GCManagementApp.Models
         Bastet,
         Brammashell,
         Deia,
-        Urara
+        Urara,
+        Uno
     }
 }

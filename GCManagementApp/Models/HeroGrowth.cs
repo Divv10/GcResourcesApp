@@ -120,6 +120,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _bp, value);
         }
 
+        private double _transPercentage;
+        public double TransPercentage
+        {
+            get => _transPercentage;
+            set => SetProperty(ref _transPercentage, value);
+        }
+
         private Accessory _ring;
         public Accessory Ring
         {

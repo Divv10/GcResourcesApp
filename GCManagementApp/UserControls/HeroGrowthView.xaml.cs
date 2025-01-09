@@ -368,7 +368,7 @@ namespace GCManagementApp.UserControls
                 if (hg != null)
                 {
                     CurrentHeroGrowth = hg;
-                    SelectedHeroGrowth = new HeroGrowth() { Hero = hg.Hero, IsOwned = hg.IsOwned, Level = hg.Level, ChaserLevel = hg.ChaserLevel, PetLevel = hg.PetLevel, SiLevel = hg.SiLevel, TranscendenceLevel = hg.TranscendenceLevel, Ring = hg.Ring, Earrings = hg.Earrings, Necklace = hg.Necklace, Equipment = hg.Equipment, IsCoreOpen = hg.IsCoreOpen, TraitsOpen = hg.TraitsOpen, BP = hg.BP };
+                    SelectedHeroGrowth = new HeroGrowth() { Hero = hg.Hero, IsOwned = hg.IsOwned, Level = hg.Level, ChaserLevel = hg.ChaserLevel, PetLevel = hg.PetLevel, SiLevel = hg.SiLevel, TranscendenceLevel = hg.TranscendenceLevel, Ring = hg.Ring, Earrings = hg.Earrings, Necklace = hg.Necklace, Equipment = hg.Equipment, IsCoreOpen = hg.IsCoreOpen, TraitsOpen = hg.TraitsOpen, BP = hg.BP, TransPercentage = hg.TransPercentage };
                     RecommendedBuild = BuildsHelper.GetBuildForHero(new Tuple<HeroEnum, HeroType>(hg.Hero.HeroName, hg.Hero.HeroType));
                     if (!hg.IsOwned)
                     {
@@ -406,6 +406,7 @@ namespace GCManagementApp.UserControls
             CurrentHeroGrowth.Earrings.AccessoryUpgradeLevel = SelectedHeroGrowth.Earrings.AccessoryUpgradeLevel;
             CurrentHeroGrowth.Earrings.AccessorySet = SelectedHeroGrowth.Earrings.AccessorySet;
             CurrentHeroGrowth.BP = SelectedHeroGrowth.BP;
+            CurrentHeroGrowth.TransPercentage = SelectedHeroGrowth.TransPercentage;
             ProfileGrowth.Heroes = Heroes.ToList();
             ProfileGrowth.SaveToFile();
             HeroGrowthSnackbarMessageQueue?.Enqueue(Properties.Resources.Saved, null, null, null, false, true, TimeSpan.FromSeconds(1.5));

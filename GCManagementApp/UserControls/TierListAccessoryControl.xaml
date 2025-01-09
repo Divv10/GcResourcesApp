@@ -21,6 +21,8 @@
          <RowDefinition Height="auto" />
          <RowDefinition Height="auto" />
          <RowDefinition Height="auto" />
+         <RowDefinition Height="auto" />
+         <RowDefinition Height="auto" />
          <RowDefinition Height="*" />
       </Grid.RowDefinitions>
       <local:TierListAccessoryElementControl Grid.Row="1" LabelText="{Binding Labels[0], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}" LabelBackground="#286053" Collection="{Binding Collections[0], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}"/>
@@ -30,5 +32,7 @@
       <local:TierListAccessoryElementControl Grid.Row="5" LabelText="{Binding Labels[4], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}" LabelBackground="#F1CEC2" Collection="{Binding Collections[4], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}"/>
       <local:TierListAccessoryElementControl Grid.Row="6" LabelText="{Binding Labels[5], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}" LabelBackground="#DDD9D6" Collection="{Binding Collections[5], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}"/>
       <local:TierListAccessoryElementControl Grid.Row="7" LabelText="{Binding Labels[6], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}" LabelBackground="#D3D3D6" Collection="{Binding Collections[6], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}"/>
-   </Grid>
+      <local:TierListAccessoryElementControl Grid.Row="8" LabelText="{Binding Labels[7], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}" LabelBackground="#D3D3D6" Collection="{Binding Collections[7], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}"/>
+      <local:TierListAccessoryElementControl Grid.Row="9" LabelText="{Binding Labels[8], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}" LabelBackground="#D3D3D6" Collection="{Binding Collections[8], RelativeSource={RelativeSource AncestorType={x:Type local:TierListAccessoryControl}}}"/>
+    </Grid>
 </UserControl>

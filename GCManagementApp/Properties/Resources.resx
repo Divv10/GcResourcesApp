@@ -1099,4 +1099,16 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
     <value />
   </data>
+  <data name="ArtiT5" xml:space="preserve">
+    <value>T5 (Rock of Eternity)</value>
+  </data>
+  <data name="TransPercentage" xml:space="preserve">
+    <value>Transcendence %</value>
+  </data>
+  <data name="AllT4" xml:space="preserve">
+    <value>All T4</value>
+  </data>
+  <data name="AnyT4" xml:space="preserve">
+    <value>Any T4</value>
+  </data>
 </root>

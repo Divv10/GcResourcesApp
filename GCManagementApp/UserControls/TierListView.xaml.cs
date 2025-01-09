@@ -37,7 +37,7 @@ namespace GCManagementApp.UserControls
         public string[] ClLabels { get; set; } = new string[] { Properties.Resources.CL25, String.Format(Properties.Resources.CLX, "20+"), String.Format(Properties.Resources.CLX, "20"), String.Format(Properties.Resources.CLX, "0+"), String.Format(Properties.Resources.CLX, "0"), Properties.Resources.NotOwned};
 
         public string[] TransLabels { get; set; } = new string[] { "T6", "T5", "T4", "T3", "T2", "T1", "T0", Properties.Resources.NotOwned };
-        public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT2, Properties.Resources.AnyT2, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
+        public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT4, Properties.Resources.AnyT4, Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT2, Properties.Resources.AnyT2, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
 
         public string[] EWLabels { get; set; } = new string[] { "+10 - +9" ,"+8", "+5 - +7", "+4", "+0 - +3", Properties.Resources.NotOwned};
 
@@ -132,6 +132,8 @@ namespace GCManagementApp.UserControls
             TransCollections = new ObservableCollection<HeroGrowth>[] { trans6, trans5, trans4, trans3, trans2, trans1, trans0, transNO};
 
 
+            var allT4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T4)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
+            var anyT4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T4)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var allT3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T3)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var anyT3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T3)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var allT2 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T2)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
@@ -140,7 +142,7 @@ namespace GCManagementApp.UserControls
             var anyT1 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T1)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var rest = new ObservableCollection<HeroGrowth>(heroes.Where(x => !x.IsOwned).OrderBy(x => x.DisplayName));
 
-            AccessoryCollections = new ObservableCollection<HeroGrowth>[] { allT3, anyT3, allT2, anyT2, allT1, anyT1, rest };
+            AccessoryCollections = new ObservableCollection<HeroGrowth>[] { allT4, anyT4, allT3, anyT3, allT2, anyT2, allT1, anyT1, rest };
 
             var ew8p = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.Equipment?.IsExclusiveWeaponOwned == true && x.Equipment?.ExclusiveWeaponUpgrade > 8).OrderByDescending(x => x.Equipment.ExclusiveWeaponUpgrade).ThenBy(x => x.DisplayName));
             var ew8 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.Equipment?.IsExclusiveWeaponOwned == true && x.Equipment?.ExclusiveWeaponUpgrade == 8).OrderBy(x => x.DisplayName));

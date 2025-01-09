@@ -48,6 +48,7 @@ namespace GCManagementApp.Static
                     heroGrowth.IsCoreOpen = profileHero.IsCoreOpen;
                     heroGrowth.TraitsOpen = profileHero.TraitsOpen;
                     heroGrowth.BP = profileHero.BP;
+                    heroGrowth.TransPercentage = profileHero.TransPercentage;
                     if (heroGrowth.TraitsOpen < AvailableSiTraits.MinimumTraits(heroGrowth.SiLevel))
                     {
                         heroGrowth.TraitsOpen = (int)AvailableSiTraits.MinimumTraits(heroGrowth.SiLevel);
@@ -220,6 +221,7 @@ namespace GCManagementApp.Static
                 IsCoreOpen = h.IsCoreOpen,
                 TraitsOpen = h.TraitsOpen,
                 BP = h.BP,
+                TransPercentage = h.TransPercentage,
                 Level = h.Level,
                 ChaserLevel = h.ChaserLevel,
                 PetLevel = h.PetLevel,
@@ -235,7 +237,7 @@ namespace GCManagementApp.Static
                 EarringsUpgradeLevel = h.Earrings?.AccessoryUpgradeLevel ?? 0,
                 EarringsSet = (int)(h.Earrings?.AccessorySet ?? 0),
                 Equipment = h.Equipment,
-                
+
             }).ToList();
         }
     }

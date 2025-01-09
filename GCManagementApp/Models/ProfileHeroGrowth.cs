@@ -21,6 +21,7 @@ namespace GCManagementApp.Models
         public int TraitsOpen { get; set; }
         public int BP { get; set; }
         public int ChaserLevel { get; set; }
+        public double TransPercentage { get; set; }
         public int PetLevel { get; set; }
         public bool IsOwned { get; set; }
         public int RingTier { get; set; }
