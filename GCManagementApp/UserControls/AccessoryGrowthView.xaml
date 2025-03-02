@@ -61,9 +61,11 @@
             <ListBoxItem Content="{x:Static properties:Resources.AnyT1}" />
             <ListBoxItem Content="{x:Static properties:Resources.AnyT2}" />
             <ListBoxItem Content="{x:Static properties:Resources.AnyT3}" />
+            <ListBoxItem Content="{x:Static properties:Resources.AnyT4}" />
             <ListBoxItem Content="{x:Static properties:Resources.OnlyT1}" />
             <ListBoxItem Content="{x:Static properties:Resources.OnlyT2}" />
             <ListBoxItem Content="{x:Static properties:Resources.OnlyT3}" />
+            <ListBoxItem Content="{x:Static properties:Resources.OnlyT4}" />
             <ListBoxItem Content="{x:Static properties:Resources.All}" />
          </ListBox>
          <materialDesign:PackIcon Kind="Palette" Margin="15,0,0,0" VerticalAlignment="Center"/>
@@ -106,7 +108,7 @@
                   </ItemsControl.Style>
                   <ItemsControl.ItemTemplate>
                      <DataTemplate>
-                        <materialDesign:Flipper materialDesign:ElevationAssist.Elevation="Dp6" Style="{StaticResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
+                        <materialDesign:Flipper Width="300" materialDesign:ElevationAssist.Elevation="Dp6" Style="{StaticResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
                            <materialDesign:Flipper.FrontContent>
                               <Grid Width="300" Height="200" Margin="10" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
                                  <Grid.ColumnDefinitions>
@@ -177,6 +179,7 @@
                                              <ListBoxItem Content="T1" Width="68" HorizontalContentAlignment="Center"/>
                                              <ListBoxItem Content="T2" Width="68" HorizontalContentAlignment="Center"/>
                                              <ListBoxItem Content="T3" Width="68" HorizontalContentAlignment="Center"/>
+                                             <ListBoxItem Content="T4" Width="68" HorizontalContentAlignment="Center"/>
                                           </ListBox>
                                           <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Value="{Binding Ring.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="50" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}" Margin="10,0,15,0"/>
                                           <ComboBox MinWidth="170" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
@@ -215,6 +218,7 @@
                                              <ListBoxItem Content="T1" Width="68" HorizontalContentAlignment="Center" />
                                              <ListBoxItem Content="T2" Width="68" HorizontalContentAlignment="Center" />
                                              <ListBoxItem Content="T3" Width="68" HorizontalContentAlignment="Center" />
+                                             <ListBoxItem Content="T4" Width="68" HorizontalContentAlignment="Center" />
                                           </ListBox>
                                           <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Necklace.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
                                           <ComboBox Grid.Row="0" MinWidth="190" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
@@ -253,6 +257,7 @@
                                              <ListBoxItem Content="T1" Width="68" HorizontalContentAlignment="Center" />
                                              <ListBoxItem Content="T2" Width="68" HorizontalContentAlignment="Center" />
                                              <ListBoxItem Content="T3" Width="68" HorizontalContentAlignment="Center" />
+                                             <ListBoxItem Content="T4" Width="68" HorizontalContentAlignment="Center" />
                                           </ListBox>
                                           <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Earrings.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
                                           <ComboBox Grid.Row="0" MinWidth="190" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"

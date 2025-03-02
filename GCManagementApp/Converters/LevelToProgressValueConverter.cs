@@ -27,6 +27,8 @@ namespace GCManagementApp.Converters
                         return 100 * (int)value / (int)StaticValues.MaxExclusiveWeaponUpgrade;
                     case GrowthLevelType.Pet:
                         return 100 * (int)value / (int)StaticValues.MaxPetLevel;
+                    case GrowthLevelType.TransPercentage:
+                        return 100 * (double)value / (int)StaticValues.MaxTransPercentage;
                 }
             }
             return 0;

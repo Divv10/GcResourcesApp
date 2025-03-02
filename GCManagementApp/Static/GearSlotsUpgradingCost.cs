@@ -102,7 +102,7 @@ namespace GCManagementApp.Static
 
         private static int GearSlotFormula(GearSlotRankEnum slotRank, int upgradeLevel)
         {
-            int raid15Material = 170;
+            int raidMaterial = 175;
             int matCost = 0;
 
             if (slotRank == GearSlotRankEnum.Normal)
@@ -115,31 +115,31 @@ namespace GCManagementApp.Static
                             matCost += 0;
                             break;
                         case 1:
-                            matCost += 25760 / raid15Material; // 151
+                            matCost += 25760 / raidMaterial; // 151
                             break;
                         case 2:
-                            matCost += 23040 / raid15Material + 1; // 136
+                            matCost += 23040 / raidMaterial + 1; // 136
                             break;
                         case 3:
-                            matCost += 20480 / raid15Material; // 120
+                            matCost += 20480 / raidMaterial; // 120
                             break;
                         case 4:
-                            matCost += 17920 / raid15Material + 1; // 106
+                            matCost += 17920 / raidMaterial + 1; // 106
                             break;
                         case 5:
-                            matCost += 15360 / raid15Material; // 90
+                            matCost += 15360 / raidMaterial; // 90
                             break;
                         case 6:
-                            matCost += 12800 / raid15Material; // 75
+                            matCost += 12800 / raidMaterial; // 75
                             break;
                         case 7:
-                            matCost += 6400 / raid15Material + 1; // 38
+                            matCost += 6400 / raidMaterial + 1; // 38
                             break;
                         case 8:
-                            matCost += 3840 / raid15Material; // 22
+                            matCost += 3840 / raidMaterial; // 22
                             break;
                         case 9:
-                            matCost += 2560 / raid15Material + 1; // 16
+                            matCost += 2560 / raidMaterial + 1; // 16
                             break;
                     }
                 }
@@ -154,35 +154,35 @@ namespace GCManagementApp.Static
                             matCost += 0;
                             break;
                         case 1:
-                            matCost += 51520 / raid15Material; // 303
+                            matCost += 51520 / raidMaterial + 1; // 1470
                             break;
                         case 2:
-                            matCost += 46240 / raid15Material; // 272
+                            matCost += 46240 / raidMaterial; // 1175
                             break;
                         case 3:
-                            matCost += 41120 / raid15Material; // 242
+                            matCost += 41120 / raidMaterial + 1; // 911
                             break;
                         case 4:
-                            matCost += 36000 / raid15Material + 1; // 212
+                            matCost += 36000 / raidMaterial + 1; // 676
                             break;
                         case 5:
-                            matCost += 30880 / raid15Material; // 181
+                            matCost += 30880 / raidMaterial; // 470
                             break;
                         case 6:
-                            matCost += 25760 / raid15Material; // 152
+                            matCost += 25760 / raidMaterial; // 294
                             break;
                         case 7:
-                            matCost += 12800 / raid15Material; // 75
+                            matCost += 12800 / raidMaterial; // 147
                             break;
                         case 8:
-                            matCost += 7680 / raid15Material; // 45
+                            matCost += 7680 / raidMaterial + 1; // 74
                             break;
                         case 9:
-                            matCost += 5120 / raid15Material + 1; // 31
+                            matCost += 5120 / raidMaterial; // 30
                             break;
                     }
                 }
-            }
+            } // DONE
             if (slotRank == GearSlotRankEnum.Rare)
             {
                 for (int i = 0; i <= upgradeLevel; i++)
@@ -193,35 +193,35 @@ namespace GCManagementApp.Static
                             matCost += 0;
                             break;
                         case 1:
-                            matCost += 77280 / raid15Material + 1; // 455
+                            matCost += 77280 / raidMaterial + 1; // 2205
                             break;
                         case 2:
-                            matCost += 69440 / raid15Material + 1; // 409
+                            matCost += 69440 / raidMaterial + 1; // 1763
                             break;
                         case 3:
-                            matCost += 61760 / raid15Material; // 363
+                            matCost += 61760 / raidMaterial; // 1366
                             break;
                         case 4:
-                            matCost += 54080 / raid15Material + 1; // 106
+                            matCost += 54080 / raidMaterial + 1; // 1014
                             break;
                         case 5:
-                            matCost += 46240 / raid15Material; // 272
+                            matCost += 46240 / raidMaterial; // 704
                             break;
                         case 6:
-                            matCost += 38560 / raid15Material + 1; // 227
+                            matCost += 38560 / raidMaterial + 1; // 440
                             break;
                         case 7:
-                            matCost += 19200 / raid15Material + 1; // 113
+                            matCost += 19200 / raidMaterial + 1; // 220
                             break;
                         case 8:
-                            matCost += 11520 / raid15Material; // 67
+                            matCost += 11520 / raidMaterial; // 110
                             break;
                         case 9:
-                            matCost += 7680 / raid15Material + 1; // 46
+                            matCost += 7680 / raidMaterial + 1; // 44
                             break;
                     }
                 }
-            }
+            } // DONE
             if (slotRank == GearSlotRankEnum.Unique)
             {
                 for (int i = 0; i <= upgradeLevel; i++)
@@ -232,35 +232,35 @@ namespace GCManagementApp.Static
                             matCost += 0;
                             break;
                         case 1:
-                            matCost += 103040 / raid15Material; // 606
+                            matCost += 103040 / raidMaterial + 1; // 2942
                             break;
                         case 2:
-                            matCost += 92640 / raid15Material + 1; // 545
+                            matCost += 92640 / raidMaterial; // 2353
                             break;
                         case 3:
-                            matCost += 82400 / raid15Material + 1; // 485
+                            matCost += 82400 / raidMaterial + 1; // 1824
                             break;
                         case 4:
-                            matCost += 72000 / raid15Material; // 403
+                            matCost += 72000 / raidMaterial + 1; // 1353
                             break;
                         case 5:
-                            matCost += 61760 / raid15Material; // 363
+                            matCost += 61760 / raidMaterial + 1; // 941
                             break;
                         case 6:
-                            matCost += 51520 / raid15Material; // 303
+                            matCost += 51520 / raidMaterial; // 588
                             break;
                         case 7:
-                            matCost += 25760 / raid15Material + 1; // 152
+                            matCost += 25760 / raidMaterial; // 294
                             break;
                         case 8:
-                            matCost += 15360 / raid15Material; // 90
+                            matCost += 15360 / raidMaterial + 1; // 147
                             break;
                         case 9:
-                            matCost += 10240 / raid15Material + 1; // 61
+                            matCost += 10240 / raidMaterial + 1; // 59
                             break;
                     }
                 }
-            }
+            } // DONE
             if (slotRank == GearSlotRankEnum.Legendary)
             {
                 for (int i = 0; i <= upgradeLevel; i++)
@@ -271,35 +271,35 @@ namespace GCManagementApp.Static
                             matCost += 0;
                             break;
                         case 1:
-                            matCost += 292920 / raid15Material + 1; // 1724
+                            matCost += 292920 / raidMaterial + 1; // 8362
                             break;
                         case 2:
-                            matCost += 263355 / raid15Material; // 1549
+                            matCost += 263355 / raidMaterial + 1; // 6688
                             break;
                         case 3:
-                            matCost += 234245 / raid15Material + 1; // 1378
+                            matCost += 234245 / raidMaterial; // 5183
                             break;
                         case 4:
-                            matCost += 204680 / raid15Material; // 1204
+                            matCost += 204680 / raidMaterial + 1; // 3845
                             break;
                         case 5:
-                            matCost += 175570 / raid15Material + 1; // 1033
+                            matCost += 175570 / raidMaterial; // 2675
                             break;
                         case 6:
-                            matCost += 146570 / raid15Material; // 862
+                            matCost += 146570 / raidMaterial; // 1672
                             break;
                         case 7:
-                            matCost += 73230 / raid15Material; // 430
+                            matCost += 73230 / raidMaterial + 1; // 835
                             break;
                         case 8:
-                            matCost += 43665 / raid15Material + 1; // 257
+                            matCost += 43665 / raidMaterial; // 416
                             break;
                         case 9:
-                            matCost += 29110 / raid15Material + 1; // 172
+                            matCost += 29110 / raidMaterial + 1; // 167
                             break;
                     }
                 }
-            }
+            } // DONE
 
             return matCost;
         }

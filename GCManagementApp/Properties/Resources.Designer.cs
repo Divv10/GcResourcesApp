@@ -203,7 +203,7 @@ namespace GCManagementApp.Properties {
                 return ResourceManager.GetString("AllT4", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Any T1.
         /// </summary>
@@ -239,7 +239,7 @@ namespace GCManagementApp.Properties {
                 return ResourceManager.GetString("AnyT4", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Artifact level.
         /// </summary>
@@ -1942,6 +1942,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only T4.
+        /// </summary>
+        public static string OnlyT4 {
+            get {
+                return ResourceManager.GetString("OnlyT4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Orange.
         /// </summary>
         public static string Orange {
@@ -2428,7 +2437,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Soul Imprint cost calculator.
+        ///   Looks up a localized string similar to Soul Imprint Cost Calculator.
         /// </summary>
         public static string SoulImprintCostCalculator {
             get {

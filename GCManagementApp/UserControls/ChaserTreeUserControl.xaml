@@ -36,8 +36,8 @@
       <Image Grid.Row="2" Grid.Column="1" Source="/GCManagementApp;component/Resources/ChaserTraits/Impulse.png" Margin="2" />
       <Image Grid.Row="2" Grid.Column="2" Source="/GCManagementApp;component/Resources/ChaserTraits/PersistentExecutioner.png" Margin="2" />
       <Image Grid.Row="2" Grid.Column="3" Source="/GCManagementApp;component/Resources/ChaserTraits/SoulHealer.png" Margin="2" />
-      <Image Grid.Row="3" Grid.Column="0" Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Margin="2" />
-      <Image Grid.Row="3" Grid.Column="3" Source="/GCManagementApp;component/Resources/Materials/ChaserCube.png" Margin="2" />
+      <Image Grid.Row="3" Grid.Column="0" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="2" />
+      <Image Grid.Row="3" Grid.Column="3" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="2" />
 
       <Border Grid.Row="0" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
          <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower]}" Foreground="{StaticResource MaterialDesignBody}"/>

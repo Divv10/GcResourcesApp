@@ -850,7 +850,7 @@
     <value>Soul Imprint</value>
   </data>
   <data name="SoulImprintCostCalculator" xml:space="preserve">
-    <value>Soul Imprint cost calculator</value>
+    <value>Soul Imprint Cost Calculator</value>
   </data>
   <data name="GrowthCubes" xml:space="preserve">
     <value>Growth Cubes</value>
@@ -1110,5 +1110,8 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="AnyT4" xml:space="preserve">
     <value>Any T4</value>
+  </data>
+  <data name="OnlyT4" xml:space="preserve">
+    <value>Only T4</value>
   </data>
 </root>

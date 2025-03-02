@@ -994,4 +994,7 @@
   <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
     <value>Marque se você está comprando pacote com boost de Cubos de Despertar</value>
   </data>
+  <data name="OnlyT4" xml:space="preserve">
+    <value>Apenas T4</value>
+  </data>
 </root>

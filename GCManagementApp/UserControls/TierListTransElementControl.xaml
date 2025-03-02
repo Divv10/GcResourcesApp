@@ -52,11 +52,15 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
                             <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
                         <Image Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="70" Height="70"/>
 
-                        <ProgressBar Grid.Column="1" Grid.RowSpan="2" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="40" Height="40" VerticalAlignment="Center" Foreground="{StaticResource TranscendenceBrush}" Value="{Binding TranscendenceLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Transcendence}}"/>
-                        <Label Grid.Column="1" Grid.RowSpan="2" Content="{Binding TranscendenceLevel}" ContentStringFormat="{}T{0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+                        <ProgressBar Grid.Column="1" Grid.RowSpan="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="30" VerticalAlignment="Center" Foreground="{StaticResource TranscendenceBrush}" Value="{Binding TranscendenceLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Transcendence}}"/>
+                        <Label Grid.Column="1" Grid.RowSpan="1" Content="{Binding TranscendenceLevel}" ContentStringFormat="{}T{0}" Height="28" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" />
+
+                        <ProgressBar Grid.Column="1" Grid.RowSpan="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" VerticalAlignment="Center" Foreground="{StaticResource TranscendenceBrush}" Value="{Binding TransPercentage, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.TransPercentage}}"/>
+                        <Label Grid.Column="1" Grid.RowSpan="2" Content="{Binding TransPercentage}" ContentStringFormat="{}{0}%" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="10" />
                     </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

@@ -10,6 +10,7 @@ namespace GCManagementApp.Static
         public static Rectangle ChaserArea => new Rectangle(885, 192, 45, 33);
         public static Rectangle TranscendenceArea => new Rectangle(1147, 191, 45, 33);
         public static Rectangle BpArea => new Rectangle(1079, 564, 134, 33);
+        public static Rectangle DupePercentArea => new Rectangle();
         public static Rectangle EWArea => new Rectangle(827, 513, 43, 30);
         public static Rectangle ArtiLevelArea => new Rectangle(919, 513, 38, 30);
         public static Rectangle RingLevelArea => new Rectangle(1014, 518, 31, 24);

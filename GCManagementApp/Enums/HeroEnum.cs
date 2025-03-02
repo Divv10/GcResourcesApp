@@ -52,6 +52,7 @@ namespace GCManagementApp.Models
         Brammashell,
         Deia,
         Urara,
-        Uno
+        Uno,
+        Vice
     }
 }

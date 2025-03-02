@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="GrandChase Resource Management" Language="1033" Version="4.3.2.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212">
+	<Product Id="*" Name="GrandChase Resource Management" Language="1033" Version="4.3.3.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
       <Property Id="INSTALLFOLDER">

@@ -13,6 +13,7 @@ namespace GCManagementApp.Static
         public static readonly double MaxPetLevel = 80;
         public static readonly double MaxLevel = 230;
         public static readonly double MaxTranscendenceLevel = 6;
+        public static readonly double MaxTransPercentage = 100;
 
         public static readonly double MaxAccessoryLevel = 9;
         public static readonly double MaxWeaponTranscendence = 9;

@@ -13,6 +13,7 @@ namespace GCManagementApp.Enums
         SoulImprint,
         Transcendence,
         ExclusiveWeapon,
+        TransPercentage,
         Pet,
     }
 }

@@ -37,6 +37,7 @@ namespace GCManagementApp.UserControls
         public string[] ClLabels { get; set; } = new string[] { Properties.Resources.CL25, String.Format(Properties.Resources.CLX, "20+"), String.Format(Properties.Resources.CLX, "20"), String.Format(Properties.Resources.CLX, "0+"), String.Format(Properties.Resources.CLX, "0"), Properties.Resources.NotOwned};
 
         public string[] TransLabels { get; set; } = new string[] { "T6", "T5", "T4", "T3", "T2", "T1", "T0", Properties.Resources.NotOwned };
+        
         public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT4, Properties.Resources.AnyT4, Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT2, Properties.Resources.AnyT2, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
 
         public string[] EWLabels { get; set; } = new string[] { "+10 - +9" ,"+8", "+5 - +7", "+4", "+0 - +3", Properties.Resources.NotOwned};

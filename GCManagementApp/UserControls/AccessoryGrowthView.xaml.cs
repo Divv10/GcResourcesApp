@@ -218,9 +218,11 @@ namespace GCManagementApp.UserControls
                     (SelectedVisibility == VisibilityFilterEnum.AnyT1 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T1)) ||
                     (SelectedVisibility == VisibilityFilterEnum.AnyT2 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T2)) ||
                     (SelectedVisibility == VisibilityFilterEnum.AnyT3 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T3)) ||
+                    (SelectedVisibility == VisibilityFilterEnum.AnyT4 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T4)) ||
                     (SelectedVisibility == VisibilityFilterEnum.OnlyT1 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T1)) ||
                     (SelectedVisibility == VisibilityFilterEnum.OnlyT2 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T2)) ||
-                    (SelectedVisibility == VisibilityFilterEnum.OnlyT3 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T3)))
+                    (SelectedVisibility == VisibilityFilterEnum.OnlyT3 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T3)) ||
+                    (SelectedVisibility == VisibilityFilterEnum.OnlyT4 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T4)))
                 && (SelectedSet == VisibilitySetEnum.All ||
                     (SelectedSet == VisibilitySetEnum.Blue && AllAccessorySet(heroGrowth, AccessorySetEnum.Blue)) ||
                     (SelectedSet == VisibilitySetEnum.Orange && AllAccessorySet(heroGrowth, AccessorySetEnum.Orange)) ||
@@ -340,10 +342,12 @@ namespace GCManagementApp.UserControls
         AnyT1 = 0, 
         AnyT2 = 1,
         AnyT3 = 2,
-        OnlyT1 = 3,
-        OnlyT2 = 4,
-        OnlyT3 = 5,
-        All = 6,
+        AnyT4 = 3,
+        OnlyT1 = 4,
+        OnlyT2 = 5,
+        OnlyT3 = 6,
+        OnlyT4 = 7,
+        All = 8,
     }
 
     public enum VisibilitySetEnum
