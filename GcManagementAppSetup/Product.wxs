@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="GrandChase Resource Management" Language="1033" Version="4.3.3.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212">
+	<Product Id="*" Name="GrandChase Resource Management" Language="1033" Version="4.3.3.2" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
       <Property Id="INSTALLFOLDER">
@@ -104,6 +104,9 @@
          <Component Id="acc_t3.png">
             <File Id='acc_t3.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\'  />
          </Component>
+         <Component Id="acc_t4.png">
+            <File Id='acc_t4.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\'  />
+         </Component>
          <Component Id="arti_burning.png">
             <File Id='arti_burning.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\'  />
          </Component>
@@ -124,6 +127,9 @@
          </Component>
          <Component Id="arti_t4.png">
             <File Id='arti_t4.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\'  />
+         </Component>
+         <Component Id="arti_t5.png">
+            <File Id='arti_t5.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\'  />
          </Component>
          <Component Id="inventory.png">
             <File Id='inventory.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\'  />
@@ -169,6 +175,9 @@
          <Component Id="acc_t3.png_kr">
             <File Name='acc_t3.png' Id='acc_t3.png_kr' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images_kr\'  />
          </Component>
+         <Component Id="acc_t4.png_kr">
+            <File Name='acc_t4.png' Id='acc_t4.png_kr' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images_kr\'  />
+         </Component>
          <Component Id="arti_burning.png_kr">
             <File Name='arti_burning.png' Id='arti_burning.png_kr' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images_kr\'  />
          </Component>
@@ -189,6 +198,9 @@
          </Component>
          <Component Id="arti_t4.png_kr">
             <File Name='arti_t4.png' Id='arti_t4.png_kr' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images_kr\'  />
+         </Component>
+         <Component Id="arti_t5.png_kr">
+            <File Name='arti_t5.png' Id='arti_t5.png_kr' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images_kr\'  />
          </Component>
          <Component Id="inventory.png_kr">
             <File Name='inventory.png' Id='inventory.png_kr' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images_kr\'  />

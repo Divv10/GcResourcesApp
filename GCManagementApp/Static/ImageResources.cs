@@ -18,9 +18,11 @@ namespace GCManagementApp.Static
         public static string AccBlue => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_blue.png";
         public static string AccPurple => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_purple.png";
         public static string AccPurple2 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_purple2.png";
+        public static string AccT4 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_t4.png";
         public static string AccT3 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_t3.png";
         public static string AccT2 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_t2.png";
         public static string AccT1 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\acc_t1.png";
+        public static string ArtiT5 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\arti_t5.png";
         public static string ArtiT4 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\arti_t4.png";
         public static string ArtiT3 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\arti_t3.png";
         public static string ArtiT2 => $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\arti_t2.png";

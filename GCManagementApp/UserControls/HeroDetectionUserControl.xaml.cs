@@ -507,7 +507,9 @@ namespace GCManagementApp.UserControls
         private void GetArtiInfo(Bitmap img, HeroScanResult result)
         {
             var artiTierImg = img.CropImage(ImageRegions.ArtiTierArea);
-            if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.8).IsEmpty)
+            if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.8).IsEmpty)
+                result.ArtiTier = 5;
+            else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.8).IsEmpty)
                 result.ArtiTier = 4;
             else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT3, artiTierImg, 0.8).IsEmpty)
                 result.ArtiTier = 3;
@@ -552,7 +554,9 @@ namespace GCManagementApp.UserControls
         {
             var ringTierImg = img.CropImage(ImageRegions.RingTierArea);
             
-            if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, ringTierImg, 0.8).IsEmpty)
+            if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, ringTierImg, 0.8).IsEmpty) 
+                result.RingTier = 4;
+            else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, ringTierImg, 0.8).IsEmpty)
                 result.RingTier = 3;
             else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT2, ringTierImg, 0.8).IsEmpty)
                 result.RingTier = 2;
@@ -595,7 +599,9 @@ namespace GCManagementApp.UserControls
         {
             var accTierImg = img.CropImage(ImageRegions.NecklaceTierArea);
             
-            if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, accTierImg, 0.8).IsEmpty)
+            if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, accTierImg, 0.8).IsEmpty)
+                result.NecklaceTier = 4;
+            else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, accTierImg, 0.8).IsEmpty)
                 result.NecklaceTier = 3;
             else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT2, accTierImg, 0.8).IsEmpty)
                 result.NecklaceTier = 2;
@@ -640,7 +646,9 @@ namespace GCManagementApp.UserControls
         {
             var accTierImg = img.CropImage(ImageRegions.EarringTierArea);
             
-            if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, accTierImg, 0.8).IsEmpty)
+            if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, accTierImg, 0.8).IsEmpty)
+                result.EarringTier = 4;
+            else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, accTierImg, 0.8).IsEmpty)
                 result.EarringTier = 3;
             else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT2, accTierImg, 0.8).IsEmpty)
                 result.EarringTier = 2;
