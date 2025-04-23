@@ -150,6 +150,9 @@ namespace GCManagementApp.UserControls
 
             _isInit = true;
 
+            this.iconWarningUpdateAcc.Visibility = Visibility.Collapsed;
+            this.txtWarningUpdateAcc.Visibility = Visibility.Collapsed;
+
             Heroes = new ObservableCollection<HeroGrowth>(ProfileGrowth.Heroes);
             foreach (var h in Heroes)
             {
@@ -318,6 +321,23 @@ namespace GCManagementApp.UserControls
                 EditsStarted--;
 
             IsEditEnabled = EditsStarted != 0;
+
+
+            // When all editing cards are done (get unflipped) editing, refresh entire view.
+            if (!IsEditEnabled)
+            {
+                iconWarningUpdateAcc.Visibility = Visibility.Collapsed;
+                txtWarningUpdateAcc.Visibility = Visibility.Collapsed;
+                HeroesView?.Refresh();   
+            }
+            else
+            {
+                // Show reminder when at least 1 editing card are being edited.
+                iconWarningUpdateAcc.Visibility = Visibility.Visible;
+                txtWarningUpdateAcc.Text = "All changes will be visible when editing is done.";
+                txtWarningUpdateAcc.Visibility = Visibility.Visible;
+            }
+            
         }
     }
 
