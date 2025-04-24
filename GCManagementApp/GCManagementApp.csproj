@@ -6,8 +6,8 @@
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <AssemblyVersion>4.3.3.2</AssemblyVersion>
-    <FileVersion>4.3.3.1</FileVersion>
+    <AssemblyVersion>4.4.1</AssemblyVersion>
+    <FileVersion>4.4.1</FileVersion>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
@@ -399,7 +399,13 @@
     <None Update="Images\HeroNames\ArmeT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+	<None Update="Images\HeroNames\ArmeS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
     <None Update="Images\HeroNames\Asin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\HeroNames\AsinT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images\HeroNames\Bastet.png">
@@ -531,7 +537,7 @@
 	<None Update="Images\HeroNames\MaydenT.png">
 	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	</None>
-	  <None Update="Images\HeroNames\Myst.png">
+	<None Update="Images\HeroNames\Myst.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
 	<None Update="Images\HeroNames\MystT.png">

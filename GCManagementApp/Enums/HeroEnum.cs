@@ -53,6 +53,7 @@ namespace GCManagementApp.Models
         Deia,
         Urara,
         Uno,
-        Vice
+        Vice,
+        Nepteon
     }
 }
