@@ -1,33 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
+	<NoWarn>NU1701</NoWarn>
+	<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
     <ApplicationIcon>LireSR.ico</ApplicationIcon>
     <AssemblyVersion>4.4.1</AssemblyVersion>
     <FileVersion>4.4.1</FileVersion>
     <ApplicationManifest>app1.manifest</ApplicationManifest>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Resources\Assets\btn_google_sign-in.png" />
     <None Remove="Resources\Assets\kofi_button_blue.png" />
@@ -94,7 +90,6 @@
     <None Remove="Resources\Materials\SoulEssenceTank.png" />
     <None Remove="Resources\Materials\SoulImprintCube.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="LireSR.ico" />
     <Resource Include="Resources\ChaserTraits\BreathOfLife.png" />
@@ -117,13 +112,11 @@
     <Resource Include="Resources\Gear\weapon.png" />
     <Resource Include="Resources\Materials\AernasisHammer.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Resources\Assets\btn_google_sign-in.png" />
     <Resource Include="Resources\Assets\kofi_button_blue.png" />
     <Resource Include="Resources\Classes\healer.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Resources\Attributes\blue.png" />
     <Resource Include="Resources\Attributes\green.png" />
@@ -150,27 +143,24 @@
     <Resource Include="Resources\Materials\GrowthEssenceTank.png" />
     <Resource Include="Resources\Materials\LabTicket.png" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="AdvancedSharpAdbClient" Version="3.2.11" />
-    <PackageReference Include="Emgu.CV.Bitmap" Version="4.8.1.5350" />
-    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.8.1.5350" />
-    <PackageReference Include="gong-wpf-dragdrop" Version="3.2.1" />
-    <PackageReference Include="Google.Apis.Drive.v3" Version="1.60.0.2986" />
-    <PackageReference Include="Google.Apis.Sheets.v4" Version="1.66.0.3148" />
-    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
-    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.2.5" />
-    <PackageReference Include="NetSparkleUpdater.UI.WPF" Version="2.2.1" />
-    <PackageReference Include="PixelLab.BOT" Version="6.0.2" />
-    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-    <PackageReference Include="TesseractOCR" Version="5.3.5" />
+    <PackageReference Include="AdvancedSharpAdbClient" />
+    <PackageReference Include="Emgu.CV.Bitmap" />
+    <PackageReference Include="gong-wpf-dragdrop" />
+    <PackageReference Include="Google.Apis.Drive.v3" />
+    <PackageReference Include="Google.Apis.Sheets.v4" />
+    <PackageReference Include="MaterialDesignThemes.MahApps" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" />
+    <PackageReference Include="NetSparkleUpdater.UI.WPF" />
+    <PackageReference Include="PixelLab.BOT" />
+    <PackageReference Include="Portable.BouncyCastle" />
+    <PackageReference Include="Serilog.Sinks.File" />
+    <PackageReference Include="System.Text.Json" />
+    <PackageReference Include="TesseractOCR" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\DivideGtControls\DivideGtCommons.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Properties\Resources.pt-BR.Designer.cs">
       <DependentUpon>Resources.pt-BR.resx</DependentUpon>
@@ -238,10 +228,10 @@
     <Compile Update="UserControls\TierListEWControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-	<Compile Update="UserControls\TierListTransControl.xaml.cs">
+    <Compile Update="UserControls\TierListTransControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-	<Compile Update="UserControls\TierListTransElementControl.xaml.cs">
+    <Compile Update="UserControls\TierListTransElementControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserControls\TierListAccessoryElementControl.xaml.cs">
@@ -269,7 +259,6 @@
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.pt-BR.resx">
       <LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
@@ -280,7 +269,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="adb\adb.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -384,9 +372,9 @@
     <None Update="Images\HeroNames\Ai.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\AiT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\AiT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Amy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -399,9 +387,9 @@
     <None Update="Images\HeroNames\ArmeT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\ArmeS.png">
+    <None Update="Images\HeroNames\ArmeS.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    </None>
     <None Update="Images\HeroNames\Asin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -423,18 +411,18 @@
     <None Update="Images\HeroNames\Decanee.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\DecaneeT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
-	<None Update="Images\HeroNames\Deia.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\DecaneeT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\HeroNames\Deia.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Dio.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\DioT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\DioT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Edel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -459,9 +447,9 @@
     <None Update="Images\HeroNames\Ganymede.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\GanymedeT.png">
+    <None Update="Images\HeroNames\GanymedeT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    </None>
     <None Update="Images\HeroNames\Grandiel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -534,21 +522,21 @@
     <None Update="Images\HeroNames\Mayden.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\MaydenT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
-	<None Update="Images\HeroNames\Myst.png">
+    <None Update="Images\HeroNames\MaydenT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\MystT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\Myst.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\HeroNames\MystT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Nelia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\NeliaT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\NeliaT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Ragnar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -558,9 +546,9 @@
     <None Update="Images\HeroNames\Rin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\RinT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\RinT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Ronan.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -576,9 +564,9 @@
     <None Update="Images\HeroNames\Ryan.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\RyanT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\RyanT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Serdin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -597,24 +585,24 @@
     <None Update="Images\HeroNames\Tia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\TiaT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
-	<None Update="Images\HeroNames\UnoS.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
-	<None Update="Images\HeroNames\Urara.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
-	<None Update="Images\HeroNames\Vice.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\TiaT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\HeroNames\UnoS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\HeroNames\Urara.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\HeroNames\Vice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Veigas.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\VeigasT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\VeigasT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\HeroNames\Werner.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -624,9 +612,9 @@
     <None Update="Images\HeroNames\Zero.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images\HeroNames\ZeroT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images\HeroNames\ZeroT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images\home_btn.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -696,9 +684,9 @@
     <None Update="Images_kr\HeroNames\Ai.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images_kr\HeroNames\AiT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images_kr\HeroNames\AiT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Amy.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -738,18 +726,18 @@
     <None Update="Images_kr\HeroNames\Decanee.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images_kr\HeroNames\DecaneeT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images_kr\HeroNames\DecaneeT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Deia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Images_kr\HeroNames\Dio.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images_kr\HeroNames\DioT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images_kr\HeroNames\DioT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Edel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -846,15 +834,15 @@
     <None Update="Images_kr\HeroNames\Mayden.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images_kr\HeroNames\MaydenT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images_kr\HeroNames\MaydenT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Myst.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images_kr\HeroNames\MystT.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images_kr\HeroNames\MystT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Nelia.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -912,9 +900,9 @@
     <None Update="Images_kr\HeroNames\TiaT.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<None Update="Images_kr\HeroNames\UnoS.png">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+    <None Update="Images_kr\HeroNames\UnoS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Images_kr\HeroNames\Urara.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -965,7 +953,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <Page Update="UserControls\EditEwPlan.xaml">
       <SubType>Designer</SubType>
@@ -974,5 +961,4 @@
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
   </ItemGroup>
-
 </Project>

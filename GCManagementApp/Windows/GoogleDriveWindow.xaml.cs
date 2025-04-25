@@ -146,6 +146,7 @@ namespace GCManagementApp.Windows
             }
         }
 
+        [Obsolete ("Json instead")]
         private async Task DownloadFromDriveImpl()
         {
             await _userCredential.RefreshTokenAsync(CancellationToken.None);

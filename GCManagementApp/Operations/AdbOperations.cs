@@ -76,7 +76,7 @@ namespace GCManagementApp.Operations
 
             var randomPt = new Point(coordinates.X + random.Next(-5, 5), coordinates.Y + random.Next(-5, 5));
             await Task.Delay(random.Next(0, 100));
-            await client.ClickAsync(device, new Cords(randomPt.X, randomPt.Y));
+            await client.ClickAsync(device, randomPt);
         }
 
         public static async Task ClickInRepeat(Point coordinates, int repeats)
@@ -90,7 +90,7 @@ namespace GCManagementApp.Operations
             {
                 var randomPt = new Point(coordinates.X + random.Next(-5, 5), coordinates.Y + random.Next(-5, 5));
                 await Task.Delay(random.Next(200, 300));
-                await client.ClickAsync(device, new Cords(randomPt.X, randomPt.Y));
+                await client.ClickAsync(device, randomPt);
             }
         }
 
@@ -103,7 +103,7 @@ namespace GCManagementApp.Operations
 
             if (!useBatchCommand)
             {
-                await client.SwipeAsync(device, new Cords(from.X, from.Y), new Cords(to.X, to.Y), speed);
+                await client.SwipeAsync(device, from, to, speed);
                 return;
             }
 
