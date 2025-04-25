@@ -6,169 +6,170 @@
              xmlns:local="clr-namespace:GCManagementApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-      <ResourceDictionary>
+        <ResourceDictionary>
 
-         <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="LightBlue" SecondaryColor="LightBlue"/>
 
-            <!-- MahApps -->
-            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-            <!-- Theme setting -->
-            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                <!-- MahApps -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!-- Theme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
 
-            <!-- Material Design -->
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.LightBlue.xaml" />
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.LightBlue.xaml" />
+                <!-- Material Design -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign2.Defaults.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />-->                
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.LightBlue.xaml" />-->
+                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.LightBlue.xaml" />-->
 
-            <!-- Material Design: MahApps Compatibility -->
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml" />
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml" />
-            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
+                <!-- Material Design: MahApps Compatibility -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />
 
-            <ResourceDictionary Source="Styles/MassEditStyles.xaml"/>
+                <ResourceDictionary Source="Styles/MassEditStyles.xaml"/>
 
-         </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary.MergedDictionaries>
 
-         <!-- MahApps Brushes -->
-         <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Primary700}"/>
-         <SolidColorBrush x:Key="AccentBaseColorBrush" Color="{DynamicResource Primary600}" />
-         <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource Primary500}"/>
-         <SolidColorBrush x:Key="AccentColorBrush2" Color="{DynamicResource Primary400}"/>
-         <SolidColorBrush x:Key="AccentColorBrush3" Color="{DynamicResource Primary300}"/>
-         <SolidColorBrush x:Key="AccentColorBrush4" Color="{DynamicResource Primary200}"/>
-         <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{DynamicResource Primary700}"/>
-         <SolidColorBrush x:Key="AccentSelectedColorBrush" Color="{DynamicResource Primary500Foreground}"/>
-         <LinearGradientBrush x:Key="ProgressBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
-            <GradientStop Color="{DynamicResource Primary700}" Offset="0"/>
-            <GradientStop Color="{DynamicResource Primary300}" Offset="1"/>
-         </LinearGradientBrush>
-         <SolidColorBrush x:Key="CheckmarkFill" Color="{DynamicResource Primary500}"/>
-         <SolidColorBrush x:Key="RightArrowFill" Color="{DynamicResource Primary500}"/>
-         <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{DynamicResource Primary500Foreground}"/>
-         <SolidColorBrush x:Key="IdealForegroundDisabledBrush" Color="{DynamicResource Primary500}" Opacity="0.4"/>
-         <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10" Color="{DynamicResource Primary500}" />
-         <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10" Color="{DynamicResource Primary400}" />
-         <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10" Color="{DynamicResource Primary500Foreground}" />
+            <!-- MahApps Brushes -->
+            <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentBaseColorBrush" Color="{DynamicResource Primary600}" />
+            <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="AccentColorBrush2" Color="{DynamicResource Primary400}"/>
+            <SolidColorBrush x:Key="AccentColorBrush3" Color="{DynamicResource Primary300}"/>
+            <SolidColorBrush x:Key="AccentColorBrush4" Color="{DynamicResource Primary200}"/>
+            <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentSelectedColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <LinearGradientBrush x:Key="ProgressBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
+                <GradientStop Color="{DynamicResource Primary700}" Offset="0"/>
+                <GradientStop Color="{DynamicResource Primary300}" Offset="1"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="CheckmarkFill" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="RightArrowFill" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <SolidColorBrush x:Key="IdealForegroundDisabledBrush" Color="{DynamicResource Primary500}" Opacity="0.4"/>
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchBrush.Win10" Color="{DynamicResource Primary500}" />
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.OnSwitchMouseOverBrush.Win10" Color="{DynamicResource Primary400}" />
+            <SolidColorBrush x:Key="MahApps.Metro.Brushes.ToggleSwitchButton.ThumbIndicatorCheckedBrush.Win10" Color="{DynamicResource Primary500Foreground}" />
 
-         <SolidColorBrush x:Key="ChaserBrush" Color="#AF36AA"/>
-         <SolidColorBrush x:Key="SiBrush" Color="#F8DE74"/>
-         <SolidColorBrush x:Key="TranscendenceBrush" Color="#B1D0F3"/>
-         <SolidColorBrush x:Key="LevelBrush" Color="#827BF5"/>
+            <SolidColorBrush x:Key="ChaserBrush" Color="#AF36AA"/>
+            <SolidColorBrush x:Key="SiBrush" Color="#F8DE74"/>
+            <SolidColorBrush x:Key="TranscendenceBrush" Color="#B1D0F3"/>
+            <SolidColorBrush x:Key="LevelBrush" Color="#827BF5"/>
 
-         <SolidColorBrush x:Key="EqPurpleSet" Color="#b8408e"/>
-         <SolidColorBrush x:Key="EqBlueSet" Color="#565fd0"/>
-         <SolidColorBrush x:Key="EqGreenSet" Color="#45a575"/>
-         <SolidColorBrush x:Key="EqOrangeSet" Color="#ce6c3f"/>
-         <SolidColorBrush x:Key="EqRedSet" Color="#bf2547"/>
+            <SolidColorBrush x:Key="EqPurpleSet" Color="#b8408e"/>
+            <SolidColorBrush x:Key="EqBlueSet" Color="#565fd0"/>
+            <SolidColorBrush x:Key="EqGreenSet" Color="#45a575"/>
+            <SolidColorBrush x:Key="EqOrangeSet" Color="#ce6c3f"/>
+            <SolidColorBrush x:Key="EqRedSet" Color="#bf2547"/>
 
-         <Style x:Key="TitleBarButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="{DynamicResource WindowTextBrush}" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-            <Setter Property="IsTabStop" Value="False" />
-            <Setter Property="Template">
-               <Setter.Value>
-                  <ControlTemplate TargetType="{x:Type Button}">
-                     <Border
+            <Style x:Key="TitleBarButtonStyle" TargetType="Button">
+                <Setter Property="Foreground" Value="{DynamicResource WindowTextBrush}" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                <Setter Property="IsTabStop" Value="False" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border
 					x:Name="border"
 					Background="Transparent"
 					BorderThickness="0"
 					SnapsToDevicePixels="true">
-                        <ContentPresenter
+                                <ContentPresenter
 						x:Name="contentPresenter"
 						Margin="0"
 						HorizontalAlignment="Center"
 						VerticalAlignment="Center"
 						Focusable="False"
 						RecognizesAccessKey="True" />
-                     </Border>
-                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                           <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                           <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
-                        </Trigger>
-                     </ControlTemplate.Triggers>
-                  </ControlTemplate>
-               </Setter.Value>
-            </Setter>
-         </Style>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
-         <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="{DynamicResource WindowTextBrush}" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
-            <Setter Property="IsTabStop" Value="False" />
-            <Setter Property="Template">
-               <Setter.Value>
-                  <ControlTemplate TargetType="{x:Type Button}">
-                     <Border
+            <Style x:Key="TitleBarCloseButtonStyle" TargetType="Button">
+                <Setter Property="Foreground" Value="{DynamicResource WindowTextBrush}" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+                <Setter Property="IsTabStop" Value="False" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border
 					x:Name="border"
 					Background="Transparent"
 					BorderThickness="0"
 					SnapsToDevicePixels="true">
-                        <ContentPresenter
+                                <ContentPresenter
 						x:Name="contentPresenter"
 						Margin="0"
 						HorizontalAlignment="Center"
 						VerticalAlignment="Center"
 						Focusable="False"
 						RecognizesAccessKey="True" />
-                     </Border>
-                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                           <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                           <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
-                        </Trigger>
-                     </ControlTemplate.Triggers>
-                  </ControlTemplate>
-               </Setter.Value>
-            </Setter>
-         </Style>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource CheckmarkFill}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
-         <Style x:Key="MaterialDesignCardGroupBoxWithoutHeader" TargetType="{x:Type GroupBox}">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}" />
-            <Setter Property="Padding" Value="9" />
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="UIElement.SnapsToDevicePixels" Value="true" />
-            <Setter Property="wpf:ElevationAssist.Elevation" Value="Dp0" />
-            <Setter Property="wpf:ColorZoneAssist.Mode" Value="PrimaryMid" />
-            <Setter Property="Template">
-               <Setter.Value>
-                  <ControlTemplate TargetType="{x:Type GroupBox}">
-                     <wpf:Card VerticalAlignment="Stretch">
-                        <DockPanel Background="{TemplateBinding Background}">
-                           <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
-                        </DockPanel>
-                     </wpf:Card>
-                  </ControlTemplate>
-               </Setter.Value>
-            </Setter>
-         </Style>
+            <Style x:Key="MaterialDesignCardGroupBoxWithoutHeader" TargetType="{x:Type GroupBox}">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType={x:Type FrameworkElement}}, Path=(TextElement.Foreground)}" />
+                <Setter Property="Padding" Value="9" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="UIElement.SnapsToDevicePixels" Value="true" />
+                <Setter Property="wpf:ElevationAssist.Elevation" Value="Dp0" />
+                <Setter Property="wpf:ColorZoneAssist.Mode" Value="PrimaryMid" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type GroupBox}">
+                            <wpf:Card VerticalAlignment="Stretch">
+                                <DockPanel Background="{TemplateBinding Background}">
+                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}" ContentStringFormat="{TemplateBinding ContentStringFormat}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
+                                </DockPanel>
+                            </wpf:Card>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
-         <Style x:Key="MaterialDesignHeadline6Label" TargetType="{x:Type Label}" BasedOn="{StaticResource MaterialDesignLabel}">
-            <Setter Property="Label.FontSize" Value="20" />
-            <Setter Property="Label.FontWeight" Value="Medium" />
-         </Style>
+            <Style x:Key="MaterialDesignHeadline6Label" TargetType="{x:Type Label}" BasedOn="{StaticResource MaterialDesignLabel}">
+                <Setter Property="Label.FontSize" Value="20" />
+                <Setter Property="Label.FontWeight" Value="Medium" />
+            </Style>
 
-         <Style x:Key="MaterialDesignSubtitle1Label" TargetType="{x:Type Label}" BasedOn="{StaticResource MaterialDesignLabel}">
-            <Style.Resources>
-               <Style TargetType="{x:Type Hyperlink}" BasedOn="{StaticResource MaterialDesignSubtitle1Hyperlink}" />
-            </Style.Resources>
-            <Setter Property="Label.FontSize" Value="16" />
-            <Setter Property="Label.FontWeight" Value="Regular" />
-         </Style>
+            <Style x:Key="MaterialDesignSubtitle1Label" TargetType="{x:Type Label}" BasedOn="{StaticResource MaterialDesignLabel}">
+                <Style.Resources>
+                    <Style TargetType="{x:Type Hyperlink}" BasedOn="{StaticResource MaterialDesignSubtitle1Hyperlink}" />
+                </Style.Resources>
+                <Setter Property="Label.FontSize" Value="16" />
+                <Setter Property="Label.FontWeight" Value="Regular" />
+            </Style>
 
-         <Style x:Key="MaterialDesignBody1TextBlockForeground" TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlock}">
-            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
-         </Style>
+            <Style x:Key="MaterialDesignBody1TextBlockForeground" TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlock}">
+                <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}" />
+            </Style>
 
-      </ResourceDictionary>
-   </Application.Resources>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

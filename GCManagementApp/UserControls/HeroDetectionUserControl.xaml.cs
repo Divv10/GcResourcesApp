@@ -14,18 +14,12 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using GCManagementApp.Enums;
 using System.Drawing;
-using MahApps.Metro.Controls;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using Emgu.CV;
 using Serilog;
-using MaterialDesignThemes.Wpf;
-using TesseractOCR.Renderers;
-using Org.BouncyCastle.Utilities;
 using System.IO;
-using System.Net.NetworkInformation;
 using System.Diagnostics;
-using System.Collections;
 using System.Threading;
 using GCManagementApp.Exceptions;
 

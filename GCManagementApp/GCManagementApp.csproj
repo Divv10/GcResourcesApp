@@ -1,964 +1,974 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>disable</Nullable>
-    <UseWPF>true</UseWPF>
-	<NoWarn>NU1701</NoWarn>
-	<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
-    <ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <AssemblyVersion>4.4.1</AssemblyVersion>
-    <FileVersion>4.4.1</FileVersion>
-    <ApplicationManifest>app1.manifest</ApplicationManifest>
-    <Platforms>AnyCPU;x64</Platforms>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>embedded</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DebugType>embedded</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>embedded</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <DebugType>embedded</DebugType>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Resources\Assets\btn_google_sign-in.png" />
-    <None Remove="Resources\Assets\kofi_button_blue.png" />
-    <None Remove="Resources\Attributes\blue.png" />
-    <None Remove="Resources\Attributes\green.png" />
-    <None Remove="Resources\Attributes\purple.png" />
-    <None Remove="Resources\Attributes\red.png" />
-    <None Remove="Resources\Attributes\yellow.png" />
-    <None Remove="Resources\ChaserTraits\BreathOfLife.png" />
-    <None Remove="Resources\ChaserTraits\Connection.png" />
-    <None Remove="Resources\ChaserTraits\DivineProtection.png" />
-    <None Remove="Resources\ChaserTraits\ElevatedPower.png" />
-    <None Remove="Resources\ChaserTraits\Helper.png" />
-    <None Remove="Resources\ChaserTraits\Impulse.png" />
-    <None Remove="Resources\ChaserTraits\InvisibleHand.png" />
-    <None Remove="Resources\ChaserTraits\LongLife.png" />
-    <None Remove="Resources\ChaserTraits\PersistentExecutioner.png" />
-    <None Remove="Resources\ChaserTraits\PrayerOfBlessing.png" />
-    <None Remove="Resources\ChaserTraits\PureLuck.png" />
-    <None Remove="Resources\ChaserTraits\SoulHealer.png" />
-    <None Remove="Resources\Classes\assault.png" />
-    <None Remove="Resources\Classes\healer.png" />
-    <None Remove="Resources\Classes\mage.png" />
-    <None Remove="Resources\Classes\ranger.png" />
-    <None Remove="Resources\Classes\tank.png" />
-    <None Remove="Resources\gc_logo.png" />
-    <None Remove="Resources\Gear\armor.png" />
-    <None Remove="Resources\Gear\blueStone.png" />
-    <None Remove="Resources\Gear\raidMaterial.png" />
-    <None Remove="Resources\Gear\subarmor.png" />
-    <None Remove="Resources\Gear\subweapon.png" />
-    <None Remove="Resources\Gear\weapon.png" />
-    <None Remove="Resources\Materials\AernasisHammer.png" />
-    <None Remove="Resources\Materials\anni_coin.png" />
-    <None Remove="Resources\Materials\AwakeningCubeAssault.png" />
-    <None Remove="Resources\Materials\AwakeningCubeHealer.png" />
-    <None Remove="Resources\Materials\AwakeningCubeMage.png" />
-    <None Remove="Resources\Materials\AwakeningCubeRanger.png" />
-    <None Remove="Resources\Materials\AwakeningCubeTank.png" />
-    <None Remove="Resources\Materials\BlessingOfValor.png" />
-    <None Remove="Resources\Materials\BlueGem.png" />
-    <None Remove="Resources\Materials\ChaserCrystalAssault.png" />
-    <None Remove="Resources\Materials\ChaserCrystalHealer.png" />
-    <None Remove="Resources\Materials\ChaserCrystalMage.png" />
-    <None Remove="Resources\Materials\ChaserCrystalRanger.png" />
-    <None Remove="Resources\Materials\ChaserCrystalTank.png" />
-    <None Remove="Resources\Materials\ChaserCube.png" />
-    <None Remove="Resources\Materials\energy.png" />
-    <None Remove="Resources\Materials\EvoCube.png" />
-    <None Remove="Resources\Materials\EW.png" />
-    <None Remove="Resources\Materials\EwMats.png" />
-    <None Remove="Resources\Materials\gold.png" />
-    <None Remove="Resources\Materials\GrowthCube.png" />
-    <None Remove="Resources\Materials\GrowthEssenceAssault.png" />
-    <None Remove="Resources\Materials\GrowthEssenceHealer.png" />
-    <None Remove="Resources\Materials\GrowthEssenceMage.png" />
-    <None Remove="Resources\Materials\GrowthEssenceRanger.png" />
-    <None Remove="Resources\Materials\GrowthEssenceTank.png" />
-    <None Remove="Resources\Materials\LabTicket.png" />
-    <None Remove="Resources\Materials\SoulEssenceAssault.png" />
-    <None Remove="Resources\Materials\SoulEssenceHealer.png" />
-    <None Remove="Resources\Materials\SoulEssenceMage.png" />
-    <None Remove="Resources\Materials\SoulEssenceRanger.png" />
-    <None Remove="Resources\Materials\SoulEssenceTank.png" />
-    <None Remove="Resources\Materials\SoulImprintCube.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LireSR.ico" />
-    <Resource Include="Resources\ChaserTraits\BreathOfLife.png" />
-    <Resource Include="Resources\ChaserTraits\Connection.png" />
-    <Resource Include="Resources\ChaserTraits\DivineProtection.png" />
-    <Resource Include="Resources\ChaserTraits\ElevatedPower.png" />
-    <Resource Include="Resources\ChaserTraits\Helper.png" />
-    <Resource Include="Resources\ChaserTraits\Impulse.png" />
-    <Resource Include="Resources\ChaserTraits\InvisibleHand.png" />
-    <Resource Include="Resources\ChaserTraits\LongLife.png" />
-    <Resource Include="Resources\ChaserTraits\PersistentExecutioner.png" />
-    <Resource Include="Resources\ChaserTraits\PrayerOfBlessing.png" />
-    <Resource Include="Resources\ChaserTraits\PureLuck.png" />
-    <Resource Include="Resources\ChaserTraits\SoulHealer.png" />
-    <Resource Include="Resources\Gear\armor.png" />
-    <Resource Include="Resources\Gear\blueStone.png" />
-    <Resource Include="Resources\Gear\raidMaterial.png" />
-    <Resource Include="Resources\Gear\subarmor.png" />
-    <Resource Include="Resources\Gear\subweapon.png" />
-    <Resource Include="Resources\Gear\weapon.png" />
-    <Resource Include="Resources\Materials\AernasisHammer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Assets\btn_google_sign-in.png" />
-    <Resource Include="Resources\Assets\kofi_button_blue.png" />
-    <Resource Include="Resources\Classes\healer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Attributes\blue.png" />
-    <Resource Include="Resources\Attributes\green.png" />
-    <Resource Include="Resources\Attributes\purple.png" />
-    <Resource Include="Resources\Attributes\red.png" />
-    <Resource Include="Resources\Attributes\yellow.png" />
-    <Resource Include="Resources\Classes\assault.png" />
-    <Resource Include="Resources\Classes\mage.png" />
-    <Resource Include="Resources\Classes\ranger.png" />
-    <Resource Include="Resources\Classes\tank.png" />
-    <Resource Include="Resources\gc_logo.png" />
-    <Resource Include="Resources\Materials\BlessingOfValor.png" />
-    <Resource Include="Resources\Materials\BlueGem.png" />
-    <Resource Include="Resources\Materials\energy.png" />
-    <Resource Include="Resources\Materials\EvoCube.png" />
-    <Resource Include="Resources\Materials\EW.png" />
-    <Resource Include="Resources\Materials\EwMats.png" />
-    <Resource Include="Resources\Materials\gold.png" />
-    <Resource Include="Resources\Materials\GrowthCube.png" />
-    <Resource Include="Resources\Materials\GrowthEssenceAssault.png" />
-    <Resource Include="Resources\Materials\GrowthEssenceHealer.png" />
-    <Resource Include="Resources\Materials\GrowthEssenceMage.png" />
-    <Resource Include="Resources\Materials\GrowthEssenceRanger.png" />
-    <Resource Include="Resources\Materials\GrowthEssenceTank.png" />
-    <Resource Include="Resources\Materials\LabTicket.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="AdvancedSharpAdbClient" />
-    <PackageReference Include="Emgu.CV.Bitmap" />
-    <PackageReference Include="gong-wpf-dragdrop" />
-    <PackageReference Include="Google.Apis.Drive.v3" />
-    <PackageReference Include="Google.Apis.Sheets.v4" />
-    <PackageReference Include="MaterialDesignThemes.MahApps" />
-    <PackageReference Include="Microsoft.Win32.SystemEvents" />
-    <PackageReference Include="NetSparkleUpdater.UI.WPF" />
-    <PackageReference Include="PixelLab.BOT" />
-    <PackageReference Include="Portable.BouncyCastle" />
-    <PackageReference Include="Serilog.Sinks.File" />
-    <PackageReference Include="System.Text.Json" />
-    <PackageReference Include="TesseractOCR" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DivideGtControls\DivideGtCommons.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Properties\Resources.pt-BR.Designer.cs">
-      <DependentUpon>Resources.pt-BR.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Update="Windows\DataSyncSummaryWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\ImageWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\MessageBoxDialog.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\EditEwPlan.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\EquipmentGrowthView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\AccessoryGrowthView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\ExclusiveWeaponPlanningView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\MeterialsItemInputString.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\HeroDetectionUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\ProcessSelectUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\ProcessAttachUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\SiCoresOpenTierListOverlay.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListBuilderUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListCompactControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListElementCompactControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListEWElementControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListEWControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListTransControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListTransElementControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListAccessoryElementControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TierListAccessoryControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\TeamBuilderUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="UserControls\VulcanusPlannerVertUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\DonateWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\GoogleDriveWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\DataSyncWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Windows\ShowRegionWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.pt-BR.resx">
-      <LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="adb\adb.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\AdbWinApi.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\AdbWinUsbApi.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\dmtracedump.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\etc1tool.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\fastboot.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\hprof-conv.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\libwinpthread-1.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\make_f2fs.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\make_f2fs_casefold.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\mke2fs.conf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\mke2fs.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\NOTICE.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\scrcpy-wireless-connect.bat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\scrcpy-wireless-setup.bat">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\source.properties">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="adb\sqlite3.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_blue.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_orange.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_purple.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_purple2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_t1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_t2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_t3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\acc_t4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_burning.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_cursed.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_frozen.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_t1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_t2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_t3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_t4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\arti_t5.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Ai.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\AiT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Amy.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\AmyT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Arme.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\ArmeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\ArmeS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Asin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\AsinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Bastet.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Callisto.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\CallistoT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Cindy.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Decanee.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\DecaneeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Deia.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Dio.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\DioT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Edel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\EdelT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Elesis.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\ElesisS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\ElesisT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Europa.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\EuropaT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Ganymede.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\GanymedeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Grandiel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Harpe.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\HarpeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Hwarin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\HwarinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Io.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\IoT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Jin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\JinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Kanavan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\KanavanT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Lapis.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\LapisT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Lass.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\LassT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Ley.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\LeyT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Lime.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\LimeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Lire.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\LireT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Mari.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\MariT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Mayden.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\MaydenT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Myst.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\MystT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Nelia.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\NeliaT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Ragnar.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\RagnarT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Rin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\RinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Ronan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\RonanT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Rufus.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\RufusT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Ryan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\RyanT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Serdin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\SerdinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Sieghart.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\SieghartT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Sol.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Tia.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\TiaT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\UnoS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Urara.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Vice.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Veigas.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\VeigasT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Werner.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\WernerT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\Zero.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\HeroNames\ZeroT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\home_btn.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\inventory.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\inventory_btn.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\question_mark.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\unitsr.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images\unitt.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_blue.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_orange.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_purple.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_purple2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_t1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_t2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_t3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\acc_t4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_burning.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_cursed.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_frozen.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_t1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_t2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_t3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_t4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\arti_t5.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Ai.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\AiT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Amy.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\AmyT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Arme.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\ArmeS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\ArmeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Asin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\AsinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Bastet.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Brammashell.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Callisto.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\CallistoT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Cindy.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Decanee.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\DecaneeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Deia.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Dio.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\DioT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Edel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\EdelT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Elesis.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\ElesisS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\ElesisT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Europa.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\EuropaT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Ganymede.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\GanymedeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Grandiel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Harpe.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Hwarin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\HwarinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Io.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\IoT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Jin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\JinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Kanavan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\KanavanT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Lapis.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\LapisT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Lass.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\LassT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Ley.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\LeyT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Lime.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\LimeT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Lire.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\LireT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Mari.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\MariT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Mayden.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\MaydenT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Myst.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\MystT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Nelia.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\NeliaT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Ragnar.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\RagnarT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Rin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\RinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Ronan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\RonanT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Rufus.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\RufusT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Ryan.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\RyanT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Serdin.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\SerdinT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Sieghart.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\SieghartT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Sol.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Tia.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\TiaT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\UnoS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Urara.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Vice.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Veigas.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\VeigasT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Werner.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\WernerT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\Zero.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\HeroNames\ZeroT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\home_btn.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\inventory.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\inventory_btn.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\question_mark.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\unitsr.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Images_kr\unitt.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="tessdata\eng.traineddata">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="UserControls\EditEwPlan.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Windows\ShowRegionWindow.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-    </Page>
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>disable</Nullable>
+		<UseWPF>true</UseWPF>
+		<NoWarn>NU1701</NoWarn>
+		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+		<ApplicationIcon>LireSR.ico</ApplicationIcon>
+		<AssemblyVersion>4.4.1</AssemblyVersion>
+		<FileVersion>4.4.1</FileVersion>
+		<ApplicationManifest>app1.manifest</ApplicationManifest>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Resources\Assets\btn_google_sign-in.png" />
+		<None Remove="Resources\Assets\kofi_button_blue.png" />
+		<None Remove="Resources\Attributes\blue.png" />
+		<None Remove="Resources\Attributes\green.png" />
+		<None Remove="Resources\Attributes\purple.png" />
+		<None Remove="Resources\Attributes\red.png" />
+		<None Remove="Resources\Attributes\yellow.png" />
+		<None Remove="Resources\ChaserTraits\BreathOfLife.png" />
+		<None Remove="Resources\ChaserTraits\Connection.png" />
+		<None Remove="Resources\ChaserTraits\DivineProtection.png" />
+		<None Remove="Resources\ChaserTraits\ElevatedPower.png" />
+		<None Remove="Resources\ChaserTraits\Helper.png" />
+		<None Remove="Resources\ChaserTraits\Impulse.png" />
+		<None Remove="Resources\ChaserTraits\InvisibleHand.png" />
+		<None Remove="Resources\ChaserTraits\LongLife.png" />
+		<None Remove="Resources\ChaserTraits\PersistentExecutioner.png" />
+		<None Remove="Resources\ChaserTraits\PrayerOfBlessing.png" />
+		<None Remove="Resources\ChaserTraits\PureLuck.png" />
+		<None Remove="Resources\ChaserTraits\SoulHealer.png" />
+		<None Remove="Resources\Classes\assault.png" />
+		<None Remove="Resources\Classes\healer.png" />
+		<None Remove="Resources\Classes\mage.png" />
+		<None Remove="Resources\Classes\ranger.png" />
+		<None Remove="Resources\Classes\tank.png" />
+		<None Remove="Resources\gc_logo.png" />
+		<None Remove="Resources\Gear\armor.png" />
+		<None Remove="Resources\Gear\blueStone.png" />
+		<None Remove="Resources\Gear\raidMaterial.png" />
+		<None Remove="Resources\Gear\subarmor.png" />
+		<None Remove="Resources\Gear\subweapon.png" />
+		<None Remove="Resources\Gear\weapon.png" />
+		<None Remove="Resources\Materials\AernasisHammer.png" />
+		<None Remove="Resources\Materials\anni_coin.png" />
+		<None Remove="Resources\Materials\AwakeningCubeAssault.png" />
+		<None Remove="Resources\Materials\AwakeningCubeHealer.png" />
+		<None Remove="Resources\Materials\AwakeningCubeMage.png" />
+		<None Remove="Resources\Materials\AwakeningCubeRanger.png" />
+		<None Remove="Resources\Materials\AwakeningCubeTank.png" />
+		<None Remove="Resources\Materials\BlessingOfValor.png" />
+		<None Remove="Resources\Materials\BlueGem.png" />
+		<None Remove="Resources\Materials\ChaserCrystalAssault.png" />
+		<None Remove="Resources\Materials\ChaserCrystalHealer.png" />
+		<None Remove="Resources\Materials\ChaserCrystalMage.png" />
+		<None Remove="Resources\Materials\ChaserCrystalRanger.png" />
+		<None Remove="Resources\Materials\ChaserCrystalTank.png" />
+		<None Remove="Resources\Materials\ChaserCube.png" />
+		<None Remove="Resources\Materials\energy.png" />
+		<None Remove="Resources\Materials\EvoCube.png" />
+		<None Remove="Resources\Materials\EW.png" />
+		<None Remove="Resources\Materials\EwMats.png" />
+		<None Remove="Resources\Materials\gold.png" />
+		<None Remove="Resources\Materials\GrowthCube.png" />
+		<None Remove="Resources\Materials\GrowthEssenceAssault.png" />
+		<None Remove="Resources\Materials\GrowthEssenceHealer.png" />
+		<None Remove="Resources\Materials\GrowthEssenceMage.png" />
+		<None Remove="Resources\Materials\GrowthEssenceRanger.png" />
+		<None Remove="Resources\Materials\GrowthEssenceTank.png" />
+		<None Remove="Resources\Materials\LabTicket.png" />
+		<None Remove="Resources\Materials\SoulEssenceAssault.png" />
+		<None Remove="Resources\Materials\SoulEssenceHealer.png" />
+		<None Remove="Resources\Materials\SoulEssenceMage.png" />
+		<None Remove="Resources\Materials\SoulEssenceRanger.png" />
+		<None Remove="Resources\Materials\SoulEssenceTank.png" />
+		<None Remove="Resources\Materials\SoulImprintCube.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="LireSR.ico" />
+		<Resource Include="Resources\ChaserTraits\BreathOfLife.png" />
+		<Resource Include="Resources\ChaserTraits\Connection.png" />
+		<Resource Include="Resources\ChaserTraits\DivineProtection.png" />
+		<Resource Include="Resources\ChaserTraits\ElevatedPower.png" />
+		<Resource Include="Resources\ChaserTraits\Helper.png" />
+		<Resource Include="Resources\ChaserTraits\Impulse.png" />
+		<Resource Include="Resources\ChaserTraits\InvisibleHand.png" />
+		<Resource Include="Resources\ChaserTraits\LongLife.png" />
+		<Resource Include="Resources\ChaserTraits\PersistentExecutioner.png" />
+		<Resource Include="Resources\ChaserTraits\PrayerOfBlessing.png" />
+		<Resource Include="Resources\ChaserTraits\PureLuck.png" />
+		<Resource Include="Resources\ChaserTraits\SoulHealer.png" />
+		<Resource Include="Resources\Gear\armor.png" />
+		<Resource Include="Resources\Gear\blueStone.png" />
+		<Resource Include="Resources\Gear\raidMaterial.png" />
+		<Resource Include="Resources\Gear\subarmor.png" />
+		<Resource Include="Resources\Gear\subweapon.png" />
+		<Resource Include="Resources\Gear\weapon.png" />
+		<Resource Include="Resources\Materials\AernasisHammer.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Assets\btn_google_sign-in.png" />
+		<Resource Include="Resources\Assets\kofi_button_blue.png" />
+		<Resource Include="Resources\Classes\healer.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\Attributes\blue.png" />
+		<Resource Include="Resources\Attributes\green.png" />
+		<Resource Include="Resources\Attributes\purple.png" />
+		<Resource Include="Resources\Attributes\red.png" />
+		<Resource Include="Resources\Attributes\yellow.png" />
+		<Resource Include="Resources\Classes\assault.png" />
+		<Resource Include="Resources\Classes\mage.png" />
+		<Resource Include="Resources\Classes\ranger.png" />
+		<Resource Include="Resources\Classes\tank.png" />
+		<Resource Include="Resources\gc_logo.png" />
+		<Resource Include="Resources\Materials\BlessingOfValor.png" />
+		<Resource Include="Resources\Materials\BlueGem.png" />
+		<Resource Include="Resources\Materials\energy.png" />
+		<Resource Include="Resources\Materials\EvoCube.png" />
+		<Resource Include="Resources\Materials\EW.png" />
+		<Resource Include="Resources\Materials\EwMats.png" />
+		<Resource Include="Resources\Materials\gold.png" />
+		<Resource Include="Resources\Materials\GrowthCube.png" />
+		<Resource Include="Resources\Materials\GrowthEssenceAssault.png" />
+		<Resource Include="Resources\Materials\GrowthEssenceHealer.png" />
+		<Resource Include="Resources\Materials\GrowthEssenceMage.png" />
+		<Resource Include="Resources\Materials\GrowthEssenceRanger.png" />
+		<Resource Include="Resources\Materials\GrowthEssenceTank.png" />
+		<Resource Include="Resources\Materials\LabTicket.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AdvancedSharpAdbClient" />
+		<PackageReference Include="CommonServiceLocation" />
+		<PackageReference Include="Emgu.CV.Bitmap" />
+		<PackageReference Include="Emgu.CV.runtime.windows" />
+		<PackageReference Include="gong-wpf-dragdrop" />
+		<PackageReference Include="Google.Apis.Drive.v3" />
+		<PackageReference Include="Google.Apis.Sheets.v4" />
+		<PackageReference Include="MahApps.Metro" />
+		<PackageReference Include="MaterialDesignThemes" />
+		<PackageReference Include="MaterialDesignThemes.Wpf" />
+		<PackageReference Include="MaterialDesignColors" />
+		<PackageReference Include="MaterialDesignThemes.MahApps" />
+		<PackageReference Include="Microsoft.Extensions.Logging" />
+		<PackageReference Include="Microsoft.Win32.SystemEvents" />
+		<PackageReference Include="NetSparkleUpdater.Chaos.NaCl" />
+		<PackageReference Include="NetSparkleUpdater.UI.WPF" />
+		<PackageReference Include="NSec.Cryptography" />
+		<PackageReference Include="PixelLab.BOT" />
+		<PackageReference Include="Portable.BouncyCastle" />
+		<PackageReference Include="Serilog.Sinks.File" />
+		<PackageReference Include="System.Diagnostics.DiagnosticSource" />
+		<PackageReference Include="System.Numerics.Vectors" />
+		<PackageReference Include="TesseractOCR" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DivideGtControls\DivideGtCommons.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.pt-BR.Designer.cs">
+			<DependentUpon>Resources.pt-BR.resx</DependentUpon>
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+		</Compile>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+		<Compile Update="Windows\DataSyncSummaryWindow.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Windows\ImageWindow.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\MessageBoxDialog.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\EditEwPlan.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\EquipmentGrowthView.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\AccessoryGrowthView.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\ExclusiveWeaponPlanningView.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\MeterialsItemInputString.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\HeroDetectionUserControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\ProcessSelectUserControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\ProcessAttachUserControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\SiCoresOpenTierListOverlay.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListBuilderUserControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListCompactControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListElementCompactControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListEWElementControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListEWControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListTransControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListTransElementControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListAccessoryElementControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TierListAccessoryControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\TeamBuilderUserControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="UserControls\VulcanusPlannerVertUserControl.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Windows\DonateWindow.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Windows\GoogleDriveWindow.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Windows\DataSyncWindow.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Update="Windows\ShowRegionWindow.xaml.cs">
+			<SubType>Code</SubType>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.pt-BR.resx">
+			<LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="adb\adb.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\AdbWinApi.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\AdbWinUsbApi.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\dmtracedump.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\etc1tool.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\fastboot.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\hprof-conv.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\libwinpthread-1.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\make_f2fs.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\make_f2fs_casefold.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\mke2fs.conf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\mke2fs.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\NOTICE.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\scrcpy-wireless-connect.bat">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\scrcpy-wireless-setup.bat">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\source.properties">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="adb\sqlite3.exe">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_blue.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_orange.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_purple.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_purple2.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_t1.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_t2.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_t3.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\acc_t4.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_burning.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_cursed.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_frozen.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_t1.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_t2.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_t3.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_t4.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\arti_t5.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Ai.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\AiT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Amy.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\AmyT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Arme.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\ArmeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\ArmeS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Asin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\AsinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Bastet.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Callisto.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\CallistoT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Cindy.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Decanee.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\DecaneeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Deia.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Dio.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\DioT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Edel.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\EdelT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Elesis.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\ElesisS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\ElesisT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Europa.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\EuropaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Ganymede.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\GanymedeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Grandiel.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Harpe.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\HarpeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Hwarin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\HwarinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Io.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\IoT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Jin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\JinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Kanavan.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\KanavanT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Lapis.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\LapisT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Lass.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\LassT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Ley.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\LeyT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Lime.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\LimeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Lire.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\LireT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Mari.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\MariT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Mayden.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\MaydenT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Myst.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\MystT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Nelia.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\NeliaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Ragnar.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\RagnarT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Rin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\RinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Ronan.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\RonanT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Rufus.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\RufusT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Ryan.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\RyanT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Serdin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\SerdinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Sieghart.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\SieghartT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Sol.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Tia.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\TiaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\UnoS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Urara.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Vice.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Veigas.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\VeigasT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Werner.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\WernerT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\Zero.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\ZeroT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\home_btn.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\inventory.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\inventory_btn.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\question_mark.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\unitsr.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\unitt.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_blue.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_orange.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_purple.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_purple2.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_t1.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_t2.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_t3.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\acc_t4.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_burning.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_cursed.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_frozen.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_t1.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_t2.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_t3.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_t4.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_t5.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Ai.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\AiT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Amy.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\AmyT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Arme.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\ArmeS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\ArmeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Asin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\AsinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Bastet.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Brammashell.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Callisto.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\CallistoT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Cindy.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Decanee.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\DecaneeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Deia.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Dio.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\DioT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Edel.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\EdelT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Elesis.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\ElesisS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\ElesisT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Europa.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\EuropaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Ganymede.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\GanymedeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Grandiel.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Harpe.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Hwarin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\HwarinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Io.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\IoT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Jin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\JinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Kanavan.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\KanavanT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Lapis.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\LapisT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Lass.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\LassT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Ley.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\LeyT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Lime.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\LimeT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Lire.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\LireT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Mari.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\MariT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Mayden.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\MaydenT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Myst.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\MystT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Nelia.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\NeliaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Ragnar.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\RagnarT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Rin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\RinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Ronan.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\RonanT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Rufus.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\RufusT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Ryan.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\RyanT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Serdin.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\SerdinT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Sieghart.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\SieghartT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Sol.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Tia.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\TiaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\UnoS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Urara.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Vice.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Veigas.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\VeigasT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Werner.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\WernerT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Zero.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\ZeroT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\home_btn.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\inventory.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\inventory_btn.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\question_mark.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\unitsr.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\unitt.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<None Update="tessdata\eng.traineddata">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Page Update="UserControls\EditEwPlan.xaml">
+			<SubType>Designer</SubType>
+		</Page>
+		<Page Update="Windows\ShowRegionWindow.xaml">
+			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+		</Page>
+	</ItemGroup>
 </Project>

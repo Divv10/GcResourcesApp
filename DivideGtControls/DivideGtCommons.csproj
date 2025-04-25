@@ -1,34 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWPF>true</UseWPF>
-	<NoWarn>NU1701</NoWarn>
-	<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutputPath>bin\x64\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-  </PropertyGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\Icons\*.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Heroes\PetIcons\*.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\banner.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" />
-    <PackageReference Include="NLog" />
-    <PackageReference Include="System.Drawing.Common" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" />
-    <PackageReference Include="System.Memory" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWPF>true</UseWPF>
+		<NoWarn>NU1701</NoWarn>
+		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<OutputPath>bin\x64\Debug\</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<OutputPath>bin\x64\Release\</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Resource Include="Heroes\Icons\*.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Heroes\PetIcons\*.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\banner.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="LiveCharts" />
+		<PackageReference Include="LiveCharts.Wpf" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" />
+		<PackageReference Include="Newtonsoft.Json" />
+		<PackageReference Include="NLog" />
+		<PackageReference Include="System.Buffers" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" />
+		<PackageReference Include="System.Drawing.Common" />
+		<PackageReference Include="System.Memory" />
+		<PackageReference Include="System.Numerics.Vectors" />
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" />
+	</ItemGroup>
 </Project>

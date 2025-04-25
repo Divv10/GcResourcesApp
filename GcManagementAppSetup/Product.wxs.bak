@@ -1,5 +1,5 @@
-<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
-	<Package Name="GrandChase Resource Management" Language="1033" Version="4.4.2.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+	<Package Name="GrandChase Resource Management" Language="1033" Version="4.4.1.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
 		
 
 	  <Property Id="INSTALLFOLDER">
@@ -8,12 +8,12 @@
 
 	  <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
 	  <Upgrade Id="a072cc82-d77e-4f1c-bf72-a7b5382eb212">
-		 <UpgradeVersion Minimum="0.0.0.1" Maximum="99.99.99.99" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="yes" />
+		 <UpgradeVersion Minimum="1.0.0.0" Maximum="4.4.0.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="no" />
 	  </Upgrade>
 
 	  <Icon Id="LireSR.ico" SourceFile="LireSR.ico" />
 
-	  <MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+	  <MajorUpgrade AllowDowngrades="no" AllowSameVersionUpgrades="no" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate EmbedCab="yes" />
 
 	  <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
@@ -77,70 +77,70 @@
    <Fragment>
 	  <ComponentGroup Id="Images" Directory="Images">
 		 <Component Id="acc_blue.png">
-			<File Id="acc_blue.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_blue.png" />
+			<File Id="acc_blue.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_orange.png">
-			<File Id="acc_orange.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_orange.png" />
+			<File Id="acc_orange.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_purple.png">
-			<File Id="acc_purple.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_purple.png" />
+			<File Id="acc_purple.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_purple2.png">
-			<File Id="acc_purple2.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_purple2.png" />
+			<File Id="acc_purple2.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_t1.png">
-			<File Id="acc_t1.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_t1.png" />
+			<File Id="acc_t1.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_t2.png">
-			<File Id="acc_t2.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_t2.png" />
+			<File Id="acc_t2.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_t3.png">
-			<File Id="acc_t3.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_t3.png" />
+			<File Id="acc_t3.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="acc_t4.png">
-			<File Id="acc_t4.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="acc_t4.png" />
+			<File Id="acc_t4.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_burning.png">
-			<File Id="arti_burning.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_burning.png" />
+			<File Id="arti_burning.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_cursed.png">
-			<File Id="arti_cursed.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_cursed.png" />
+			<File Id="arti_cursed.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_frozen.png">
-			<File Id="arti_frozen.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_frozen.png" />
+			<File Id="arti_frozen.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_t1.png">
-			<File Id="arti_t1.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_t1.png" />
+			<File Id="arti_t1.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_t2.png">
-			<File Id="arti_t2.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_t2.png" />
+			<File Id="arti_t2.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_t3.png">
-			<File Id="arti_t3.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_t3.png" />
+			<File Id="arti_t3.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_t4.png">
-			<File Id="arti_t4.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_t4.png" />
+			<File Id="arti_t4.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="arti_t5.png">
-			<File Id="arti_t5.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="arti_t5.png" />
+			<File Id="arti_t5.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="inventory.png">
-			<File Id="inventory.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="inventory.png" />
+			<File Id="inventory.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="inventory_btn.png">
-			<File Id="inventory_btn.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="inventory_btn.png" />
+			<File Id="inventory_btn.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="question_mark.png">
-			<File Id="question_mark.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="question_mark.png" />
+			<File Id="question_mark.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="unitsr.png">
-			<File Id="unitsr.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="unitsr.png" />
+			<File Id="unitsr.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="unitt.png">
-			<File Id="unitt.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="unitt.png" />
+			<File Id="unitt.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 		 <Component Id="home_btn.png">
-			<File Id="home_btn.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" Name="home_btn.png" />
+			<File Id="home_btn.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\" />
 		 </Component>
 	  </ComponentGroup>
    </Fragment>
@@ -219,241 +219,241 @@
    <Fragment>
 	  <ComponentGroup Id="HeroNames" Directory="HeroNames">
 		 <Component Id="Ai.png">
-			<File Id="Ai.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ai.png" />
+			<File Id="Ai.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Amy.png">
-			<File Id="Amy.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Amy.png" />
+			<File Id="Amy.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="AmyT.png">
-			<File Id="AmyT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="AmyT.png" />
+			<File Id="AmyT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Arme.png">
-			<File Id="Arme.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Arme.png" />
+			<File Id="Arme.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="ArmeT.png">
-			<File Id="ArmeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="ArmeT.png" />
+			<File Id="ArmeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		  <Component Id="ArmeS.png">
-			<File Id="ArmeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="ArmeS.png" />
+			<File Id="ArmeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		  </Component>
 		 <Component Id="Asin.png">
-			<File Id="Asin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Asin.png" />
+			<File Id="Asin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="AsinT.png">
-			<File Id="AsinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="AsinT.png" />
+			<File Id="AsinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Bastet.png">
-			<File Id="Bastet.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Bastet.png" />
+			<File Id="Bastet.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Callisto.png">
-			<File Id="Callisto.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Callisto.png" />
+			<File Id="Callisto.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="CallistoT.png">
-			<File Id="CallistoT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="CallistoT.png" />
+			<File Id="CallistoT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Cindy.png">
-			<File Id="Cindy.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Cindy.png" />
+			<File Id="Cindy.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Decanee.png">
-			<File Id="Decanee.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Decanee.png" />
+			<File Id="Decanee.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="DecaneeT.png">
-			<File Id="DecaneeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="DecaneeT.png" />
+			<File Id="DecaneeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Deia.png">
-			<File Id="Deia.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Deia.png" />
+			<File Id="Deia.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Dio.png">
-			<File Id="Dio.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Dio.png" />
+			<File Id="Dio.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="DioT.png">
-			<File Id="DioT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="DioT.png" />
+			<File Id="DioT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Edel.png">
-			<File Id="Edel.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Edel.png" />
+			<File Id="Edel.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="EdelT.png">
-			<File Id="EdelT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="EdelT.png" />
+			<File Id="EdelT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Elesis.png">
-			<File Id="Elesis.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Elesis.png" />
+			<File Id="Elesis.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="ElesisS.png">
-			<File Id="ElesisS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="ElesisS.png" />
+			<File Id="ElesisS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="ElesisT.png">
-			<File Id="ElesisT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="ElesisT.png" />
+			<File Id="ElesisT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Europa.png">
-			<File Id="Europa.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Europa.png" />
+			<File Id="Europa.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="EuropaT.png">
-			<File Id="EuropaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="EuropaT.png" />
+			<File Id="EuropaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Ganymede.png">
-			<File Id="Ganymede.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ganymede.png" />
+			<File Id="Ganymede.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="GanymedeT.png">
-			<File Id="GanymedeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="GanymedeT.png" />
+			<File Id="GanymedeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Grandiel.png">
-			<File Id="Grandiel.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Grandiel.png" />
+			<File Id="Grandiel.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Harpe.png">
-			<File Id="Harpe.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Harpe.png" />
+			<File Id="Harpe.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="HarpeT.png">
-			<File Id="HarpeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="HarpeT.png" />
+			<File Id="HarpeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Hwarin.png">
-			<File Id="Hwarin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Hwarin.png" />
+			<File Id="Hwarin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="HwarinT.png">
-			<File Id="HwarinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="HwarinT.png" />
+			<File Id="HwarinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Io.png">
-			<File Id="Io.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Io.png" />
+			<File Id="Io.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="IoT.png">
-			<File Id="IoT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="IoT.png" />
+			<File Id="IoT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Jin.png">
-			<File Id="Jin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Jin.png" />
+			<File Id="Jin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="JinT.png">
-			<File Id="JinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="JinT.png" />
+			<File Id="JinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Kanavan.png">
-			<File Id="Kanavan.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Kanavan.png" />
+			<File Id="Kanavan.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="KanavanT.png">
-			<File Id="KanavanT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="KanavanT.png" />
+			<File Id="KanavanT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Lapis.png">
-			<File Id="Lapis.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Lapis.png" />
+			<File Id="Lapis.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="LapisT.png">
-			<File Id="LapisT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LapisT.png" />
+			<File Id="LapisT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Lass.png">
-			<File Id="Lass.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Lass.png" />
+			<File Id="Lass.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="LassT.png">
-			<File Id="LassT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LassT.png" />
+			<File Id="LassT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Ley.png">
-			<File Id="Ley.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ley.png" />
+			<File Id="Ley.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="LeyT.png">
-			<File Id="LeyT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LeyT.png" />
+			<File Id="LeyT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Lime.png">
-			<File Id="Lime.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Lime.png" />
+			<File Id="Lime.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="LimeT.png">
-			<File Id="LimeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LimeT.png" />
+			<File Id="LimeT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Lire.png">
-			<File Id="Lire.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Lire.png" />
+			<File Id="Lire.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="LireT.png">
-			<File Id="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LireT.png" />
+			<File Id="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Mari.png">
-			<File Id="Mari.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Mari.png" />
+			<File Id="Mari.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="MariT.png">
-			<File Id="MariT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="MariT.png" />
+			<File Id="MariT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Mayden.png">
-			<File Id="Mayden.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Mayden.png" />
+			<File Id="Mayden.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Myst.png">
-			<File Id="Myst.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Myst.png" />
+			<File Id="Myst.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="MystT.png">
-			<File Id="MystT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="MystT.png" />
+			<File Id="MystT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Nelia.png">
-			<File Id="Nelia.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Nelia.png" />
+			<File Id="Nelia.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="NeliaT.png">
-			<File Id="NeliaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="NeliaT.png" />
+			<File Id="NeliaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Ragnar.png">
-			<File Id="Ragnar.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ragnar.png" />
+			<File Id="Ragnar.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="RagnarT.png">
-			<File Id="RagnarT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="RagnarT.png" />
+			<File Id="RagnarT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Rin.png">
-			<File Id="Rin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Rin.png" />
+			<File Id="Rin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="RinT.png">
-			<File Id="RinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="RinT.png" />
+			<File Id="RinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Ronan.png">
-			<File Id="Ronan.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ronan.png" />
+			<File Id="Ronan.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="RonanT.png">
-			<File Id="RonanT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="RonanT.png" />
+			<File Id="RonanT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Rufus.png">
-			<File Id="Rufus.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Rufus.png" />
+			<File Id="Rufus.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="RufusT.png">
-			<File Id="RufusT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="RufusT.png" />
+			<File Id="RufusT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Ryan.png">
-			<File Id="Ryan.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ryan.png" />
+			<File Id="Ryan.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="RyanT.png">
-			<File Id="RyanT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="RyanT.png" />
+			<File Id="RyanT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Serdin.png">
-			<File Id="Serdin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Serdin.png" />
+			<File Id="Serdin.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="SerdinT.png">
-			<File Id="SerdinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="SerdinT.png" />
+			<File Id="SerdinT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Sieghart.png">
-			<File Id="Sieghart.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Sieghart.png" />
+			<File Id="Sieghart.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="SieghartT.png">
-			<File Id="SieghartT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="SieghartT.png" />
+			<File Id="SieghartT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Sol.png">
-			<File Id="Sol.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Sol.png" />
+			<File Id="Sol.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Tia.png">
-			<File Id="Tia.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Tia.png" />
+			<File Id="Tia.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="TiaT.png">
-			<File Id="TiaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="TiaT.png" />
+			<File Id="TiaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="UnoS.png">
-			<File Id="UnoS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="UnoS.png" />
+			<File Id="UnoS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Urara.png">
-			<File Id="Urara.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Urara.png" />
+			<File Id="Urara.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Veigas.png">
-			<File Id="Veigas.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Veigas.png" />
+			<File Id="Veigas.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="VeigasT.png">
-			<File Id="VeigasT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="VeigasT.png" />
+			<File Id="VeigasT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Vice.png">
-			<File Id="Vice.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Vice.png" />
+			<File Id="Vice.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Werner.png">
-			<File Id="Werner.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Werner.png" />
+			<File Id="Werner.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="WernerT.png">
-			<File Id="WernerT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="WernerT.png" />
+			<File Id="WernerT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <Component Id="Zero.png">
-			<File Id="Zero.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Zero.png" />
+			<File Id="Zero.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" />
 		 </Component>
 		 <!--<Component Id="Brammashell.png">
 			<File Id='Brammashell.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\HeroNames\'  />
@@ -716,7 +716,7 @@
    <Fragment>
 	  <ComponentGroup Id="tessdata" Directory="tessdata">
 		 <Component Id="eng.traineddata">
-			<File Id="eng.traineddata" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\tessdata\" Name="eng.traineddata" />
+			<File Id="eng.traineddata" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\tessdata\" />
 		 </Component>
 	  </ComponentGroup>
    </Fragment>
@@ -746,22 +746,22 @@
    <Fragment>
 	  <ComponentGroup Id="adb" Directory="adb">
 		 <Component Id="adb.exe">
-			<File Id="adb.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="adb.exe" />
+			<File Id="adb.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="AdbWinApi.dll">
-			<File Id="AdbWinApi.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="AdbWinApi.dll" />
+			<File Id="AdbWinApi.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="AdbWinUsbApi.dll">
-			<File Id="AdbWinUsbApi.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="AdbWinUsbApi.dll" />
+			<File Id="AdbWinUsbApi.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="dmtracedump.exe">
-			<File Id="dmtracedump.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="dmtracedump.exe" />
+			<File Id="dmtracedump.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="etc1tool.exe">
-			<File Id="etc1tool.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="etc1tool.exe" />
+			<File Id="etc1tool.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="fastboot.exe">
-			<File Id="fastboot.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="fastboot.exe" />
+			<File Id="fastboot.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="hprofconv.exe">
 			<File Id="hprof_conv.exe" Name="hprof-conv.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
@@ -770,25 +770,25 @@
 			<File Id="libwinpthread_1.dll" Name="libwinpthread-1.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="make_f2fs.exe">
-			<File Id="make_f2fs.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="make_f2fs.exe" />
+			<File Id="make_f2fs.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="make_f2fs_casefold.exe">
-			<File Id="make_f2fs_casefold.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="make_f2fs_casefold.exe" />
+			<File Id="make_f2fs_casefold.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="mke2fs.conf">
-			<File Id="mke2fs.conf" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="mke2fs.conf" />
+			<File Id="mke2fs.conf" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="mke2fs.exe">
-			<File Id="mke2fs.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="mke2fs.exe" />
+			<File Id="mke2fs.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="NOTICE.txt">
-			<File Id="NOTICE.txt" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="NOTICE.txt" />
+			<File Id="NOTICE.txt" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="source.properties">
-			<File Id="source.properties" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="source.properties" />
+			<File Id="source.properties" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 		 <Component Id="sqlite3.exe">
-			<File Id="sqlite3.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" Name="sqlite3.exe" />
+			<File Id="sqlite3.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\adb\" />
 		 </Component>
 	  </ComponentGroup>
    </Fragment>
@@ -796,139 +796,136 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			 <Component Id="GCManagementApp.exe">
-			 <File Id="GCManagementApp.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="GCManagementApp.exe" />
+			 <File Id="GCManagementApp.exe" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 			</Component>
 		 <Component Id="AdvancedSharpAdbClient.dll">
-			<File Id="AdvancedSharpAdbClient.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="AdvancedSharpAdbClient.dll" />
+			<File Id="AdvancedSharpAdbClient.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="BouncyCastle.Crypto.dll">
-			<File Id="BouncyCastle.Crypto.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="BouncyCastle.Crypto.dll" />
+			<File Id="BouncyCastle.Crypto.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="ControlzEx.dll">
-			<File Id="ControlzEx.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="ControlzEx.dll" />
+			<File Id="ControlzEx.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="DivideGtCommons.dll">
-			<File Id="DivideGtCommons.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="DivideGtCommons.dll" />
+			<File Id="DivideGtCommons.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Emgu.CV.Bitmap.dll">
-			<File Id="Emgu.CV.Bitmap.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Emgu.CV.Bitmap.dll" />
+			<File Id="Emgu.CV.Bitmap.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Emgu.CV.dll">
-			<File Id="Emgu.CV.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Emgu.CV.dll" />
+			<File Id="Emgu.CV.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="GCManagementApp.deps.json">
-			<File Id="GCManagementApp.deps.json" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="GCManagementApp.deps.json" />
+			<File Id="GCManagementApp.deps.json" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="GCManagementApp.dll">
-			<File Id="GCManagementApp.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="GCManagementApp.dll" />
+			<File Id="GCManagementApp.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="GCManagementApp.runtimeconfig.json">
-			<File Id="GCManagementApp.runtimeconfig.json" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="GCManagementApp.runtimeconfig.json" />
+			<File Id="GCManagementApp.runtimeconfig.json" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="GongSolutions.WPF.DragDrop.dll">
-			<File Id="GongSolutions.WPF.DragDrop.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="GongSolutions.WPF.DragDrop.dll" />
+			<File Id="GongSolutions.WPF.DragDrop.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Google.Apis.Auth.dll">
-			<File Id="Google.Apis.Auth.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Google.Apis.Auth.dll" />
+			<File Id="Google.Apis.Auth.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Google.Apis.Core.dll">
-			<File Id="Google.Apis.Core.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Google.Apis.Core.dll" />
+			<File Id="Google.Apis.Core.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Google.Apis.dll">
-			<File Id="Google.Apis.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Google.Apis.dll" />
+			<File Id="Google.Apis.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Google.Apis.Drive.v3.dll">
-			<File Id="Google.Apis.Drive.v3.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Google.Apis.Drive.v3.dll" />
+			<File Id="Google.Apis.Drive.v3.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Google.Apis.Sheets.v4.dll">
-			<File Id="Google.Apis.Sheets.v4.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Google.Apis.Sheets.v4.dll" />
+			<File Id="Google.Apis.Sheets.v4.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="MahApps.Metro.dll">
-			<File Id="MahApps.Metro.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="MahApps.Metro.dll" />
+			<File Id="MahApps.Metro.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="MaterialDesignColors.dll">
-			<File Id="MaterialDesignColors.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="MaterialDesignColors.dll" />
+			<File Id="MaterialDesignColors.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="MaterialDesignThemes.MahApps.dll">
-			<File Id="MaterialDesignThemes.MahApps.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="MaterialDesignThemes.MahApps.dll" />
+			<File Id="MaterialDesignThemes.MahApps.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="MaterialDesignThemes.Wpf.dll">
-			<File Id="MaterialDesignThemes.Wpf.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="MaterialDesignThemes.Wpf.dll" />
+			<File Id="MaterialDesignThemes.Wpf.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Expression.Interactions.dll">
-			<File Id="Microsoft.Expression.Interactions.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Expression.Interactions.dll" />
+			<File Id="Microsoft.Expression.Interactions.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Extensions.Logging.Abstractions.dll">
-			<File Id="Microsoft.Extensions.Logging.Abstractions.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Extensions.Logging.Abstractions.dll" />
+			<File Id="Microsoft.Extensions.Logging.Abstractions.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Practices.Prism.dll">
-			<File Id="Microsoft.Practices.Prism.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Practices.Prism.dll" />
+			<File Id="Microsoft.Practices.Prism.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Practices.Prism.Interactivity.dll">
-			<File Id="Microsoft.Practices.Prism.Interactivity.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Practices.Prism.Interactivity.dll" />
+			<File Id="Microsoft.Practices.Prism.Interactivity.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Practices.ServiceLocation.dll">
-			<File Id="Microsoft.Practices.ServiceLocation.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Practices.ServiceLocation.dll" />
+			<File Id="Microsoft.Practices.ServiceLocation.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Win32.SystemEvents.dll">
-			<File Id="Microsoft.Win32.SystemEvents.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Win32.SystemEvents.dll" />
+			<File Id="Microsoft.Win32.SystemEvents.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Microsoft.Xaml.Behaviors.dll">
-			<File Id="Microsoft.Xaml.Behaviors.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Microsoft.Xaml.Behaviors.dll" />
+			<File Id="Microsoft.Xaml.Behaviors.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
-		<Component Id="Chaos.NaCl.dll">
-			<File Id="Chaos.NaCl.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Chaos.NaCl.dll" />
-		</Component>
 		 <Component Id="NetSparkle.dll">
-			<File Id="NetSparkle.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="NetSparkle.dll" />
+			<File Id="NetSparkle.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="NetSparkle.UI.WPF.dll">
-			<File Id="NetSparkle.UI.WPF.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="NetSparkle.UI.WPF.dll" />
+			<File Id="NetSparkle.UI.WPF.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Newtonsoft.Json.dll">
-			<File Id="Newtonsoft.Json.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Newtonsoft.Json.dll" />
+			<File Id="Newtonsoft.Json.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="NLog.dll">
-			<File Id="NLog.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="NLog.dll" />
+			<File Id="NLog.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="NSec.Cryptography.dll">
-			<File Id="NSec.Cryptography.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="NSec.Cryptography.dll" />
+			<File Id="NSec.Cryptography.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="PixelLab.Common.dll">
-			<File Id="PixelLab.Common.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="PixelLab.Common.dll" />
+			<File Id="PixelLab.Common.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="PixelLab.Core.dll">
-			<File Id="PixelLab.Core.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="PixelLab.Core.dll" />
+			<File Id="PixelLab.Core.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="PixelLab.Wpf.dll">
-			<File Id="PixelLab.Wpf.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="PixelLab.Wpf.dll" />
+			<File Id="PixelLab.Wpf.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Serilog.dll">
-			<File Id="Serilog.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Serilog.dll" />
+			<File Id="Serilog.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="Serilog.Sinks.File.dll">
-			<File Id="Serilog.Sinks.File.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="Serilog.Sinks.File.dll" />
+			<File Id="Serilog.Sinks.File.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="System.CodeDom.dll">
-			<File Id="System.CodeDom.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.CodeDom.dll" />
+			<File Id="System.CodeDom.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="System.Management.dll">
-			<File Id="System.Management.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Management.dll" />
+			<File Id="System.Management.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="System.Drawing.Common.dll">
-			<File Id="System.Drawing.Common.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Drawing.Common.dll" />
+			<File Id="System.Drawing.Common.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="System.Text.Encodings.Web.dll">
-			<File Id="System.Text.Encodings.Web.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Text.Encodings.Web.dll" />
+			<File Id="System.Text.Encodings.Web.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="System.Text.Json.dll">
-			<File Id="System.Text.Json.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Text.Json.dll" />
+			<File Id="System.Text.Json.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="System.Windows.Interactivity.dll">
-			<File Id="System.Windows.Interactivity.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Windows.Interactivity.dll" />
+			<File Id="System.Windows.Interactivity.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		 <Component Id="TesseractOCR.dll">
-			<File Id="TesseractOCR.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="TesseractOCR.dll" />
+			<File Id="TesseractOCR.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" />
 		 </Component>
 		</ComponentGroup>
 	</Fragment>

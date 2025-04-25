@@ -52,17 +52,18 @@ namespace GCManagementApp.Windows
             set => SetProperty(ref _username, value);
         }
 
-        private UserCredential _userCredential 
+        private static UserCredential UserCredential 
         {
             get => ProfileGrowth.Profile.GoogleUserCredentials;
             set => ProfileGrowth.Profile.GoogleUserCredentials = value;
         }
-        private DriveService _driveService 
+        private static DriveService DriveService 
         {
             get => ProfileGrowth.Profile.GoogleDriveService;
             set => ProfileGrowth.Profile.GoogleDriveService = value;
         }
 
+        [Obsolete ("Google Drive obsolete") ]
         public GoogleDriveWindow()
         {
             InitializeComponent();
@@ -70,7 +71,7 @@ namespace GCManagementApp.Windows
 
             LoginStatus = ProfileGrowth.Profile.GoogleLoginStatus;
             Username = ProfileGrowth.Profile.GoogleDisplayName;
-            if (_userCredential == null || _driveService == null)
+            if (UserCredential == null || DriveService == null)
             {
                 LoginStatus = GoogleLoginStatus.NotLogged;
             }
@@ -96,26 +97,26 @@ namespace GCManagementApp.Windows
 
         private async Task Run()
         {
-            ClientSecrets secrets = new ClientSecrets()
+            ClientSecrets secrets = new()
             {
                 ClientId = ClientId,
                 ClientSecret = ClientSecret,
             };
 
-            CancellationTokenSource cts = new CancellationTokenSource();
+            CancellationTokenSource cts = new();
             cts.CancelAfter(TimeSpan.FromSeconds(20));
             CancellationToken ct = cts.Token;
 
-            _userCredential = await GoogleWebAuthorizationBroker.AuthorizeAsync(secrets, Scopes, "user", ct);
+            UserCredential = await GoogleWebAuthorizationBroker.AuthorizeAsync(secrets, Scopes, "user", ct);
 
             // Create the service.
-            _driveService = new DriveService(new BaseClientService.Initializer()
+            DriveService = new DriveService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = _userCredential,
+                HttpClientInitializer = UserCredential,
                 ApplicationName = "GcManagementApp",
             });
 
-            var request = _driveService.About.Get();
+            var request = DriveService.About.Get();
             request.Fields = "user";
             var about = request.Execute();
 
@@ -123,6 +124,7 @@ namespace GCManagementApp.Windows
             ProfileGrowth.Profile.GoogleDisplayName = Username;
         }
 
+        [Obsolete( "Google Drive errors")]
         private async void DownloadFromDrive()
         {
             LoginStatus = GoogleLoginStatus.Logging;
@@ -132,7 +134,7 @@ namespace GCManagementApp.Windows
                 await DownloadFromDriveImpl();
                 WindowsHelper.ShowMessageDialog(Properties.Resources.ProgressDownloaded, this);
 
-                Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+                Process.Start(Environment.ProcessPath);
                 Application.Current.Shutdown();
             }
             catch 
@@ -149,13 +151,13 @@ namespace GCManagementApp.Windows
         [Obsolete ("Json instead")]
         private async Task DownloadFromDriveImpl()
         {
-            await _userCredential.RefreshTokenAsync(CancellationToken.None);
+            await UserCredential.RefreshTokenAsync(CancellationToken.None);
 
-            CancellationTokenSource cts = new CancellationTokenSource();
+            CancellationTokenSource cts = new();
             cts.CancelAfter(TimeSpan.FromSeconds(15));
             CancellationToken ct = cts.Token;
 
-            var request = _driveService.Files.List();
+            var request = DriveService.Files.List();
             request.Spaces = "appDataFolder";
             request.Fields = "nextPageToken, files(id, name)";
             var result = await request.ExecuteAsync(ct);
@@ -171,7 +173,7 @@ namespace GCManagementApp.Windows
             cts.CancelAfter(TimeSpan.FromSeconds(15));
             ct = cts.Token;
 
-            var downloadRequest = _driveService.Files.Get(progressId.Id);
+            var downloadRequest = DriveService.Files.Get(progressId.Id);
             Profile profile;
             using (var stream = new MemoryStream())
             {
@@ -188,12 +190,10 @@ namespace GCManagementApp.Windows
                     cts.CancelAfter(TimeSpan.FromSeconds(15));
                     ct = cts.Token;
 
-                    using (var xmlStream = new MemoryStream())
-                    {
-                        await downloadRequest.DownloadAsync(xmlStream, ct);
-                        xmlStream.Position = 0;
-                        profile = Profile.LoadFromStreamXml(xmlStream);
-                    }
+                    using var xmlStream = new MemoryStream();
+                    await downloadRequest.DownloadAsync(xmlStream, ct);
+                    xmlStream.Position = 0;
+                    profile = Profile.LoadFromStreamXml(xmlStream);
                 }
             }
 
@@ -229,15 +229,15 @@ namespace GCManagementApp.Windows
         }
 
 
-        private async Task UploadToDriveImpl()
+        private static async Task UploadToDriveImpl()
         {
-            await _userCredential.RefreshTokenAsync(CancellationToken.None);
+            await UserCredential.RefreshTokenAsync(CancellationToken.None);
 
-            CancellationTokenSource cts = new CancellationTokenSource();
+            CancellationTokenSource cts = new();
             cts.CancelAfter(TimeSpan.FromSeconds(15));
             CancellationToken ct = cts.Token;
 
-            var request = _driveService.Files.List();
+            var request = DriveService.Files.List();
             request.Spaces = "appDataFolder";
             request.Fields = "nextPageToken, files(id, name)";
             var result = await request.ExecuteAsync(ct);
@@ -247,7 +247,7 @@ namespace GCManagementApp.Windows
                 cts.CancelAfter(TimeSpan.FromSeconds(15));
                 ct = cts.Token;
 
-                var deleteRequest = _driveService.Files.Delete(file.Id);
+                var deleteRequest = DriveService.Files.Delete(file.Id);
                 await deleteRequest.ExecuteAsync(ct);
             }
 
@@ -266,12 +266,10 @@ namespace GCManagementApp.Windows
 
             FilesResource.CreateMediaUpload uploadRequest;
             var profileXml = ProfileGrowth.Profile.GetProfileJson();
-            using (var stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(profileXml)))
-            {
-                uploadRequest = _driveService.Files.Create(fileMetadata, stream, "application/xml");
-                uploadRequest.Fields = "id";
-                await uploadRequest.UploadAsync(ct);
-            }
+            using var stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(profileXml));
+            uploadRequest = DriveService.Files.Create(fileMetadata, stream, "application/xml");
+            uploadRequest.Fields = "id";
+            await uploadRequest.UploadAsync(ct);
         }
 
         #region PC

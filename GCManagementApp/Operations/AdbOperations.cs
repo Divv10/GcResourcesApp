@@ -1,13 +1,7 @@
 ﻿using AdvancedSharpAdbClient;
 using AdvancedSharpAdbClient.DeviceCommands;
-using AdvancedSharpAdbClient.DeviceCommands.Models;
 using AdvancedSharpAdbClient.Models;
-using AdvancedSharpAdbClient.Receivers;
-using ControlzEx.Standard;
-using GCManagementApp.Helpers;
 using GCManagementApp.Models;
-using Microsoft.Practices.Prism;
-using Org.BouncyCastle.Ocsp;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -16,10 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
-using TesseractOCR.Pix;
-using Image = System.Drawing.Image;
 
 namespace GCManagementApp.Operations
 {
