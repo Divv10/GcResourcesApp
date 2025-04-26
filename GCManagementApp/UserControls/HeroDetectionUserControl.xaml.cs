@@ -501,9 +501,10 @@ namespace GCManagementApp.UserControls
         private void GetArtiInfo(Bitmap img, HeroScanResult result)
         {
             var artiTierImg = img.CropImage(ImageRegions.ArtiTierArea);
-            if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.8).IsEmpty)
+
+            if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.85).IsEmpty)
                 result.ArtiTier = 5;
-            else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.8).IsEmpty)
+            else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.85).IsEmpty)
                 result.ArtiTier = 4;
             else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT3, artiTierImg, 0.8).IsEmpty)
                 result.ArtiTier = 3;
