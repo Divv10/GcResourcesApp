@@ -25,6 +25,7 @@ namespace GCManagementApp.Windows
             App.Current.MainWindow.Opacity = 1;
         }
 
+        [Obsolete ("Google Drive out")]
         public static void ShowGoogleDriveWindow()
         {
             var window = new GoogleDriveWindow()

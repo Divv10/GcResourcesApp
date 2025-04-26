@@ -1,43 +1,31 @@
-﻿using ControlzEx.Theming;
-using GCManagementApp.Helpers;
-using GCManagementApp.Models;
-using GCManagementApp.Static;
-using GCManagementApp.Windows;
-using MaterialDesignThemes.Wpf;
-using NetSparkleUpdater.Enums;
-using NetSparkleUpdater.SignatureVerifiers;
-using NetSparkleUpdater;
-using Newtonsoft.Json.Linq;
-using Serilog;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Interop;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using System.Security.Policy;
-using System.Threading;
+using ControlzEx.Theming;
 using GCManagementApp.Enums;
-using GCManagementApp.UserControls;
-using System.Collections.ObjectModel;
+using GCManagementApp.Helpers;
+using GCManagementApp.Models;
+using GCManagementApp.Static;
+using GCManagementApp.Windows;
+using MaterialDesignThemes.Wpf;
+using NetSparkleUpdater;
+using NetSparkleUpdater.Enums;
+using NetSparkleUpdater.SignatureVerifiers;
+using Serilog;
+using Theme = MaterialDesignThemes.Wpf.Theme;
 
 namespace GCManagementApp
 {
@@ -124,8 +112,8 @@ namespace GCManagementApp
             if (Properties.Settings.Default.DarkTheme)
             {
                 var paletteHelper = new PaletteHelper();
-                ITheme theme = paletteHelper.GetTheme();
-                theme.SetBaseTheme(MaterialDesignThemes.Wpf.Theme.Dark);
+                Theme theme = paletteHelper.GetTheme();
+                theme.SetBaseTheme(MaterialDesignThemes.Wpf.BaseTheme.Dark);
                 paletteHelper.SetTheme(theme);
 
                 ThemeManager.Current.ChangeTheme(this, "Dark.Blue");
@@ -133,8 +121,8 @@ namespace GCManagementApp
             else
             {
                 var paletteHelper = new PaletteHelper();
-                ITheme theme = paletteHelper.GetTheme();
-                theme.SetBaseTheme(MaterialDesignThemes.Wpf.Theme.Light);
+                Theme theme = paletteHelper.GetTheme();
+                theme.SetBaseTheme(MaterialDesignThemes.Wpf.BaseTheme.Light);
                 paletteHelper.SetTheme(theme);
 
                 ThemeManager.Current.ChangeTheme(this, "Light.Blue");
@@ -145,7 +133,7 @@ namespace GCManagementApp
                 UIFactory = new NetSparkleUpdater.UI.WPF.UIFactory(),
                 RelaunchAfterUpdate = true,
                 CustomInstallerArguments = "",
-                LogWriter= new LogWriter(false),
+                LogWriter= new LogWriter(LogWriterOutputMode.None),
             };
             _sparkle.StartLoop(true, true);
 
