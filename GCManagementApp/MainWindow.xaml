@@ -142,7 +142,7 @@
                     </TabItem>
                 </TabControl>
             </TabItem>
-            <TabItem Header="Team builders">
+            <TabItem Header="{x:Static properties:Resources.TeamBuilder}">
                 <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
                     <TabItem ToolTip="Vulcanus team builder">
                         <TabItem.Header>

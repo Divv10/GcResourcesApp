@@ -123,6 +123,9 @@
   <data name="Accessories" xml:space="preserve">
     <value>Acessórios</value>
   </data>
+  <data name="GEGainedInBossStage" xml:space="preserve">
+    <value>Essência de Crescimento obtida em fase de chefe</value>
+  </data>
   <data name="AdditionalEnergyBoughtWeekly" xml:space="preserve">
     <value>Energia adicional comprada semanalmente:</value>
   </data>
@@ -205,7 +208,7 @@
     <value>Com base na minha experiência, você ganha cerca de 900 energia semanalmente com anúncios na loja. Edite o valor abaixo se você sentir que está recebendo um valor diferente.</value>
   </data>
   <data name="BGFromSellingHeroes" xml:space="preserve">
-    <value>Gema Azuis da venda de heróis</value>
+    <value>Gemas Azuis da venda de heróis</value>
   </data>
   <data name="Blue" xml:space="preserve">
     <value>EQUILÍB</value>
@@ -225,6 +228,9 @@
   <data name="BlueGemsOptions" xml:space="preserve">
     <value>Opções de Gemas Azuis</value>
   </data>
+  <data name="BlueGemsPerSoldHero" xml:space="preserve">
+    <value>Gemas Azuis por Herói Vendido</value>
+  </data>
   <data name="BlueGemsWeekly" xml:space="preserve">
     <value>Gemas Azuis semanalmente</value>
   </data>
@@ -234,8 +240,29 @@
   <data name="BonusEnergyFromPack" xml:space="preserve">
     <value>Energia bônus do pacote</value>
   </data>
+  <data name="BovFromEnergy" xml:space="preserve">
+    <value>BoV das energias</value>
+  </data>
+  <data name="BoVFromLab" xml:space="preserve">
+    <value>BoV do Labirinto</value>
+  </data>
+  <data name="BoVPerRun" xml:space="preserve">
+    <value>BoV por ida</value>
+  </data>
+  <data name="BP" xml:space="preserve">
+    <value>BP</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="BGFromDefenseMode" xml:space="preserve">
+    <value>Gema Azul obtida do Modo Defesa</value>
+  </data>
+  <data name="BoVGainedInBossStage" xml:space="preserve">
+    <value>BoV obtida em fase de chefe</value>
+  </data>
+  <data name="GEPerRun" xml:space="preserve">
+    <value>Essência de Crescimento por ida</value>
   </data>
   <data name="Chaser" xml:space="preserve">
     <value>Chaser</value>
@@ -303,6 +330,9 @@
   <data name="CostOfLevels" xml:space="preserve">
     <value>Custo dos níveis de {0}:</value>
   </data>
+  <data name="CostOfSI15InGE" xml:space="preserve">
+    <value>Custo do SI15 em Essências do Crescimento</value>
+  </data>
   <data name="CostX" xml:space="preserve">
     <value>Custo: {0}</value>
   </data>
@@ -347,6 +377,9 @@
   </data>
   <data name="DailyEntryPackage" xml:space="preserve">
     <value>Pacote Entrada Diária (+3)</value>
+  </data>
+  <data name="DailyEntryPackage1" xml:space="preserve">
+    <value>Pacote Entrada Diária (+1)</value>
   </data>
   <data name="DailyGoldIncome" xml:space="preserve">
     <value>Rendimento diário de ouro:</value>
@@ -825,6 +858,9 @@
   <data name="T" xml:space="preserve">
     <value>T</value>
   </data>
+  <data name="T6" xml:space="preserve">
+    <value>T6</value>
+  </data>
   <data name="Tank" xml:space="preserve">
     <value>Guard</value>
   </data>
@@ -969,11 +1005,35 @@
   <data name="YouHaveAddedTHero" xml:space="preserve">
     <value>Você adicionou T hero ao planejamento, mas não tem o herói SR básico atualizado para T6 e CL20. Deseja adicionar automaticamente o herói base ao planejamento?</value>
   </data>
+  <data name="BlueGemsFromWeeklyMission" xml:space="preserve">
+    <value>Gemas Azuis da Missão Semanal</value>
+  </data>
+  <data name="GEFromDefenseMode" xml:space="preserve">
+    <value>Essência de Crescimento obtida do Modo Defesa</value>
+  </data>
   <data name="SelectACUpgradeType" xml:space="preserve">
     <value>Selecione o tipo de atualização CA</value>
   </data>
   <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
     <value>Selecione se você usa Cubos de Despertar para atualizar heróis A e S.</value>
+  </data>
+  <data name="BlueGemsFromDailyMission" xml:space="preserve">
+    <value>Gemas Azuis da Missão Diária</value>
+  </data>
+  <data name="CL25Cost" xml:space="preserve">
+    <value>Custo CL25</value>
+  </data>
+  <data name="CostOfCL25InGE" xml:space="preserve">
+    <value>Custo do CL25 em Essências do Crescimento</value>
+  </data>
+  <data name="WeeksForFullCS" xml:space="preserve">
+    <value>Semanas para um CS Completo</value>
+  </data>
+  <data name="CL25SRCost" xml:space="preserve">
+    <value>Custo CL25 (SR)</value>
+  </data>
+  <data name="CL25TCost" xml:space="preserve">
+    <value>Custo CL25 (T)</value>
   </data>
   <data name="CostOfSI15InSE" xml:space="preserve">
     <value>Custo do SI15 em Essência da Alma</value>
@@ -985,8 +1045,11 @@
   <data name="BlueGemsFromArena" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="GEFromEnergy" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="GEFromEnergy" xml:space="preserve">
+    <value>Essência de Crescimento obtida pelas energias</value>
+  </data>
+  <data name="BGFromEnergy" xml:space="preserve">
+    <value>Gemas Azuis de Energia</value>
   </data>
   <data name="EnergyPackWithAcBoost" xml:space="preserve">
     <value>Pacote de energia com boost de Cubo de Despertar </value>
@@ -994,7 +1057,16 @@
   <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
     <value>Marque se você está comprando pacote com boost de Cubos de Despertar</value>
   </data>
+  <data name="AllT4" xml:space="preserve">
+    <value>T4</value>
+  </data>
+  <data name="AnyT4" xml:space="preserve">
+    <value>T4</value>
+  </data>
   <data name="OnlyT4" xml:space="preserve">
     <value>Apenas T4</value>
+  </data>
+  <data name="TeamBuilder" xml:space="preserve">
+    <value>Construtor de equipes</value>
   </data>
 </root>
