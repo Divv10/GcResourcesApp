@@ -1,13 +1,7 @@
 ﻿using AdvancedSharpAdbClient;
 using AdvancedSharpAdbClient.DeviceCommands;
-using AdvancedSharpAdbClient.DeviceCommands.Models;
 using AdvancedSharpAdbClient.Models;
-using AdvancedSharpAdbClient.Receivers;
-using ControlzEx.Standard;
-using GCManagementApp.Helpers;
 using GCManagementApp.Models;
-using Microsoft.Practices.Prism;
-using Org.BouncyCastle.Ocsp;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -16,10 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
-using TesseractOCR.Pix;
-using Image = System.Drawing.Image;
 
 namespace GCManagementApp.Operations
 {
@@ -76,7 +66,7 @@ namespace GCManagementApp.Operations
 
             var randomPt = new Point(coordinates.X + random.Next(-5, 5), coordinates.Y + random.Next(-5, 5));
             await Task.Delay(random.Next(0, 100));
-            await client.ClickAsync(device, new Cords(randomPt.X, randomPt.Y));
+            await client.ClickAsync(device, randomPt);
         }
 
         public static async Task ClickInRepeat(Point coordinates, int repeats)
@@ -90,7 +80,7 @@ namespace GCManagementApp.Operations
             {
                 var randomPt = new Point(coordinates.X + random.Next(-5, 5), coordinates.Y + random.Next(-5, 5));
                 await Task.Delay(random.Next(200, 300));
-                await client.ClickAsync(device, new Cords(randomPt.X, randomPt.Y));
+                await client.ClickAsync(device, randomPt);
             }
         }
 
@@ -103,7 +93,7 @@ namespace GCManagementApp.Operations
 
             if (!useBatchCommand)
             {
-                await client.SwipeAsync(device, new Cords(from.X, from.Y), new Cords(to.X, to.Y), speed);
+                await client.SwipeAsync(device, from, to, speed);
                 return;
             }
 

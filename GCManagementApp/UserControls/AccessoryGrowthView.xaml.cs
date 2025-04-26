@@ -328,7 +328,7 @@ namespace GCManagementApp.UserControls
             {
                 iconWarningUpdateAcc.Visibility = Visibility.Collapsed;
                 txtWarningUpdateAcc.Visibility = Visibility.Collapsed;
-                HeroesView?.Refresh();   
+                HeroesView?.Refresh();
             }
             else
             {

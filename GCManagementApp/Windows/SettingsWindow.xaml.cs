@@ -11,6 +11,7 @@ using GCManagementApp.Enums;
 using System.Linq;
 using System.Windows.Input;
 using System.Diagnostics;
+using Theme = MaterialDesignThemes.Wpf.Theme;
 
 namespace GCManagementApp.Windows
 {
@@ -62,8 +63,8 @@ namespace GCManagementApp.Windows
                 if (value)
                 {
                     var paletteHelper = new PaletteHelper();
-                    ITheme theme = paletteHelper.GetTheme();
-                    theme.SetBaseTheme(MaterialDesignThemes.Wpf.Theme.Dark);
+                    Theme theme = paletteHelper.GetTheme();
+                    theme.SetBaseTheme(MaterialDesignThemes.Wpf.BaseTheme.Dark);
                     paletteHelper.SetTheme(theme);
 
                     ThemeManager.Current.ChangeTheme(this, "Dark.Blue");
@@ -71,8 +72,8 @@ namespace GCManagementApp.Windows
                 else
                 {
                     var paletteHelper = new PaletteHelper();
-                    ITheme theme = paletteHelper.GetTheme();
-                    theme.SetBaseTheme(MaterialDesignThemes.Wpf.Theme.Light);
+                    Theme theme = paletteHelper.GetTheme();
+                    theme.SetBaseTheme(MaterialDesignThemes.Wpf.BaseTheme.Light);
                     paletteHelper.SetTheme(theme);
 
                     ThemeManager.Current.ChangeTheme(this, "Light.Blue");

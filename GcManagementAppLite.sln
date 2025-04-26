@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivideGtCommons", "DivideGt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCManagementApp", "GCManagementApp\GCManagementApp.csproj", "{53AFBC8A-7646-4541-BB1B-8ABE0D5BBF60}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "GcManagementAppSetup", "GcManagementAppSetup\GcManagementAppSetup.wixproj", "{0B8E86E4-D6CE-46C8-89CD-2B970126651E}"
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "GcManagementAppSetup", "GcManagementAppSetup\GcManagementAppSetup.wixproj", "{0B8E86E4-D6CE-46C8-89CD-2B970126651E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,8 +51,8 @@ Global
 		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Debug|x86.Build.0 = Debug|x86
 		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|Any CPU.ActiveCfg = Release|x86
 		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|Any CPU.Build.0 = Release|x86
-		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|x64.ActiveCfg = Release|x86
-		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|x64.Build.0 = Release|x86
+		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|x64.ActiveCfg = Release|x64
+		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|x64.Build.0 = Release|x64
 		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|x86.ActiveCfg = Release|x86
 		{0B8E86E4-D6CE-46C8-89CD-2B970126651E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection

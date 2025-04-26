@@ -29,6 +29,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
@@ -115,7 +116,7 @@
                         </ItemsControl.Style>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <materialDesign:Flipper Width="300" materialDesign:ElevationAssist.Elevation="Dp6" Style="{StaticResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
+                                <materialDesign:Flipper Width="300" materialDesign:ElevationAssist.Elevation="Dp6" Style="{DynamicResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
                                     <materialDesign:Flipper.FrontContent>
                                         <Grid Width="300" Height="200" Margin="10" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
                                             <Grid.ColumnDefinitions>
