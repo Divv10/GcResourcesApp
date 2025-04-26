@@ -1114,4 +1114,7 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="OnlyT4" xml:space="preserve">
     <value>Only T4</value>
   </data>
+  <data name="TeamBuilder" xml:space="preserve">
+    <value>Team builders</value>
+  </data>
 </root>
