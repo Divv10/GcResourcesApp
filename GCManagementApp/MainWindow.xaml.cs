@@ -133,7 +133,7 @@ namespace GCManagementApp
                 UIFactory = new NetSparkleUpdater.UI.WPF.UIFactory(),
                 RelaunchAfterUpdate = true,
                 CustomInstallerArguments = "",
-                LogWriter= new LogWriter(LogWriterOutputMode.None),
+                LogWriter= new LogWriter(),
             };
             _sparkle.StartLoop(true, true);
 
