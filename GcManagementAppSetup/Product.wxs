@@ -915,9 +915,9 @@
 		 <Component Id="System.Management.dll">
 			<File Id="System.Management.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Management.dll" />
 		 </Component>
-		 <Component Id="System.Drawing.Common.dll">
+		<Component Id="System.Drawing.Common.dll">
 			<File Id="System.Drawing.Common.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Drawing.Common.dll" />
-		 </Component>
+		</Component>
 		 <Component Id="System.Text.Encodings.Web.dll">
 			<File Id="System.Text.Encodings.Web.dll" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)" Name="System.Text.Encodings.Web.dll" />
 		 </Component>

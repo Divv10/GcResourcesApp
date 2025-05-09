@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCManagementApp", "GCManagementApp\GCManagementApp.csproj", "{53AFBC8A-7646-4541-BB1B-8ABE0D5BBF60}"
 EndProject
 Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "GcManagementAppSetup", "GcManagementAppSetup\GcManagementAppSetup.wixproj", "{0B8E86E4-D6CE-46C8-89CD-2B970126651E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8BFECC29-5119-4B8A-949A-B750698FBEE2} = {8BFECC29-5119-4B8A-949A-B750698FBEE2}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

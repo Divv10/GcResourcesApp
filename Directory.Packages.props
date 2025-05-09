@@ -26,7 +26,7 @@
     <PackageVersion Include="Microsoft.Win32.SystemEvents" Version="9.0.4" />
     <PackageVersion Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageVersion Include="NetSparkleUpdater.Chaos.NaCl" Version="0.9.3" />
-    <PackageVersion Include="NetSparkleUpdater.UI.WPF" Version="3.0.2" />
+    <PackageVersion Include="NetSparkleUpdater.UI.WPF" Version="2.3.0" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageVersion Include="NLog" Version="5.4.0" />
     <PackageVersion Include="NSec.Cryptography" Version="24.4.0" />
@@ -50,5 +50,9 @@
     <PackageVersion Include="System.Text.Json" Version="9.0.4" />
     <PackageVersion Include="TesseractOCR" Version="5.5.1" />
     <PackageVersion Include="WixToolset.UI.wixext" Version="6.0.0" />
+
+	<Content Include="$(NuGetPackageRoot)system.drawing.common\6.0.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 </Project>

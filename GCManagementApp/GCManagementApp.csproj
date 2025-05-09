@@ -165,6 +165,7 @@
 		<PackageReference Include="Portable.BouncyCastle" />
 		<PackageReference Include="Serilog.Sinks.File" />
 		<PackageReference Include="System.Diagnostics.DiagnosticSource" />
+		<PackageReference Include="System.Drawing.Common" />
 		<PackageReference Include="System.Numerics.Vectors" />
 		<PackageReference Include="TesseractOCR" />
 	</ItemGroup>
