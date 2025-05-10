@@ -25,10 +25,6 @@
 		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 	<ItemGroup>
-	  <Content Remove="C:\Users\AE\.nuget\packages\system.diagnostics.diagnosticsource\9.0.4\lib\netstandard2.0\System.Diagnostics.DiagnosticSource.dll" />
-	  <Content Remove="C:\Users\AE\.nuget\packages\system.drawing.common\7.0.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll" />
-	</ItemGroup>
-	<ItemGroup>
 		<None Remove="Resources\Assets\btn_google_sign-in.png" />
 		<None Remove="Resources\Assets\kofi_button_blue.png" />
 		<None Remove="Resources\Attributes\blue.png" />
