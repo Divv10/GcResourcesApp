@@ -618,7 +618,7 @@
 				<File Id="LireT.png_kr" Name="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
       <Component Id="LireS.png_kr">
-        <File Id="LireT.png_kr" Name="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+        <File Id="LireS.png_kr" Name="LireS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
       </Component>
 			<Component Id="Mari.png_kr">
 				<File Id="Mari.png_kr" Name="Mari.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
