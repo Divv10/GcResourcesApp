@@ -412,6 +412,9 @@
 		<None Update="Images\HeroNames\Bastet.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+    <None Update="Images\HeroNames\Brammashell.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
 		<None Update="Images\HeroNames\Callisto.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>

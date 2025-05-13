@@ -383,6 +383,9 @@
 			<Component Id="Mayden.png">
 				<File Id="Mayden.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Mayden.png" />
 			</Component>
+      <Component Id="MaydenT.png">
+        <File Id="MaydenT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="MaydenT.png" />
+      </Component>
 			<Component Id="Myst.png">
 				<File Id="Myst.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Myst.png" />
 			</Component>
@@ -470,9 +473,12 @@
 			<Component Id="Zero.png">
 				<File Id="Zero.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Zero.png" />
 			</Component>
-			<!--<Component Id="Brammashell.png">
-			<File Id='Brammashell.png' KeyPath="yes" Source='$(var.GCManagementApp.TargetDir)\Images\HeroNames\'  />
-		 </Component>-->
+      <Component Id="ZeroT.png">
+        <File Id="ZeroT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="ZeroT.png" />
+      </Component>
+			<Component Id="Brammashell.png">
+        <File Id="Brammashell.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Brammashell.png" />
+		 </Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -611,6 +617,9 @@
 			<Component Id="LireT.png_kr">
 				<File Id="LireT.png_kr" Name="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
+      <Component Id="LireS.png_kr">
+        <File Id="LireT.png_kr" Name="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+      </Component>
 			<Component Id="Mari.png_kr">
 				<File Id="Mari.png_kr" Name="Mari.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
