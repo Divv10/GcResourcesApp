@@ -13,7 +13,8 @@
              xmlns:behaviors="clr-namespace:GCManagementApp.Behaviors"
         xmlns:properties="clr-namespace:GCManagementApp.Properties"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1200">
+             d:DesignHeight="450" d:DesignWidth="1200"
+             SizeChanged="UserControl_SizeChanged">
     <UserControl.Resources>
         <converters:HeroToImageConverter x:Key="HeroToImageConverter"/>
         <converters:ClassToImageConverter x:Key="ClassToImageConverter"/>
@@ -89,7 +90,7 @@
                 />
         </StackPanel>
         <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="1">
-            <Grid>
+            <Grid x:Name="GridAccTab">
                 <ScrollViewer PanningMode="Both">
                     <ItemsControl Focusable="True" ItemsSource="{Binding HeroesView}" Margin="20" x:Name="ItemsC">
                         <ItemsControl.Style>
@@ -129,7 +130,7 @@
                                                 <RowDefinition />
                                                 <RowDefinition />
                                             </Grid.RowDefinitions>
-                                            <Image Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" />
+                                            <Image Margin="10,10,10,5" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" />
                                             <Label Grid.Row="2" Content="{Binding DisplayName}" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                                             <materialDesign:PackIcon Grid.Column="1" Kind="Ring" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>

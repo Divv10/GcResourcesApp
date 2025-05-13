@@ -100,7 +100,7 @@
             </Button>
         </Grid>
 
-        <TabControl x:Name="Tabs" materialDesign:ColorZoneAssist.Mode="PrimaryLight" Grid.Row="1">
+        <TabControl x:Name="Tabs" materialDesign:ColorZoneAssist.Mode="PrimaryLight" Grid.Row="1" SelectionChanged="Tabs_SelectionChanged">
             <TabItem Header="{x:Static properties:Resources.Heroes}" >
                 <uc:HeroGrowthView x:Name="HeroTab"/>
             </TabItem>
@@ -173,8 +173,9 @@
             <TabItem Header="{x:Static properties:Resources.CompactView}">
                 <uc:TierListView />
             </TabItem>
-            <TabItem Header="{x:Static properties:Resources.Accessories}">
-                <uc:AccessoryGrowthView />
+            <TabItem Header="{x:Static properties:Resources.Accessories}" x:Name="AccessoriesTab">
+                <ContentControl x:Name="AccessoriesContentControl"/>
+                <!--<uc:AccessoryGrowthView />-->
             </TabItem>
             <TabItem Header="{x:Static properties:Resources.GearSlots}">
                 <uc:GearSlotsUserControl />
