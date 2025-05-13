@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Threading;
@@ -19,6 +20,7 @@ using GCManagementApp.Enums;
 using GCManagementApp.Helpers;
 using GCManagementApp.Models;
 using GCManagementApp.Static;
+using GCManagementApp.UserControls;
 using GCManagementApp.Windows;
 using MaterialDesignThemes.Wpf;
 using NetSparkleUpdater;
@@ -180,6 +182,15 @@ namespace GCManagementApp
             }
         }
 
+        private bool _accessoryViewLoaded = false;
+        private void Tabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (AccessoriesTab.IsSelected && !_accessoryViewLoaded)
+            {
+                AccessoriesContentControl.Content = new AccessoryGrowthView();
+                _accessoryViewLoaded = true;
+            }
+        }
         private void CheckProfileForTransUpgrade(object sender, EventArgs e)
         {
             if (ProfileGrowth.Heroes.Any(x => x.TranscendenceLevel > 6))

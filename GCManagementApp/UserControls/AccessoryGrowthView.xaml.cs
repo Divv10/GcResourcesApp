@@ -339,6 +339,12 @@ namespace GCManagementApp.UserControls
             }
             
         }
+
+        private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            GridAccTab.Width = e.NewSize.Width;
+            GridAccTab.Height = e.NewSize.Height - 70;
+        }
     }
 
     public enum WorkingFilterEnum
