@@ -147,6 +147,7 @@
 	<ItemGroup>
 		<PackageReference Include="AdvancedSharpAdbClient" />
 		<PackageReference Include="CommonServiceLocation" />
+		<PackageReference Include="Emgu.CV" />
 		<PackageReference Include="Emgu.CV.Bitmap" />
 		<PackageReference Include="Emgu.CV.runtime.windows" />
 		<PackageReference Include="gong-wpf-dragdrop" />
