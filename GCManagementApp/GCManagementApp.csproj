@@ -841,6 +841,9 @@
 		<None Update="Images_kr\HeroNames\LireT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+    <None Update="Images_kr\HeroNames\LireS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
 		<None Update="Images_kr\HeroNames\Mari.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
