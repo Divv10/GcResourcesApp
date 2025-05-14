@@ -739,6 +739,9 @@
 		<None Update="Images_kr\HeroNames\Cindy.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+    <None Update="Images_kr\HeroNames\CindyT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
 		<None Update="Images_kr\HeroNames\Decanee.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>

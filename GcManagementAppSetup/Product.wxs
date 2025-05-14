@@ -236,6 +236,9 @@
 			<Component Id="Ai.png">
 				<File Id="Ai.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Ai.png" />
 			</Component>
+      <Component Id="AiT.png">
+        <File Id="AiT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="AiT.png" />
+      </Component>
 			<Component Id="Amy.png">
 				<File Id="Amy.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Amy.png" />
 			</Component>
@@ -374,6 +377,9 @@
 			<Component Id="LireT.png">
 				<File Id="LireT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LireT.png" />
 			</Component>
+      <Component Id="LireS.png">
+        <File Id="LireS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LireS.png" />
+      </Component>
 			<Component Id="Mari.png">
 				<File Id="Mari.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Mari.png" />
 			</Component>
@@ -521,6 +527,9 @@
 			<Component Id="Cindy.png_kr">
 				<File Id="Cindy.png_kr" Name="Cindy.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
+      <Component Id="CindyT.png_kr">
+        <File Id="CindyT.png_kr" Name="CindyT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+      </Component>
 			<Component Id="Decanee.png_kr">
 				<File Id="Decanee.png_kr" Name="Decanee.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
