@@ -266,6 +266,36 @@ namespace GCManagementApp.UserControls
             }
         }
 
+        public int CrystalsAdditionalWeekly
+        {
+            get => ProfileGrowth.Profile.Settings.WeeklyAdditionalDivineCrystals;
+            set
+            {
+                ProfileGrowth.Profile.Settings.WeeklyAdditionalDivineCrystals = value;
+                OnPropertyChanged(string.Empty);
+            }
+        }
+
+        public int MaxGCFromBGShop
+        {
+            get => ProfileGrowth.Profile.Settings.MaxGCFromBG;
+            set
+            {
+                ProfileGrowth.Profile.Settings.MaxGCFromBG = value;
+                OnPropertyChanged(string.Empty);
+            }
+        }
+
+        public bool BuyingCrystalsFor70BG
+        {
+            get => ProfileGrowth.Profile.Settings.Buying70BGCrystals;
+            set
+            {
+                ProfileGrowth.Profile.Settings.Buying70BGCrystals = value;
+                OnPropertyChanged(string.Empty);
+            }
+        }
+
         // Binding purposes (displaying value as the switch + switching value saves new value in the profile file).
         public bool IsWeeklyBoVPackBought
         {
@@ -317,6 +347,7 @@ namespace GCManagementApp.UserControls
         public int BlueGemsWeeklyTotal => OverrideBlueGems ? CustomBlueGems : BlueGems.BlueGemsWeeklyTotal;
         public double BGFromSellingHeroes => BlueGems.SellRarityTypes.FirstOrDefault(t => t.Type == SellRarityType)?.Sell ?? 0;
         public int GrowthCubesFromBg => GrowthCubes.CubesFromBlueGems;
+        public int GrowthCubesFromBgCost => GrowthCubes.CubesFromBlueGemsCost;
         public int GrowthCubesFromAnni => GrowthCubes.CubesFromAnni;
         public int GrowthCubesTotalWeekly => GrowthCubes.CubesTotalWeekly;
         public double GrowthCubesCSSrWeeksNeeded => GrowthCubes.WeeksForFullChaser;
@@ -324,6 +355,16 @@ namespace GCManagementApp.UserControls
         public double GrowthCubesSIWeeksNeeded => GrowthCubes.WeeksForFullSi;
         public double GrowthCubesSISrWeeksNeeded => GrowthCubes.WeeksForFullSiSr;
         public double GrowthCubesSINoEventWeeksNeeded => GrowthCubes.WeeksForFullSiNoEvent;
+        public int CrystalsFromBG => DivineCrystals.CrystalsFromBlueGems;
+        public int CrystalsFromAnni => DivineCrystals.CrystalsFromAnni;
+        public int CrystalsFromConv => DivineCrystals.CrystalsFromConvertion;
+        public int CrystalsTotalWeekly => DivineCrystals.CrystalsTotalWeekly;
+        public int CrystalsForFullDescent => DivineCrystals.CrystalsForFullDescent;
+        public double CrystalsWeeksForFullDescent => DivineCrystals.WeeksForFullDescent;
+        public int CrystalsCheapWeekly => DivineCrystals.CheapCrystalsWeekly;
+        public int CrystalsCheapCost => DivineCrystals.CheapCrystalsCost;
+        public int CrystalsExpensiveWeekly => DivineCrystals.ExpensiveCrystalsWeekly;
+        public int CrystalsExpensiveCost => DivineCrystals.ExpensiveCrystalsCost;
 
         public EnergyCalculatorView()
         {

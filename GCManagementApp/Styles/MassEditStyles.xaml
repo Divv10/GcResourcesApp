@@ -42,6 +42,27 @@
       </Grid>
    </DataTemplate>
 
+   <DataTemplate x:Key="DescentEditor">
+      <Grid Margin="10" Height="80">
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+         </Grid.ColumnDefinitions>
+         <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+         </Grid.RowDefinitions>
+
+         <TextBlock Grid.Row="0" Text="Descent" VerticalAlignment="Center"/>
+         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlaceholderHero.DescentLevel, RelativeSource={RelativeSource AncestorType=UserControl}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="40" HorizontalContentAlignment="Center" />
+
+         <Slider Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Maximum="{x:Static static:StaticValues.MaxDescentLevel}" Value="{Binding PlaceholderHero.DescentLevel, RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="{DynamicResource DescentBrush}" IsTabStop="False"/>
+
+         <Button Content="Remove" Grid.Column="2" Grid.RowSpan="2" Margin="20"  HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding RemoveStatCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+      </Grid>
+   </DataTemplate>
+
    <DataTemplate x:Key="LevelEditor">
       <Grid Margin="10" Height="80">
          <Grid.ColumnDefinitions>
@@ -376,5 +397,6 @@
                                Earring="{StaticResource EarringEditor}"
                                Artifact="{StaticResource ArtifactEditor}"
                                EW="{StaticResource EWEditor}"
+                               Descent="{StaticResource DescentEditor}"
                                />
 </ResourceDictionary>

@@ -24,6 +24,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _siLevel, value);
         }
 
+        private int _descentLevel;
+        public int DescentLevel
+        {
+            get => _descentLevel;
+            set => SetProperty(ref _descentLevel, value);
+        }
+
         private int _transcendenceLevel;
         public int TranscendenceLevel
         {
@@ -83,6 +90,13 @@ namespace GCManagementApp.Models
         {
             get => _heroSpecificSiCubesOwned;
             set => SetProperty(ref _heroSpecificSiCubesOwned, value);
+        }
+
+        private int _heroSpecificDivineCrystalsOwned;
+        public int HeroSpecificDivineCrystalsOwned
+        {
+            get => _heroSpecificDivineCrystalsOwned;
+            set => SetProperty(ref _heroSpecificDivineCrystalsOwned, value);
         }
     }
 }

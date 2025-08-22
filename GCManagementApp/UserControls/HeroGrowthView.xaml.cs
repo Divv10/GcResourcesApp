@@ -40,6 +40,7 @@ namespace GCManagementApp.UserControls
         public ICommand SortByLevel { get; }
         public ICommand SortByPet { get; }
         public ICommand SortByBp { get; }
+        public ICommand SortByDescent { get; }
 
         public bool IsPerformanceModeEnabled => GCManagementApp.Properties.Settings.Default.PerformanceMode;
 
@@ -178,6 +179,9 @@ namespace GCManagementApp.UserControls
                     case HeroSortOrder.Bp:
                         OnSortByBp(null);
                         break;
+                    case HeroSortOrder.DescentLevel:
+                        OnSortByDescent(null);
+                        break;
                 }
             }
 
@@ -195,6 +199,7 @@ namespace GCManagementApp.UserControls
             SortByLevel = new RelayCommand(OnSortByLevel);
             SortByPet = new RelayCommand(OnSortByPet);
             SortByBp = new RelayCommand(OnSortByBp);
+            SortByDescent = new RelayCommand(OnSortByDescent);
 
             this.IsVisibleChanged += RefreshCollection;
 
@@ -353,6 +358,17 @@ namespace GCManagementApp.UserControls
             Properties.Settings.Default.Save();
         }
 
+        private void OnSortByDescent(object param)
+        {
+            using (HeroesView.DeferRefresh())
+            {
+                HeroesView.SortDescriptions.Clear();
+                HeroesView.SortDescriptions.Add(new SortDescription(nameof(HeroGrowth.DescentLevel), ListSortDirection.Descending));
+            }
+            Properties.Settings.Default.LastHeroesSortOrder = (int)HeroSortOrder.DescentLevel;
+            Properties.Settings.Default.Save();
+        }
+
         #endregion
 
         private void EditHeroClick(object sender, RoutedEventArgs e)
@@ -368,7 +384,7 @@ namespace GCManagementApp.UserControls
                 if (hg != null)
                 {
                     CurrentHeroGrowth = hg;
-                    SelectedHeroGrowth = new HeroGrowth() { Hero = hg.Hero, IsOwned = hg.IsOwned, Level = hg.Level, ChaserLevel = hg.ChaserLevel, PetLevel = hg.PetLevel, SiLevel = hg.SiLevel, TranscendenceLevel = hg.TranscendenceLevel, Ring = hg.Ring, Earrings = hg.Earrings, Necklace = hg.Necklace, Equipment = hg.Equipment, IsCoreOpen = hg.IsCoreOpen, TraitsOpen = hg.TraitsOpen, BP = hg.BP, TransPercentage = hg.TransPercentage };
+                    SelectedHeroGrowth = new HeroGrowth() { Hero = hg.Hero, IsOwned = hg.IsOwned, Level = hg.Level, ChaserLevel = hg.ChaserLevel, PetLevel = hg.PetLevel, SiLevel = hg.SiLevel, TranscendenceLevel = hg.TranscendenceLevel, Ring = hg.Ring, Earrings = hg.Earrings, Necklace = hg.Necklace, Equipment = hg.Equipment, IsCoreOpen = hg.IsCoreOpen, TraitsOpen = hg.TraitsOpen, BP = hg.BP, TransPercentage = hg.TransPercentage, DescentLevel = hg.DescentLevel };
                     RecommendedBuild = BuildsHelper.GetBuildForHero(new Tuple<HeroEnum, HeroType>(hg.Hero.HeroName, hg.Hero.HeroType));
                     if (!hg.IsOwned)
                     {
@@ -391,6 +407,7 @@ namespace GCManagementApp.UserControls
             CurrentHeroGrowth.PetLevel = SelectedHeroGrowth.PetLevel;
             CurrentHeroGrowth.ChaserLevel = SelectedHeroGrowth.ChaserLevel;
             CurrentHeroGrowth.SiLevel = SelectedHeroGrowth.SiLevel;
+            CurrentHeroGrowth.DescentLevel = SelectedHeroGrowth.DescentLevel;
             CurrentHeroGrowth.Level = SelectedHeroGrowth.Level;
             CurrentHeroGrowth.TranscendenceLevel = SelectedHeroGrowth.TranscendenceLevel;
             CurrentHeroGrowth.IsOwned = SelectedHeroGrowth.IsOwned;
@@ -472,5 +489,6 @@ namespace GCManagementApp.UserControls
         HeroLevel = 4,
         PetLevel = 5,
         Bp = 6,
+        DescentLevel = 7,
     }
 }

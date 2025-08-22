@@ -73,7 +73,7 @@ namespace GCManagementApp.Models
             new Hero(HeroEnum.Harpe, HeroType.SR, HeroClass.Mage, HeroAttribute.Yellow),
             new Hero(HeroEnum.Lass, HeroType.SR, HeroClass.Assault, HeroAttribute.Blue),
             new Hero(HeroEnum.Jin, HeroType.SR, HeroClass.Tank, HeroAttribute.Blue),
-            new Hero(HeroEnum.Rin, HeroType.SR, HeroClass.Healer, HeroAttribute.Yellow),
+            new Hero(HeroEnum.Rin, HeroType.SR, HeroClass.Healer, HeroAttribute.Purple),
             new Hero(HeroEnum.Rufus, HeroType.SR, HeroClass.Ranger, HeroAttribute.Blue),
             new Hero(HeroEnum.Callisto, HeroType.SR, HeroClass.Assault, HeroAttribute.Green),
             new Hero(HeroEnum.Arme, HeroType.SR, HeroClass.Mage, HeroAttribute.Red),
@@ -81,7 +81,7 @@ namespace GCManagementApp.Models
             new Hero(HeroEnum.Io, HeroType.SR, HeroClass.Ranger, HeroAttribute.Red),
             new Hero(HeroEnum.Cindy, HeroType.SR, HeroClass.Healer, HeroAttribute.Red),
             new Hero(HeroEnum.Sieghart, HeroType.SR, HeroClass.Assault, HeroAttribute.Yellow),
-            new Hero(HeroEnum.Asin, HeroType.SR, HeroClass.Tank, HeroAttribute.Green),
+            new Hero(HeroEnum.Asin, HeroType.SR, HeroClass.Tank, HeroAttribute.Purple),
             new Hero(HeroEnum.Ley, HeroType.SR, HeroClass.Mage, HeroAttribute.Green),
             new Hero(HeroEnum.Kanavan, HeroType.SR, HeroClass.Assault, HeroAttribute.Red),
             new Hero(HeroEnum.Lime, HeroType.SR, HeroClass.Healer, HeroAttribute.Yellow),
@@ -150,6 +150,7 @@ namespace GCManagementApp.Models
             new Hero(HeroEnum.Lire, HeroType.S, HeroClass.Ranger, HeroAttribute.Green),
             new Hero(HeroEnum.Nepteon, HeroType.SR, HeroClass.Assault, HeroAttribute.Red),
             new Hero(HeroEnum.Cindy, HeroType.T, HeroClass.Mage, HeroAttribute.Red),
+            new Hero(HeroEnum.Metatron, HeroType.SR, HeroClass.Mage, HeroAttribute.Purple),
         };
 
         public string DisplayName =>  $"{Properties.Resources.ResourceManager.GetObject(HeroName.GetDescription()) ?? HeroName}{(HeroType == Enums.HeroType.T ? "(T)" : HeroType == HeroType.S ? "(S)" : "")}";

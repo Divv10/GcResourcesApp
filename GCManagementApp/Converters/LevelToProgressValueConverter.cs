@@ -29,6 +29,8 @@ namespace GCManagementApp.Converters
                         return 100 * (int)value / (int)StaticValues.MaxPetLevel;
                     case GrowthLevelType.TransPercentage:
                         return 100 * (double)value / (int)StaticValues.MaxTransPercentage;
+                    case GrowthLevelType.Descent:
+                        return 100 * (int)value / (int)StaticValues.MaxDescentLevel;
                 }
             }
             return 0;

@@ -21,5 +21,6 @@ namespace GCManagementApp.Enums
         ExclusiveWeapon,
         [Description("Artifact")]
         Artifact,
+        Descent,
     }
 }

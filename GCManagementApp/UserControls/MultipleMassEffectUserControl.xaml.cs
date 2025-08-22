@@ -126,6 +126,8 @@ namespace GCManagementApp.UserControls
                                     hero.PetLevel= PlaceholderHero.PetLevel; break;
                                 case MassEditTypeEnum.Chaser:
                                     hero.ChaserLevel = PlaceholderHero.ChaserLevel; break;
+                                case MassEditTypeEnum.Descent:
+                                    hero.DescentLevel = PlaceholderHero.DescentLevel; break;
                                 case MassEditTypeEnum.SoulImprint:
                                     hero.SiLevel = PlaceholderHero.SiLevel;
                                     hero.IsCoreOpen = PlaceholderHero.IsCoreOpen;

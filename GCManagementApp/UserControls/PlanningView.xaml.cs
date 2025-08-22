@@ -3,9 +3,6 @@ using GCManagementApp.Helpers;
 using GCManagementApp.Models;
 using GCManagementApp.Static;
 using MaterialDesignThemes.Wpf;
-using Newtonsoft.Json.Linq;
-using PixelLab.Common;
-using PixelLab.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,17 +11,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GCManagementApp.UserControls
 {
@@ -42,6 +30,7 @@ namespace GCManagementApp.UserControls
 
         public int GCGain => GrowthCubes.CubesTotalWeekly / 7;
         public int GEGain => GrowthEssences.GrowthEssenceTotalWeekly / 7 ;
+        public int DCGain => DivineCrystals.CrystalsTotalWeekly / 7;
         public int GrowthCubesFromBg => Inventory.GrowthCubesFromBlueGems;
 
         private ObservableCollection<HeroPlan> _heroPlans;
@@ -103,10 +92,12 @@ namespace GCManagementApp.UserControls
 
                 hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel);
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
+                hp.DCost = DescendingCosts.CalculateCost(hp.CurrentGrowth.DescentLevel, hp.DesiredGrowth.DescentLevel);
                 //hp.SiLevelCost = SiLevelingCosts.CalculateCost(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
                 RecalculateGrowthCubesCost(hp, phg);
+                RecalculateDivineCrystalsCost(hp, phg);
 
                 HeroPlans.Add(hp);
             }
@@ -151,13 +142,16 @@ namespace GCManagementApp.UserControls
                     }
 
                     hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel);
+                    hp.DCost = DescendingCosts.CalculateCost(hp.CurrentGrowth.DescentLevel, hp.DesiredGrowth.DescentLevel);
                     hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                     hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
                     hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                     hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+                    hp.SiLevelCost.GeCost += hp.DCost.GrowthEssenceCost;
 
                     RecalculateGrowthCubesCost(hp, phg);
+                    RecalculateDivineCrystalsCost(hp, phg);
 
                     HeroPlans.Add(hp);
                 }
@@ -192,6 +186,7 @@ namespace GCManagementApp.UserControls
                     TranscendenceLevel = ownedHeroGrowth?.TranscendenceLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 0),
                     ChaserLevel = ownedHeroGrowth?.ChaserLevel ?? (hp.HeroType == Enums.HeroType.SR ? 0 : 20),
                     SiLevel = ownedHeroGrowth?.SiLevel ?? 0,
+                    DescentLevel = ownedHeroGrowth?.DescentLevel ?? 0,
                     TraitsOpen = ownedHeroGrowth?.TraitsOpen ?? 0,
                     IsCoreOpen = ownedHeroGrowth?.IsCoreOpen ?? false,
                 };
@@ -220,16 +215,21 @@ namespace GCManagementApp.UserControls
 
                 if (hp.DesiredGrowth.TraitsOpen < hp.CurrentGrowth.TraitsOpen)                
                     hp.DesiredGrowth.TraitsOpen = hp.CurrentGrowth.TraitsOpen;
-                
 
-                hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel);
+                if (hp.DesiredGrowth.DescentLevel < hp.CurrentGrowth.DescentLevel)
+                    hp.DesiredGrowth.DescentLevel = hp.CurrentGrowth.DescentLevel;
+                
+                hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel); 
+                hp.DCost = DescendingCosts.CalculateCost(hp.CurrentGrowth.DescentLevel, hp.DesiredGrowth.DescentLevel);
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
                 hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                 hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+                hp.SiLevelCost.GeCost += hp.DCost.GrowthEssenceCost;
 
                 RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
+                RecalculateDivineCrystalsCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Add(hp);
 
@@ -277,12 +277,14 @@ namespace GCManagementApp.UserControls
                         if (heroPlan.DesiredGrowth.ChaserLevel < heroPlan.CurrentGrowth.ChaserLevel)
                             heroPlan.DesiredGrowth.ChaserLevel = heroPlan.CurrentGrowth.ChaserLevel;
 
-                        heroPlan.TCost = TranscendingCosts.CalculateCost(heroPlan.CurrentGrowth.TranscendenceLevel, heroPlan.DesiredGrowth.TranscendenceLevel);
+                        heroPlan.TCost = TranscendingCosts.CalculateCost(heroPlan.CurrentGrowth.TranscendenceLevel, heroPlan.DesiredGrowth.TranscendenceLevel); 
+                        heroPlan.DCost = DescendingCosts.CalculateCost(hp.CurrentGrowth.DescentLevel, hp.DesiredGrowth.DescentLevel);
                         heroPlan.ClLevelCost = ChaserLevelingCosts.CalculateCost(heroPlan.CurrentGrowth.ChaserLevel, heroPlan.DesiredGrowth.ChaserLevel);
                         heroPlan.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(heroPlan.CurrentGrowth.SiLevel, heroPlan.DesiredGrowth.SiLevel, heroPlan.CurrentGrowth.TraitsOpen, heroPlan.DesiredGrowth.TraitsOpen, heroPlan.CurrentGrowth.IsCoreOpen, heroPlan.DesiredGrowth.IsCoreOpen);
 
                         heroPlan.SiLevelCost.GrowthCubesCost += heroPlan.ClLevelCost.GrowthCubesCost;
                         heroPlan.SiLevelCost.GeCost += heroPlan.ClLevelCost.GrowthEssencesCost;
+                        heroPlan.SiLevelCost.GeCost += heroPlan.DCost.GrowthEssenceCost;
 
                         HeroPlans.Insert(HeroPlans.IndexOf(hp), heroPlan);
                     }
@@ -307,6 +309,7 @@ namespace GCManagementApp.UserControls
                     SiLevel = heroPlan.CurrentGrowth.SiLevel,
                     IsCoreOpen = (new[] { 0, 5, 10 }).Any(l => l == heroPlan.CurrentGrowth.SiLevel) && heroPlan.CurrentGrowth.IsCoreOpen,
                     TraitsOpen = heroPlan.CurrentGrowth.TraitsOpen,
+                    DescentLevel = heroPlan.CurrentGrowth.DescentLevel,
                 },
                 DesiredGrowth = new GrowthPlan()
                 {
@@ -316,7 +319,9 @@ namespace GCManagementApp.UserControls
                     DupesForSi = heroPlan.DesiredGrowth.DupesForSi,
                     IsCoreOpen = heroPlan.DesiredGrowth.IsCoreOpen,
                     HeroSpecificSiCubesOwned = heroPlan.DesiredGrowth.HeroSpecificSiCubesOwned,
+                    HeroSpecificDivineCrystalsOwned = heroPlan.DesiredGrowth.HeroSpecificDivineCrystalsOwned,
                     TraitsOpen = heroPlan.DesiredGrowth.TraitsOpen,
+                    DescentLevel = heroPlan.DesiredGrowth.DescentLevel,
                 },
             };
 
@@ -346,6 +351,7 @@ namespace GCManagementApp.UserControls
                         SiLevel = ownedHeroGrowth.SiLevel,
                         TraitsOpen = ownedHeroGrowth.TraitsOpen,
                         IsCoreOpen = ownedHeroGrowth.IsCoreOpen,
+                        DescentLevel = ownedHeroGrowth.DescentLevel,
                     };
                 }
                 else 
@@ -375,21 +381,33 @@ namespace GCManagementApp.UserControls
                 if (hp.DesiredGrowth.SiLevel < hp.CurrentGrowth.SiLevel)
                     hp.DesiredGrowth.SiLevel = hp.CurrentGrowth.SiLevel;
 
+                if (hp.DesiredGrowth.DescentLevel < hp.CurrentGrowth.DescentLevel)
+                    hp.DesiredGrowth.DescentLevel = hp.CurrentGrowth.DescentLevel;
+
                 hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel);
+                hp.DCost = DescendingCosts.CalculateCost(hp.CurrentGrowth.DescentLevel, hp.DesiredGrowth.DescentLevel);
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
 
                 // This is right
                 hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                 hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+                hp.SiLevelCost.GeCost += hp.DCost.GrowthEssenceCost;
 
                 RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
+                RecalculateDivineCrystalsCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Insert(HeroPlans.IndexOf(heroPlan), hp);
                 HeroPlans.Remove(heroPlan);
 
                 RecalculateDaysReady();
             }
+        }
+
+        private void RecalculateDivineCrystalsCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
+        {
+            var crystalsCost = hp.DCost.DivineCrystalsCost - hp.DesiredGrowth.HeroSpecificDivineCrystalsOwned;
+            hp.DCost = new DescendCosts(hp.DCost.Level, crystalsCost < 0 ? 0 : crystalsCost, hp.DCost.GrowthEssenceCost, hp.DCost.GoldCost);
         }
 
         private void RecalculateGrowthCubesCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
@@ -463,13 +481,16 @@ namespace GCManagementApp.UserControls
                 }
 
                 hp.TCost = TranscendingCosts.CalculateCost(hp.CurrentGrowth.TranscendenceLevel, hp.DesiredGrowth.TranscendenceLevel);
+                hp.DCost = DescendingCosts.CalculateCost(hp.CurrentGrowth.DescentLevel, hp.DesiredGrowth.DescentLevel);
                 hp.ClLevelCost = ChaserLevelingCosts.CalculateCost(hp.CurrentGrowth.ChaserLevel, hp.DesiredGrowth.ChaserLevel);
                 hp.SiLevelCost = SiLevelingCosts.CalculateCostWithTraits(hp.CurrentGrowth.SiLevel, hp.DesiredGrowth.SiLevel, hp.CurrentGrowth.TraitsOpen, hp.DesiredGrowth.TraitsOpen, hp.CurrentGrowth.IsCoreOpen, hp.DesiredGrowth.IsCoreOpen);
                 
                 hp.SiLevelCost.GrowthCubesCost += hp.ClLevelCost.GrowthCubesCost;
                 hp.SiLevelCost.GeCost += hp.ClLevelCost.GrowthEssencesCost;
+                hp.SiLevelCost.GeCost += hp.DCost.GrowthEssenceCost;
 
                 RecalculateGrowthCubesCost(hp, phg);
+                RecalculateDivineCrystalsCost(hp, phg);
             }
         }
 
@@ -484,6 +505,7 @@ namespace GCManagementApp.UserControls
                 MageGE = profileInventory.MageGE,
                 TankGE = profileInventory.TankGE,
                 HealerGE = profileInventory.HealerGE,
+                DivineCrystals = profileInventory.DivineCrystals,
 
                 Gold = profileInventory.Gold,
             };
@@ -538,13 +560,13 @@ namespace GCManagementApp.UserControls
                 currentInventory.GrowthCubes -= hp.SiLevelCost?.GrowthCubesCost ?? 0;
                 hp.SiNeeded = currentInventory.GrowthCubes;
 
-                hp.GoldCost = hp.TCost.GoldCost + hp.SiLevelCost.GoldCost + hp.ClLevelCost.GoldCost;
+                hp.GoldCost = hp.TCost.GoldCost + hp.SiLevelCost.GoldCost + hp.ClLevelCost.GoldCost + hp.DCost.GoldCost;
                 hp.DaysForGold = (double)(hp.GoldCost - currentInventory.Gold) / ((double)DailyGoldIncome);
                 currentInventory.Gold -= hp.GoldCost;
                 hp.GoldNeeded = currentInventory.Gold;
 
-                var GeNeeded = 0;
-                Calculate(hp, ref currentInventory, ref GeNeeded, hp.Hero.HeroClass);
+                CalculateGrowthEssence(hp, ref currentInventory, hp.Hero.HeroClass);
+                CalculateDivineCrystals(hp, ref currentInventory);
 
                 calcLog.AppendLine("Inventory After:");
                 calcLog.AppendLine($"Growth Cubes: {currentInventory.GrowthCubes}\r\n");
@@ -566,9 +588,8 @@ namespace GCManagementApp.UserControls
             CalculationLog = calcLog.ToString();
         }
 
-        private void Calculate(HeroPlan hp, ref Inventory currentInventory, ref int GENeeded, HeroClass heroClass)
+        private void CalculateGrowthEssence(HeroPlan hp, ref Inventory currentInventory, HeroClass heroClass)
         {
-
             hp.DaysForGE = (double)(hp.SiLevelCost.GeCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }]) / ((double)GrowthEssences.GrowthEssenceTotalWeekly / 7);
 
             calcLog.AppendLine($"GE cost: {hp.SiLevelCost.GeCost}. GE owned: {Math.Max(currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }], 0)}");
@@ -583,7 +604,23 @@ namespace GCManagementApp.UserControls
 
             currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }] -= hp.SiLevelCost.GeCost;
             hp.GeNeeded = currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.GE }];
+        }
 
+        private void CalculateDivineCrystals(HeroPlan hp, ref Inventory currentInventory)
+        {
+            hp.DaysForDe = (double)(hp.DCost.DivineCrystalsCost - currentInventory.DivineCrystals) / ((double)DivineCrystals.CrystalsTotalWeekly / 7);
+            calcLog.AppendLine($"Divine crystals cost: {hp.DCost.DivineCrystalsCost}. Crystals owned: {Math.Max(currentInventory.DivineCrystals, 0)}");
+            if (hp.DCost.DivineCrystalsCost - Math.Max(currentInventory.DivineCrystals, 0) <= 0)
+            {
+                calcLog.AppendLine("Divine crystals ready!\r\n");
+            }
+            else
+            {
+                calcLog.AppendLine($"Divine crystals days to farm: {hp.DCost.DivineCrystalsCost} - {currentInventory.DivineCrystals} / {(double)DivineCrystals.CrystalsTotalWeekly / 7} = {hp.DaysForDe}\r\n");
+            }
+
+            currentInventory.DivineCrystals -= hp.DCost?.DivineCrystalsCost ?? 0;
+            hp.DivineCrystalsNeeded = currentInventory.DivineCrystals;
 
         }
 

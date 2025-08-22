@@ -57,6 +57,7 @@
             <SolidColorBrush x:Key="SiBrush" Color="#F8DE74"/>
             <SolidColorBrush x:Key="TranscendenceBrush" Color="#B1D0F3"/>
             <SolidColorBrush x:Key="LevelBrush" Color="#827BF5"/>
+            <SolidColorBrush x:Key="DescentBrush" Color="#FCF6DD"/>
 
             <SolidColorBrush x:Key="EqPurpleSet" Color="#b8408e"/>
             <SolidColorBrush x:Key="EqBlueSet" Color="#565fd0"/>

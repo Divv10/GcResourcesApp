@@ -41,6 +41,7 @@ namespace GCManagementApp.Static
                 {
                     heroGrowth.Level = profileHero.Level;
                     heroGrowth.ChaserLevel = profileHero.ChaserLevel;
+                    heroGrowth.DescentLevel = profileHero.DescentLevel;
                     heroGrowth.PetLevel = profileHero.PetLevel;
                     heroGrowth.SiLevel = profileHero.SiLevel;
                     heroGrowth.TranscendenceLevel = profileHero.TranscendenceLevel;
@@ -225,6 +226,7 @@ namespace GCManagementApp.Static
                 Level = h.Level,
                 ChaserLevel = h.ChaserLevel,
                 PetLevel = h.PetLevel,
+                DescentLevel = h.DescentLevel,
                 TranscendenceLevel = h.TranscendenceLevel,
                 SiLevel = h.SiLevel,
                 RingTier = (int)(h.Ring?.AccessoryTier ?? 0),

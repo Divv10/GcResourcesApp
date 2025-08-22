@@ -14,6 +14,7 @@ namespace GCManagementApp.TemplateSelectors
         public DataTemplate Transcendence { get; set; }
         public DataTemplate Level { get; set; }
         public DataTemplate SoulImprint { get; set; }
+        public DataTemplate Descent { get; set; }
         public DataTemplate Chaser { get; set; }
         public DataTemplate Pet { get; set; }
         public DataTemplate Necklace { get; set; }
@@ -38,6 +39,7 @@ namespace GCManagementApp.TemplateSelectors
                 case MassEditTypeEnum.AccessoryEarring: return Earring;
                 case MassEditTypeEnum.ExclusiveWeapon: return EW;
                 case MassEditTypeEnum.Artifact: return Artifact;
+                case MassEditTypeEnum.Descent: return Descent;
             }
         }
     }

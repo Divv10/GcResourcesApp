@@ -609,8 +609,9 @@ namespace GCManagementApp.UserControls {
 			var siImg = heroDetailsImg.CropImage(TextRegions.SIArea);
 			var chaserImg = heroDetailsImg.CropImage(TextRegions.ChaserArea);
 			var transImg = heroDetailsImg.CropImage(TextRegions.TranscendenceArea);
+			var descentImg = heroDetailsImg.CropImage(TextRegions.DescentArea);
 
-			int level;
+            int level;
 			for ( int i = 0; i < 3; i++ ) {
 				var levelString = TesseractOperations.ReadText(levelImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
 				if ( int.TryParse(levelString, out level) && level > 0 && level <= StaticValues.MaxLevel ) {
@@ -646,8 +647,19 @@ namespace GCManagementApp.UserControls {
 					}
 				}
 			Log.Verbose($"T: {result.Trans}");
+            int descent;
+            for (int i = 0; i < 3; i++)
+            {
+                var descentString = TesseractOperations.ReadText(descentImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
+                if (int.TryParse(descentString, out descent) && descent >= 0 && descent <= StaticValues.MaxDescentLevel)
+                {
+                    result.Descent = descent;
+                    break;
+                }
+            }
+            Log.Verbose($"D: {result.Descent}");
 
-			return result;
+            return result;
 			}
 
 		#region PC

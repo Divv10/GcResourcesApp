@@ -7,9 +7,9 @@
 		<NoWarn>NU1701</NoWarn>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <Version>4.5.1.0</Version>
-		<AssemblyVersion>4.5.1.0</AssemblyVersion>
-		<FileVersion>4.5.1.0</FileVersion>
+    <Version>4.6.0.0</Version>
+		<AssemblyVersion>4.6.0.0</AssemblyVersion>
+		<FileVersion>4.6.0.0</FileVersion>
 		<ApplicationManifest>app1.manifest</ApplicationManifest>
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
@@ -72,6 +72,7 @@
 		<None Remove="Resources\Materials\ChaserCrystalRanger.png" />
 		<None Remove="Resources\Materials\ChaserCrystalTank.png" />
 		<None Remove="Resources\Materials\ChaserCube.png" />
+		<None Remove="Resources\Materials\DescentMat.png" />
 		<None Remove="Resources\Materials\energy.png" />
 		<None Remove="Resources\Materials\EvoCube.png" />
 		<None Remove="Resources\Materials\EW.png" />
@@ -131,6 +132,7 @@
 		<Resource Include="Resources\gc_logo.png" />
 		<Resource Include="Resources\Materials\BlessingOfValor.png" />
 		<Resource Include="Resources\Materials\BlueGem.png" />
+		<Resource Include="Resources\Materials\DescentMat.png" />
 		<Resource Include="Resources\Materials\energy.png" />
 		<Resource Include="Resources\Materials\EvoCube.png" />
 		<Resource Include="Resources\Materials\EW.png" />

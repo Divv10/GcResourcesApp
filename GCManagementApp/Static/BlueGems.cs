@@ -37,5 +37,7 @@ namespace GCManagementApp.Static
         }
 
         public static int BlueGemsWeeklyTotal => BlueGemsFromPvP + BlueGemsFromWeeklyMission + BlueGemsFromDailyMission + BlueGemsFromDefenceMode + BlueGemsFromArena + BlueGemSellRarity + BlueGemsFromEnergy;
+
+        public static int TotalBlueGems => ProfileGrowth.Profile.Settings.OverrideBlueGems ? ProfileGrowth.Profile.Settings.CustomBlueGems : BlueGemsWeeklyTotal;
     }
 }

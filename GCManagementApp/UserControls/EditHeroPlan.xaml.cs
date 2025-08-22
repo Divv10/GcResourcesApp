@@ -91,7 +91,7 @@ namespace GCManagementApp.UserControls
             {
                 if (_heroesCollection == null)
                 {
-                    _heroesCollection = ProfileGrowth.Heroes.Where(h => !(h.ChaserLevel == 25 && h.SiLevel == 15)).Select(h => h.Hero).OrderBy(h => h.DisplayName).ToList();
+                    _heroesCollection = ProfileGrowth.Heroes.Where(h => !(h.ChaserLevel == 25 && h.SiLevel == 15 && h.DescentLevel == 10)).Select(h => h.Hero).OrderBy(h => h.DisplayName).ToList();
                     _heroesCollection.Add(_unknownHero);
                 }
                 return _heroesCollection;
@@ -182,7 +182,7 @@ namespace GCManagementApp.UserControls
             DataContext = this;
             GoNextCommand = new RelayCommand(o => Step = WizardStep.Second);
             GoBackCommand = new RelayCommand(o => Step = WizardStep.First);
-            HeroPlan = new HeroPlan() { DesiredGrowth = new GrowthPlan() { ChaserLevel = 0, SiLevel = 0, TranscendenceLevel = 0 } };
+            HeroPlan = new HeroPlan() { DesiredGrowth = new GrowthPlan() { ChaserLevel = 0, SiLevel = 0, TranscendenceLevel = 0, DescentLevel = 0 } };
         }
 
         #region PC

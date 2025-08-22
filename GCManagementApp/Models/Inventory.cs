@@ -27,6 +27,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _growthCubes, value);
         }
 
+        private int _divineCrystals;
+        public int DivineCrystals
+        {
+            get => _divineCrystals;
+            set => SetProperty(ref _divineCrystals, value);
+        }
+
         private int _assaultGE;
         public int AssaultGE
         {

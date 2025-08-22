@@ -10,6 +10,7 @@ namespace GCManagementApp.Enums
     {
         Level,
         Chaser,
+        Descent,
         SoulImprint,
         Transcendence,
         ExclusiveWeapon,

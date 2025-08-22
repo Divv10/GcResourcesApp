@@ -158,7 +158,7 @@
             </Grid>
          </materialDesign:Card>
          <materialDesign:Card Margin="0,5"/>
-            <materialDesign:Card Margin="0,5">
+         <materialDesign:Card Margin="0,5">
             <Grid>
                <Grid.RowDefinitions>
                   <RowDefinition/>
@@ -244,35 +244,35 @@
                      </materialDesign:PopupBox>
                   </StackPanel>
                   <!-- end of popup definition -->
-                        <TextBox Text="{Binding BoVFromMercShop, Mode=OneWay}" materialDesign:HintAssist.Hint="BoV from Mercuria" materialDesign:HintAssist.HelperText="BoV from Mercuria shop" ToolTip="BoV from Mercuria Shop" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
-                            <materialDesign:PopupBox StaysOpen="True">
-                                <materialDesign:PopupBox.ToggleContent>
-                                    <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
-                                </materialDesign:PopupBox.ToggleContent>
-                                <Grid Width="300" Margin="8,8,8,8">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Enter how many BoV You get from Mercuria Shop" />
-                                    <TextBox Grid.Row="1" Margin="0,10" materialDesign:HintAssist.Hint="Additional BoV from Mercuria Shop" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
-                                        <TextBox.Text>
-                                            <Binding Path="BoVFromMercShop" UpdateSourceTrigger="PropertyChanged">
-                                                <Binding.ValidationRules>
-                                                    <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
-                                                </Binding.ValidationRules>
-                                            </Binding>
-                                        </TextBox.Text>
-                                    </TextBox>
-                                    <StackPanel Grid.Row="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                                        <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
-                                    </StackPanel>
-                                </Grid>
-                            </materialDesign:PopupBox>
-                        </StackPanel>
-                        <TextBox Text="{Binding BoVTotalWeekly, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.TotalWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.SumOfAllPrevious}" ToolTip="{x:Static properties:Resources.SumOfAllPrevious}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BoVFromMercShop, Mode=OneWay}" materialDesign:HintAssist.Hint="BoV from Mercuria" materialDesign:HintAssist.HelperText="BoV from Mercuria shop" ToolTip="BoV from Mercuria Shop" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <TextBlock Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Enter how many BoV You get from Mercuria Shop" />
+                           <TextBox Grid.Row="1" Margin="0,10" materialDesign:HintAssist.Hint="Additional BoV from Mercuria Shop" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                              <TextBox.Text>
+                                 <Binding Path="BoVFromMercShop" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                       <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
+                                    </Binding.ValidationRules>
+                                 </Binding>
+                              </TextBox.Text>
+                           </TextBox>
+                           <StackPanel Grid.Row="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
+                  <TextBox Text="{Binding BoVTotalWeekly, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.TotalWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.SumOfAllPrevious}" ToolTip="{x:Static properties:Resources.SumOfAllPrevious}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                </StackPanel>
             </Grid>
          </materialDesign:Card>
@@ -374,49 +374,49 @@
                </StackPanel>
             </Grid>
          </materialDesign:Card>
-            <materialDesign:Card Margin="0,5">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.ColumnSpan="4" Margin="10,5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="Weekly Aernasis Hammer gains" />
-                    <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
-                        <Image Source="/GCManagementApp;component/Resources/Materials/AernasisHammer.png" Height="55" />
-                        <TextBox Text="{Binding AHTickets, Mode=OneWay}" materialDesign:HintAssist.Hint="Tickets from EC" materialDesign:HintAssist.HelperText="Craftable tickets from AH" ToolTip="Craftable tickets from AH" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding AHRuns, Mode=OneWay}" materialDesign:HintAssist.Hint="Runs from tickets" materialDesign:HintAssist.HelperText="Runs from tickets" ToolTip="Runs from tickets" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding AHOres, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Ores obtained" materialDesign:HintAssist.HelperText="Total Ores obtained" ToolTip="Ores obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
-                            <materialDesign:PopupBox StaysOpen="True">
-                                <materialDesign:PopupBox.ToggleContent>
-                                    <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
-                                </materialDesign:PopupBox.ToggleContent>
-                                <Grid Width="300" Margin="8,8,8,8">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="*" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Margin="0,0,0,15" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" TextWrapping="Wrap" Text="AH Farming method" />
-                                    <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Toggle On if You farm only one stage instead of all three" TextWrapping="Wrap"/>
-                                    <ToggleButton Grid.Row="1" Grid.Column="1" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsSingleStageAHFarming}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
-                                    <StackPanel Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
-                                        <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
-                                    </StackPanel>
-                                </Grid>
-                            </materialDesign:PopupBox>
-                        </StackPanel>
-                        <TextBox Text="{Binding PurpleCrystals, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Purples" materialDesign:HintAssist.HelperText="Purple crystals obtained" ToolTip="Purple crystals obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding BlueCrystals, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Blues" materialDesign:HintAssist.HelperText="Blue crystals obtained" ToolTip="Blue crystals obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding GreenCrystals, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Greens" materialDesign:HintAssist.HelperText="Green crystals obtained" ToolTip="Green crystals obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                    </StackPanel>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card Margin="0,5">
+         <materialDesign:Card Margin="0,5">
+            <Grid>
+               <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+               </Grid.RowDefinitions>
+               <TextBlock Grid.ColumnSpan="4" Margin="10,5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="Weekly Aernasis Hammer gains" />
+               <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Source="/GCManagementApp;component/Resources/Materials/AernasisHammer.png" Height="55" />
+                  <TextBox Text="{Binding AHTickets, Mode=OneWay}" materialDesign:HintAssist.Hint="Tickets from EC" materialDesign:HintAssist.HelperText="Craftable tickets from AH" ToolTip="Craftable tickets from AH" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding AHRuns, Mode=OneWay}" materialDesign:HintAssist.Hint="Runs from tickets" materialDesign:HintAssist.HelperText="Runs from tickets" ToolTip="Runs from tickets" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding AHOres, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Ores obtained" materialDesign:HintAssist.HelperText="Total Ores obtained" ToolTip="Ores obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition/>
+                              <ColumnDefinition Width="auto"/>
+                           </Grid.ColumnDefinitions>
+                           <TextBlock Margin="0,0,0,15" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" TextWrapping="Wrap" Text="AH Farming method" />
+                           <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Toggle On if You farm only one stage instead of all three" TextWrapping="Wrap"/>
+                           <ToggleButton Grid.Row="1" Grid.Column="1" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsSingleStageAHFarming}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
+                           <StackPanel Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
+                  <TextBox Text="{Binding PurpleCrystals, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Purples" materialDesign:HintAssist.HelperText="Purple crystals obtained" ToolTip="Purple crystals obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BlueCrystals, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Blues" materialDesign:HintAssist.HelperText="Blue crystals obtained" ToolTip="Blue crystals obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding GreenCrystals, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="Greens" materialDesign:HintAssist.HelperText="Green crystals obtained" ToolTip="Green crystals obtained" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+               </StackPanel>
+            </Grid>
+         </materialDesign:Card>
+         <materialDesign:Card Margin="0,5">
             <Grid>
                <Grid.RowDefinitions>
                   <RowDefinition/>
@@ -425,7 +425,7 @@
                <TextBlock Grid.ColumnSpan="4" Margin="10,5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{x:Static properties:Resources.WeeklyBGGain}" />
                <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
                   <Image Source="/GCManagementApp;component/Resources/Materials/BlueGem.png" Height="55" />
-                        <TextBox Text="{Binding BGFromSellingHeroes, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromSellingHeroes}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromSellingHeroes}" ToolTip="{x:Static properties:Resources.BGFromSellingHeroes}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromSellingHeroes, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromSellingHeroes}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromSellingHeroes}" ToolTip="{x:Static properties:Resources.BGFromSellingHeroes}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
                      <materialDesign:PopupBox StaysOpen="True">
                         <materialDesign:PopupBox.ToggleContent>
@@ -465,38 +465,38 @@
                         </Grid>
                      </materialDesign:PopupBox>
                   </StackPanel>
-                        <TextBox Text="{Binding BGFromEnergy, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromEnergy}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromEnergy}" ToolTip="{x:Static properties:Resources.BGFromEnergy}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding BGFromDefenseMode, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromDefenseMode}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromDefenseMode}" ToolTip="{x:Static properties:Resources.BGFromDefenseMode}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
-                        <materialDesign:PopupBox StaysOpen="True">
-                            <materialDesign:PopupBox.ToggleContent>
-                                <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
-                            </materialDesign:PopupBox.ToggleContent>
-                            <Grid Width="300" Margin="8,8,8,8">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-                                <TextBlock Margin="0,0,0,15" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" TextWrapping="Wrap" Text="{x:Static properties:Resources.AdditionalEntries}" />
-                                <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.ResetWithGems}" />
-                                <ToggleButton Grid.Row="1" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDDGemReset}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"/>
-                                <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.DailyEntryPackage}" />
-                                <ToggleButton Grid.Row="2" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDailyEntryPackageBought}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"/>
-                                <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.DailyEntryEssentialPackage}" />
-                                <ToggleButton Grid.Row="3" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDailyEntryPackageEssentialBought}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
-                                <StackPanel Grid.Row="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                                    <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="{x:Static properties:Resources.OK}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
-                                </StackPanel>
-                            </Grid>
-                        </materialDesign:PopupBox>
-                     </StackPanel>
-                        <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromPvP}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromPVP}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFrom15PVP}" ToolTip="{x:Static properties:Resources.BlueGemsFrom15PVP}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromArena}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromArena}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromArena}" ToolTip="{x:Static properties:Resources.BlueGemsFromArena}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromDailyMission}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromDailyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromDailyMission}" ToolTip="{x:Static properties:Resources.BlueGemsFromDailyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                        <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromWeeklyMission}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" ToolTip="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromEnergy, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromEnergy}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromEnergy}" ToolTip="{x:Static properties:Resources.BGFromEnergy}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromDefenseMode, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromDefenseMode}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromDefenseMode}" ToolTip="{x:Static properties:Resources.BGFromDefenseMode}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <TextBlock Margin="0,0,0,15" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" TextWrapping="Wrap" Text="{x:Static properties:Resources.AdditionalEntries}" />
+                           <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.ResetWithGems}" />
+                           <ToggleButton Grid.Row="1" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDDGemReset}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"/>
+                           <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.DailyEntryPackage}" />
+                           <ToggleButton Grid.Row="2" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDailyEntryPackageBought}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"/>
+                           <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.DailyEntryEssentialPackage}" />
+                           <ToggleButton Grid.Row="3" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDailyEntryPackageEssentialBought}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
+                           <StackPanel Grid.Row="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="{x:Static properties:Resources.OK}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
+                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromPvP}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromPVP}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFrom15PVP}" ToolTip="{x:Static properties:Resources.BlueGemsFrom15PVP}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromArena}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromArena}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromArena}" ToolTip="{x:Static properties:Resources.BlueGemsFromArena}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromDailyMission}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromDailyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromDailyMission}" ToolTip="{x:Static properties:Resources.BlueGemsFromDailyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromWeeklyMission}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" ToolTip="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding BlueGemsWeeklyTotal, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.TotalWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.SumOfAllPrevious}" ToolTip="{x:Static properties:Resources.SumOfAllPrevious}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
                      <materialDesign:PopupBox StaysOpen="True">
@@ -538,6 +538,57 @@
                   <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="55" />
                   <TextBox Text="{Binding BlueGemsWeeklyTotal, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.TotalBGGainedOverWeek}" ToolTip="{x:Static properties:Resources.TotalBGGainedOverWeek}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding GrowthCubesFromBg, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.CubesFromBG}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.CubesBoughtInBGShop}" ToolTip="{x:Static properties:Resources.CubesBoughtInBGShop}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="2*" />
+                              <ColumnDefinition />
+                              <ColumnDefinition />
+                           </Grid.ColumnDefinitions>
+                           <TextBlock Grid.ColumnSpan="3" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Enter how many Growth Cubes you want to buy weekly from BG shop" />
+                           <TextBox Grid.ColumnSpan="3" Grid.Row="1" Margin="0,10" materialDesign:HintAssist.Hint="Maximum Growth Cubes from BG shop" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                              <TextBox.Text>
+                                 <Binding Path="MaxGCFromBGShop" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                       <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
+                                       <validationRules:MaximumIntValueValidationRule MaximumIntValue="1200" />
+                                    </Binding.ValidationRules>
+                                 </Binding>
+                              </TextBox.Text>
+                           </TextBox>
+                           <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Buying Crystals for 70BG too" />
+                           <ToggleButton Grid.Row="2" Grid.ColumnSpan="3" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding BuyingCrystalsFor70BG}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
+                           <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Amount" />
+                           <TextBlock Grid.Row="3" Grid.Column="2" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Cost" />
+                           <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Growth Cubes" />
+                           <TextBlock Grid.Row="4" Grid.Column="1" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding GrowthCubesFromBg, Mode=OneWay}" />
+                           <TextBlock Grid.Row="4" Grid.Column="2" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding GrowthCubesFromBgCost, Mode=OneWay}" />
+                           <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Divine crystals (35)" />
+                           <TextBlock Grid.Row="5" Grid.Column="1" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsCheapWeekly, Mode=OneWay}" />
+                           <TextBlock Grid.Row="5" Grid.Column="2" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsCheapCost, Mode=OneWay}" />
+                           <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Divine crystals (70)" />
+                           <TextBlock Grid.Row="6" Grid.Column="1" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsExpensiveWeekly, Mode=OneWay}" />
+                           <TextBlock Grid.Row="6" Grid.Column="2" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsExpensiveCost, Mode=OneWay}" />
+                           <StackPanel Grid.ColumnSpan="3" Grid.Row="7" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,10,0,0">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
                   <TextBox Text="{Binding GrowthCubesFromAnni, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.CubesFromAnni}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.WeeklyFromAnnihilation}" ToolTip="{x:Static properties:Resources.WeeklyFromAnnihilation}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
                      <materialDesign:PopupBox StaysOpen="True">
@@ -606,10 +657,140 @@
                   <TextBox Text="{Binding GrowthCubesSINoEventWeeksNeeded, Mode=OneWay, StringFormat='{}{0:F2}'}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.WeeksNeeded}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.WeeksForFullSI}" ToolTip="{x:Static properties:Resources.WeeksForFullSI}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding Source={x:Static statics:GrowthCubes.CubesForFullChaserSrNoEvent}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.CL25TCost}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.CostInGECubes}" ToolTip="{x:Static properties:Resources.CostInGECubes}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding GrowthCubesCSNoEventWeeksNeeded, Mode=OneWay, StringFormat='{}{0:F2}'}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.WeeksNeeded}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.WeeksForFullCS}" ToolTip="{x:Static properties:Resources.WeeksForFullCS}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                    </StackPanel>
+               </StackPanel>
                <StackPanel Grid.Row="4" HorizontalAlignment="Left" Orientation="Horizontal" Height="55">
                   <TextBox Text="{Binding Source={x:Static statics:GrowthCubes.CubesForFullSi}, Path=.}" Margin="65,0,10,0" materialDesign:HintAssist.Hint="{x:Static properties:Resources.SI15TCost}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.With100CubesFromEvent}" ToolTip="{x:Static properties:Resources.With100CubesFromEvent}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding GrowthCubesSIWeeksNeeded, Mode=OneWay, StringFormat='{}{0:F2}'}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.WeeksNeeded}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.WeeksForFullSI}" ToolTip="{x:Static properties:Resources.WeeksForFullSI}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+               </StackPanel>
+            </Grid>
+         </materialDesign:Card>
+         <materialDesign:Card Margin="0,5">
+            <Grid>
+               <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                  <RowDefinition/>
+                  <RowDefinition/>
+               </Grid.RowDefinitions>
+               <TextBlock Grid.ColumnSpan="4" Margin="10,5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="Weekly Divine Crystals gain" />
+               <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                  <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="55" />
+                  <TextBox Text="{Binding BlueGemsWeeklyTotal, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.TotalBGGainedOverWeek}" ToolTip="{x:Static properties:Resources.TotalBGGainedOverWeek}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding CrystalsFromBG, Mode=OneWay}" materialDesign:HintAssist.Hint="Crystals from BG" materialDesign:HintAssist.HelperText="Cubes bought in BG" ToolTip="Cubes bought in BG" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="2*" />
+                              <ColumnDefinition />
+                              <ColumnDefinition />
+                           </Grid.ColumnDefinitions>
+                           <TextBlock Grid.ColumnSpan="3" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Enter how many Growth Cubes you want to buy weekly from BG shop" />
+                           <TextBox Grid.ColumnSpan="3" Grid.Row="1" Margin="0,10" materialDesign:HintAssist.Hint="Maximum Growth Cubes from BG shop" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                              <TextBox.Text>
+                                 <Binding Path="MaxGCFromBGShop" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                       <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
+                                       <validationRules:MaximumIntValueValidationRule MaximumIntValue="1200" />
+                                    </Binding.ValidationRules>
+                                 </Binding>
+                              </TextBox.Text>
+                           </TextBox>
+                           <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Buying Crystals for 70BG too" />
+                           <ToggleButton Grid.Row="2" Grid.ColumnSpan="3" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding BuyingCrystalsFor70BG}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
+                           <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Amount" />
+                           <TextBlock Grid.Row="3" Grid.Column="2" Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Cost" />
+                           <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Growth Cubes" />
+                           <TextBlock Grid.Row="4" Grid.Column="1" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding GrowthCubesFromBg, Mode=OneWay}" />
+                           <TextBlock Grid.Row="4" Grid.Column="2" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding GrowthCubesFromBgCost, Mode=OneWay}" />
+                           <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Divine crystals (35)" />
+                           <TextBlock Grid.Row="5" Grid.Column="1" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsCheapWeekly, Mode=OneWay}" />
+                           <TextBlock Grid.Row="5" Grid.Column="2" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsCheapCost, Mode=OneWay}" />
+                           <TextBlock Grid.Row="6" Grid.Column="0" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Divine crystals (70)" />
+                           <TextBlock Grid.Row="6" Grid.Column="1" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsExpensiveWeekly, Mode=OneWay}" />
+                           <TextBlock Grid.Row="6" Grid.Column="2" Margin="0,10,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{Binding CrystalsExpensiveCost, Mode=OneWay}" />
+                           <StackPanel Grid.ColumnSpan="3" Grid.Row="7" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,10,0,0">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
+                  <TextBox Text="{Binding CrystalsFromAnni, Mode=OneWay}" materialDesign:HintAssist.Hint="Crystals from Anni" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.WeeklyFromAnnihilation}" ToolTip="{x:Static properties:Resources.WeeklyFromAnnihilation}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <TextBlock Margin="0,0,0,15" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="DemiBold" TextWrapping="Wrap" Text="{x:Static properties:Resources.AdditionalEntries}" />
+                           <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.ResetWithGems}" />
+                           <ToggleButton Grid.Row="1" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsAnniGemReset}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"/>
+                           <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.DailyEntryPackage}" />
+                           <ToggleButton Grid.Row="2" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDailyEntryPackageBought}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}"/>
+                           <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Text="{x:Static properties:Resources.DailyEntryEssentialPackage}" />
+                           <ToggleButton Grid.Row="3" Margin="0,10" HorizontalAlignment="Right" IsChecked="{Binding IsDailyEntryPackageEssentialBought}" Style="{StaticResource MaterialDesignSwitchLightToggleButton}" />
+                           <StackPanel Grid.Row="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="{x:Static properties:Resources.OK}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
+                  <TextBox Text="{Binding CrystalsFromConv, Mode=OneWay}" materialDesign:HintAssist.Hint="Cubes convertion" materialDesign:HintAssist.HelperText="Cubes into Crystals conv" ToolTip="Cubes into Crystals conv" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+
+                  <TextBox Text="{Binding CrystalsAdditionalWeekly, Mode=OneWay}" materialDesign:HintAssist.Hint="Additional Crystals" materialDesign:HintAssist.HelperText="Income from other sources" ToolTip="Income from other sources" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
+                        </materialDesign:PopupBox.ToggleContent>
+                        <Grid Width="300" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                              <RowDefinition Height="*" />
+                           </Grid.RowDefinitions>
+                           <TextBlock Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="Enter how many Divine Crystals You get from other sources weekly" />
+                           <TextBox Grid.Row="1" Margin="0,10" materialDesign:HintAssist.Hint="Additional weekly Divine crystals from other sources" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                              <TextBox.Text>
+                                 <Binding Path="CrystalsAdditionalWeekly" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                       <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
+                                    </Binding.ValidationRules>
+                                 </Binding>
+                              </TextBox.Text>
+                           </TextBox>
+                           <StackPanel Grid.Row="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                              <Button Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}" Content="OK" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+                           </StackPanel>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>
+                  <TextBox Text="{Binding CrystalsTotalWeekly, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.TotalWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.SumOfAllPrevious}" ToolTip="{x:Static properties:Resources.SumOfAllPrevious}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+               </StackPanel>
+               <StackPanel Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal" Height="55">
+                  <TextBox Text="{Binding Source={x:Static statics:DivineCrystals.CrystalsForFullDescent}, Path=.}" Margin="65,0,10,0" materialDesign:HintAssist.Hint="D10 cost" materialDesign:HintAssist.HelperText="Cost in Divine Crystals" ToolTip="Cost in Divine Crystals" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding CrystalsWeeksForFullDescent, Mode=OneWay, StringFormat='{}{0:F2}'}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.WeeksNeeded}" materialDesign:HintAssist.HelperText="Weeks for full Descent" ToolTip="Weeks for full Descent" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                </StackPanel>
             </Grid>
          </materialDesign:Card>

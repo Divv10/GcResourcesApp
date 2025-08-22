@@ -106,6 +106,15 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _tCost, value);
         }
 
+        private DescendCosts _dCost;
+        [XmlIgnore]
+        [JsonIgnore]
+        public DescendCosts DCost
+        {
+            get => _dCost;
+            set => SetProperty(ref _dCost, value);
+        }
+
         private double _daysForGE;
         [XmlIgnore]
         [JsonIgnore]
@@ -124,13 +133,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _daysForSi, value);
         }
 
-        private double _daysForSE;
+        private double _daysForDe;
         [XmlIgnore]
         [JsonIgnore]
-        public double DaysForSE
+        public double DaysForDe
         {
-            get => _daysForSE;
-            set => SetProperty(ref _daysForSE, value);
+            get => _daysForDe;
+            set => SetProperty(ref _daysForDe, value);
         }
 
         private int _geNeeded;
@@ -151,31 +160,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _siNeeded, value);
         }
 
-        private int _chaserCubesNeeded;
+        private int _divineCrystalsNeeded;
         [XmlIgnore]
         [JsonIgnore]
-        public int ChaserCubesNeeded
+        public int DivineCrystalsNeeded
         {
-            get => _chaserCubesNeeded;
-            set => SetProperty(ref _chaserCubesNeeded, value);
-        }
-
-        private double _daysForChaserCubes;
-        [XmlIgnore]
-        [JsonIgnore]
-        public double DaysForChaserCubes
-        {
-            get => _daysForChaserCubes;
-            set => SetProperty(ref _daysForChaserCubes, value);
-        }
-
-        private int _seNeeded;
-        [XmlIgnore]
-        [JsonIgnore]
-        public int SeNeeded
-        {
-            get => _seNeeded;
-            set => SetProperty(ref _seNeeded, value);
+            get => _divineCrystalsNeeded;
+            set => SetProperty(ref _divineCrystalsNeeded, value);
         }
 
         private int _goldCost;

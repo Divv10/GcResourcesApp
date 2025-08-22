@@ -46,6 +46,12 @@ namespace GCManagementApp.Models
             get => _trans; set => SetProperty(ref _trans, value);
         }
 
+        private int? _descent;
+        public int? Descent
+        {
+            get => _descent; set => SetProperty(ref _descent, value);
+        }
+
         private int? _pet;
         public int? Pet
         {

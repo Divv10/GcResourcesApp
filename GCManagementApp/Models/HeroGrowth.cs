@@ -59,6 +59,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _chaserLevel, value);
         }
 
+        private int _descentLevel;
+        public int DescentLevel
+        {
+            get => _descentLevel;
+            set => SetProperty(ref _descentLevel, value);
+        }
+
         private int _siLevel;
         public int SiLevel
         {

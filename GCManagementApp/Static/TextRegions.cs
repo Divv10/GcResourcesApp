@@ -5,10 +5,11 @@ namespace GCManagementApp.Static
     internal static class TextRegions
     {
         public static Rectangle HeroNameArea => new Rectangle(0, 136, 106, 23);
-        public static Rectangle LevelArea => new Rectangle(860, 120, 61, 30);
-        public static Rectangle SIArea => new Rectangle(1145, 120, 40, 30);
-        public static Rectangle ChaserArea => new Rectangle(885, 192, 45, 33);
-        public static Rectangle TranscendenceArea => new Rectangle(1147, 191, 45, 33);
+        public static Rectangle LevelArea => new Rectangle(725, 170, 58, 34);
+        public static Rectangle SIArea => new Rectangle(936, 170, 58, 34);
+        public static Rectangle ChaserArea => new Rectangle(830, 170, 58, 34);
+        public static Rectangle TranscendenceArea => new Rectangle(1037, 170, 58, 34);
+        public static Rectangle DescentArea => new Rectangle(1137, 170, 58, 34);
         public static Rectangle BpArea => new Rectangle(1049, 564, 164, 33);
         public static Rectangle DupePercentArea => new Rectangle();
         public static Rectangle EWArea => new Rectangle(827, 513, 43, 30);

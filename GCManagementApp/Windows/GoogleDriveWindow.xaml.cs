@@ -27,8 +27,8 @@ namespace GCManagementApp.Windows
     public partial class GoogleDriveWindow : Window, INotifyPropertyChanged
     {
         private static readonly string[] Scopes = new[] { DriveService.Scope.DriveAppdata };
-        private static readonly string ClientId = "id";
-        private static readonly string ClientSecret = "secret";
+        private static readonly string ClientId = "503338283476-ept2qag40om96p9ron5re315b94eq04s.apps.googleusercontent.com";
+        private static readonly string ClientSecret = "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";
 
         public ICommand LoginToDriveCommand { get; }
         public ICommand DownloadFromDriveCommand { get; }

@@ -33,296 +33,299 @@
       <converters:SILevelToMaximumTraitsConverter x:Key="SILevelToMaximumTraitsConverter" />
       <converters:SILevelToMinimumTraitsConverter x:Key="SILevelToMinimumTraitsConverter" />
    </UserControl.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <ToolBarTray />
-        <ToolBarTray HorizontalAlignment="Left">
-            <ToolBar ClipToBounds="False" Style="{StaticResource MaterialDesignToolBar}">
-                <TextBox  Width="200" Margin="8,0" materialDesign:HintAssist.Hint="{x:Static properties:Resources.FilterHeroName}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding FilterName, UpdateSourceTrigger=PropertyChanged}"/>
-            </ToolBar>
-        </ToolBarTray>
-        <ToolBarTray HorizontalAlignment="Right">
-            <ToolBar ClipToBounds="False" Style="{StaticResource MaterialDesignToolBar}">
-                <Menu>
-                    <MenuItem Header="{x:Static properties:Resources.Sort}">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="OrderAlphabeticalAscending" />
-                        </MenuItem.Icon>
-                        <MenuItem Header="{x:Static properties:Resources.HeroName}" Command="{Binding SortByHeroName}"/>
-                        <MenuItem Header="{x:Static properties:Resources.TranscendenceLevel}" Command="{Binding SortByT}"/>
-                        <MenuItem Header="{x:Static properties:Resources.SoulImprintLevel}" Command="{Binding SortBySi}"/>
-                        <MenuItem Header="{x:Static properties:Resources.ChaserLevel}" Command="{Binding SortByCl}"/>
-                        <MenuItem Header="{x:Static properties:Resources.HeroLevel}" Command="{Binding SortByLevel}"/>
-                        <MenuItem Header="{x:Static properties:Resources.PetLevel}" Command="{Binding SortByPet}"/>
-                        <MenuItem Header="{x:Static properties:Resources.BP}" Command="{Binding SortByBp}"/>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static properties:Resources.Filter}">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="Filter" />
-                        </MenuItem.Icon>
-                        <MenuItem Header="{x:Static properties:Resources.HeroType}" >
-                            <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterHeroType}" CommandParameter="{x:Null}"/>
-                            <MenuItem Header="{x:Static properties:Resources.SR}" Command="{Binding FilterHeroType}" CommandParameter="{x:Static enums:HeroType.SR}"/>
-                            <MenuItem Header="{x:Static properties:Resources.T}" Command="{Binding FilterHeroType}" CommandParameter="{x:Static enums:HeroType.T}"/>
-                        </MenuItem>
-                        <MenuItem Header="{x:Static properties:Resources.SoulImprint}" >
-                            <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterSi}" CommandParameter="{x:Null}"/>
-                            <MenuItem Header="{x:Static properties:Resources.SI15}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI15}"/>
-                            <MenuItem Header="{x:Static properties:Resources.SI10_14}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI10}"/>
-                            <MenuItem Header="{x:Static properties:Resources.SI5_9}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI5}"/>
-                            <MenuItem Header="{x:Static properties:Resources.SI0_4}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI0}"/>
-                        </MenuItem>
-                        <MenuItem Header="{x:Static properties:Resources.Chaser}" >
-                            <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterCl}" CommandParameter="{x:Null}"/>
-                            <MenuItem Header="{x:Static properties:Resources.CL25}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL25}"/>
-                            <MenuItem Header="{x:Static properties:Resources.CL20_24}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL20}"/>
-                            <MenuItem Header="{x:Static properties:Resources.CL0_19}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL0}"/>
-                        </MenuItem>
-                        <MenuItem Header="{x:Static properties:Resources.Class}" >
-                            <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterClass}" CommandParameter="{x:Null}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Assault}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Assault}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Tank}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Tank}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Healer}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Healer}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Ranger}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Ranger}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Mage}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Mage}"/>
-                        </MenuItem>
-                        <MenuItem Header="{x:Static properties:Resources.Attribute}" >
-                            <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterAttribute}" CommandParameter="{x:Null}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Red}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Red}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Blue}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Blue}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Yellow}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Yellow}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Green}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Green}"/>
-                            <MenuItem Header="{x:Static properties:Resources.Purple}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Purple}"/>
-                        </MenuItem>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static properties:Resources.ClearFilters}" Command="{Binding FilterReset}">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="UndoVariant" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </Menu>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="{x:Static properties:Resources.ShowNotOwned}" VerticalAlignment="Center"/>
-                    <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="10,0,0,0" IsChecked="{Binding ShowNotOwned}"/>
-                </StackPanel>
-            </ToolBar>
-        </ToolBarTray>
-        <materialDesign:DrawerHost x:Name="HeroDrawer" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="1">
-            <materialDesign:DrawerHost.LeftDrawerContent>
-                <Grid Width="1400" Margin="10">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="900" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
+   <Grid>
+      <Grid.RowDefinitions>
+         <RowDefinition Height="auto"/>
+         <RowDefinition/>
+         <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <ToolBarTray />
+      <ToolBarTray HorizontalAlignment="Left">
+         <ToolBar ClipToBounds="False" Style="{StaticResource MaterialDesignToolBar}">
+            <TextBox  Width="200" Margin="8,0" materialDesign:HintAssist.Hint="{x:Static properties:Resources.FilterHeroName}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Text="{Binding FilterName, UpdateSourceTrigger=PropertyChanged}"/>
+         </ToolBar>
+      </ToolBarTray>
+      <ToolBarTray HorizontalAlignment="Right">
+         <ToolBar ClipToBounds="False" Style="{StaticResource MaterialDesignToolBar}">
+            <Menu>
+               <MenuItem Header="{x:Static properties:Resources.Sort}">
+                  <MenuItem.Icon>
+                     <materialDesign:PackIcon Kind="OrderAlphabeticalAscending" />
+                  </MenuItem.Icon>
+                  <MenuItem Header="{x:Static properties:Resources.HeroName}" Command="{Binding SortByHeroName}"/>
+                  <MenuItem Header="{x:Static properties:Resources.TranscendenceLevel}" Command="{Binding SortByT}"/>
+                  <MenuItem Header="{x:Static properties:Resources.SoulImprintLevel}" Command="{Binding SortBySi}"/>
+                  <MenuItem Header="Descent level" Command="{Binding SortByDescent}"/>
+                  <MenuItem Header="{x:Static properties:Resources.ChaserLevel}" Command="{Binding SortByCl}"/>
+                  <MenuItem Header="{x:Static properties:Resources.HeroLevel}" Command="{Binding SortByLevel}"/>
+                  <MenuItem Header="{x:Static properties:Resources.PetLevel}" Command="{Binding SortByPet}"/>
+                  <MenuItem Header="{x:Static properties:Resources.BP}" Command="{Binding SortByBp}"/>
+               </MenuItem>
+               <MenuItem Header="{x:Static properties:Resources.Filter}">
+                  <MenuItem.Icon>
+                     <materialDesign:PackIcon Kind="Filter" />
+                  </MenuItem.Icon>
+                  <MenuItem Header="{x:Static properties:Resources.HeroType}" >
+                     <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterHeroType}" CommandParameter="{x:Null}"/>
+                     <MenuItem Header="{x:Static properties:Resources.SR}" Command="{Binding FilterHeroType}" CommandParameter="{x:Static enums:HeroType.SR}"/>
+                     <MenuItem Header="{x:Static properties:Resources.T}" Command="{Binding FilterHeroType}" CommandParameter="{x:Static enums:HeroType.T}"/>
+                  </MenuItem>
+                  <MenuItem Header="{x:Static properties:Resources.SoulImprint}" >
+                     <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterSi}" CommandParameter="{x:Null}"/>
+                     <MenuItem Header="{x:Static properties:Resources.SI15}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI15}"/>
+                     <MenuItem Header="{x:Static properties:Resources.SI10_14}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI10}"/>
+                     <MenuItem Header="{x:Static properties:Resources.SI5_9}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI5}"/>
+                     <MenuItem Header="{x:Static properties:Resources.SI0_4}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI0}"/>
+                  </MenuItem>
+                  <MenuItem Header="{x:Static properties:Resources.Chaser}" >
+                     <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterCl}" CommandParameter="{x:Null}"/>
+                     <MenuItem Header="{x:Static properties:Resources.CL25}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL25}"/>
+                     <MenuItem Header="{x:Static properties:Resources.CL20_24}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL20}"/>
+                     <MenuItem Header="{x:Static properties:Resources.CL0_19}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL0}"/>
+                  </MenuItem>
+                  <MenuItem Header="{x:Static properties:Resources.Class}" >
+                     <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterClass}" CommandParameter="{x:Null}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Assault}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Assault}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Tank}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Tank}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Healer}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Healer}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Ranger}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Ranger}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Mage}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Mage}"/>
+                  </MenuItem>
+                  <MenuItem Header="{x:Static properties:Resources.Attribute}" >
+                     <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterAttribute}" CommandParameter="{x:Null}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Red}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Red}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Blue}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Blue}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Yellow}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Yellow}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Green}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Green}"/>
+                     <MenuItem Header="{x:Static properties:Resources.Purple}" Command="{Binding FilterAttribute}" CommandParameter="{x:Static enums:HeroAttribute.Purple}"/>
+                  </MenuItem>
+               </MenuItem>
+               <MenuItem Header="{x:Static properties:Resources.ClearFilters}" Command="{Binding FilterReset}">
+                  <MenuItem.Icon>
+                     <materialDesign:PackIcon Kind="UndoVariant" />
+                  </MenuItem.Icon>
+               </MenuItem>
+            </Menu>
+            <StackPanel Orientation="Horizontal">
+               <Label Content="{x:Static properties:Resources.ShowNotOwned}" VerticalAlignment="Center"/>
+               <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="10,0,0,0" IsChecked="{Binding ShowNotOwned}"/>
+            </StackPanel>
+         </ToolBar>
+      </ToolBarTray>
+      <materialDesign:DrawerHost x:Name="HeroDrawer" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="1">
+         <materialDesign:DrawerHost.LeftDrawerContent>
+            <Grid Width="1400" Margin="10">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="900" />
+                  <ColumnDefinition />
+               </Grid.ColumnDefinitions>
+               <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="auto"/>
+               </Grid.RowDefinitions>
 
-                    <local:EditHeroStatsUserControl SelectedHeroGrowth="{Binding SelectedHeroGrowth, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
-                    <!--<local:EditEquipmentUserControl Grid.Column="1" Grid.Row="1" Margin="30,0,0,0" HeroGrowth="{Binding SelectedHeroGrowth, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}" Visibility="{Binding SelectedHeroGrowth.IsOwned, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>-->
-                    <local:RecommendedBuildsUserControl Grid.Column="1" Margin="30,0" Build="{Binding RecommendedBuild, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
+               <local:EditHeroStatsUserControl SelectedHeroGrowth="{Binding SelectedHeroGrowth, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
+               <!--<local:EditEquipmentUserControl Grid.Column="1" Grid.Row="1" Margin="30,0,0,0" HeroGrowth="{Binding SelectedHeroGrowth, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}" Visibility="{Binding SelectedHeroGrowth.IsOwned, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>-->
+               <local:RecommendedBuildsUserControl Grid.Column="1" Margin="30,0" Build="{Binding RecommendedBuild, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
 
-                    <Button Grid.Row="9" Grid.ColumnSpan="2" Margin="5,10" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Save" Style="{StaticResource MaterialDesignRaisedLightButton}"
+               <Button Grid.Row="9" Grid.ColumnSpan="2" Margin="5,10" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Save" Style="{StaticResource MaterialDesignRaisedLightButton}"
                        Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Click="SaveProgressClick" TabIndex="15"/>
 
-                </Grid>
-            </materialDesign:DrawerHost.LeftDrawerContent>
-            <Grid>
-                <ScrollViewer PanningMode="Both">
-                    <ItemsControl Focusable="True" ItemsSource="{Binding HeroesView}" Margin="20">
-                        <ItemsControl.Style>
-                            <Style TargetType="ItemsControl">
-                                <Setter Property="ItemsPanel">
-                                    <Setter.Value>
-                                        <ItemsPanelTemplate>
-                                            <lib:AnimatingTilePanel lib:AnimatingTilePanel.ItemHeight="250" lib:AnimatingTilePanel.ItemWidth="300"/>
-                                        </ItemsPanelTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsPerformanceModeEnabled}" Value="True">
-                                        <Setter Property="ItemsPanel">
-                                            <Setter.Value>
-                                                <ItemsPanelTemplate>
-                                                    <local:StretchyWrapPanel VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.IsVirtualizing="True" DesiredItemHeight="250" DesiredItemWidth="300"/>
-                                                </ItemsPanelTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ItemsControl.Style>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <materialDesign:Card HorizontalAlignment="Left" VerticalAlignment="Top" materialDesign:ElevationAssist.Elevation="Dp6" >
-                                    <materialDesign:Card.Style>
-                                        <Style TargetType="materialDesign:Card">
-                                            <Setter Property="Opacity" Value="1"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding IsOwned}" Value="False">
-                                                    <Setter Property="Opacity" Value=".5"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </materialDesign:Card.Style>
-
-                                    <Grid x:Name="CardContainer">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="120" />
-                                            <ColumnDefinition Width="40" />
-                                            <ColumnDefinition Width="110" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="120" />
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="40" />
-                                            <RowDefinition Height="40" />
-                                        </Grid.RowDefinitions>
-                                        <Image Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Height="90" Width="110" VerticalAlignment="Top" Margin="0,10,0,0"/>
-                                        <Label Grid.Row="0" Content="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,-7" FontSize="15" />
-                                        <Label Grid.Row="1" Content="{Binding BP}" ContentStringFormat="{}{0} BP" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,-5" FontSize="13" />
-                                        <Grid Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition/>
-                                                <ColumnDefinition/>
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition/>
-                                                <RowDefinition/>
-                                            </Grid.RowDefinitions>
-                                            <ProgressBar Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource TranscendenceBrush}" Value="{Binding TranscendenceLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Transcendence}}"/>
-                                            <Label Grid.Column="1" Grid.Row="1" Content="{Binding TranscendenceLevel}" ContentStringFormat="{x:Static properties:Resources.TX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
-                                            <!--<ProgressBar Grid.Column="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource SiBrush}" Value="{Binding SiLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.SoulImprint}}"/>-->
-                                            <uc:SiCoresOpenOverlay Grid.Column="1" Width="60" Height="60" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
-                                            <Label Grid.Column="1" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
-                                            <ProgressBar Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
-                                            <Label Grid.Column="0" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
-                                            <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource LevelBrush}" Value="{Binding Level, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Level}}"/>
-                                            <Label Content="{Binding Level}" ContentStringFormat="{x:Static properties:Resources.LvlX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
-                                        </Grid>
-                                        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="auto"/>
-                                                <ColumnDefinition Width="auto"/>
-                                                <ColumnDefinition Width="auto"/>
-                                            </Grid.ColumnDefinitions>
-                                            <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{DynamicResource MaterialDesignChipBackground}" Margin="0">
-                                                <materialDesign:Chip.Icon>
-                                                    <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="25" Height="25"/>
-                                                </materialDesign:Chip.Icon>
-                                                <materialDesign:Chip.Content>
-                                                    <Label Content="{Binding Hero.HeroClass, Converter={StaticResource EnumDescriptionConverter}}" Margin="-9,0,-7,0"/>
-                                                </materialDesign:Chip.Content>
-                                            </materialDesign:Chip>
-                                            <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{DynamicResource MaterialDesignChipBackground}" Margin="5,0">
-                                                <materialDesign:Chip.Icon>
-                                                    <Image Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="25" Height="25"/>
-                                                </materialDesign:Chip.Icon>
-                                                <materialDesign:Chip.Content>
-                                                    <Label Content="{Binding Hero.HeroAttribute, Converter={StaticResource EnumDescriptionConverter}}" Margin="-9,0,-7,0"/>
-                                                </materialDesign:Chip.Content>
-                                            </materialDesign:Chip>
-                                            <materialDesign:Chip Grid.Column="2" Style="{StaticResource MaterialDesignOutlineChip}" Margin="0">
-                                                <Label Content="{Binding PetLevel}" ContentStringFormat="{x:Static properties:Resources.PetX}" Margin="-9,0,-7,0"/>
-                                            </materialDesign:Chip>
-                                        </Grid>
-                                        <Grid Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="auto"/>
-                                                <ColumnDefinition Width="auto"/>
-                                                <ColumnDefinition Width="auto"/>
-                                            </Grid.ColumnDefinitions>
-                                            <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="0">
-                                                <materialDesign:Chip.Icon>
-                                                    <materialDesign:PackIcon Kind="Ring" />
-                                                </materialDesign:Chip.Icon>
-                                                <Label Padding="0">
-                                                    <Label.Content>
-                                                        <MultiBinding Converter="{StaticResource AccessoryToStringConverter}">
-                                                            <Binding Path="Ring.AccessoryTier" />
-                                                            <Binding Path="Ring.AccessoryUpgradeLevel" />
-                                                            <Binding Path="Ring.AccessorySet" />
-                                                        </MultiBinding>
-                                                    </Label.Content>
-                                                </Label>
-                                            </materialDesign:Chip>
-                                            <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="5,0">
-                                                <materialDesign:Chip.Icon>
-                                                    <materialDesign:PackIcon Kind="Necklace" />
-                                                </materialDesign:Chip.Icon>
-                                                <Label Padding="0">
-                                                    <Label.Content>
-                                                        <MultiBinding Converter="{StaticResource AccessoryToStringConverter}">
-                                                            <Binding Path="Necklace.AccessoryTier" />
-                                                            <Binding Path="Necklace.AccessoryUpgradeLevel" />
-                                                            <Binding Path="Necklace.AccessorySet" />
-                                                        </MultiBinding>
-                                                    </Label.Content>
-                                                </Label>
-                                            </materialDesign:Chip>
-                                            <materialDesign:Chip Grid.Column="2" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="0">
-                                                <materialDesign:Chip.Icon>
-                                                    <materialDesign:PackIcon Kind="GlobeLightOutline"/>
-                                                </materialDesign:Chip.Icon>
-                                                <Label Padding="0">
-                                                    <Label.Content>
-                                                        <MultiBinding Converter="{StaticResource AccessoryToStringConverter}">
-                                                            <Binding Path="Earrings.AccessoryTier" />
-                                                            <Binding Path="Earrings.AccessoryUpgradeLevel" />
-                                                            <Binding Path="Earrings.AccessorySet" />
-                                                        </MultiBinding>
-                                                    </Label.Content>
-                                                </Label>
-                                            </materialDesign:Chip>
-                                        </Grid>
-                                        <Button Grid.ColumnSpan="3" Grid.RowSpan="4" Height="230" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Click="EditHeroClick">
-                                            <Button.Style>
-                                                <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="False">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="True">
-                                                            <Setter Property="Visibility" Value="Visible"/>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                            </Button.Style>
-                                            <Grid>
-                                                <Button IsEnabled="False" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Opacity="1" >
-                                                    <materialDesign:PackIcon Kind="TextBoxEditOutline" Height="25" Width="25" />
-                                                </Button>
-                                            </Grid>
-                                        </Button>
-                                    </Grid>
-                                </materialDesign:Card>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-
-                <materialDesign:Snackbar MessageQueue="{Binding HeroGrowthSnackbarMessageQueue}" HorizontalContentAlignment="Center"/>
             </Grid>
-        </materialDesign:DrawerHost>
+         </materialDesign:DrawerHost.LeftDrawerContent>
+         <Grid>
+            <ScrollViewer PanningMode="Both">
+               <ItemsControl Focusable="True" ItemsSource="{Binding HeroesView}" Margin="20">
+                  <ItemsControl.Style>
+                     <Style TargetType="ItemsControl">
+                        <Setter Property="ItemsPanel">
+                           <Setter.Value>
+                              <ItemsPanelTemplate>
+                                 <lib:AnimatingTilePanel lib:AnimatingTilePanel.ItemHeight="250" lib:AnimatingTilePanel.ItemWidth="300"/>
+                              </ItemsPanelTemplate>
+                           </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                           <DataTrigger Binding="{Binding IsPerformanceModeEnabled}" Value="True">
+                              <Setter Property="ItemsPanel">
+                                 <Setter.Value>
+                                    <ItemsPanelTemplate>
+                                       <local:StretchyWrapPanel VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.IsVirtualizing="True" DesiredItemHeight="250" DesiredItemWidth="300"/>
+                                    </ItemsPanelTemplate>
+                                 </Setter.Value>
+                              </Setter>
+                           </DataTrigger>
+                        </Style.Triggers>
+                     </Style>
+                  </ItemsControl.Style>
+                  <ItemsControl.ItemTemplate>
+                     <DataTemplate>
+                        <materialDesign:Card HorizontalAlignment="Left" VerticalAlignment="Top" materialDesign:ElevationAssist.Elevation="Dp6" >
+                           <materialDesign:Card.Style>
+                              <Style TargetType="materialDesign:Card">
+                                 <Setter Property="Opacity" Value="1"/>
+                                 <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsOwned}" Value="False">
+                                       <Setter Property="Opacity" Value=".5"/>
+                                    </DataTrigger>
+                                 </Style.Triggers>
+                              </Style>
+                           </materialDesign:Card.Style>
 
-        <ToolBarTray Grid.Row="2">
-            <ToolBar>
-                <Label Content="{Binding HeroesOwned}" ContentStringFormat="{x:Static properties:Resources.OwnedHeroesX}" />
-                <Label Content="{Binding TotalHeroes, StringFormat=// {0}}" />
-                <Separator/>
-                <Label Content="{Binding HeroesSi15}" ContentStringFormat="{x:Static properties:Resources.SI15X}" Foreground="Orange"/>
-                <Separator/>
-                <Label Content="{Binding HeroesCl25}" ContentStringFormat="{x:Static properties:Resources.CL25X}" Foreground="{StaticResource ChaserBrush}"/>
-                <Separator/>
-                <Label Content="{Binding MaxEquipTierLevel}" ContentStringFormat="{x:Static properties:Resources.LevelX}" Foreground="{StaticResource LevelBrush}"/>
-                <Label Content="{Binding HeroesLevel215}" Foreground="{StaticResource LevelBrush}"/>
-                <Separator/>
-            </ToolBar>
-        </ToolBarTray>
-    </Grid>
+                           <Grid x:Name="CardContainer">
+                              <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="120" />
+                                 <ColumnDefinition Width="225" />
+                              </Grid.ColumnDefinitions>
+                              <Grid.RowDefinitions>
+                                 <RowDefinition Height="120" />
+                                 <RowDefinition Height="30" />
+                                 <RowDefinition Height="40" />
+                                 <RowDefinition Height="40" />
+                              </Grid.RowDefinitions>
+                              <Image Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Height="90" Width="110" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                              <Label Grid.Row="0" Content="{Binding DisplayName}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,-7" FontSize="15" />
+                              <Label Grid.Row="1" Content="{Binding BP}" ContentStringFormat="{}{0} BP" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,-5" FontSize="13" />
+                              <Grid Grid.Column="1" Grid.RowSpan="2" >
+                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                 </Grid.ColumnDefinitions>
+                                 <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                 </Grid.RowDefinitions>
+                                 <ProgressBar Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource TranscendenceBrush}" Value="{Binding TranscendenceLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Transcendence}}"/>
+                                 <Label Grid.Column="1" Grid.Row="1" Content="{Binding TranscendenceLevel}" ContentStringFormat="{x:Static properties:Resources.TX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                                 <!--<ProgressBar Grid.Column="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource SiBrush}" Value="{Binding SiLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.SoulImprint}}"/>-->
+                                 <uc:SiCoresOpenOverlay Grid.Column="1" Width="60" Height="60" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
+                                 <Label Grid.Column="1" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                                 <ProgressBar Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
+                                 <Label Grid.Column="0" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                                 <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource LevelBrush}" Value="{Binding Level, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Level}}"/>
+                                 <Label Content="{Binding Level}" ContentStringFormat="{x:Static properties:Resources.LvlX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                                 <ProgressBar Grid.Column="2" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                                 <Label Grid.Column="2" Content="{Binding DescentLevel}" ContentStringFormat="D{0}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                              </Grid>
+                              <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                 </Grid.ColumnDefinitions>
+                                 <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{DynamicResource MaterialDesignChipBackground}" Margin="0">
+                                    <materialDesign:Chip.Icon>
+                                       <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="25" Height="25"/>
+                                    </materialDesign:Chip.Icon>
+                                    <materialDesign:Chip.Content>
+                                       <Label Content="{Binding Hero.HeroClass, Converter={StaticResource EnumDescriptionConverter}}" Margin="-9,0,-7,0"/>
+                                    </materialDesign:Chip.Content>
+                                 </materialDesign:Chip>
+                                 <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{DynamicResource MaterialDesignChipBackground}" Margin="5,0">
+                                    <materialDesign:Chip.Icon>
+                                       <Image Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="25" Height="25"/>
+                                    </materialDesign:Chip.Icon>
+                                    <materialDesign:Chip.Content>
+                                       <Label Content="{Binding Hero.HeroAttribute, Converter={StaticResource EnumDescriptionConverter}}" Margin="-9,0,-7,0"/>
+                                    </materialDesign:Chip.Content>
+                                 </materialDesign:Chip>
+                                 <materialDesign:Chip Grid.Column="2" Style="{StaticResource MaterialDesignOutlineChip}" Margin="0">
+                                    <Label Content="{Binding PetLevel}" ContentStringFormat="{x:Static properties:Resources.PetX}" Margin="-9,0,-7,0"/>
+                                 </materialDesign:Chip>
+                              </Grid>
+                              <Grid Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                 </Grid.ColumnDefinitions>
+                                 <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="0">
+                                    <materialDesign:Chip.Icon>
+                                       <materialDesign:PackIcon Kind="Ring" />
+                                    </materialDesign:Chip.Icon>
+                                    <Label Padding="0">
+                                       <Label.Content>
+                                          <MultiBinding Converter="{StaticResource AccessoryToStringConverter}">
+                                             <Binding Path="Ring.AccessoryTier" />
+                                             <Binding Path="Ring.AccessoryUpgradeLevel" />
+                                             <Binding Path="Ring.AccessorySet" />
+                                          </MultiBinding>
+                                       </Label.Content>
+                                    </Label>
+                                 </materialDesign:Chip>
+                                 <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="5,0">
+                                    <materialDesign:Chip.Icon>
+                                       <materialDesign:PackIcon Kind="Necklace" />
+                                    </materialDesign:Chip.Icon>
+                                    <Label Padding="0">
+                                       <Label.Content>
+                                          <MultiBinding Converter="{StaticResource AccessoryToStringConverter}">
+                                             <Binding Path="Necklace.AccessoryTier" />
+                                             <Binding Path="Necklace.AccessoryUpgradeLevel" />
+                                             <Binding Path="Necklace.AccessorySet" />
+                                          </MultiBinding>
+                                       </Label.Content>
+                                    </Label>
+                                 </materialDesign:Chip>
+                                 <materialDesign:Chip Grid.Column="2" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="0">
+                                    <materialDesign:Chip.Icon>
+                                       <materialDesign:PackIcon Kind="GlobeLightOutline"/>
+                                    </materialDesign:Chip.Icon>
+                                    <Label Padding="0">
+                                       <Label.Content>
+                                          <MultiBinding Converter="{StaticResource AccessoryToStringConverter}">
+                                             <Binding Path="Earrings.AccessoryTier" />
+                                             <Binding Path="Earrings.AccessoryUpgradeLevel" />
+                                             <Binding Path="Earrings.AccessorySet" />
+                                          </MultiBinding>
+                                       </Label.Content>
+                                    </Label>
+                                 </materialDesign:Chip>
+                              </Grid>
+                              <Button Grid.ColumnSpan="3" Grid.RowSpan="4" Height="230" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Click="EditHeroClick">
+                                 <Button.Style>
+                                    <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                                       <Style.Triggers>
+                                          <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="False">
+                                             <Setter Property="Visibility" Value="Collapsed"/>
+                                          </DataTrigger>
+                                          <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="True">
+                                             <Setter Property="Visibility" Value="Visible"/>
+                                          </DataTrigger>
+                                       </Style.Triggers>
+                                    </Style>
+                                 </Button.Style>
+                                 <Grid>
+                                    <Button IsEnabled="False" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Opacity="1" >
+                                       <materialDesign:PackIcon Kind="TextBoxEditOutline" Height="25" Width="25" />
+                                    </Button>
+                                 </Grid>
+                              </Button>
+                           </Grid>
+                        </materialDesign:Card>
+                     </DataTemplate>
+                  </ItemsControl.ItemTemplate>
+               </ItemsControl>
+            </ScrollViewer>
+
+            <materialDesign:Snackbar MessageQueue="{Binding HeroGrowthSnackbarMessageQueue}" HorizontalContentAlignment="Center"/>
+         </Grid>
+      </materialDesign:DrawerHost>
+
+      <ToolBarTray Grid.Row="2">
+         <ToolBar>
+            <Label Content="{Binding HeroesOwned}" ContentStringFormat="{x:Static properties:Resources.OwnedHeroesX}" />
+            <Label Content="{Binding TotalHeroes, StringFormat=// {0}}" />
+            <Separator/>
+            <Label Content="{Binding HeroesSi15}" ContentStringFormat="{x:Static properties:Resources.SI15X}" Foreground="Orange"/>
+            <Separator/>
+            <Label Content="{Binding HeroesCl25}" ContentStringFormat="{x:Static properties:Resources.CL25X}" Foreground="{StaticResource ChaserBrush}"/>
+            <Separator/>
+            <Label Content="{Binding MaxEquipTierLevel}" ContentStringFormat="{x:Static properties:Resources.LevelX}" Foreground="{StaticResource LevelBrush}"/>
+            <Label Content="{Binding HeroesLevel215}" Foreground="{StaticResource LevelBrush}"/>
+            <Separator/>
+         </ToolBar>
+      </ToolBarTray>
+   </Grid>
 </UserControl>

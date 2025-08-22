@@ -12,7 +12,10 @@ namespace GCManagementApp.Static
             (ProfileGrowth.Profile.Settings.IsAnnihilationGemReset ? 3 : 0) +
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageBought ? 3 : 0) +
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageEssentialBought ? 1 : 0)) * 7;
-        public static int CubesFromBlueGems => Math.Min(1200, ProfileGrowth.Profile.Settings.OverrideBlueGems ? (ProfileGrowth.Profile.Settings.CustomBlueGems / 120) : (BlueGems.BlueGemsWeeklyTotal / 120));
+                
+        public static int CubeCostInBG = 120;
+        public static int CubesFromBlueGems => Math.Min(ProfileGrowth.Profile.Settings.MaxGCFromBG, BlueGems.TotalBlueGems / CubeCostInBG);
+        public static int CubesFromBlueGemsCost => CubesFromBlueGems * CubeCostInBG;
         public static int AdditionalCubesWeekly => ProfileGrowth.Profile.Settings.WeeklyAdditionalGCCubes;
         public static int CubesTotalWeekly => CubesFromAnni + CubesFromBlueGems + AdditionalCubesWeekly;
         public static int CubesForFullSi => 3150;

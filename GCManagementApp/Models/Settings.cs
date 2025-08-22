@@ -285,6 +285,27 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _weeklyAdditionalGCCubes, value);
         }
 
+        private int _weeklyAdditionalDivineCrystals;
+        public int WeeklyAdditionalDivineCrystals
+        {
+            get => _weeklyAdditionalDivineCrystals;
+            set => SetProperty(ref _weeklyAdditionalDivineCrystals, value);
+        }
+
+        private int _maxGCFromBG;
+        public int MaxGCFromBG
+        {
+            get => _maxGCFromBG;
+            set => SetProperty(ref _maxGCFromBG, value);
+        }
+
+        private bool _buying70BGCrystals;
+        public bool Buying70BGCrystals
+        {
+            get => _buying70BGCrystals;
+            set => SetProperty(ref _buying70BGCrystals, value);
+        }
+
         //Adding entry here makes it that this value will be saved into profile file, and remembered between app restars
         private bool _isWeeklyBoVPackBought;
         public bool IsWeeklyBoVPackBought

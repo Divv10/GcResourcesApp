@@ -165,9 +165,52 @@
 			</Grid>
 
 		 </Grid>
-	  </DataTemplate>
-	  
-	  <DataTemplate x:Key="LevelPetLevel">
+      </DataTemplate>
+
+      <DataTemplate x:Key="Descent">
+         <Grid Height="215" Width="500" Background="{DynamicResource MaterialDesignCardBackground}">
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition Width="130" />
+               <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+               <RowDefinition Height="150" />
+               <RowDefinition Height="30" />
+               <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Margin="20,20,0,0"/>
+            <Label Grid.Row="1" Content="{Binding DisplayName}" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Grid Grid.Column="1" Grid.RowSpan="2" Margin="10,0">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition />
+                  <ColumnDefinition />
+               </Grid.ColumnDefinitions>
+               <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition />
+                  <RowDefinition />
+                  <RowDefinition />
+                  <RowDefinition />
+                  <RowDefinition />
+               </Grid.RowDefinitions>
+
+               <TextBlock Text="Descent" VerticalAlignment="Center"/>
+               <TextBox Grid.Column="1" Text="{Binding DescentLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="40" HorizontalContentAlignment="Center" />
+
+               <Slider Grid.Row="1" Grid.ColumnSpan="2" Maximum="{x:Static static:StaticValues.MaxDescentLevel}" Value="{Binding DescentLevel, UpdateSourceTrigger=PropertyChanged}" Foreground="{StaticResource DescentBrush}" IsTabStop="False"/>
+
+            </Grid>
+            <Grid Grid.Column="1" Grid.RowSpan="10" Background="{DynamicResource MaterialDesignCardBackground}" Visibility="{Binding IsOwned, Converter={StaticResource BooleanToVisibilityConverterMD}}">
+               <TextBlock Text="{x:Static properties:Resources.HeroOwned}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="40"/>
+               <ToggleButton IsChecked="{Binding IsOwned}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="60" Visibility="Visible"/>
+            </Grid>
+
+         </Grid>
+      </DataTemplate>
+
+      <DataTemplate x:Key="LevelPetLevel">
          <Grid Height="215" Width="500" Background="{DynamicResource MaterialDesignCardBackground}">
 			<Grid.ColumnDefinitions>
 			   <ColumnDefinition Width="130" />
@@ -517,6 +560,7 @@
 				  <MenuItem Header="{x:Static properties:Resources.HeroLevel}" Command="{Binding SortByLevel}"/>
 				  <MenuItem Header="{x:Static properties:Resources.PetLevel}" Command="{Binding SortByPet}"/>
 				  <MenuItem Header="{x:Static properties:Resources.BP}" Command="{Binding SortByBp}"/>
+				  <MenuItem Header="Descent level" Command="{Binding SortByDescent}"/>
 			   </MenuItem>
 			</Menu>
 			<StackPanel Orientation="Horizontal">
@@ -571,6 +615,9 @@
 							  </DataTrigger>
 							  <DataTrigger Binding="{Binding SelectedEditType, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="Artifact">
 								 <Setter Property="ContentTemplate" Value="{StaticResource Artifact}" />
+							  </DataTrigger>
+							  <DataTrigger Binding="{Binding SelectedEditType, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="Descent">
+								 <Setter Property="ContentTemplate" Value="{StaticResource Descent}" />
 							  </DataTrigger>
 						   </Style.Triggers>
 						</Style>

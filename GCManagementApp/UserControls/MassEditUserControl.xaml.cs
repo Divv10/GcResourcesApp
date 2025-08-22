@@ -37,6 +37,7 @@ namespace GCManagementApp.UserControls
         public ICommand SortByLevel { get; }
         public ICommand SortByPet { get; }
         public ICommand SortByBp { get; }
+        public ICommand SortByDescent { get; }
 
         private string _filterName;
         public string FilterName
@@ -97,6 +98,7 @@ namespace GCManagementApp.UserControls
             SortByLevel = new RelayCommand(OnSortByLevel);
             SortByPet = new RelayCommand(OnSortByPet);
             SortByBp = new RelayCommand(OnSortByBp);
+            SortByDescent = new RelayCommand(OnSortByDescent);
 
             Heroes = new ObservableCollection<HeroGrowth>(ProfileGrowth.Heroes.OrderBy(x => x.DisplayName));
             foreach (var hero in Heroes)
@@ -172,6 +174,15 @@ namespace GCManagementApp.UserControls
             {
                 HeroesView.SortDescriptions.Clear();
                 HeroesView.SortDescriptions.Add(new SortDescription(nameof(HeroGrowth.PetLevel), ListSortDirection.Descending));
+            }
+        }
+
+        private void OnSortByDescent(object param)
+        {
+            using (HeroesView.DeferRefresh())
+            {
+                HeroesView.SortDescriptions.Clear();
+                HeroesView.SortDescriptions.Add(new SortDescription(nameof(HeroGrowth.DescentLevel), ListSortDirection.Descending));
             }
         }
 

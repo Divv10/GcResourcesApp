@@ -54,6 +54,7 @@ namespace GCManagementApp.Models
         Urara,
         Uno,
         Vice,
-        Nepteon
+        Nepteon,
+        Metatron
     }
 }

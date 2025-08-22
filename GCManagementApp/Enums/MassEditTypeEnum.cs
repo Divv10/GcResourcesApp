@@ -9,6 +9,7 @@ namespace GCManagementApp.Enums
         [Description("Soul Imprint")]
         SoulImprint,
         Chaser,
+        Descent,
         Pet,
         [Description("Accessory - Earrings")]
         AccessoryEarring,
