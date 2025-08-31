@@ -192,6 +192,101 @@
          </ScrollViewer>
       </TabItem>
       <TabItem>
+            <TabItem.Header>
+                <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="60"/>
+            </TabItem.Header>
+
+          <ScrollViewer>
+              <Grid Margin="10">
+                 <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition />
+                 </Grid.RowDefinitions>
+                 <materialDesign:Card Grid.Row="0" Margin="0,10,0,0">
+                     <StackPanel Orientation="Vertical">
+                         <Grid>
+                             <Grid.ColumnDefinitions>
+                                 <ColumnDefinition Width="auto"/>
+                                 <ColumnDefinition Width="auto"/>
+                                 <ColumnDefinition Width="auto"/>
+                                 <ColumnDefinition />
+                             </Grid.ColumnDefinitions>
+                             <Grid.RowDefinitions>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                                 <RowDefinition Height="auto"/>
+                              </Grid.RowDefinitions>
+                              <TextBlock Grid.ColumnSpan="4" Margin="20,5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{x:Static properties:Resources.DescentCostCalculator}" />
+                              <TextBox Grid.Row="1" Margin="20,5" materialDesign:HintAssist.Hint="{x:Static properties:Resources.CurrentDescentLevel}" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                                  <TextBox.Text>
+                                      <Binding Path="CurrentDl" UpdateSourceTrigger="PropertyChanged">
+                                          <Binding.ValidationRules>
+                                              <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
+                                          </Binding.ValidationRules>
+                                      </Binding>
+                                  </TextBox.Text>
+                              </TextBox>
+                              <TextBox Grid.Row="1" Grid.Column="1" Margin="20,5" materialDesign:HintAssist.Hint="{x:Static properties:Resources.DesiredDescentLevel}" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                                  <TextBox.Text>
+                                     <Binding Path="DesiredDl" UpdateSourceTrigger="PropertyChanged">
+                                         <Binding.ValidationRules>
+                                            <validationRules:MaximumIntValueValidationRule MaximumIntValue="10" />
+                                            </Binding.ValidationRules>
+                                         </Binding>
+                                     </TextBox.Text>
+                                </TextBox>
+                                <TextBlock Grid.Row="2" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.Level, StringFormat='{x:Static properties:Resources.CostOfLevels}'}" />
+                                <StackPanel Grid.Row="3" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.DivineCrystalsCost, StringFormat='{x:Static properties:Resources.XDescentCrystals}'}" VerticalAlignment="Center" />
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.GrowthEssenceCost, StringFormat='{x:Static properties:Resources.XGrowthEssences}'}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="40"/>
+                                    <TextBlock Margin="20,5" Width="250" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.GoldCost, StringFormat='{x:Static properties:Resources.XGold}'}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                                <TextBlock Grid.Row="4" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{x:Static properties:Resources.Inventory}" />
+                                <StackPanel Grid.Row="5" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.DivineCrystals, StringFormat='{x:Static properties:Resources.XGrowthCubes}'}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.AssaultGE}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceRanger.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.RangerGE}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceTank.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.TankGE}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceHealer.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.HealerGE}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceMage.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.MageGE}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                         </Grid>
+                         <Expander HorizontalAlignment="Stretch" Header="{x:Static properties:Resources.ClickHereToShowFullDTable}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{x:Static properties:Resources.NoticeDIncludesCost}" />
+                                <DataGrid Grid.Row="1" CanUserAddRows="False" CanUserSortColumns="False" IsReadOnly="True" ItemsSource="{Binding DCostsTable}" MaxHeight="400" MaxWidth="550" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto">
+                                    <DataGrid.Columns>
+                                       <DataGridTextColumn Header="{x:Static properties:Resources.DL}" Binding="{Binding Level}" Width="auto"/>
+                                       <DataGridTextColumn Header="{x:Static properties:Resources.DescentCrystals}" Binding="{Binding DivineCrystalsCost}" Width="*"/>
+                                       <DataGridTextColumn Header="{x:Static properties:Resources.GrowthEssence}" Binding="{Binding GrowthEssenceCost}" Width="*"/>
+                                       <DataGridTextColumn Header="{x:Static properties:Resources.Gold}" Binding="{Binding GoldCost, StringFormat='{}{0:#,0}'}" Width="*"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                         </Expander>
+                     </StackPanel>
+                 </materialDesign:Card>
+              </Grid>
+          </ScrollViewer>
+      </TabItem>
+      <TabItem>
          <TabItem.Header>
             <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="60"/>
          </TabItem.Header>

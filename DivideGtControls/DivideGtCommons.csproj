@@ -40,4 +40,10 @@
 		<PackageReference Include="System.Numerics.Vectors" />
 		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Update="Heroes\Icons\ElesisSR.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
 </Project>

@@ -212,6 +212,7 @@
                            <ColumnDefinition />
                            <ColumnDefinition />
                            <ColumnDefinition />
+                           <ColumnDefinition />
                         </Grid.ColumnDefinitions>
 
                         <ProgressBar Grid.Column="0" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource LevelBrush}" Value="{Binding Level, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Level}}"/>
@@ -224,6 +225,8 @@
                         <Label Grid.Column="3" Content="{Binding TranscendenceLevel}" ContentStringFormat="{x:Static properties:Resources.TX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                         <ProgressBar Grid.Column="4" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Value="{Binding PetLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Pet}}"/>
                         <Label Grid.Column="4" Content="{Binding PetLevel}" ContentStringFormat="{x:Static properties:Resources.PX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                        <ProgressBar Grid.Column="5" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="#FCF6DD" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                        <Label Grid.Column="5" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                      </Grid>
                   </Grid>
                </Border>

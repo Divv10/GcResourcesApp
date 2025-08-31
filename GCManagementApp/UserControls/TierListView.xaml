@@ -54,7 +54,22 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=ClList}"/>
          </Grid>
       </TabItem>
-       <TabItem>
+        <TabItem Background="#FCF6DD">
+            <TabItem.Header>
+                <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="60"/>
+            </TabItem.Header>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer>
+                    <local:TierListDescentControl VerticalAlignment="Top" x:Name="DList" Labels="{Binding DLabels, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}" Collections="{Binding DCollections, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}"/>
+                </ScrollViewer>
+                <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=DList}"/>
+            </Grid>
+        </TabItem>
+        <TabItem>
             <TabItem.Header>
                 <materialDesign:PackIcon Kind="AccountArrowUp" Height="40" Width="40"/>
             </TabItem.Header>

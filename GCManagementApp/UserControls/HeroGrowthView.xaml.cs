@@ -27,6 +27,7 @@ namespace GCManagementApp.UserControls
     public partial class HeroGrowthView : UserControl, INotifyPropertyChanged
     {
         public ICommand FilterHeroType { get; }
+        public ICommand FilterDescent { get; }
         public ICommand FilterSi { get; }
         public ICommand FilterCl { get; }
         public ICommand FilterClass { get; }
@@ -85,6 +86,13 @@ namespace GCManagementApp.UserControls
             get => _filterHeroTypeEnum;
             set => SetProperty(ref _filterHeroTypeEnum, value);
         }
+        private DescentFilterEnum? _filterDescentEnum;
+        public DescentFilterEnum? FilterDescentEnum
+        {
+            get => _filterDescentEnum;
+            set => SetProperty(ref _filterDescentEnum, value);
+        }
+
         private SiLevelFilterEnum? _filterSiEnum;
         public SiLevelFilterEnum? FilterSiEnum
         {
@@ -111,6 +119,7 @@ namespace GCManagementApp.UserControls
         }
 
         public int HeroesOwned => Heroes.Count(h => h.IsOwned);
+        public int HeroesD10 => Heroes.Count(h => h.DescentLevel == 10);
         public int HeroesSi15 => Heroes.Count(h => h.SiLevel == 15);
         public int HeroesCl25 => Heroes.Count(h => h.ChaserLevel == 25);
         public int HeroesLevel215 => Heroes.Count(h => h.Level >= StaticValues.MaxLevel - 5);
@@ -186,6 +195,7 @@ namespace GCManagementApp.UserControls
             }
 
             FilterHeroType = new RelayCommand(OnFilterHeroType);
+            FilterDescent = new RelayCommand(OnFilterDescent);
             FilterSi = new RelayCommand(OnFilterSi);
             FilterCl = new RelayCommand(OnFilterCl);
             FilterClass = new RelayCommand(OnFilterClass);
@@ -226,6 +236,11 @@ namespace GCManagementApp.UserControls
                 (FilterHeroTypeEnum == null || heroGrowth.Hero.HeroType == FilterHeroTypeEnum.Value) &&
                 (FilterClassEnum == null || heroGrowth.Hero.HeroClass == FilterClassEnum.Value) &&
                 (FilterAttributeEnum == null || heroGrowth.Hero.HeroAttribute == FilterAttributeEnum.Value) &&
+                (FilterDescentEnum == null || FilterDescentEnum == DescentFilterEnum.D10 && heroGrowth.DescentLevel == 10) || 
+                    (FilterDescentEnum == DescentFilterEnum.D8 && heroGrowth.DescentLevel < 10 && heroGrowth.DescentLevel >= 8) ||
+                    (FilterDescentEnum == DescentFilterEnum.D5 && heroGrowth.DescentLevel < 8 && heroGrowth.DescentLevel >=5) || 
+                    (FilterDescentEnum == DescentFilterEnum.D3 && heroGrowth.DescentLevel < 5 && heroGrowth.DescentLevel >= 3) ||
+                    (FilterDescentEnum == DescentFilterEnum.D0 && heroGrowth.DescentLevel < 3 && heroGrowth.DescentLevel >= 0) &&
                 (FilterSiEnum == null ||
                     (FilterSiEnum == SiLevelFilterEnum.SI15 && heroGrowth.SiLevel == 15) ||
                     (FilterSiEnum == SiLevelFilterEnum.SI10 && heroGrowth.SiLevel < 15 && heroGrowth.SiLevel >= 10) ||
@@ -240,6 +255,12 @@ namespace GCManagementApp.UserControls
         private void OnFilterHeroType(object param) 
         {
             FilterHeroTypeEnum = param as HeroType?;
+            HeroesView.Refresh();
+        }
+
+        private void OnFilterDescent(object param)
+        {
+            FilterDescentEnum = param as DescentFilterEnum?;
             HeroesView.Refresh();
         }
 

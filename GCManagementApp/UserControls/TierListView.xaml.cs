@@ -10,7 +10,9 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net;
 using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,9 +37,11 @@ namespace GCManagementApp.UserControls
         public string[] SiLabels { get; set; } = new string[] { Properties.Resources.SI15, String.Format(Properties.Resources.SIX, "10+"), String.Format(Properties.Resources.SIX, "5+"), String.Format(Properties.Resources.SIX, "0+"), Properties.Resources.Locked, Properties.Resources.NotOwned };
 
         public string[] ClLabels { get; set; } = new string[] { Properties.Resources.CL25, String.Format(Properties.Resources.CLX, "20+"), String.Format(Properties.Resources.CLX, "20"), String.Format(Properties.Resources.CLX, "0+"), String.Format(Properties.Resources.CLX, "0"), Properties.Resources.NotOwned};
+       
+        public string[] DLabels { get; set; } = new string[] { Properties.Resources.D10, String.Format(Properties.Resources.DX, "8+"), String.Format(Properties.Resources.DX, "5+"), String.Format(Properties.Resources.DX, "3+"), String.Format(Properties.Resources.DX, "0+"), String.Format(Properties.Resources.DX, "0"), Properties.Resources.NotOwned};
 
         public string[] TransLabels { get; set; } = new string[] { "T6", "T5", "T4", "T3", "T2", "T1", "T0", Properties.Resources.NotOwned };
-        
+
         public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT4, Properties.Resources.AnyT4, Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT2, Properties.Resources.AnyT2, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
 
         public string[] EWLabels { get; set; } = new string[] { "+10 - +9" ,"+8", "+5 - +7", "+4", "+0 - +3", Properties.Resources.NotOwned};
@@ -56,6 +60,13 @@ namespace GCManagementApp.UserControls
         {
             get => _clCollections;
             set => SetProperty(ref _clCollections, value);
+        }
+
+        private ObservableCollection<HeroGrowth>[] _dCollections;
+        public ObservableCollection<HeroGrowth>[] DCollections
+        {
+            get => _dCollections;
+            set => SetProperty(ref _dCollections, value);
         }
 
         private ObservableCollection<HeroGrowth>[] _transCollections;
@@ -96,6 +107,7 @@ namespace GCManagementApp.UserControls
 
             SiList.IsVisibleChanged += IsVisibleChangedDep;
             ClList.IsVisibleChanged += IsVisibleChangedDep;
+            DList.IsVisibleChanged += IsVisibleChangedDep;
             AccList.IsVisibleChanged += IsVisibleChangedDep;
             EwList.IsVisibleChanged += IsVisibleChangedDep;
         }
@@ -132,6 +144,15 @@ namespace GCManagementApp.UserControls
 
             TransCollections = new ObservableCollection<HeroGrowth>[] { trans6, trans5, trans4, trans3, trans2, trans1, trans0, transNO};
 
+            var d10 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.DescentLevel == 10).OrderByDescending(x => x.DisplayName));
+            var d8p = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.DescentLevel < 10 && x.DescentLevel >= 8).OrderByDescending(x => x.DescentLevel).ThenBy(x => x.DisplayName));
+            var d5p = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.DescentLevel < 8 && x.DescentLevel >= 5).OrderByDescending(x => x.DescentLevel).ThenBy(x => x.DisplayName));
+            var d3p = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.DescentLevel < 5 && x.DescentLevel >= 3).OrderByDescending(x => x.DescentLevel).ThenBy(x => x.DisplayName));
+            var d0p = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.DescentLevel < 3 && x.DescentLevel > 0).OrderByDescending(x => x.DescentLevel).ThenBy(x => x.DisplayName));
+            var d0 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.IsOwned && x.DescentLevel == 0).OrderByDescending(x => x.DisplayName));
+            var dNO = new ObservableCollection<HeroGrowth>(heroes.Where(x => !x.IsOwned).OrderBy(x => x.DisplayName));
+
+            DCollections = new ObservableCollection<HeroGrowth>[] { d10, d8p, d5p, d3p, d0p, d0, dNO};
 
             var allT4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T4)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var anyT4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T4)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));

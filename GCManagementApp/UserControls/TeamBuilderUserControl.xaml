@@ -84,6 +84,7 @@
                                        <ColumnDefinition Width="35" />
                                        <ColumnDefinition Width="70" />
                                        <ColumnDefinition Width="35" />
+                                       <ColumnDefinition Width="35" />
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                        <RowDefinition Height="35" />
@@ -99,6 +100,8 @@
                                     <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                                     <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                                     <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                                    <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                                    <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                                  </Grid>
                               </DataTemplate>
                            </ListBox.ItemTemplate>
@@ -118,7 +121,7 @@
                      </Grid>
                   </DataTemplate>
                </ItemsControl.ItemTemplate>
-            </ItemsControl>     
+            </ItemsControl>
          </Grid>
       </ScrollViewer>
 
@@ -146,6 +149,7 @@
                      <ColumnDefinition Width="35" />
                      <ColumnDefinition Width="70" />
                      <ColumnDefinition Width="35" />
+                     <ColumnDefinition Width="35" />
                   </Grid.ColumnDefinitions>
                   <Grid.RowDefinitions>
                      <RowDefinition Height="35" />
@@ -161,11 +165,13 @@
                   <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                   <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                   <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                  <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                  <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                </Grid>
             </DataTemplate>
          </ListBox.ItemTemplate>
       </ListBox>
-
+       
       <StackPanel Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
          <Button Content="Save" Command="{Binding SaveCommand}" />
          <Button Content="Add new team" Command="{Binding AddNewTeamCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>

@@ -70,7 +70,15 @@
                      <MenuItem Header="{x:Static properties:Resources.SR}" Command="{Binding FilterHeroType}" CommandParameter="{x:Static enums:HeroType.SR}"/>
                      <MenuItem Header="{x:Static properties:Resources.T}" Command="{Binding FilterHeroType}" CommandParameter="{x:Static enums:HeroType.T}"/>
                   </MenuItem>
-                  <MenuItem Header="{x:Static properties:Resources.SoulImprint}" >
+                  <MenuItem Header="{x:Static properties:Resources.Descent}" >
+                     <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterDescent}" CommandParameter="{x:Null}"/>
+                     <MenuItem Header="{x:Static properties:Resources.D10}" Command="{Binding FilterDescent}" CommandParameter="{x:Static enums:DescentFilterEnum.D10}"/>
+                     <MenuItem Header="{x:Static properties:Resources.D8_9}" Command="{Binding FilterDescent}" CommandParameter="{x:Static enums:DescentFilterEnum.D8}"/>
+                     <MenuItem Header="{x:Static properties:Resources.D5_7}" Command="{Binding FilterDescent}" CommandParameter="{x:Static enums:DescentFilterEnum.D5}"/>
+                     <MenuItem Header="{x:Static properties:Resources.D3_4}" Command="{Binding FilterDescent}" CommandParameter="{x:Static enums:DescentFilterEnum.D3}"/>
+                     <MenuItem Header="{x:Static properties:Resources.D0_2}" Command="{Binding FilterDescent}" CommandParameter="{x:Static enums:DescentFilterEnum.D0}"/>
+                  </MenuItem>
+                     <MenuItem Header="{x:Static properties:Resources.SoulImprint}" >
                      <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterSi}" CommandParameter="{x:Null}"/>
                      <MenuItem Header="{x:Static properties:Resources.SI15}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI15}"/>
                      <MenuItem Header="{x:Static properties:Resources.SI10_14}" Command="{Binding FilterSi}" CommandParameter="{x:Static enums:SiLevelFilterEnum.SI10}"/>
@@ -83,6 +91,7 @@
                      <MenuItem Header="{x:Static properties:Resources.CL20_24}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL20}"/>
                      <MenuItem Header="{x:Static properties:Resources.CL0_19}" Command="{Binding FilterCl}" CommandParameter="{x:Static enums:ChaserLevelFilterEnum.CL0}"/>
                   </MenuItem>
+                   
                   <MenuItem Header="{x:Static properties:Resources.Class}" >
                      <MenuItem Header="{x:Static properties:Resources.All}" Command="{Binding FilterClass}" CommandParameter="{x:Null}"/>
                      <MenuItem Header="{x:Static properties:Resources.Assault}" Command="{Binding FilterClass}" CommandParameter="{x:Static enums:HeroClass.Assault}"/>
@@ -317,6 +326,8 @@
          <ToolBar>
             <Label Content="{Binding HeroesOwned}" ContentStringFormat="{x:Static properties:Resources.OwnedHeroesX}" />
             <Label Content="{Binding TotalHeroes, StringFormat=// {0}}" />
+            <Separator/>
+            <Label Content="{Binding HeroesD10}" ContentStringFormat="{x:Static properties:Resources.D10X}" Foreground="{StaticResource DescentBrush}"/>
             <Separator/>
             <Label Content="{Binding HeroesSi15}" ContentStringFormat="{x:Static properties:Resources.SI15X}" Foreground="Orange"/>
             <Separator/>

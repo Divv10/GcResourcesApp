@@ -69,15 +69,42 @@ namespace GCManagementApp.UserControls
             }
         }
 
+        private int _currentDl = 0;
+        public int CurrentDl
+        {
+            get => _currentDl;
+            set
+            {
+                SetProperty(ref _currentDl, value);
+                CalculateDCost();
+            }
+        }
+
+        private int _desiredDl = 10;
+        public int DesiredDl
+        {
+            get => _desiredDl;
+            set
+            {
+                SetProperty(ref _desiredDl, value);
+                CalculateDCost();
+            }
+        }
+
         public ChaserLevelCost Cost { get; set; }
 
+   
         public SiLevelCost SiCost { get; set; }
+  
+        public DescendCosts DCost { get; set; }
 
         public Inventory Inventory { get; set; } = ProfileGrowth.Profile.MaterialsInventory;
         
         public List<ChaserLevelCost> ChaserCostsTable { get; } = ChaserLevelingCosts.CostsTable;
 
         public List<SiLevelCost> SiCostsTable { get; } = SiLevelingCosts.CostsTable;
+ 
+        public List<DescendCosts> DCostsTable { get; } = DescendingCosts.CostsTable;
 
         public ClAndSiCalculatorView()
         {
@@ -85,6 +112,7 @@ namespace GCManagementApp.UserControls
             DataContext = this;
             CalculateCost();
             CalculateSiCost();
+            CalculateDCost();
             //Inventory.PropertyChanged += (s, o) => { OnPropertyChanged(nameof(CraftableSoulEssences)); };
         }
 
@@ -100,6 +128,11 @@ namespace GCManagementApp.UserControls
             OnPropertyChanged(nameof(SiCost));
         }
 
+        private void CalculateDCost()
+        {
+            DCost = DescendingCosts.CalculateCost(CurrentDl, DesiredDl);
+            OnPropertyChanged(nameof(DCost));
+        }
         #region PC
 
         public event PropertyChangedEventHandler PropertyChanged;

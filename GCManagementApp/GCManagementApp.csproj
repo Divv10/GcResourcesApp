@@ -7,9 +7,9 @@
 		<NoWarn>NU1701</NoWarn>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<ApplicationIcon>LireSR.ico</ApplicationIcon>
-    <Version>4.6.0.0</Version>
-		<AssemblyVersion>4.6.0.0</AssemblyVersion>
-		<FileVersion>4.6.0.0</FileVersion>
+    <Version>4.6.5.0</Version>
+		<AssemblyVersion>4.6.5.0</AssemblyVersion>
+		<FileVersion>4.6.5.0</FileVersion>
 		<ApplicationManifest>app1.manifest</ApplicationManifest>
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
@@ -864,6 +864,9 @@
 		<None Update="Images_kr\HeroNames\MaydenT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images_kr\HeroNames\Metatron.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_kr\HeroNames\Myst.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -875,6 +878,9 @@
 		</None>
 		<None Update="Images_kr\HeroNames\NeliaT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\Nepteon.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\HeroNames\Ragnar.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

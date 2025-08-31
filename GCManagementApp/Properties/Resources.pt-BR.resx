@@ -1035,9 +1035,6 @@
   <data name="CL25TCost" xml:space="preserve">
     <value>Custo CL25 (T)</value>
   </data>
-  <data name="CostOfSI15InSE" xml:space="preserve">
-    <value>Custo do SI15 em Essência da Alma</value>
-  </data>
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value>Cubos SI específicos do herói</value>
   </data>
@@ -1068,5 +1065,56 @@
   </data>
   <data name="TeamBuilder" xml:space="preserve">
     <value>Construtor de equipes</value>
+  </data>
+  <data name="D10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DX" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CostInGECubes" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CurrentDescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DescentCostCalculator" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DesiredDescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="XDescentCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="ClickHereToShowFullDTable" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="NoticeDIncludesCost" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DescentCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DL" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Descent" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="D0-2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="D3-4" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="D5-7" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="D8-9" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="D10X" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
   </data>
 </root>

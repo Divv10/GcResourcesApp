@@ -20,4 +20,13 @@ namespace GCManagementApp.Enums
         SI5,
         SI0,
     }
+
+    public enum DescentFilterEnum
+    {
+        D10,
+        D8,
+        D5,
+        D3,
+        D0
+    }
 }

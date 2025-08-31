@@ -328,9 +328,6 @@
   <data name="Cost" xml:space="preserve">
     <value>Cost</value>
   </data>
-  <data name="CostInGECubes" xml:space="preserve">
-    <value>Cost in GE Cubes</value>
-  </data>
   <data name="CostOfLevels" xml:space="preserve">
     <value>Cost of {0} levels:</value>
   </data>
@@ -1078,9 +1075,6 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="CL25TCost" xml:space="preserve">
     <value>CL25 (T) Cost</value>
   </data>
-  <data name="CostOfSI15InSE" xml:space="preserve">
-    <value />
-  </data>
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value />
   </data>
@@ -1116,5 +1110,56 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="TeamBuilder" xml:space="preserve">
     <value>Team builders</value>
+  </data>
+  <data name="D10" xml:space="preserve">
+    <value>D10</value>
+  </data>
+  <data name="DX" xml:space="preserve">
+    <value>D{0}</value>
+  </data>
+  <data name="CostInGECubes" xml:space="preserve">
+    <value>Cost in GE Cubes</value>
+  </data>
+  <data name="CurrentDescentLevel" xml:space="preserve">
+    <value>Current Descent Level</value>
+  </data>
+  <data name="DescentCostCalculator" xml:space="preserve">
+    <value>Descent Cost Calculator</value>
+  </data>
+  <data name="DesiredDescentLevel" xml:space="preserve">
+    <value>Desired Descent Level</value>
+  </data>
+  <data name="XDescentCrystals" xml:space="preserve">
+    <value>{0} Descent Crystals</value>
+  </data>
+  <data name="ClickHereToShowFullDTable" xml:space="preserve">
+    <value>Click here to show full Descent cost table</value>
+  </data>
+  <data name="NoticeDIncludesCost" xml:space="preserve">
+    <value>Notice: D0 includes the cost to open the system</value>
+  </data>
+  <data name="DescentCrystals" xml:space="preserve">
+    <value>Descent Crystals</value>
+  </data>
+  <data name="DL" xml:space="preserve">
+    <value>Descent Level</value>
+  </data>
+  <data name="Descent" xml:space="preserve">
+    <value>Descent</value>
+  </data>
+  <data name="D0-2" xml:space="preserve">
+    <value>D0-2</value>
+  </data>
+  <data name="D3-4" xml:space="preserve">
+    <value>D3-4</value>
+  </data>
+  <data name="D5-7" xml:space="preserve">
+    <value>D5-7</value>
+  </data>
+  <data name="D8-9" xml:space="preserve">
+    <value>D8-9</value>
+  </data>
+  <data name="D10X" xml:space="preserve">
+    <value>D10: {0}</value>
   </data>
 </root>
