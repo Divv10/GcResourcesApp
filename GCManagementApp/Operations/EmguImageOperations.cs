@@ -66,7 +66,7 @@ namespace GCManagementApp.Operations
             double[] maxValues;
             Point[] maxLocations;
             output.MinMax(out _, out maxValues, out _, out maxLocations);
-
+            //Log.Verbose(pathToImageToFind + ": " + maxValues[0].ToString());
             if (maxValues[0] > confidence)
             {
                 // This is a match. Do something with it, for example draw a rectangle around it.

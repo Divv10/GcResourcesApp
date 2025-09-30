@@ -177,6 +177,9 @@ namespace GCManagementApp.UserControls {
 							if ( _cancellationToken.IsCancellationRequested )
 								throw new ScanningCanceledException();
 							Log.Verbose("... Before Scan Hero");
+
+							await Task.Delay(2700);
+
 							await ScanHero(hero);
 							Log.Verbose("... After Scan Hero");
 							}
@@ -316,7 +319,7 @@ namespace GCManagementApp.UserControls {
 		private Hero GetHeroFromNameWithIR( Bitmap img, Rectangle nameArea ) {
 			var nameImg = img.CropImage(nameArea);
 			//nameImg.ToImageSource().DisplayImage();
-			var path = $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\HeroNames";
+			var path = $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.Portuguese ? "_br" : "_kr")}\\HeroNames";
 			foreach ( var heroIcon in Directory.GetFiles(path, "*.png") ) {
 				if ( EmguImageOperations.FindImageWithMask(heroIcon, nameImg, EmulatorConnectionInfo.Confidence) ) {
 					var heroName = Path.GetFileName(heroIcon).Split(".")[0];
@@ -343,7 +346,7 @@ namespace GCManagementApp.UserControls {
 
 			var nameImg = img.CropImage(nameArea);
 			//nameImg.ToImageSource().DisplayImage();
-			var path = $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : "_kr")}\\HeroNames";
+			var path = $"Images{(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.English ? "" : EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.Portuguese ? "_br" : "_kr")}\\HeroNames";
 			foreach ( var heroIcon in Directory.GetFiles(path, "*.png") ) {
 				var score = EmguImageOperations.FindImageWithMaskScore(heroIcon, nameImg);
 				values.Add(heroIcon, score);
@@ -437,9 +440,22 @@ namespace GCManagementApp.UserControls {
 
 		private void GetArtiInfo( Bitmap img, HeroScanResult result ) {
 			var artiTierImg = img.CropImage(ImageRegions.ArtiTierArea);
-			if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.85).IsEmpty )
+			
+			// Used to test confidence levels for artifact type image scans
+			//var scoreT5 = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiT5, artiTierImg);
+			//Log.Verbose("Arti T5: " + scoreT5.ToString());
+			//var scoreT4 = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiT4, artiTierImg);
+			//Log.Verbose("Arti T4: " + scoreT4.ToString());
+			//var scoreT3 = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiT3, artiTierImg);
+			//Log.Verbose("Arti T3: " + scoreT3.ToString());
+			//var scoreT2 = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiT2, artiTierImg);
+			//Log.Verbose("Arti T2: " + scoreT2.ToString());
+			//var scoreT1 = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiT1, artiTierImg);
+			//Log.Verbose("Arti T1: " + scoreT1.ToString());
+
+			if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.85).IsEmpty && !(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.Portuguese) || !EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.92).IsEmpty)
 				result.ArtiTier = 5;
-			else if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.85).IsEmpty )
+			else if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.85).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 1).IsEmpty)
 				result.ArtiTier = 4;
 			else if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiT3, artiTierImg, 0.8).IsEmpty )
 				result.ArtiTier = 3;
@@ -461,9 +477,18 @@ namespace GCManagementApp.UserControls {
 					}
 
 				var artiTypeImg = img.CropImage(ImageRegions.ArtiTypeArea);
+
+				// Used to test confidence levels for artifact type image scans
+				//var scoreCursed = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiCurse, artiTypeImg);
+				//Log.Verbose("Arti Cursed: " + scoreCursed.ToString());
+				//var scoreFrozen = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiFrozen, artiTypeImg);
+				//Log.Verbose("Arti Frozen: " + scoreFrozen.ToString());
+				//var scoreBurn = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiBurning, artiTypeImg);
+				//Log.Verbose("Arti Burn: " + scoreBurn.ToString());
+				
 				if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiFrozen, artiTypeImg, 0.8).IsEmpty )
 					result.ArtiType = 3;
-				else if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiCurse, artiTypeImg, 0.8).IsEmpty )
+				else if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiCurse, artiTypeImg, 0.7).IsEmpty )
 					result.ArtiType = 2;
 				else if ( !EmguImageOperations.FindImageRegion(ImageResources.ArtiBurning, artiTypeImg, 0.8).IsEmpty )
 					result.ArtiType = 1;
@@ -543,13 +568,28 @@ namespace GCManagementApp.UserControls {
 					}
 
 				var accTypeImg = img.CropImage(ImageRegions.NecklaceTypeArea);
-				if ( !EmguImageOperations.FindImageRegion(ImageResources.AccOrange, accTypeImg, 0.8).IsEmpty )
+				var accTypeImgCheck = img.CropImage(ImageRegions.NecklaceTypeCheckArea);
+
+				// Used to test confidence levels for necklace acc image scans
+				//var scoreOrange = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccOrange, accTypeImg);
+				//var scoreBlue = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccBlue, accTypeImg);
+				//var scorePurple = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccPurple, accTypeImg);
+				//var scorePurple2 = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccPurple2, accTypeImg);
+				//var scoreType1 = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccType1, accTypeImgCheck);
+				//Log.Verbose("Necklace Orange: " + scoreOrange.ToString());
+				//Log.Verbose("Necklace Blue: " + scoreBlue.ToString());
+				//Log.Verbose("Necklace Purple: " + scorePurple.ToString());
+				//Log.Verbose("Necklace Purple2: " + scorePurple2.ToString());
+				//Log.Verbose("Necklace Type1: " + scoreType1.ToString());
+
+
+				if ( !EmguImageOperations.FindImageRegion(ImageResources.AccOrange, accTypeImg, 0.79).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.AccType1, accTypeImgCheck, 0.8).IsEmpty && !EmguImageOperations.FindImageRegion(ImageResources.AccOrange, accTypeImg, 0.39).IsEmpty)
 					result.NecklaceType = 3;
-				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccBlue, accTypeImg, 0.8).IsEmpty )
+				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccBlue, accTypeImg, 0.7).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.AccType1, accTypeImgCheck, 0.8).IsEmpty && !EmguImageOperations.FindImageRegion(ImageResources.AccBlue, accTypeImg, 0.38).IsEmpty)
 					result.NecklaceType = 2;
-				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccPurple, accTypeImg, 0.8).IsEmpty )
+				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccPurple, accTypeImg, 0.79).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.AccType1, accTypeImgCheck, 0.8).IsEmpty && !EmguImageOperations.FindImageRegion(ImageResources.AccPurple, accTypeImg, 0.4).IsEmpty)
 					result.NecklaceType = 1;
-				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccPurple2, accTypeImg, 0.8).IsEmpty )
+				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccPurple2, accTypeImg, 0.79).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.AccType1, accTypeImgCheck, 0.8).IsEmpty && !EmguImageOperations.FindImageRegion(ImageResources.AccPurple2, accTypeImg, 0.4).IsEmpty)
 					result.NecklaceType = 1;
 				else
 					result.NecklaceType = 0;
@@ -586,6 +626,17 @@ namespace GCManagementApp.UserControls {
 					}
 
 				var accTypeImg = img.CropImage(ImageRegions.EarringTypeArea);
+
+				// Used to test confidence levels for earring acc image scans
+				//var scoreOrange = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccOrange, accTypeImg);
+				//var scoreBlue = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccBlue, accTypeImg);
+				//var scorePurple = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccPurple, accTypeImg);
+				//var scorePurple2 = EmguImageOperations.FindImageWithMaskScore(ImageResources.AccPurple2, accTypeImg);
+				//Log.Verbose("Earring Orange: " + scoreOrange.ToString());
+				//Log.Verbose("Earring Blue: " + scoreBlue.ToString());
+				//Log.Verbose("Earring Purple: " + scorePurple.ToString());
+				//Log.Verbose("Earring Purple2: " + scorePurple2.ToString());
+
 				if ( !EmguImageOperations.FindImageRegion(ImageResources.AccOrange, accTypeImg, 0.8).IsEmpty )
 					result.EarringType = 3;
 				else if ( !EmguImageOperations.FindImageRegion(ImageResources.AccBlue, accTypeImg, 0.8).IsEmpty )
@@ -611,34 +662,34 @@ namespace GCManagementApp.UserControls {
 			var transImg = heroDetailsImg.CropImage(TextRegions.TranscendenceArea);
 			var descentImg = heroDetailsImg.CropImage(TextRegions.DescentArea);
 
-            int level;
+            int level = 0;
 			for ( int i = 0; i < 3; i++ ) {
 				var levelString = TesseractOperations.ReadText(levelImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
-				if ( int.TryParse(levelString, out level) && level > 0 && level <= StaticValues.MaxLevel ) {
+				if ( int.TryParse(levelString, out level) && level >= 0 && level <= StaticValues.MaxLevel ) {
 					result.Level = level;
 					break;
 					}
 				}
 			Log.Verbose($"Level: {result.Level}");
-			int si;
+			int si = 0;
 			for ( int i = 0; i < 3; i++ ) {
 				var siString = TesseractOperations.ReadText(siImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
-				if ( int.TryParse(siString, out si) && si > 0 && si <= StaticValues.MaxSiLevel ) {
+				if ( int.TryParse(siString, out si) && si >= 0 && si <= StaticValues.MaxSiLevel ) {
 					result.Si = si;
 					break;
 					}
 				}
 			Log.Verbose($"SI: {result.Si}");
-			int chaser;
+			int chaser = 0;
 			for ( int i = 0; i < 3; i++ ) {
 				var chaserString = TesseractOperations.ReadText(chaserImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
-				if ( int.TryParse(chaserString, out chaser) && chaser > 0 && chaser <= StaticValues.MaxClLevel ) {
+				if ( int.TryParse(chaserString, out chaser) && chaser >= 0 && chaser <= StaticValues.MaxClLevel ) {
 					result.Chaser = chaser;
 					break;
 					}
 				}
 			Log.Verbose($"CL: {result.Chaser}");
-			int trans;
+			int trans = 0;
 			for ( int i = 0; i < 3; i++ ) {
 				var transString = TesseractOperations.ReadText(transImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();
 				if ( int.TryParse(transString, out trans) && trans >= 0 && trans <= StaticValues.MaxTranscendenceLevel ) {
@@ -647,7 +698,7 @@ namespace GCManagementApp.UserControls {
 					}
 				}
 			Log.Verbose($"T: {result.Trans}");
-            int descent;
+            int descent = 0;
             for (int i = 0; i < 3; i++)
             {
                 var descentString = TesseractOperations.ReadText(descentImg.ToByteArray(ImageFormat.Png))?.Trim()?.GetNumbers();

@@ -55,6 +55,7 @@ namespace GCManagementApp.Models
         Uno,
         Vice,
         Nepteon,
-        Metatron
+        Metatron,
+        Myrielle
     }
 }

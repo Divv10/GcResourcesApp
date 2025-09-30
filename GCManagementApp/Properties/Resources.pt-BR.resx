@@ -1084,7 +1084,7 @@
   <data name="DesiredDescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="XDescentCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="XDivineCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="ClickHereToShowFullDTable" type="System.Resources.ResXNullRef, System.Windows.Forms">
@@ -1093,7 +1093,7 @@
   <data name="NoticeDIncludesCost" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="DescentCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="DivineCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="DL" type="System.Resources.ResXNullRef, System.Windows.Forms">
@@ -1115,6 +1115,12 @@
     <value />
   </data>
   <data name="D10X" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="HeroRelease" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="DescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
 </root>

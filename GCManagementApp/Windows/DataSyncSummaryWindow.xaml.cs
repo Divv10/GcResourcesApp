@@ -70,6 +70,8 @@ namespace GCManagementApp.Windows
                         hero.Level = result.Level.Value;
                     if (result.Trans != null)
                         hero.TranscendenceLevel = result.Trans.Value;
+                    if (result.Descent != null)
+                        hero.DescentLevel = result.Descent.Value;
                     if (result.Pet != null)
                         hero.PetLevel = result.Pet.Value;
                     if (result.Bp != null)

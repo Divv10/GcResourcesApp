@@ -565,7 +565,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chaser level.
+        ///   Looks up a localized string similar to Chaser Level.
         /// </summary>
         public static string ChaserLevel {
             get {
@@ -1078,11 +1078,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Descent Crystals.
+        ///   Looks up a localized string similar to Descent Level.
         /// </summary>
-        public static string DescentCrystals {
+        public static string DescentLevel {
             get {
-                return ResourceManager.GetString("DescentCrystals", resourceCulture);
+                return ResourceManager.GetString("DescentLevel", resourceCulture);
             }
         }
         
@@ -1119,6 +1119,15 @@ namespace GCManagementApp.Properties {
         public static string DesiredSoulImprintLevel {
             get {
                 return ResourceManager.GetString("DesiredSoulImprintLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Divine Crystals.
+        /// </summary>
+        public static string DivineCrystals {
+            get {
+                return ResourceManager.GetString("DivineCrystals", resourceCulture);
             }
         }
         
@@ -1609,7 +1618,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hero level.
+        ///   Looks up a localized string similar to Hero Level.
         /// </summary>
         public static string HeroLevel {
             get {
@@ -1618,7 +1627,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hero name.
+        ///   Looks up a localized string similar to Hero Name.
         /// </summary>
         public static string HeroName {
             get {
@@ -1641,6 +1650,15 @@ namespace GCManagementApp.Properties {
         public static string HeroPlans {
             get {
                 return ResourceManager.GetString("HeroPlans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hero Release.
+        /// </summary>
+        public static string HeroRelease {
+            get {
+                return ResourceManager.GetString("HeroRelease", resourceCulture);
             }
         }
         
@@ -2131,7 +2149,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pet level.
+        ///   Looks up a localized string similar to Pet Level.
         /// </summary>
         public static string PetLevel {
             get {
@@ -2572,7 +2590,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Soul Imprint level.
+        ///   Looks up a localized string similar to Soul Imprint Level.
         /// </summary>
         public static string SoulImprintLevel {
             get {
@@ -2801,7 +2819,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transcendence level.
+        ///   Looks up a localized string similar to Transcendence Level.
         /// </summary>
         public static string TranscendenceLevel {
             get {
@@ -3080,11 +3098,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} Descent Crystals.
+        ///   Looks up a localized string similar to {0} Divine Crystals.
         /// </summary>
-        public static string XDescentCrystals {
+        public static string XDivineCrystals {
             get {
-                return ResourceManager.GetString("XDescentCrystals", resourceCulture);
+                return ResourceManager.GetString("XDivineCrystals", resourceCulture);
             }
         }
         

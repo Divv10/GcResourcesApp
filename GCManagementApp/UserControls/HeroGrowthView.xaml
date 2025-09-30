@@ -55,7 +55,7 @@
                   <MenuItem Header="{x:Static properties:Resources.HeroName}" Command="{Binding SortByHeroName}"/>
                   <MenuItem Header="{x:Static properties:Resources.TranscendenceLevel}" Command="{Binding SortByT}"/>
                   <MenuItem Header="{x:Static properties:Resources.SoulImprintLevel}" Command="{Binding SortBySi}"/>
-                  <MenuItem Header="Descent level" Command="{Binding SortByDescent}"/>
+                  <MenuItem Header="{x:Static properties:Resources.DescentLevel}" Command="{Binding SortByDescent}"/>
                   <MenuItem Header="{x:Static properties:Resources.ChaserLevel}" Command="{Binding SortByCl}"/>
                   <MenuItem Header="{x:Static properties:Resources.HeroLevel}" Command="{Binding SortByLevel}"/>
                   <MenuItem Header="{x:Static properties:Resources.PetLevel}" Command="{Binding SortByPet}"/>

@@ -242,7 +242,7 @@
                                 <TextBlock Grid.Row="2" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.Level, StringFormat='{x:Static properties:Resources.CostOfLevels}'}" />
                                 <StackPanel Grid.Row="3" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
                                     <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="50"/>
-                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.DivineCrystalsCost, StringFormat='{x:Static properties:Resources.XDescentCrystals}'}" VerticalAlignment="Center" />
+                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.DivineCrystalsCost, StringFormat='{x:Static properties:Resources.XDivineCrystals}'}" VerticalAlignment="Center" />
                                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
                                     <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.GrowthEssenceCost, StringFormat='{x:Static properties:Resources.XGrowthEssences}'}" VerticalAlignment="Center"/>
                                     <Image Source="/GCManagementApp;component/Resources/Materials/Gold.png" Height="40"/>
@@ -274,7 +274,7 @@
                                 <DataGrid Grid.Row="1" CanUserAddRows="False" CanUserSortColumns="False" IsReadOnly="True" ItemsSource="{Binding DCostsTable}" MaxHeight="400" MaxWidth="550" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto">
                                     <DataGrid.Columns>
                                        <DataGridTextColumn Header="{x:Static properties:Resources.DL}" Binding="{Binding Level}" Width="auto"/>
-                                       <DataGridTextColumn Header="{x:Static properties:Resources.DescentCrystals}" Binding="{Binding DivineCrystalsCost}" Width="*"/>
+                                       <DataGridTextColumn Header="{x:Static properties:Resources.DivineCrystals}" Binding="{Binding DivineCrystalsCost}" Width="*"/>
                                        <DataGridTextColumn Header="{x:Static properties:Resources.GrowthEssence}" Binding="{Binding GrowthEssenceCost}" Width="*"/>
                                        <DataGridTextColumn Header="{x:Static properties:Resources.Gold}" Binding="{Binding GoldCost, StringFormat='{}{0:#,0}'}" Width="*"/>
                                     </DataGrid.Columns>

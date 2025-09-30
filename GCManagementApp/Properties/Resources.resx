@@ -271,7 +271,7 @@
     <value>Chaser Cost Calculator</value>
   </data>
   <data name="ChaserLevel" xml:space="preserve">
-    <value>Chaser level</value>
+    <value>Chaser Level</value>
   </data>
   <data name="ChaserTranscendence" xml:space="preserve">
     <value>Chaser &amp; Transcendence</value>
@@ -543,10 +543,10 @@
     <value>Heroes</value>
   </data>
   <data name="HeroLevel" xml:space="preserve">
-    <value>Hero level</value>
+    <value>Hero Level</value>
   </data>
   <data name="HeroName" xml:space="preserve">
-    <value>Hero name</value>
+    <value>Hero Name</value>
   </data>
   <data name="HeroOwned" xml:space="preserve">
     <value>Hero owned</value>
@@ -706,7 +706,7 @@
     <value>Performance mode</value>
   </data>
   <data name="PetLevel" xml:space="preserve">
-    <value>Pet level</value>
+    <value>Pet Level</value>
   </data>
   <data name="PetX" xml:space="preserve">
     <value>Pet: {0}</value>
@@ -853,7 +853,7 @@
     <value>Growth Cubes</value>
   </data>
   <data name="SoulImprintLevel" xml:space="preserve">
-    <value>Soul Imprint level</value>
+    <value>Soul Imprint Level</value>
   </data>
   <data name="SpecialEnergyPackageBasic" xml:space="preserve">
     <value>Special Energy Package (Basic) (220 x 7 = 1540)</value>
@@ -930,7 +930,7 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value>Transcendence</value>
   </data>
   <data name="TranscendenceLevel" xml:space="preserve">
-    <value>Transcendence level</value>
+    <value>Transcendence Level</value>
   </data>
   <data name="TX" xml:space="preserve">
     <value>T{0}</value>
@@ -1129,8 +1129,8 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="DesiredDescentLevel" xml:space="preserve">
     <value>Desired Descent Level</value>
   </data>
-  <data name="XDescentCrystals" xml:space="preserve">
-    <value>{0} Descent Crystals</value>
+  <data name="XDivineCrystals" xml:space="preserve">
+    <value>{0} Divine Crystals</value>
   </data>
   <data name="ClickHereToShowFullDTable" xml:space="preserve">
     <value>Click here to show full Descent cost table</value>
@@ -1138,8 +1138,8 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="NoticeDIncludesCost" xml:space="preserve">
     <value>Notice: D0 includes the cost to open the system</value>
   </data>
-  <data name="DescentCrystals" xml:space="preserve">
-    <value>Descent Crystals</value>
+  <data name="DivineCrystals" xml:space="preserve">
+    <value>Divine Crystals</value>
   </data>
   <data name="DL" xml:space="preserve">
     <value>Descent Level</value>
@@ -1161,5 +1161,11 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="D10X" xml:space="preserve">
     <value>D10: {0}</value>
+  </data>
+  <data name="HeroRelease" xml:space="preserve">
+    <value>Hero Release</value>
+  </data>
+  <data name="DescentLevel" xml:space="preserve">
+    <value>Descent Level</value>
   </data>
 </root>

@@ -10,5 +10,6 @@ namespace GCManagementApp.Enums
     {
         English,
         Korean,
+        Portuguese,
     }
 }
