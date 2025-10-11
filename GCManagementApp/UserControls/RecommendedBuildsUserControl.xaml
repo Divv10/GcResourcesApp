@@ -18,19 +18,22 @@
              d:DesignHeight="450" d:DesignWidth="800" >
    <UserControl.Resources>
       <converters:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
-      <converters:GearSetToFillConverter x:Key="GearSetToFillConverter" />
+      <converters:AccessorySetToBrushConverter x:Key="AccessorySetToBrushConverter" />
       <converters:HeroToImageConverter x:Key="HeroToImageConverter"/>
-   </UserControl.Resources>
+      <converters:ArtifactTypeToBackgroundConverter x:Key="ArtifactTypeToBackgroundConverter"/>
+      <converters:ArtifactTypeToImageConverter x:Key="ArtifactTypeToImageConverter"/>
+    </UserControl.Resources>
     <Grid>
       <Grid.RowDefinitions>
          <RowDefinition Height="110"/>
          <RowDefinition Height="*"/>
          <RowDefinition Height="auto"/>
       </Grid.RowDefinitions>
-      <Label Grid.ColumnSpan="3" Content="Recommended build" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      <Label Grid.ColumnSpan="3" Content="Recommended Build" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
       <ScrollViewer Grid.Row="1">
          <Grid>
             <Grid.RowDefinitions>
+               <RowDefinition Height="auto"/>
                <RowDefinition Height="auto"/>
                <RowDefinition Height="auto"/>
                <RowDefinition Height="auto"/>
@@ -93,29 +96,45 @@
             </ItemsControl>-->
 
 
-            <Label Grid.Row="1" Grid.RowSpan="1" Content="Chaser traits" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <Label Grid.Row="1" Grid.RowSpan="1" Content="Chaser Traits" VerticalAlignment="Center" Margin="0,10,10,10"/>
             <!--<Label Grid.Row="3" Grid.Column="1" Content="{Binding Path=Build.HeroBuild.CsTraits[(enums:ChaserTraitEnum)SoulHelper]}" />-->
             <local:ChaserTreeUserControl Grid.Row="1" BorderBrush="Black" Grid.Column="1" ChaserTraits="{Binding Build.HeroBuild.CsTraits, RelativeSource={RelativeSource AncestorType=local:RecommendedBuildsUserControl}}" HorizontalAlignment="Left" Margin="0,10"/>
 
-            <Label Grid.Row="2" Grid.RowSpan="1" Content="Accessories" VerticalAlignment="Center" Margin="0,10,10,10"/>
-            <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-               <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[0]}">
+            <Label Grid.Row="2" Grid.RowSpan="1" Content="Level Traits" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <local:LevelTreeUserControl Grid.Row="2" BorderBrush="Black" Grid.Column="1" LevelTraits="{Binding Build.HeroBuild.LvlTraits, RelativeSource={RelativeSource AncestorType=local:RecommendedBuildsUserControl}}" HorizontalAlignment="Left" Margin="0,10"/>
+
+            <Label Grid.Row="3" Grid.RowSpan="1" Content="Accessories" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+               <materialDesign:Chip Grid.Column="1" IconBackground="{Binding Build.HeroBuild.AccessoryColor, Converter={StaticResource AccessorySetToBrushConverter}}" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[0]}">
                   <materialDesign:Chip.Icon>
                      <materialDesign:PackIcon Kind="Ring" />
                   </materialDesign:Chip.Icon>
                </materialDesign:Chip>
-               <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[1]}">
+               <materialDesign:Chip Grid.Column="1" IconBackground="{Binding Build.HeroBuild.AccessoryColor, Converter={StaticResource AccessorySetToBrushConverter}}" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[1]}">
                   <materialDesign:Chip.Icon>
                      <materialDesign:PackIcon Kind="Necklace" />
                   </materialDesign:Chip.Icon>
                </materialDesign:Chip>
-               <materialDesign:Chip Grid.Column="1" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[2]}">
+               <materialDesign:Chip Grid.Column="1" IconBackground="{Binding Build.HeroBuild.AccessoryColor, Converter={StaticResource AccessorySetToBrushConverter}}" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Accessories[2]}">
                   <materialDesign:Chip.Icon>
                      <materialDesign:PackIcon Kind="GlobeLightOutline" />
                   </materialDesign:Chip.Icon>
                </materialDesign:Chip>
             </StackPanel>
+             
+            <Label Grid.Row="4" Grid.RowSpan="1" Content="Artifact" VerticalAlignment="Center" Margin="0,10,10,10"/>
+            <StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" Orientation="Horizontal">
+                <materialDesign:Chip Grid.Column="1" IconBackground="{Binding Build.HeroBuild.ArtifactType, Converter={StaticResource ArtifactTypeToBackgroundConverter}}" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" Content="{Binding Build.HeroBuild.Artifact}">
+                    <materialDesign:Chip.Icon>
+                         <Image Source="{Binding Build.HeroBuild.Artifact, Converter={StaticResource ArtifactTypeToImageConverter}}" Width="30" Height="30"/>
+                    </materialDesign:Chip.Icon>
+                </materialDesign:Chip>
+            </StackPanel>
 
+            <!--<Label Grid.Row="5" Grid.RowSpan="1" Content="SI Traits" VerticalAlignment="Center" Margin="0,10,10,10"/>-->
+            <ComboBox Grid.Row="5" Grid.RowSpan="1" Name="SiSelector" SelectionChanged="SelectSiType" ItemsSource="{Binding Build.HeroBuild.SiTypes}" IsEditable="True" Text="SI Traits" Margin="0,10,10,10" IsReadOnly="true" />
+            <ContentControl Name="SelectedSiType" Grid.Row="5" Grid.Column="1" BorderBrush="Black" HorizontalAlignment="Left" Margin="0,10" />
+            
             <!--<Label Grid.Row="4" Grid.RowSpan="1" Content="Used in" VerticalAlignment="Center" Margin="0,10,10,10"/>
             <ItemsControl Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Build.ContentKeys}">
                <ItemsControl.ItemContainerStyle>

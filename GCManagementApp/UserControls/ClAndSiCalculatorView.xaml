@@ -193,7 +193,7 @@
       </TabItem>
       <TabItem>
             <TabItem.Header>
-                <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="60"/>
+                <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="60"/>
             </TabItem.Header>
 
           <ScrollViewer>
@@ -241,7 +241,7 @@
                                 </TextBox>
                                 <TextBlock Grid.Row="2" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.Level, StringFormat='{x:Static properties:Resources.CostOfLevels}'}" />
                                 <StackPanel Grid.Row="3" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="50"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="50"/>
                                     <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.DivineCrystalsCost, StringFormat='{x:Static properties:Resources.XDivineCrystals}'}" VerticalAlignment="Center" />
                                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
                                     <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding DCost.GrowthEssenceCost, StringFormat='{x:Static properties:Resources.XGrowthEssences}'}" VerticalAlignment="Center"/>
@@ -250,8 +250,8 @@
                                 </StackPanel>
                                 <TextBlock Grid.Row="4" Margin="20,5" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{x:Static properties:Resources.Inventory}" />
                                 <StackPanel Grid.Row="5" Grid.ColumnSpan="6" Margin="20,5" Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="50"/>
-                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.DivineCrystals, StringFormat='{x:Static properties:Resources.XGrowthCubes}'}" VerticalAlignment="Center"/>
+                                    <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="50"/>
+                                    <TextBlock Margin="20,5" Width="150" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.DivineCrystals, StringFormat='{x:Static properties:Resources.XDivineCrystals}'}" VerticalAlignment="Center"/>
                                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="50"/>
                                     <TextBlock Margin="20,5" Width="auto" Style="{StaticResource MaterialDesignBody2TextBlock}" Text="{Binding Inventory.AssaultGE}" VerticalAlignment="Center"/>
                                     <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceRanger.png" Height="50"/>

@@ -28,6 +28,22 @@
 	<ItemGroup>
 		<None Remove="Resources\Assets\btn_google_sign-in.png" />
 		<None Remove="Resources\Assets\kofi_button_blue.png" />
+		<None Remove="Resources\Artifact\BurningAssault.png" />
+		<None Remove="Resources\Artifact\BurningHealer.png" />
+		<None Remove="Resources\Artifact\BurningMage.png" />
+		<None Remove="Resources\Artifact\BurningRanger.png" />
+		<None Remove="Resources\Artifact\BurningTank.png" />
+		<None Remove="Resources\Artifact\CursedAssault.png" />
+		<None Remove="Resources\Artifact\CursedHealer.png" />
+		<None Remove="Resources\Artifact\CursedMage.png" />
+		<None Remove="Resources\Artifact\CursedRanger.png" />
+		<None Remove="Resources\Artifact\CursedTank.png" />
+		<None Remove="Resources\Artifact\FrozenAssault.png" />
+		<None Remove="Resources\Artifact\FrozenHealer.png" />
+		<None Remove="Resources\Artifact\FrozenMage.png" />
+		<None Remove="Resources\Artifact\FrozenRanger.png" />
+		<None Remove="Resources\Artifact\FrozenTank.png" />
+		<None Remove="Resources\Artifact\Normal.png" />
 		<None Remove="Resources\Attributes\blue.png" />
 		<None Remove="Resources\Attributes\green.png" />
 		<None Remove="Resources\Attributes\purple.png" />
@@ -57,6 +73,15 @@
 		<None Remove="Resources\Gear\subarmor.png" />
 		<None Remove="Resources\Gear\subweapon.png" />
 		<None Remove="Resources\Gear\weapon.png" />
+		<None Remove="Resources\LevelTraits\BasicAtkDamageIncrease.png" />
+		<None Remove="Resources\LevelTraits\BasicAtkDamageReduction.png" />
+		<None Remove="Resources\LevelTraits\BasicAtkSpeedIncrease.png" />
+		<None Remove="Resources\LevelTraits\CritChance.png" />
+		<None Remove="Resources\LevelTraits\HealingReceivedIncrease.png" />
+		<None Remove="Resources\LevelTraits\SkillAtkDamageIncrease.png" />
+		<None Remove="Resources\LevelTraits\SkillAtkDamageReduction.png" />
+		<None Remove="Resources\LevelTraits\SkillCooldownReduction.png" />
+		<None Remove="Resources\LevelTraits\TrueDamageIncrease.png" />
 		<None Remove="Resources\Materials\AernasisHammer.png" />
 		<None Remove="Resources\Materials\anni_coin.png" />
 		<None Remove="Resources\Materials\AwakeningCubeAssault.png" />
@@ -72,7 +97,7 @@
 		<None Remove="Resources\Materials\ChaserCrystalRanger.png" />
 		<None Remove="Resources\Materials\ChaserCrystalTank.png" />
 		<None Remove="Resources\Materials\ChaserCube.png" />
-		<None Remove="Resources\Materials\DescentMat.png" />
+		<None Remove="Resources\Materials\DivineCrystal.png" />
 		<None Remove="Resources\Materials\energy.png" />
 		<None Remove="Resources\Materials\EvoCube.png" />
 		<None Remove="Resources\Materials\EW.png" />
@@ -91,6 +116,9 @@
 		<None Remove="Resources\Materials\SoulEssenceRanger.png" />
 		<None Remove="Resources\Materials\SoulEssenceTank.png" />
 		<None Remove="Resources\Materials\SoulImprintCube.png" />
+		<None Remove="Resources\SiTemplates\SiBodyCoreTemplate.png" />
+		<None Remove="Resources\SiTemplates\SiMemCoreTemplate.png" />
+		<None Remove="Resources\SiTemplates\SiSoulCoreTemplate.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<Content Include="LireSR.ico" />
@@ -106,12 +134,24 @@
 		<Resource Include="Resources\ChaserTraits\PrayerOfBlessing.png" />
 		<Resource Include="Resources\ChaserTraits\PureLuck.png" />
 		<Resource Include="Resources\ChaserTraits\SoulHealer.png" />
+		<Resource Include="Resources\LevelTraits\BasicAtkDamageIncrease.png" />
+		<Resource Include="Resources\LevelTraits\BasicAtkDamageReduction.png" />
+		<Resource Include="Resources\LevelTraits\BasicAtkSpeedIncrease.png" />
+		<Resource Include="Resources\LevelTraits\CritChance.png" />
+		<Resource Include="Resources\LevelTraits\HealingReceivedIncrease.png" />
+		<Resource Include="Resources\LevelTraits\SkillAtkDamageIncrease.png" />
+		<Resource Include="Resources\LevelTraits\SkillAtkDamageReduction.png" />
+		<Resource Include="Resources\LevelTraits\SkillCooldownReduction.png" />
+		<Resource Include="Resources\LevelTraits\TrueDamageIncrease.png" />
 		<Resource Include="Resources\Gear\armor.png" />
 		<Resource Include="Resources\Gear\blueStone.png" />
 		<Resource Include="Resources\Gear\raidMaterial.png" />
 		<Resource Include="Resources\Gear\subarmor.png" />
 		<Resource Include="Resources\Gear\subweapon.png" />
 		<Resource Include="Resources\Gear\weapon.png" />
+		<Resource Include="Resources\SiTemplates\SiBodyCoreTemplate.png" />
+		<Resource Include="Resources\SiTemplates\SiMemCoreTemplate.png" />
+		<Resource Include="Resources\SiTemplates\SiSoulCoreTemplate.png" />
 		<Resource Include="Resources\Materials\AernasisHammer.png" />
 	</ItemGroup>
 	<ItemGroup>
@@ -120,6 +160,22 @@
 		<Resource Include="Resources\Classes\healer.png" />
 	</ItemGroup>
 	<ItemGroup>
+		<Resource Include="Resources\Artifact\BurningAssault.png" />
+		<Resource Include="Resources\Artifact\BurningHealer.png" />
+		<Resource Include="Resources\Artifact\BurningMage.png" />
+		<Resource Include="Resources\Artifact\BurningRanger.png" />
+		<Resource Include="Resources\Artifact\BurningTank.png" />
+		<Resource Include="Resources\Artifact\CursedAssault.png" />
+		<Resource Include="Resources\Artifact\CursedHealer.png" />
+		<Resource Include="Resources\Artifact\CursedMage.png" />
+		<Resource Include="Resources\Artifact\CursedRanger.png" />
+		<Resource Include="Resources\Artifact\CursedTank.png" />
+		<Resource Include="Resources\Artifact\FrozenAssault.png" />
+		<Resource Include="Resources\Artifact\FrozenHealer.png" />
+		<Resource Include="Resources\Artifact\FrozenMage.png" />
+		<Resource Include="Resources\Artifact\FrozenRanger.png" />
+		<Resource Include="Resources\Artifact\FrozenTank.png" />
+		<Resource Include="Resources\Artifact\Normal.png" />
 		<Resource Include="Resources\Attributes\blue.png" />
 		<Resource Include="Resources\Attributes\green.png" />
 		<Resource Include="Resources\Attributes\purple.png" />
@@ -132,7 +188,7 @@
 		<Resource Include="Resources\gc_logo.png" />
 		<Resource Include="Resources\Materials\BlessingOfValor.png" />
 		<Resource Include="Resources\Materials\BlueGem.png" />
-		<Resource Include="Resources\Materials\DescentMat.png" />
+		<Resource Include="Resources\Materials\DivineCrystal.png" />
 		<Resource Include="Resources\Materials\energy.png" />
 		<Resource Include="Resources\Materials\EvoCube.png" />
 		<Resource Include="Resources\Materials\EW.png" />
@@ -1329,6 +1385,9 @@
 		<None Update="Properties\Settings.settings">
 			<Generator>SettingsSingleFileGenerator</Generator>
 			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+		<None Update="Resources\Materials\DivineCrystal.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="tessdata\eng.traineddata">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -43,6 +43,20 @@ namespace GCManagementApp.UserControls
             CopyCommand = new RelayCommand(Copy);
         }
 
+        private void SelectSiType(object sender, SelectionChangedEventArgs e)
+        {
+            UserControl selectedSiType = null;
+                
+            if (SiSelector.SelectedItem.ToString() == "Memory Core")
+            {
+                selectedSiType = new SiMemCoreTreeUserControl() { SiMemTrait = Build.HeroBuild.SiTraitList };
+            } else if (SiSelector.SelectedItem.ToString() == "Body Core")
+            {
+                selectedSiType = new SiBodyCoreTreeUserControl() { SiBodyTrait = Build.HeroBuild.SiTraitList };
+            }
+            SelectedSiType.Content = selectedSiType;
+        }
+
         private void Copy(object param)
         {
             try

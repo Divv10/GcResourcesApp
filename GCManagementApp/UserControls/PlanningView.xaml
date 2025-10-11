@@ -37,7 +37,7 @@
                   <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GrowthCubesFromBg, StringFormat=' ( +{0}'}" />
                   <Image Source="/GCManagementApp;component/Resources/Materials/BlueGem.png" Height="40"/>
                   <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text=")" />
-                  <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="45" Margin="10,0,0,0"/>
+                  <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="45" Margin="10,0,0,0"/>
                   <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.DivineCrystals}" />
                   <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="45" Margin="10,0,0,0"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
@@ -74,7 +74,7 @@
                      <TextBlock Margin="10,5" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.DailyColon}" />
                      <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="45" />
                      <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GCGain}" />
-                     <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="45" Margin="20,0,10,0"/>
+                     <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="45" Margin="20,0,10,0"/>
                      <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DCGain}" />
                      <Image Source="/GCManagementApp;component/Resources/Materials/GrowthEssenceAssault.png" Height="45" Margin="20,0,10,0"/>
                             <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding GEGain}" />
@@ -180,7 +180,7 @@
                            <TextBlock Grid.Row="2" Grid.Column="8" Text="{Binding SiLevelCost.GeCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            <Image Grid.Row="2" Grid.Column="9" Source="/GCManagementApp;component/Resources/Materials/gold.png" />
                            <TextBlock Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="3" Text="{Binding GoldCost, StringFormat={}{0:N0}}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                           <Image Grid.Row="3" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" />
+                           <Image Grid.Row="3" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" />
                            <TextBlock Grid.Row="3" Grid.Column="8" Grid.ColumnSpan="3" Text="{Binding DCost.DivineCrystalsCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
 
                            <!-- -->
@@ -219,7 +219,7 @@
                               </TextBlock>
                            </StackPanel>
                            <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
-                              <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Margin="0"/>
+                              <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Margin="0"/>
                               <TextBlock x:Name="DaysForDivineCrystals" Text="{Binding DaysForDe, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,0,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForDe, Converter={StaticResource DaysLeftToForegroundConverter}}"/>
                               <TextBlock Text="{Binding DivineCrystalsNeeded, StringFormat='({0})'}" Margin="0,0" VerticalAlignment="Center" Foreground="{Binding DaysForDe, Converter={StaticResource DaysLeftToForegroundConverter}}">
                                  <TextBlock.Style>
