@@ -287,32 +287,7 @@ namespace GCManagementApp.Helpers
 						ArtifactType artiType = ArtifactType.Normal;
 						b.Artifact = "Normal";
 						b.ArtifactType = artiType;
-					}
-					
-					var siCoresSplit = siTraits.Split("-");
-					var memCore = siCoresSplit[0];
-					var bodyCore = siCoresSplit[1];
-					var soulCore = siCoresSplit[2];
-					
-					var memCoreList = new List<int> { };
-					var bodyCoreList = new List<int> { };
-					var soulCoreList = new List<int> { };
-
-					for (var i = 0; i < memCore.Length; i++)
-					{
-						memCoreList.Add(Convert.ToInt32(memCore[i].ToString()));
-					}
-					for (var i = 0; i < bodyCore.Length; i++)
-					{
-						bodyCoreList.Add(Convert.ToInt32(bodyCore[i].ToString()));
-					}
-					for (var i = 0; i < soulCore.Length; i++)
-					{
-						soulCoreList.Add(Convert.ToInt32(soulCore[i].ToString()));
-					}
-					b.SiTraitList.Add(memCoreList);
-					b.SiTraitList.Add(bodyCoreList);
-					b.SiTraitList.Add(soulCoreList);				
+					}			
 
 		//foreach (var set in sets.Split("/", StringSplitOptions.TrimEntries))
 		//{
@@ -437,6 +412,39 @@ namespace GCManagementApp.Helpers
 						if (!b.CsTraits.TryGetValue(cs, out _))
 							b.CsTraits.Add(cs, 0);
 					}
+
+					siTraits = siTraits.Replace(" ", "");
+					if (siTraits != "")
+					{
+						var siCoresSplit = siTraits.Split("-");
+						var memCore = siCoresSplit[0];
+						var bodyCore = siCoresSplit[1];
+						var soulCore = siCoresSplit[2];
+					
+						var memCoreList = new List<int> { };
+						var bodyCoreList = new List<int> { };
+						var soulCoreList = new List<int> { };
+
+						for (var i = 0; i < memCore.Length; i++)
+						{
+							memCoreList.Add(Convert.ToInt32(memCore[i].ToString()));
+						}
+						for (var i = 0; i < bodyCore.Length; i++)
+						{
+							bodyCoreList.Add(Convert.ToInt32(bodyCore[i].ToString()));
+						}
+						for (var i = 0; i < soulCore.Length; i++)
+						{
+							soulCoreList.Add(Convert.ToInt32(soulCore[i].ToString()));
+						}
+						b.SiTraitList.Add(memCoreList);
+						b.SiTraitList.Add(bodyCoreList);
+						b.SiTraitList.Add(soulCoreList);
+					} else
+					{
+						b.SiTraitList = null;
+					}
+					
 
 					Builds.Add(contentHero, b);
 				}

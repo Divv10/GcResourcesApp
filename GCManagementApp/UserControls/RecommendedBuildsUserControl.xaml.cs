@@ -46,13 +46,29 @@ namespace GCManagementApp.UserControls
         private void SelectSiType(object sender, SelectionChangedEventArgs e)
         {
             UserControl selectedSiType = null;
-                
+            
+            if (SiSelector.SelectedItem == null)
+            {
+                SiSelector.SelectedIndex = -1;
+                SiSelector.Text = "SI Traits";
+                SelectedSiType.Content = null;
+                return;
+            } else if (Build.HeroBuild.SiTraitList == null)
+            {
+                SiSelector.SelectedIndex = -1;
+                SiSelector.Text = "SI Traits";
+                SelectedSiType.Content = null;
+                return;
+            }
             if (SiSelector.SelectedItem.ToString() == "Memory Core")
             {
                 selectedSiType = new SiMemCoreTreeUserControl() { SiMemTrait = Build.HeroBuild.SiTraitList };
             } else if (SiSelector.SelectedItem.ToString() == "Body Core")
             {
                 selectedSiType = new SiBodyCoreTreeUserControl() { SiBodyTrait = Build.HeroBuild.SiTraitList };
+            } else if (SiSelector.SelectedItem.ToString() == "Soul Core")
+            {
+                selectedSiType = new SiSoulCoreTreeUserControl() { SiSoulTrait = Build.HeroBuild.SiTraitList };
             }
             SelectedSiType.Content = selectedSiType;
         }

@@ -121,9 +121,9 @@
             </StackPanel>
          </ToolBar>
       </ToolBarTray>
-      <materialDesign:DrawerHost x:Name="HeroDrawer" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="1">
+      <materialDesign:DrawerHost x:Name="HeroDrawer" DrawerClosing="HeroDrawer_DrawerClosing" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="1">
          <materialDesign:DrawerHost.LeftDrawerContent>
-            <Grid Width="1400" Margin="10">
+            <Grid Width="1450" Margin="10">
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="900" />
                   <ColumnDefinition />
@@ -135,7 +135,7 @@
 
                <local:EditHeroStatsUserControl SelectedHeroGrowth="{Binding SelectedHeroGrowth, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
                <!--<local:EditEquipmentUserControl Grid.Column="1" Grid.Row="1" Margin="30,0,0,0" HeroGrowth="{Binding SelectedHeroGrowth, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}" Visibility="{Binding SelectedHeroGrowth.IsOwned, Converter={StaticResource BooleanToVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>-->
-               <local:RecommendedBuildsUserControl Grid.Column="1" Margin="30,0" Build="{Binding RecommendedBuild, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
+               <local:RecommendedBuildsUserControl x:Name="BuildUserControl" Grid.Column="1" Margin="30,0" Build="{Binding RecommendedBuild, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type local:HeroGrowthView}}}"/>
 
                <Button Grid.Row="9" Grid.ColumnSpan="2" Margin="5,10" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Save" Style="{StaticResource MaterialDesignRaisedLightButton}"
                        Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Click="SaveProgressClick" TabIndex="15"/>

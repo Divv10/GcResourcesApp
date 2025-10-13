@@ -7,9 +7,9 @@
 		<NoWarn>NU1701</NoWarn>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<ApplicationIcon>LireSR.ico</ApplicationIcon>
-		<Version>4.6.8.0</Version>
-		<AssemblyVersion>4.6.8.0</AssemblyVersion>
-		<FileVersion>4.6.8.0</FileVersion>
+		<Version>4.7.0.0</Version>
+		<AssemblyVersion>4.7.0.0</AssemblyVersion>
+		<FileVersion>4.7.0.0</FileVersion>
 		<ApplicationManifest>app1.manifest</ApplicationManifest>
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
@@ -1385,9 +1385,6 @@
 		<None Update="Properties\Settings.settings">
 			<Generator>SettingsSingleFileGenerator</Generator>
 			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
-		</None>
-		<None Update="Resources\Materials\DivineCrystal.png">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="tessdata\eng.traineddata">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
