@@ -462,7 +462,11 @@ namespace GCManagementApp.UserControls
                 RefreshCollections();
             }
         }
-
+        private void HeroDrawer_DrawerClosing(object sender, DrawerClosingEventArgs e)
+        {
+            BuildUserControl.SiSelector.SelectedIndex = -1;
+            BuildUserControl.SiSelector.Text = "SI Traits";
+        }
         private void RefreshCollections()
         {
             ////Heroes = new ObservableCollection<HeroGrowth>(ProfileGrowth.Heroes);

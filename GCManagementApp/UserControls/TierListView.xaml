@@ -56,7 +56,7 @@
       </TabItem>
         <TabItem Background="#FCF6DD">
             <TabItem.Header>
-                <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="60"/>
+                <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="60"/>
             </TabItem.Header>
             <Grid Margin="10">
                 <Grid.RowDefinitions>

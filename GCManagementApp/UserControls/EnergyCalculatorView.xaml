@@ -675,7 +675,7 @@
                </Grid.RowDefinitions>
                <TextBlock Grid.ColumnSpan="4" Margin="10,5" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="Weekly Divine Crystals gain" />
                <StackPanel Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
-                  <Image Source="/GCManagementApp;component/Resources/Materials/DescentMat.png" Height="55" />
+                  <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="55" />
                   <TextBox Text="{Binding BlueGemsWeeklyTotal, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.TotalBGGainedOverWeek}" ToolTip="{x:Static properties:Resources.TotalBGGainedOverWeek}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding CrystalsFromBG, Mode=OneWay}" materialDesign:HintAssist.Hint="Crystals from BG" materialDesign:HintAssist.HelperText="Cubes bought in BG" ToolTip="Cubes bought in BG" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">

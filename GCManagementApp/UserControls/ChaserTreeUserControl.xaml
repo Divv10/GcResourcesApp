@@ -39,47 +39,89 @@
       <Image Grid.Row="3" Grid.Column="0" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="2" />
       <Image Grid.Row="3" Grid.Column="3" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="2" />
 
-      <Border Grid.Row="0" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="0" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="0" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LongLife], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LongLife]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="0" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LongLife], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LongLife]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="0" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Helper], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Helper]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="0" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Helper], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Helper]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="0" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PrayerOfBlessing], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PrayerOfBlessing]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="0" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PrayerOfBlessing], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PrayerOfBlessing]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="1" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)InvisibleHand], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)InvisibleHand]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="1" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)InvisibleHand], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)InvisibleHand]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="1" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)DivineProtection], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)DivineProtection]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="1" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)DivineProtection], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)DivineProtection]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="1" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PureLuck], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PureLuck]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="1" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PureLuck], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PureLuck]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="1" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)SoulHealer], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)SoulHealer]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="1" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)SoulHealer], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)SoulHealer]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="2" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Connection], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Connection]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="2" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Connection], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Connection]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="2" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Impulse], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Impulse]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="2" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Impulse], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Impulse]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="2" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PersistentExecutioner], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PersistentExecutioner]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="2" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PersistentExecutioner], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PersistentExecutioner]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="2" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)BreathOfLife], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)BreathOfLife]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="2" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)BreathOfLife], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)BreathOfLife]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="3" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LeftChaser], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LeftChaser]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="3" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LeftChaser], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LeftChaser]}" Foreground="Black"/>
       </Border>
-      <Border Grid.Row="3" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)RightChaser], Converter={StaticResource IntToVisibilityConverter}}" Background="{DynamicResource PrimaryHueLightBrush}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
-         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)RightChaser]}" Foreground="{StaticResource MaterialDesignBody}"/>
+      <Border Grid.Row="3" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)RightChaser], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)RightChaser]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)ElevatedPower]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LongLife], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LongLife]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Helper], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Helper]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PrayerOfBlessing], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PrayerOfBlessing]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)InvisibleHand], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)InvisibleHand]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)DivineProtection], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)DivineProtection]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PureLuck], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PureLuck]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="1" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)SoulHealer], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)SoulHealer]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Connection], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Connection]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="1" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Impulse], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)Impulse]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="2" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PersistentExecutioner], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)PersistentExecutioner]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="2" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)BreathOfLife], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)BreathOfLife]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="0" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LeftChaser], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)LeftChaser]}" Foreground="Black"/>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="3" Width="20" Height="20" Visibility="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)RightChaser], Converter={StaticResource IntToVisibilityConverter}}" Background="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2" CornerRadius="10,0,0,0" BorderBrush="Black" BorderThickness="1" >
+         <Label Padding="2,2,0,0" HorizontalAlignment="Center" Content="{Binding Path=ChaserTraits[(enums:ChaserTraitEnum)RightChaser]}" Foreground="Black"/>
       </Border>
    </Grid>
 </UserControl>
