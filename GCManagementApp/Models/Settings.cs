@@ -1,4 +1,5 @@
 ﻿using GCManagementApp.Enums;
+using GCManagementApp.Static;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,19 +20,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _energyAdsShop, value);
         }
 
-        private int _vulcaRanksClear;
-        public int VulcaRanksClear
+        private VulcanusRankReward _vulcRankTier;
+        public VulcanusRankReward VulcRankTier
         {
-            get => _vulcaRanksClear;
-            set => SetProperty(ref _vulcaRanksClear, value);
+            get => _vulcRankTier;
+            set => SetProperty(ref _vulcRankTier, value);
         }
-
-        private VulcanusRankEnum _vulcaRankTier;
-        public VulcanusRankEnum VulcaRankTier
-        {
-            get => _vulcaRankTier;
-            set => SetProperty(ref _vulcaRankTier, value);
-        }
+        
 
         private bool _isExtraEnergyBought;
         public bool IsExtraEnergyBought
@@ -319,27 +314,6 @@ namespace GCManagementApp.Models
         {
             get => _BoVFromMercShop;
             set => SetProperty(ref _BoVFromMercShop, value);
-        }
-        
-        [XmlIgnore]
-        [JsonIgnore]
-        public int VulcaRanksReward 
-        { 
-            get
-            {
-                switch (VulcaRanksClear)
-                {
-                    default:
-                        return 0;
-                    case int i when i >= 8:
-                        return 288+173+116;
-                    case int i when i >= 5:
-                        return 173+116;
-                    case int i when i >= 2:
-                        return 116;
-                }
-
-            } 
         }
     }
 }

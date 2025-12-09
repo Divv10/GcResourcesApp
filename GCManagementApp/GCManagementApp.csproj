@@ -7,9 +7,9 @@
 		<NoWarn>NU1701</NoWarn>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<ApplicationIcon>LireSR.ico</ApplicationIcon>
-		<Version>4.7.1.0</Version>
-		<AssemblyVersion>4.7.1.0</AssemblyVersion>
-		<FileVersion>4.7.1.0</FileVersion>
+		<Version>4.7.5.0</Version>
+		<AssemblyVersion>4.7.5.0</AssemblyVersion>
+		<FileVersion>4.7.5.0</FileVersion>
 		<ApplicationManifest>app1.manifest</ApplicationManifest>
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>

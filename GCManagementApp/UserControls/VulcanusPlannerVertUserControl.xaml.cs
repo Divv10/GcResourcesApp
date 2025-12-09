@@ -58,13 +58,6 @@ namespace GCManagementApp.UserControls
             set => SetProperty(ref _isPrintMode, value);
         }
 
-        private ObservableCollection<bool> _sweeps;
-        public ObservableCollection<bool> Sweeps
-        {
-            get => _sweeps;
-            set => SetProperty(ref _sweeps, value);
-        }
-
         public VulcanusPlannerVertUserControl()
         {
             InitializeComponent();
@@ -88,9 +81,6 @@ namespace GCManagementApp.UserControls
                 new ObservableCollection<HeroGrowth>(),
                 new ObservableCollection<HeroGrowth>(),
                 new ObservableCollection<HeroGrowth>(),
-                new ObservableCollection<HeroGrowth>(),
-                new ObservableCollection<HeroGrowth>(),
-                new ObservableCollection<HeroGrowth>(),
                 Heroes
             };
 
@@ -99,12 +89,9 @@ namespace GCManagementApp.UserControls
             HeroesView.SortDescriptions.Add(new SortDescription(nameof(HeroGrowth.ChaserLevel), ListSortDirection.Descending));
             HeroesView.SortDescriptions.Add(new SortDescription(nameof(HeroGrowth.DisplayName), ListSortDirection.Ascending));
 
-            Sweeps = new ObservableCollection<bool>(ProfileGrowth.Profile.VulcanusSweeps);
-
             Initialize();
 
             this.IsVisibleChanged += OnIsVisibleChanged;
-            Sweeps.CollectionChanged += OnSweepsChanged;
         }
 
         private void OnSweepsChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -193,13 +180,12 @@ namespace GCManagementApp.UserControls
                 ProfileGrowth.Profile.VulcanusTeams.Add(new List<Hero>(VulcanusTeam[i].Select(x => x.Hero)));
             }
 
-            ProfileGrowth.Profile.VulcanusSweeps = Sweeps.ToArray();
             ProfileGrowth.Profile.SaveToJson();
         }
 
         void IDropTarget.DragOver(IDropInfo dropInfo)
         {
-            if (dropInfo.TargetCollection.Cast<HeroGrowth>().Count() >= 4 && GetTeamIndex(dropInfo.TargetCollection) != 12 && dropInfo.TargetCollection != dropInfo.DragInfo.SourceCollection) 
+            if (dropInfo.TargetCollection.Cast<HeroGrowth>().Count() >= 4 && GetTeamIndex(dropInfo.TargetCollection) != 9 && dropInfo.TargetCollection != dropInfo.DragInfo.SourceCollection || dropInfo.DragInfo.SourceCollection == dropInfo.TargetCollection) 
             {
                 dropInfo.Effects = DragDropEffects.None;
                 return;

@@ -10,7 +10,7 @@ namespace GCManagementApp.Static
     {
 
         public static int BoVPerRun => 4;
-        public static int BoVFromLab => 670 * (1 +
+        public static int BoVFromLab => 750 * (1 +
             (ProfileGrowth.Profile.Settings.IsLabGemReset ? 1 : 0) +
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageBought ? 1 : 0) +
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageEssentialBought ? 1 : 0)) * 7;

@@ -109,7 +109,16 @@ namespace GCManagementApp.Static
 
             if (Profile.Settings == null)
             {
-                Profile.Settings = new Settings() { EnergyAdsShop = 900, VulcaRanksClear = 0, VulcaRankTier = Enums.VulcanusRankEnum.Diamond5 };
+                Profile.Settings = new Settings() { EnergyAdsShop = 900, VulcRankTier = VulcanusRankReward.GetRankRewards.Last() };
+            }
+
+            if (Profile.Settings.VulcRankTier == null)
+            {
+                Profile.Settings.VulcRankTier = VulcanusRankReward.GetRankRewards.Last();
+            } 
+            else
+            {
+                Profile.Settings.VulcRankTier = VulcanusRankReward.GetRankRewards.Where(x => x.Rank == Profile.Settings.VulcRankTier.Rank).First();
             }
 
             if (Profile.HeroPlans == null)
@@ -155,14 +164,7 @@ namespace GCManagementApp.Static
                     new List<Hero>(),
                     new List<Hero>(),
                     new List<Hero>(),
-                    new List<Hero>(),
-                    new List<Hero>(),
-                    new List<Hero>(),
                 };
-            }
-            if (Profile.VulcanusSweeps == null)
-            {
-                Profile.VulcanusSweeps = new bool[12];
             }
             if (Profile.ContentTeams == null)
             {

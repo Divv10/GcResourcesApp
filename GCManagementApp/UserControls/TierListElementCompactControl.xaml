@@ -45,7 +45,7 @@
          </ItemsControl.ItemsPanel>
          <ItemsControl.ItemTemplate>
             <DataTemplate>
-               <Border CornerRadius="5" BorderBrush="Gray" BorderThickness="1" Margin="5" >
+               <Border CornerRadius="5" BorderBrush="Gray" BorderThickness="1" Margin="3" >
                   <Grid Cursor="Hand" Margin="5">
                      <Grid.InputBindings>
                         <MouseBinding MouseAction="LeftClick" Command="{Binding EditHeroCommand}" CommandParameter="{Binding}"/>
@@ -144,7 +144,7 @@
                               <Setter Property="Visibility" Value="Visible" />
                               <Style.Triggers>
                                  <DataTrigger Binding="{Binding Earrings.AccessorySet}" Value="None">
-                                    <Setter Property="Visibility" Value="Collapsed" />
+                                    <Setter Property="Visibility" Value="Visible" />
                                  </DataTrigger>
                                  <DataTrigger Binding="{Binding IsOwned}" Value="False">
                                     <Setter Property="Visibility" Value="Collapsed" />

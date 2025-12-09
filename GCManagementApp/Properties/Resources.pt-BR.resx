@@ -219,10 +219,10 @@
   <data name="BlueGems" xml:space="preserve">
     <value>Gema Azul</value>
   </data>
-  <data name="BlueGemsFrom15PVP" xml:space="preserve">
+  <data name="BGFrom15PVP" xml:space="preserve">
     <value>Gemas Azuis de 15 PvP</value>
   </data>
-  <data name="BlueGemsFromPVP" xml:space="preserve">
+  <data name="BGFromPVP" xml:space="preserve">
     <value>Gemas Azuis de PvP</value>
   </data>
   <data name="BlueGemsOptions" xml:space="preserve">
@@ -468,7 +468,7 @@
   <data name="EnoughBGToBuyGC" xml:space="preserve">
     <value>Gemas azuis suficientes para comprar {0} Cubos de Growth {1} Pode limpar a loja de Cubos de Growth por {2} semanas</value>
   </data>
-  <data name="EnterHowManyVulcanusRanks" xml:space="preserve">
+  <data name="EnterVulcanusDivision" xml:space="preserve">
     <value>Digite quantos níveis de Vulcanos semanalmente você está limpando e em qual classificação você geralmente termina. </value>
   </data>
   <data name="Equipment" xml:space="preserve">
@@ -1005,7 +1005,7 @@
   <data name="YouHaveAddedTHero" xml:space="preserve">
     <value>Você adicionou T hero ao planejamento, mas não tem o herói SR básico atualizado para T6 e CL20. Deseja adicionar automaticamente o herói base ao planejamento?</value>
   </data>
-  <data name="BlueGemsFromWeeklyMission" xml:space="preserve">
+  <data name="BGFromWeeklyMission" xml:space="preserve">
     <value>Gemas Azuis da Missão Semanal</value>
   </data>
   <data name="GEFromDefenseMode" xml:space="preserve">
@@ -1017,7 +1017,7 @@
   <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
     <value>Selecione se você usa Cubos de Despertar para atualizar heróis A e S.</value>
   </data>
-  <data name="BlueGemsFromDailyMission" xml:space="preserve">
+  <data name="BGFromDailyMission" xml:space="preserve">
     <value>Gemas Azuis da Missão Diária</value>
   </data>
   <data name="CL25Cost" xml:space="preserve">
@@ -1039,7 +1039,7 @@
     <value>Cubos SI específicos do herói</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BlueGemsFromArena" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="BGFromArena" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="GEFromEnergy" xml:space="preserve">
@@ -1121,6 +1121,9 @@
     <value />
   </data>
   <data name="DescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="BGFromVulc" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
 </root>

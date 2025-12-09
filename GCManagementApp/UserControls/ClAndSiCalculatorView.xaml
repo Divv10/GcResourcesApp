@@ -10,7 +10,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="850" d:DesignWidth="800">
    <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
-      <TabItem>
+      <TabItem ToolTip="Chaser Cost Calculator">
          <TabItem.Header>
          <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="45"/>
          </TabItem.Header>
@@ -96,7 +96,7 @@
             </Grid>
          </ScrollViewer>
       </TabItem>
-      <TabItem>
+      <TabItem ToolTip="Soul Imprint Cost Calculator">
          <TabItem.Header>
             <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60"/>
          </TabItem.Header>
@@ -191,7 +191,7 @@
             </Grid>
          </ScrollViewer>
       </TabItem>
-      <TabItem>
+      <TabItem ToolTip="Descent Cost Calculator">
             <TabItem.Header>
                 <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="60"/>
             </TabItem.Header>
@@ -286,7 +286,7 @@
               </Grid>
           </ScrollViewer>
       </TabItem>
-      <TabItem>
+      <TabItem ToolTip="Hero Training Cost Calculator">
          <TabItem.Header>
             <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="60"/>
          </TabItem.Header>

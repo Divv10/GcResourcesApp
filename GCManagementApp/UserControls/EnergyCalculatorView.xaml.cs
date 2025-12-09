@@ -1,6 +1,7 @@
 ﻿using GCManagementApp.Enums;
 using GCManagementApp.Helpers;
 using GCManagementApp.Static;
+using Org.BouncyCastle.Asn1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,22 +27,12 @@ namespace GCManagementApp.UserControls
             }
         }
 
-        public int VulcaRanksClear
+        public VulcanusRankReward VulcanusRank
         {
-            get => ProfileGrowth.Profile.Settings.VulcaRanksClear;
+            get => ProfileGrowth.Profile.Settings.VulcRankTier;
             set
             {
-                ProfileGrowth.Profile.Settings.VulcaRanksClear = value;
-                OnPropertyChanged(string.Empty);
-            }
-        }
-
-        public VulcanusRankEnum VulcanusRank
-        {
-            get => ProfileGrowth.Profile.Settings.VulcaRankTier;
-            set
-            {
-                ProfileGrowth.Profile.Settings.VulcaRankTier = value;
+                ProfileGrowth.Profile.Settings.VulcRankTier = value;
                 OnPropertyChanged(string.Empty);
             }
         }
@@ -315,8 +306,8 @@ namespace GCManagementApp.UserControls
                 OnPropertyChanged(string.Empty);
             }
         }
-        public Dictionary<VulcanusRankEnum, int> VulcanusRanks { get; } = ((VulcanusRankEnum[])Enum.GetValues(typeof(VulcanusRankEnum))).ToDictionary(e => e, e => (int)e);
-        public int VulcanusDivisionEnergy => (int)VulcanusRank;
+        public VulcanusRankReward[] VulcanusRanks { get; } = VulcanusRankReward.GetRankRewards;
+        public int VulcanusDivisionEnergy => VulcanusRank.Energy;
         public int VulcanusTotalEnergy => Energy.EnergyVulcanus;
         public int ExtraEnergyFromPack => TotalEnergyBought;
         public int EnergyTotalWeekly => Energy.EnergyTotalWeekly;
@@ -344,6 +335,11 @@ namespace GCManagementApp.UserControls
         public double SoulEssencesCSWeeksNeeded => GrowthEssences.WeeksForFullChaser;
         public int BGFromDefenseMode => BlueGems.BlueGemsFromDefenceMode;
         public int BGFromEnergy => BlueGems.BlueGemsFromEnergy;
+        public int BGFromPvP => BlueGems.BlueGemsFromPvP;
+        public int BGFromDailyMission => BlueGems.BlueGemsFromDailyMission;
+        public int BGFromWeeklyMission => BlueGems.BlueGemsFromWeeklyMission;
+        public int BGFromArena => BlueGems.BlueGemsFromArena;
+        public int BGFromVulc => BlueGems.BlueGemsFromVulc;
         public int BlueGemsWeeklyTotal => OverrideBlueGems ? CustomBlueGems : BlueGems.BlueGemsWeeklyTotal;
         public double BGFromSellingHeroes => BlueGems.SellRarityTypes.FirstOrDefault(t => t.Type == SellRarityType)?.Sell ?? 0;
         public int GrowthCubesFromBg => GrowthCubes.CubesFromBlueGems;

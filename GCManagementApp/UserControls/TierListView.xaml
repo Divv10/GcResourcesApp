@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
    <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch" >
-      <TabItem >
+      <TabItem ToolTip="Overall Heroes Compact View">
          <TabItem.Header>
             <materialDesign:PackIcon Kind="CardAccountDetailsOutline" Height="40" Width="40"/>
          </TabItem.Header>
@@ -24,9 +24,9 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=ScList}"/>
          </Grid>
       </TabItem>
-        <TabItem Background="Yellow">
-            <TabItem.Header>
-                <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60" />
+      <TabItem Background="Yellow" ToolTip="Soul Imprint Heroes Sorter">
+         <TabItem.Header>
+            <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60" />
          </TabItem.Header>
          <Grid Margin="10">
             <Grid.RowDefinitions>
@@ -39,7 +39,7 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=SiList}"/>
          </Grid>
       </TabItem>
-        <TabItem Background="Purple">
+      <TabItem Background="Purple" ToolTip="Chaser Heroes Sorter">
          <TabItem.Header>
             <Image Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Height="60"/>
          </TabItem.Header>
@@ -54,37 +54,37 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=ClList}"/>
          </Grid>
       </TabItem>
-        <TabItem Background="#FCF6DD">
-            <TabItem.Header>
-                <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="60"/>
-            </TabItem.Header>
-            <Grid Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <ScrollViewer>
-                    <local:TierListDescentControl VerticalAlignment="Top" x:Name="DList" Labels="{Binding DLabels, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}" Collections="{Binding DCollections, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}"/>
-                </ScrollViewer>
-                <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=DList}"/>
-            </Grid>
-        </TabItem>
-        <TabItem>
-            <TabItem.Header>
-                <materialDesign:PackIcon Kind="AccountArrowUp" Height="40" Width="40"/>
-            </TabItem.Header>
-            <Grid Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <ScrollViewer>
-                    <local:TierListTransControl VerticalAlignment="Top" x:Name="TransList" Labels="{Binding TransLabels, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}" Collections="{Binding TransCollections, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}"/>
-                </ScrollViewer>
-                <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=TransList}"/>
-            </Grid>
-        </TabItem>
-        <TabItem>
+      <TabItem Background="#FCF6DD" ToolTip="Descent Heroes Sorter">
+          <TabItem.Header>
+              <Image Source="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" Height="60"/>
+          </TabItem.Header>
+          <Grid Margin="10">
+              <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="auto"/>
+              </Grid.RowDefinitions>
+              <ScrollViewer>
+                  <local:TierListDescentControl VerticalAlignment="Top" x:Name="DList" Labels="{Binding DLabels, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}" Collections="{Binding DCollections, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}"/>
+              </ScrollViewer>
+              <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=DList}"/>
+          </Grid>
+      </TabItem>
+      <TabItem ToolTip="Heroes Transcendence Sorter">
+          <TabItem.Header>
+              <materialDesign:PackIcon Kind="AccountArrowUp" Height="40" Width="40"/>
+          </TabItem.Header>
+          <Grid Margin="10">
+              <Grid.RowDefinitions>
+                  <RowDefinition />
+                  <RowDefinition Height="auto"/>
+              </Grid.RowDefinitions>
+              <ScrollViewer>
+                  <local:TierListTransControl VerticalAlignment="Top" x:Name="TransList" Labels="{Binding TransLabels, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}" Collections="{Binding TransCollections, RelativeSource={RelativeSource AncestorType={x:Type local:TierListView}}}"/>
+              </ScrollViewer>
+              <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=TransList}"/>
+          </Grid>
+      </TabItem>
+      <TabItem ToolTip="Heroes Accessories Sorter">
          <TabItem.Header>
             <materialDesign:PackIcon Kind="Necklace" Height="40" Width="40"/>
          </TabItem.Header>
@@ -99,7 +99,7 @@
             <Button Grid.Row="1" Margin="23" HorizontalAlignment="Right" Content="{x:Static properties:Resources.CopyImageToClipboard}" Command="{Binding CopyToClipboardCommand}" CommandParameter="{Binding ElementName=AccList}"/>
          </Grid>
       </TabItem>
-      <TabItem >
+      <TabItem ToolTip="Heroes Exclusive Weapon Sorter">
          <TabItem.Header>
             <Image Source="/GCManagementApp;component/Resources/Materials/EW.png" Height="50"/>
          </TabItem.Header>

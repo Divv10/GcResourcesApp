@@ -257,7 +257,7 @@ namespace GCManagementApp.UserControls
 
         private void SetMaxLevel(object param)
         {
-            int maxLevel = 720;
+            int maxLevel = 800;
 
             switch (param.ToString())
             {

@@ -67,7 +67,7 @@
                         <Style TargetType="StackPanel">
                            <Setter Property="Visibility" Value="Visible" />
                            <Style.Triggers>
-                              <DataTrigger Binding="{Binding Necklace.AccessorySet}" Value="None">
+                              <DataTrigger Binding="{Binding Ring.AccessorySet}" Value="None">
                                  <Setter Property="Visibility" Value="Collapsed" />
                               </DataTrigger>
                               <DataTrigger Binding="{Binding IsOwned}" Value="False">
@@ -79,7 +79,22 @@
                      <Label Content="{Binding Ring.AccessoryDisplayTier}" VerticalAlignment="Center"/>
                      <Label Content="{Binding Ring.AccessoryUpgradeDisplayLevel}" ContentStringFormat="+{0}" VerticalAlignment="Center"/>
                   </StackPanel>
-
+                  <Label Grid.Column="2" Grid.Row="0" Content="-" VerticalAlignment="Center" HorizontalAlignment="Left">
+                     <Label.Style>
+                        <Style TargetType="Label">
+                           <Setter Property="Visibility" Value="Collapsed" />
+                           <Style.Triggers>
+                              <DataTrigger Binding="{Binding Ring.AccessorySet}" Value="None">
+                                 <Setter Property="Visibility" Value="Visible" />
+                              </DataTrigger>
+                              <DataTrigger Binding="{Binding IsOwned}" Value="False">
+                                 <Setter Property="Visibility" Value="Collapsed" />
+                              </DataTrigger>
+                           </Style.Triggers>
+                        </Style>
+                     </Label.Style>
+                  </Label>
+                   
                   <Ellipse Grid.Column="1" Grid.Row="1" Width="20" Height="20" Fill="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" Visibility="{Binding IsOwned, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                   <materialDesign:PackIcon Grid.Column="1" Grid.Row="1" Width="15" Height="15" Kind="Necklace" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Visibility="{Binding IsOwned, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                   <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal">
@@ -99,6 +114,22 @@
                      <Label Content="{Binding Necklace.AccessoryDisplayTier}" VerticalAlignment="Center"/>
                      <Label Content="{Binding Necklace.AccessoryUpgradeDisplayLevel}" ContentStringFormat="+{0}" VerticalAlignment="Center"/>
                   </StackPanel>
+                  <Label Grid.Column="2" Grid.Row="1"  Content="-" VerticalAlignment="Center" HorizontalAlignment="Left">
+                     <Label.Style>
+                        <Style TargetType="Label">
+                           <Setter Property="Visibility" Value="Collapsed" />
+                           <Style.Triggers>
+                              <DataTrigger Binding="{Binding Necklace.AccessorySet}" Value="None">
+                                 <Setter Property="Visibility" Value="Visible" />
+                              </DataTrigger>
+                              <DataTrigger Binding="{Binding IsOwned}" Value="False">
+                                 <Setter Property="Visibility" Value="Collapsed" />
+                              </DataTrigger>
+                           </Style.Triggers>
+                        </Style>
+                     </Label.Style>
+                  </Label>
+
 
                   <Ellipse Grid.Column="1" Grid.Row="2" Width="20" Height="20" Fill="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" Visibility="{Binding IsOwned, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                   <materialDesign:PackIcon Grid.Column="1" Grid.Row="2" Width="15" Height="15" Kind="GlobeLightOutline" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Visibility="{Binding IsOwned, Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -107,7 +138,7 @@
                         <Style TargetType="StackPanel">
                            <Setter Property="Visibility" Value="Visible" />
                            <Style.Triggers>
-                              <DataTrigger Binding="{Binding Necklace.AccessorySet}" Value="None">
+                              <DataTrigger Binding="{Binding Earrings.AccessorySet}" Value="None">
                                  <Setter Property="Visibility" Value="Collapsed" />
                               </DataTrigger>
                               <DataTrigger Binding="{Binding IsOwned}" Value="False">
@@ -119,7 +150,21 @@
                      <Label Content="{Binding Earrings.AccessoryDisplayTier}" VerticalAlignment="Center"/>
                      <Label Content="{Binding Earrings.AccessoryUpgradeDisplayLevel}" ContentStringFormat="+{0}" VerticalAlignment="Center"/>
                   </StackPanel>
-                  
+                  <Label Grid.Column="2" Grid.Row="2"  Content="-" VerticalAlignment="Center" HorizontalAlignment="Left">
+                     <Label.Style>
+                        <Style TargetType="Label">
+                           <Setter Property="Visibility" Value="Collapsed" />
+                           <Style.Triggers>
+                              <DataTrigger Binding="{Binding Earrings.AccessorySet}" Value="None">
+                                 <Setter Property="Visibility" Value="Visible" />
+                              </DataTrigger>
+                              <DataTrigger Binding="{Binding IsOwned}" Value="False">
+                                 <Setter Property="Visibility" Value="Collapsed" />
+                              </DataTrigger>
+                           </Style.Triggers>
+                        </Style>
+                     </Label.Style>
+                  </Label>
                </Grid>
             </DataTemplate>
          </ItemsControl.ItemTemplate>

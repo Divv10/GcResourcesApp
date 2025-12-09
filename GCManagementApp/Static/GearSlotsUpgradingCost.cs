@@ -52,6 +52,11 @@ namespace GCManagementApp.Static
                 matsCost += GearSlotFormula(currentRank, (int)StaticValues.MaxGearSlotUpgrade - currentUpgrade);
                 currentUpgrade = 0;
             }
+            if (currentRank == GearSlotRankEnum.Ancient)
+            {
+                matsCost += GearSlotFormula(currentRank, (int)StaticValues.MaxGearSlotUpgrade - currentUpgrade);
+                currentUpgrade = 0;
+            }
 
             return new GearSlotCost() { RaidMatsCost = matsCost, BlueStonesCost= stonesCost };
         }
@@ -102,8 +107,11 @@ namespace GCManagementApp.Static
 
         private static int GearSlotFormula(GearSlotRankEnum slotRank, int upgradeLevel)
         {
-            int raidMaterial = 175;
-            int matCost = 0;
+            double raidMaterial = 180;
+            double matTotal = 0;
+            double matCost = 0;
+            double slotExpCost;
+            double slotEXP = 0;
 
             if (slotRank == GearSlotRankEnum.Normal)
             {
@@ -112,38 +120,66 @@ namespace GCManagementApp.Static
                     switch (i)
                     {
                         case 0:
-                            matCost += 0;
+                            matTotal += 0;
                             break;
                         case 1:
-                            matCost += 25760 / raidMaterial; // 151
+                            slotExpCost = 25760 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 2:
-                            matCost += 23040 / raidMaterial + 1; // 136
+                            slotExpCost = 23040 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 3:
-                            matCost += 20480 / raidMaterial; // 120
+                            slotExpCost = 20480 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 4:
-                            matCost += 17920 / raidMaterial + 1; // 106
+                            slotExpCost = 17920 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 5:
-                            matCost += 15360 / raidMaterial; // 90
+                            slotExpCost = 15360 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 6:
-                            matCost += 12800 / raidMaterial; // 75
+                            slotExpCost = 12800 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 7:
-                            matCost += 6400 / raidMaterial + 1; // 38
+                            slotExpCost = 6400 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 8:
-                            matCost += 3840 / raidMaterial; // 22
+                            slotExpCost = 3840 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 9:
-                            matCost += 2560 / raidMaterial + 1; // 16
+                            slotExpCost = 2560 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                     }
                 }
             }
+
             if (slotRank == GearSlotRankEnum.Premium)
             {
                 for (int i = 0; i <= upgradeLevel; i++)
@@ -151,34 +187,61 @@ namespace GCManagementApp.Static
                     switch (i)
                     {
                         case 0:
-                            matCost += 0;
+                            matTotal += 0;
                             break;
                         case 1:
-                            matCost += 51520 / raidMaterial + 1; // 1470
+                            slotExpCost = 51520 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 2:
-                            matCost += 46240 / raidMaterial; // 1175
+                            slotExpCost = 46240 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 3:
-                            matCost += 41120 / raidMaterial + 1; // 911
+                            slotExpCost = 41120 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 4:
-                            matCost += 36000 / raidMaterial + 1; // 676
+                            slotExpCost = 36000 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 5:
-                            matCost += 30880 / raidMaterial; // 470
+                            slotExpCost = 30880 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 6:
-                            matCost += 25760 / raidMaterial; // 294
+                            slotExpCost = 25760 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 7:
-                            matCost += 12800 / raidMaterial; // 147
+                            slotExpCost = 12800 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 8:
-                            matCost += 7680 / raidMaterial + 1; // 74
+                            slotExpCost = 51520 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 9:
-                            matCost += 5120 / raidMaterial; // 30
+                            slotExpCost = 51520 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                     }
                 }
@@ -190,34 +253,61 @@ namespace GCManagementApp.Static
                     switch (i)
                     {
                         case 0:
-                            matCost += 0;
+                            matTotal += 0;
                             break;
                         case 1:
-                            matCost += 77280 / raidMaterial + 1; // 2205
+                            slotExpCost = 77280 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 2:
-                            matCost += 69440 / raidMaterial + 1; // 1763
+                            slotExpCost = 69440 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 3:
-                            matCost += 61760 / raidMaterial; // 1366
+                            slotExpCost = 61760 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 4:
-                            matCost += 54080 / raidMaterial + 1; // 1014
+                            slotExpCost = 54080 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 5:
-                            matCost += 46240 / raidMaterial; // 704
+                            slotExpCost = 46240 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 6:
-                            matCost += 38560 / raidMaterial + 1; // 440
+                            slotExpCost = 38560 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 7:
-                            matCost += 19200 / raidMaterial + 1; // 220
+                            slotExpCost = 19200 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 8:
-                            matCost += 11520 / raidMaterial; // 110
+                            slotExpCost = 11520 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 9:
-                            matCost += 7680 / raidMaterial + 1; // 44
+                            slotExpCost = 7680 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                     }
                 }
@@ -229,34 +319,61 @@ namespace GCManagementApp.Static
                     switch (i)
                     {
                         case 0:
-                            matCost += 0;
+                            matTotal += 0;
                             break;
                         case 1:
-                            matCost += 103040 / raidMaterial + 1; // 2942
+                            slotExpCost = 103040 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 2:
-                            matCost += 92640 / raidMaterial; // 2353
+                            slotExpCost = 92640 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 3:
-                            matCost += 82400 / raidMaterial + 1; // 1824
+                            slotExpCost = 82400 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 4:
-                            matCost += 72000 / raidMaterial + 1; // 1353
+                            slotExpCost = 72000 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 5:
-                            matCost += 61760 / raidMaterial + 1; // 941
+                            slotExpCost = 61760 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 6:
-                            matCost += 51520 / raidMaterial; // 588
+                            slotExpCost = 51520 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 7:
-                            matCost += 25760 / raidMaterial; // 294
+                            slotExpCost = 25760 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 8:
-                            matCost += 15360 / raidMaterial + 1; // 147
+                            slotExpCost = 15360 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 9:
-                            matCost += 10240 / raidMaterial + 1; // 59
+                            slotExpCost = 10240 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                     }
                 }
@@ -268,40 +385,133 @@ namespace GCManagementApp.Static
                     switch (i)
                     {
                         case 0:
-                            matCost += 0;
+                            matTotal += 0;
                             break;
                         case 1:
-                            matCost += 292920 / raidMaterial + 1; // 8362
+                            slotExpCost = 292920 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 2:
-                            matCost += 263355 / raidMaterial + 1; // 6688
+                            slotExpCost = 263355 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 3:
-                            matCost += 234245 / raidMaterial; // 5183
+                            slotExpCost = 234245 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 4:
-                            matCost += 204680 / raidMaterial + 1; // 3845
+                            slotExpCost = 204680 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 5:
-                            matCost += 175570 / raidMaterial; // 2675
+                            slotExpCost = 175570 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 6:
-                            matCost += 146570 / raidMaterial; // 1672
+                            slotExpCost = 146570 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 7:
-                            matCost += 73230 / raidMaterial + 1; // 835
+                            slotExpCost = 73230 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 8:
-                            matCost += 43665 / raidMaterial; // 416
+                            slotExpCost = 43665 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                         case 9:
-                            matCost += 29110 / raidMaterial + 1; // 167
+                            slotExpCost = 29110 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
                             break;
                     }
                 }
             } // DONE
 
-            return matCost;
+            if (slotRank == GearSlotRankEnum.Ancient)
+            {
+                for (int i = 0; i <= upgradeLevel; i++)
+                {
+                    switch(i)
+                    {
+                        case 0:
+                            matTotal += 0;
+                            break;
+                        case 1:
+                            slotExpCost = 311140 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 2:
+                            slotExpCost = 279730 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 3: // Estimated
+                            slotExpCost = 250000 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 4:
+                            slotExpCost = 248810 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 5:
+                            slotExpCost = 217410 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 6:
+                            slotExpCost = 155570 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 7:
+                            slotExpCost = 77780 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 8:
+                            slotExpCost = 46380 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                        case 9:
+                            slotExpCost = 30920 + slotEXP;
+                            matCost = slotExpCost / raidMaterial;
+                            matTotal += matCost;
+                            slotEXP = slotExpCost % raidMaterial;
+                            break;
+                    }
+                }
+            }
+            return (int)matTotal;
         }
     }
 }

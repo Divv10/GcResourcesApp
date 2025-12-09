@@ -24,7 +24,7 @@ namespace GCManagementApp.Static
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageEssentialBought ? 1 : 0)) * 7;
         public static int BlueGemsFromEnergy => (int)(((double)Energy.EnergyTotalWeekly / 12) * BGFromEnergy * EnergyPackCubesMultiplier);
         public static int BlueGemsFromArena = 4000;
-        
+
         public static int BlueGemsFromWeeklyMission => 3000;
 
         public static int BlueGemSellRarity
@@ -36,7 +36,9 @@ namespace GCManagementApp.Static
             }
         }
 
-        public static int BlueGemsWeeklyTotal => BlueGemsFromPvP + BlueGemsFromWeeklyMission + BlueGemsFromDailyMission + BlueGemsFromDefenceMode + BlueGemsFromArena + BlueGemSellRarity + BlueGemsFromEnergy;
+        public static int BlueGemsFromVulc => ProfileGrowth.Profile.Settings.VulcRankTier.BlueGems;
+
+        public static int BlueGemsWeeklyTotal => BlueGemsFromPvP + BlueGemsFromWeeklyMission + BlueGemsFromDailyMission + BlueGemsFromDefenceMode + BlueGemsFromArena + BlueGemsFromVulc + BlueGemSellRarity + BlueGemsFromEnergy;
 
         public static int TotalBlueGems => ProfileGrowth.Profile.Settings.OverrideBlueGems ? ProfileGrowth.Profile.Settings.CustomBlueGems : BlueGemsWeeklyTotal;
     }

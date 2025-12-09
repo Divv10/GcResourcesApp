@@ -22,7 +22,7 @@ namespace GCManagementApp.Static
         public static int GemmedEnergy => ProfileGrowth.Profile.Settings.EnergyFromGemsBought ? 150 * 10 * 7 : 0;
         public static int ExtraEnergyFromPack => ProfileGrowth.Profile.Settings.TotalEnergyBought;
         public static int TotalEnergyFromPack => EnergySupportPackEnergy + EnergySupportPack2Energy + DailySpecUpPackEnergy + SpecialEnergyPackPremiumEnergy + SpecialEnergyPackBasicEnergy + ExtraEnergyFromPack + EnergySupplyPackageEnergy + GemmedEnergy;
-        public static int EnergyVulcanus => (int)ProfileGrowth.Profile.Settings.VulcaRankTier + ProfileGrowth.Profile.Settings.VulcaRanksReward;
+        public static int EnergyVulcanus => ProfileGrowth.Profile.Settings.VulcRankTier.Energy;
         public static int EnergyTotalWeekly => EnergyNaturalRegen + EnergyMailAds + EnergyShopAds + EnergyDaily + EnergyWeekly + EnergyVulcanus + TotalEnergyFromPack;
         public static int EnergyPerBossStage => 12;
     }

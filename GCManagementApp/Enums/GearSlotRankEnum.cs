@@ -18,6 +18,8 @@ namespace GCManagementApp.Enums
         [Description("Unique")]
         Unique,
         [Description("Legendary")]
-        Legendary
+        Legendary,
+        [Description("Ancient")]
+        Ancient,
     }
 }

@@ -219,10 +219,10 @@
   <data name="BlueGems" xml:space="preserve">
     <value>Blue Gems</value>
   </data>
-  <data name="BlueGemsFrom15PVP" xml:space="preserve">
+  <data name="BGFrom15PVP" xml:space="preserve">
     <value>Blue Gems from 15 PvP</value>
   </data>
-  <data name="BlueGemsFromPVP" xml:space="preserve">
+  <data name="BGFromPVP" xml:space="preserve">
     <value>Blue Gems from PvP</value>
   </data>
   <data name="BlueGemsOptions" xml:space="preserve">
@@ -473,8 +473,8 @@
     <value>Enough Blue Gems to buy {0} Growth Cubes{1}Can clear Growth Cubes shop for {2} weeks</value>
     <comment>{1} is new line</comment>
   </data>
-  <data name="EnterHowManyVulcanusRanks" xml:space="preserve">
-    <value>Enter how many Vulcanus ranks weekly are You clearing and what Division do You usually end in.</value>
+  <data name="EnterVulcanusDivision" xml:space="preserve">
+    <value>Enter what division do you usually end in. (Press OK to save)</value>
   </data>
   <data name="Equipment" xml:space="preserve">
     <value>Equipment</value>
@@ -954,7 +954,7 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value>Vulcanus</value>
   </data>
   <data name="VulcanusDivision" xml:space="preserve">
-    <value>Vulcanus division</value>
+    <value>Vulcanus Division</value>
   </data>
   <data name="WeaponsAlreadyUsedOnCurrentLevel" xml:space="preserve">
     <value>Weapons already used on current level</value>
@@ -1045,7 +1045,7 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="YouHaveAddedTHero" xml:space="preserve">
     <value>You have added T hero to planning, but You dont have the base SR hero upgraded to T6 and CL20. Do You want to automatically add the base hero to planning?</value>
   </data>
-  <data name="BlueGemsFromWeeklyMission" xml:space="preserve">
+  <data name="BGFromWeeklyMission" xml:space="preserve">
     <value>BG from Weekly Mission</value>
   </data>
   <data name="GEFromDefenseMode" xml:space="preserve">
@@ -1057,7 +1057,7 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="SelectWhetherYouUseACToUpgrade" xml:space="preserve">
     <value />
   </data>
-  <data name="BlueGemsFromDailyMission" xml:space="preserve">
+  <data name="BGFromDailyMission" xml:space="preserve">
     <value>BG from Daily Mission</value>
   </data>
   <data name="CL25Cost" xml:space="preserve">
@@ -1078,7 +1078,7 @@ If You like using the app and find it usefull, please consider clicking on the K
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value />
   </data>
-  <data name="BlueGemsFromArena" xml:space="preserve">
+  <data name="BGFromArena" xml:space="preserve">
     <value>Blue Gems from Arena</value>
   </data>
   <data name="GEFromEnergy" xml:space="preserve">
@@ -1109,7 +1109,7 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value>Only T4</value>
   </data>
   <data name="TeamBuilder" xml:space="preserve">
-    <value>Team builders</value>
+    <value>Team Builders</value>
   </data>
   <data name="D10" xml:space="preserve">
     <value>D10</value>
@@ -1167,5 +1167,8 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="DescentLevel" xml:space="preserve">
     <value>Descent Level</value>
+  </data>
+  <data name="BGFromVulc" xml:space="preserve">
+    <value>Blue Gems from Vulcanus</value>
   </data>
 </root>

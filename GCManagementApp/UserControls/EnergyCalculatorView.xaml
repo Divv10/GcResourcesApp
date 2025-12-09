@@ -65,33 +65,28 @@
                         <materialDesign:PopupBox.ToggleContent>
                            <materialDesign:PackIcon Kind="PlaylistEdit" Height="25" Width="25" Foreground="{DynamicResource MaterialDesignBody}"/>
                         </materialDesign:PopupBox.ToggleContent>
-                        <Grid Width="300" Margin="8,8,8,8">
+                        <Grid Width="400" Margin="8,8,8,8">
                            <Grid.RowDefinitions>
                               <RowDefinition Height="*" />
                               <RowDefinition Height="*" />
                               <RowDefinition Height="*" />
-                              <RowDefinition Height="*" />
                            </Grid.RowDefinitions>
-                           <TextBlock Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{x:Static properties:Resources.EnterHowManyVulcanusRanks}" />
-                           <TextBox Grid.Row="1" Margin="0,10" materialDesign:HintAssist.Hint="{x:Static properties:Resources.NumberOfRanksCleared}" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
-                              <TextBox.Text>
-                                 <Binding Path="VulcaRanksClear" UpdateSourceTrigger="PropertyChanged">
-                                    <Binding.ValidationRules>
-                                       <validationRules:MinimumIntValueValidationRule MinimumIntValue="0" />
-                                       <validationRules:MaximumIntValueValidationRule MaximumIntValue="12" />
-                                    </Binding.ValidationRules>
-                                 </Binding>
-                              </TextBox.Text>
-                           </TextBox>
-                           <ComboBox Grid.Row="2" Margin="0,10"
+                           <TextBlock Margin="0,0,8,0" VerticalAlignment="Center" TextWrapping="Wrap" Text="{x:Static properties:Resources.EnterVulcanusDivision}" />
+                           <ComboBox Grid.Row="1" Margin="0,10"
                                      materialDesign:HintAssist.Hint="{x:Static properties:Resources.VulcanusDivision}" 
                                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
-                                     SelectedValue="{Binding VulcanusRank}" ItemsSource="{Binding VulcanusRanks}" SelectedValuePath="Key" >
+                                     SelectedValue="{Binding VulcanusRank}" ItemsSource="{Binding VulcanusRanks}" >
                               <ComboBox.ItemTemplate>
                                  <DataTemplate>
                                     <Grid>
-                                       <Label Content="{Binding Key}" HorizontalAlignment="Left"/>
-                                       <Label Content="{Binding Value}" ContentStringFormat="{x:Static properties:Resources.XEnergy}" HorizontalAlignment="Right"/>
+                                       <Grid.ColumnDefinitions>
+                                           <ColumnDefinition/>
+                                           <ColumnDefinition/>
+                                           <ColumnDefinition/>
+                                       </Grid.ColumnDefinitions>
+                                       <Label Content="{Binding Rank}" HorizontalAlignment="Left"/>
+                                       <Label Grid.Column="1" Content="{Binding Energy}" ContentStringFormat="{}{0} Energy"/>
+                                       <Label Grid.Column="2" Content="{Binding BlueGems}" ContentStringFormat="{}{0} Blue Gems" HorizontalAlignment="Right"/>
                                     </Grid>
                                  </DataTemplate>
                               </ComboBox.ItemTemplate>
@@ -493,10 +488,11 @@
                         </Grid>
                      </materialDesign:PopupBox>
                   </StackPanel>
-                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromPvP}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromPVP}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFrom15PVP}" ToolTip="{x:Static properties:Resources.BlueGemsFrom15PVP}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromArena}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromArena}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromArena}" ToolTip="{x:Static properties:Resources.BlueGemsFromArena}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromDailyMission}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromDailyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromDailyMission}" ToolTip="{x:Static properties:Resources.BlueGemsFromDailyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
-                  <TextBox Text="{Binding Source={x:Static statics:BlueGems.BlueGemsFromWeeklyMission}, Path=.}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" ToolTip="{x:Static properties:Resources.BlueGemsFromWeeklyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromPvP, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromPVP}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFrom15PVP}" ToolTip="{x:Static properties:Resources.BGFrom15PVP}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromArena, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromArena}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromArena}" ToolTip="{x:Static properties:Resources.BGFromArena}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromVulc, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromVulc}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromVulc}" ToolTip="{x:Static properties:Resources.BGFromVulc}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromDailyMission, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromDailyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromDailyMission}" ToolTip="{x:Static properties:Resources.BGFromDailyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
+                  <TextBox Text="{Binding BGFromWeeklyMission, Mode=OneWay}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.BGFromWeeklyMission}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.BGFromWeeklyMission}" ToolTip="{x:Static properties:Resources.BGFromWeeklyMission}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <TextBox Text="{Binding BlueGemsWeeklyTotal, Mode=OneWay}" FontWeight="Medium" materialDesign:HintAssist.Hint="{x:Static properties:Resources.TotalWeekly}" materialDesign:HintAssist.HelperText="{x:Static properties:Resources.SumOfAllPrevious}" ToolTip="{x:Static properties:Resources.SumOfAllPrevious}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Margin="10,0" Width="120" IsReadOnly="True"/>
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="-35,0,0,5">
                      <materialDesign:PopupBox StaysOpen="True">

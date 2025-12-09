@@ -89,13 +89,6 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _vulcanusTeams, value);
         }
 
-        private bool[] _vulcanusSweeps;
-        public bool[] VulcanusSweeps
-        {
-            get => _vulcanusSweeps;
-            set => SetProperty(ref _vulcanusSweeps, value);
-        }
-
         private List<SerializableContentTeam> _contentTeams;
         public List<SerializableContentTeam> ContentTeams
         {

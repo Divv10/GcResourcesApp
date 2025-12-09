@@ -21,15 +21,16 @@
       <converters:ClassToImageConverter x:Key="ClassToImageConverter"/>
       <converters:AttributeToImageConverter x:Key="AttributeToImageConverter"/>
       <converters:LevelToProgressValueConverter x:Key="LevelToProgressValueConverter"/>
+      <materialDesign:BooleanToVisibilityConverter TrueValue="Hidden" FalseValue="Visible" x:Key="InverterBooleanToVisibilityConverter" />
 
       <DataTemplate x:Key="DragAdorner">
-         <Image Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="40" Height="40" />
+        <Image Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="40" Height="40" />
       </DataTemplate>
    </UserControl.Resources>
    <Grid>
       <Grid.ColumnDefinitions>
          <ColumnDefinition Width="*"/>
-         <ColumnDefinition Width="auto" />
+         <ColumnDefinition Width="auto"/>
          <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
       <Grid.RowDefinitions>
@@ -39,14 +40,16 @@
          <RowDefinition/>
          <RowDefinition Height="auto"/>
       </Grid.RowDefinitions>
+      
       <ScrollViewer Margin="10" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" x:Name="VulcaTeamScroller">
-         <Grid HorizontalAlignment="Center" x:Name="VulcaTeams" Background="{DynamicResource MaterialDesignPaper}">
+          <Grid HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="VulcaTeams" Background="{DynamicResource MaterialDesignPaper}">
             <Grid.ColumnDefinitions>
+               <ColumnDefinition/>
                <ColumnDefinition/>
                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-               <RowDefinition Height="auto" />
+               <RowDefinition Height="220" />
                <RowDefinition Height="auto" />
                <RowDefinition Height="auto"/>
                <RowDefinition Height="auto" />
@@ -55,158 +58,25 @@
                <RowDefinition Height="auto"/>
                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-
-            <!-- Energy rewards -->
-            <Grid Grid.Row="2" Margin="10,0,10,0">
-               <Border BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="{StaticResource MaterialDesignBody}" Margin="0,0,60,0"/>
-               <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"  >
-                  <Image Source="/GCManagementApp;component/Resources/Materials/Energy.png" Height="25" Margin="10,0,0,0"/>
-                  <TextBlock Text="+ 116" VerticalAlignment="Center"/>
-               </StackPanel>
-            </Grid>
-            <Grid Grid.Row="6" Margin="0,0,10,0">
-               <Border BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="{StaticResource MaterialDesignBody}" Margin="0,0,60,0"/>
-               <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
-                  <Image Source="/GCManagementApp;component/Resources/Materials/Energy.png" Height="25" Margin="10,0,0,0" />
-                  <TextBlock Text="+ 173" VerticalAlignment="Center"/>
-               </StackPanel>
-            </Grid>
-            <Grid Grid.Row="2" Grid.Column="1" Margin="0,0,10,0">
-               <Border BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="{StaticResource MaterialDesignBody}" Margin="0,0,60,0"/>
-               <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
-                  <Image Source="/GCManagementApp;component/Resources/Materials/Energy.png" Height="25" Margin="10,0,0,0" />
-                  <TextBlock Text="+ 288" VerticalAlignment="Center"/>
-               </StackPanel>
-            </Grid>
-
+            <Label Content="Retribution Attribute" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-3,50,0" FontSize="20"/>
+            <Label Content="Balance Attribute" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-3,50,0" FontSize="20"/>
+            <Label Content="Life Attribute" Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-3,25,0" FontSize="20"/>
+            
             <!-- Vulcanus teams-->
-            <Grid Margin="5" Height="100" Width="800" HorizontalAlignment="Right" >
+            <Grid Margin="5" Height="185" Width="530" VerticalAlignment="Bottom" >
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
                   <ColumnDefinition Width="30"/>
-               </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#C9DAF8" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[0]}" />
-               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 1" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <Image Source="/GCManagementApp;component/Resources/Attributes/Blue.png" Width="40" Margin="0,20,0,0"/>
-
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[0]}"                        
-                                         dd:DragDrop.IsDragSource="True"
-                                         dd:DragDrop.IsDropTarget="True"
-                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
-                                         dd:DragDrop.DropHandler="{Binding}"
-                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
-                  <ListBox.ItemsPanel>
-                     <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                     </ItemsPanelTemplate>
-                  </ListBox.ItemsPanel>
-                  <ListBox.ItemTemplate>
-                     <DataTemplate>
-                        <Grid>
-                           <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="35" />
-                              <ColumnDefinition Width="70" />
-                              <ColumnDefinition Width="35" />
-                           </Grid.ColumnDefinitions>
-                           <Grid.RowDefinitions>
-                              <RowDefinition Height="35" />
-                              <RowDefinition Height="35"/>
-                           </Grid.RowDefinitions>
-
-                           <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                           <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                           <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
-
-                           <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
-                           <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                           <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
-                           <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                        </Grid>
-                     </DataTemplate>
-                  </ListBox.ItemTemplate>
-               </ListBox>
-
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="0" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-                  <materialDesign:PackIcon Kind="Close"/>
-               </Button>
-            </Grid>
-            <Grid Grid.Row="1" Margin="5" Height="100" Width="800"  HorizontalAlignment="Right">
-               <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
-                  <ColumnDefinition />
                   <ColumnDefinition Width="30"/>
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#C9DAF8" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[1]}" />
-               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 2" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <Image Source="/GCManagementApp;component/Resources/Attributes/Blue.png" Width="40" Margin="0,20,0,0"/>
-
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[1]}"                        
-                                         dd:DragDrop.IsDragSource="True"
-                                         dd:DragDrop.IsDropTarget="True"
-                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
-                                         dd:DragDrop.DropHandler="{Binding}"
-                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
-                  <ListBox.ItemsPanel>
-                     <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                     </ItemsPanelTemplate>
-                  </ListBox.ItemsPanel>
-                  <ListBox.ItemTemplate>
-                     <DataTemplate>
-                        <Grid>
-                           <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="35" />
-                              <ColumnDefinition Width="70" />
-                              <ColumnDefinition Width="35" />
-                           </Grid.ColumnDefinitions>
-                           <Grid.RowDefinitions>
-                              <RowDefinition Height="35" />
-                              <RowDefinition Height="35"/>
-                           </Grid.RowDefinitions>
-
-                           <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                           <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                           <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
-
-                           <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
-                           <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                           <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
-                           <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                        </Grid>
-                     </DataTemplate>
-                  </ListBox.ItemTemplate>
-               </ListBox>
-
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="1" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-                  <materialDesign:PackIcon Kind="Close"/>
-               </Button>
-            </Grid>
-            <Grid Grid.Row="3" Margin="5" Height="100" Width="800"  HorizontalAlignment="Right">
-               <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
-                  <ColumnDefinition />
-                  <ColumnDefinition Width="30"/>
-               </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#E06666" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[2]}" />
-               <Border BorderBrush="#E06666" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 3" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               
+               <Border Background="#E06666" />
+               <Border BorderBrush="#E06666" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 1" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
                <Image Source="/GCManagementApp;component/Resources/Attributes/Red.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[2]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[0]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -214,7 +84,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -224,44 +94,46 @@
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
                               <ColumnDefinition Width="35" />
+                              <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
                               <RowDefinition Height="35" />
-                              <RowDefinition Height="35"/>
+                              <RowDefinition Height="35" />
                            </Grid.RowDefinitions>
 
                            <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                            <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                           <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
+                           <Image Grid.Column="1" Grid.RowSpan="3" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
 
                            <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="2" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="0" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
-            <Grid Grid.Row="4" Margin="5" Height="100" Width="800"  HorizontalAlignment="Right">
+            <Grid Grid.Row="1" Margin="5" Height="185" Width="530">
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
-                  <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30"/>
+                  <ColumnDefinition Width="30"/>
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#E06666" />
-               <Border BorderBrush="#E06666" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[3]}" />
-               <TextBlock Text="Rank 4" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#E06666" />
+               <Border BorderBrush="#E06666" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 2" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
                <Image Source="/GCManagementApp;component/Resources/Attributes/Red.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[3]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[1]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -269,7 +141,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -278,6 +150,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -294,29 +167,30 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="3" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="1" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
-            <Grid Grid.Row="5" Margin="5" Height="100" Width="800"  HorizontalAlignment="Right">
+            <Grid Grid.Row="2" Margin="5" Height="185" Width="530" >
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
-                  <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30"/>
+                  <ColumnDefinition Width="30"/>
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#6AA84F" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[4]}" />
-               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 5" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <Image Source="/GCManagementApp;component/Resources/Attributes/Green.png" Width="40" Margin="0,20,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#E06666" />
+               <Border BorderBrush="#E06666" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 3" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Image Source="/GCManagementApp;component/Resources/Attributes/Red.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[4]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[2]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -324,7 +198,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -333,6 +207,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -349,87 +224,32 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="4" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-                  <materialDesign:PackIcon Kind="Close"/>
-               </Button>
-            </Grid>
-            <Grid Grid.Row="7" Margin="5" Height="100" Width="800" HorizontalAlignment="Right" >
-               <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
-                  <ColumnDefinition />
-                  <ColumnDefinition Width="30" />
-               </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#6AA84F" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[5]}" />
-               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 6" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <Image Source="/GCManagementApp;component/Resources/Attributes/Green.png" Width="40" Margin="0,20,0,0"/>
-
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[5]}"                        
-                                         dd:DragDrop.IsDragSource="True"
-                                         dd:DragDrop.IsDropTarget="True"
-                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
-                                         dd:DragDrop.DropHandler="{Binding}"
-                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
-                  <ListBox.ItemsPanel>
-                     <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                     </ItemsPanelTemplate>
-                  </ListBox.ItemsPanel>
-                  <ListBox.ItemTemplate>
-                     <DataTemplate>
-                        <Grid>
-                           <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="35" />
-                              <ColumnDefinition Width="70" />
-                              <ColumnDefinition Width="35" />
-                           </Grid.ColumnDefinitions>
-                           <Grid.RowDefinitions>
-                              <RowDefinition Height="35" />
-                              <RowDefinition Height="35"/>
-                           </Grid.RowDefinitions>
-
-                           <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                           <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                           <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
-
-                           <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
-                           <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                           <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
-                           <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                        </Grid>
-                     </DataTemplate>
-                  </ListBox.ItemTemplate>
-               </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="5" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="2" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
 
             <!-- Second column -->
 
-            <Grid Grid.Column="1" Margin="5" Height="100" Width="800" HorizontalAlignment="Left">
+            <Grid Grid.Column="1" Margin="5" Height="185" Width="530" VerticalAlignment="Bottom">
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
                   <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30" />
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#C9DAF8" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[6]}" />
-               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 7" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#C9DAF8" />
+               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 1" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
                <Image Source="/GCManagementApp;component/Resources/Attributes/Blue.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[6]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[3]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -437,7 +257,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -446,6 +266,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -462,29 +283,29 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="6" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="6" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
-            <Grid Grid.Column="1" Grid.Row="1" Margin="5" Height="100" Width="800" HorizontalAlignment="Left" >
+            <Grid Grid.Column="1" Grid.Row="1" Margin="5" Height="185" Width="530" >
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
                   <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30" />
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#C9DAF8" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[7]}" />
-               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 8" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#C9DAF8" />
+               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 2" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
                <Image Source="/GCManagementApp;component/Resources/Attributes/Blue.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[7]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[4]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -492,7 +313,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -501,6 +322,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -517,29 +339,29 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="7" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="7" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
-            <Grid Grid.Column="1" Grid.Row="3" Margin="5" Height="100" Width="800"  HorizontalAlignment="Left">
+            <Grid Grid.Column="1" Grid.Row="2" Margin="5" Height="185" Width="530">
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
                   <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30" />
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#E06666" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[8]}" />
-               <Border BorderBrush="#E06666" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 9" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <Image Source="/GCManagementApp;component/Resources/Attributes/Red.png" Width="40" Margin="0,20,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#C9DAF8" />
+               <Border BorderBrush="#C9DAF8" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 3" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Image Source="/GCManagementApp;component/Resources/Attributes/Blue.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[8]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[5]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -547,7 +369,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -556,6 +378,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -572,84 +395,31 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="8" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="8" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
-            <Grid Grid.Column="1" Grid.Row="4" Margin="5" Height="100" Width="800"  HorizontalAlignment="Left">
+            
+            <!-- Third Column-->
+            <Grid Grid.Column="2" Margin="5" Height="185" Width="530" VerticalAlignment="Bottom">
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
                   <ColumnDefinition Width="30" />
-               </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#E06666" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[9]}" />
-               <Border BorderBrush="#E06666" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 10" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <Image Source="/GCManagementApp;component/Resources/Attributes/Red.png" Width="40" Margin="0,20,0,0"/>
-
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[9]}"                        
-                                         dd:DragDrop.IsDragSource="True"
-                                         dd:DragDrop.IsDropTarget="True"
-                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
-                                         dd:DragDrop.DropHandler="{Binding}"
-                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
-                  <ListBox.ItemsPanel>
-                     <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
-                     </ItemsPanelTemplate>
-                  </ListBox.ItemsPanel>
-                  <ListBox.ItemTemplate>
-                     <DataTemplate>
-                        <Grid>
-                           <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="35" />
-                              <ColumnDefinition Width="70" />
-                              <ColumnDefinition Width="35" />
-                           </Grid.ColumnDefinitions>
-                           <Grid.RowDefinitions>
-                              <RowDefinition Height="35" />
-                              <RowDefinition Height="35"/>
-                           </Grid.RowDefinitions>
-
-                           <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                           <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                           <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
-
-                           <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
-                           <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                           <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
-                           <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
-                        </Grid>
-                     </DataTemplate>
-                  </ListBox.ItemTemplate>
-               </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-                  <materialDesign:PackIcon Kind="Close"/>
-               </Button>
-            </Grid>
-            <Grid Grid.Column="1" Grid.Row="5" Margin="5" Height="100" Width="800"  HorizontalAlignment="Left">
-               <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
-                  <ColumnDefinition />
                   <ColumnDefinition Width="30" />
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#6AA84F" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[10]}" />
-               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 11" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#6AA84F" />
+               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 1" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
                <Image Source="/GCManagementApp;component/Resources/Attributes/Green.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[10]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[6]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -657,7 +427,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -666,6 +436,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -682,29 +453,29 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="10" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
-            <Grid Grid.Column="1" Grid.Row="7" Margin="5" Height="100" Width="800" HorizontalAlignment="Left" >
+            <Grid Grid.Column="2" Grid.Row="1" Margin="5" Height="185" Width="530" >
                <Grid.ColumnDefinitions>
                   <ColumnDefinition Width="80" />
-                  <ColumnDefinition Width="50" />
                   <ColumnDefinition />
                   <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30" />
                </Grid.ColumnDefinitions>
-               <Border Grid.ColumnSpan="2" Background="#6AA84F" />
-               <TextBlock Grid.Column="1" Text="Sweep" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
-               <CheckBox Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" IsChecked="{Binding Sweeps[11]}" />
-               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="3" BorderThickness="5" />
-               <TextBlock Text="Rank 12" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Border Grid.ColumnSpan="1" Background="#6AA84F" />
+               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 2" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
                <Image Source="/GCManagementApp;component/Resources/Attributes/Green.png" Width="40" Margin="0,20,0,0"/>
 
-               <ListBox Grid.Column="2" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[11]}"                        
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[7]}"                        
                                          dd:DragDrop.IsDragSource="True"
                                          dd:DragDrop.IsDropTarget="True"
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
@@ -712,7 +483,7 @@
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
                   <ListBox.ItemsPanel>
                      <ItemsPanelTemplate>
-                        <StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+                        <WrapPanel IsItemsHost="True" />
                      </ItemsPanelTemplate>
                   </ListBox.ItemsPanel>
                   <ListBox.ItemTemplate>
@@ -721,6 +492,7 @@
                            <Grid.ColumnDefinitions>
                               <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
                               <ColumnDefinition Width="35" />
                            </Grid.ColumnDefinitions>
                            <Grid.RowDefinitions>
@@ -737,11 +509,69 @@
                            <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
                            <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
                            <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
                         </Grid>
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="3" Command="{Binding ClearRankCommand}" CommandParameter="11" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                  <materialDesign:PackIcon Kind="Close"/>
+               </Button>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="2" Margin="5" Height="185" Width="530">
+               <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="80" />
+                  <ColumnDefinition />
+                  <ColumnDefinition Width="30" />
+                  <ColumnDefinition Width="30" />
+               </Grid.ColumnDefinitions>
+               <Border Grid.ColumnSpan="1" Background="#6AA84F" />
+               <Border BorderBrush="#6AA84F" Grid.ColumnSpan="2" BorderThickness="5" />
+               <TextBlock Text="Phase 3" HorizontalAlignment="Center" Foreground="Black" FontSize="15" Margin="0,10,0,0"/>
+               <Image Source="/GCManagementApp;component/Resources/Attributes/Green.png" Width="40" Margin="0,20,0,0"/>
+
+               <ListBox HorizontalContentAlignment="Stretch" Grid.Column="1" Background="{Binding ElementName=VulcanusPlannerUC, Path=Background}" Margin="0,5,5,5" ItemsSource="{Binding VulcanusTeam[8]}"                        
+                                         dd:DragDrop.IsDragSource="True"
+                                         dd:DragDrop.IsDropTarget="True"
+                                         dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
+                                         dd:DragDrop.DropHandler="{Binding}"
+                                         dd:DragDrop.UseDefaultEffectDataTemplate="True">
+                  <ListBox.ItemsPanel>
+                     <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True" />
+                     </ItemsPanelTemplate>
+                  </ListBox.ItemsPanel>
+                  <ListBox.ItemTemplate>
+                     <DataTemplate>
+                        <Grid>
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="35" />
+                              <ColumnDefinition Width="70" />
+                              <ColumnDefinition Width="35" />
+                              <ColumnDefinition Width="35" />
+                           </Grid.ColumnDefinitions>
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="35" />
+                              <RowDefinition Height="35"/>
+                           </Grid.RowDefinitions>
+
+                           <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                           <Image Grid.Row="1" Source="{Binding Hero.HeroAttribute, Converter={StaticResource AttributeToImageConverter}}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                           <Image Grid.Column="1" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Width="65" Height="65"/>
+
+                           <local:SiCoresOpenTierListOverlay Grid.Column="2" Width="35" Height="35" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
+                           <Label Grid.Column="2" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
+                           <Label Grid.Column="2" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" />
+                           <ProgressBar Grid.Column="3" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="35" Height="35" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
+                           <Label Grid.Column="3" Content="{Binding DescentLevel}" ContentStringFormat="{x:Static properties:Resources.DX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10"/>
+                        </Grid>
+                     </DataTemplate>
+                  </ListBox.ItemTemplate>
+               </ListBox>
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
@@ -760,10 +590,17 @@
                                          dd:DragDrop.DragAdornerTemplate="{StaticResource DragAdorner}"
                                          dd:DragDrop.DropHandler="{Binding}"
                                          dd:DragDrop.UseDefaultEffectDataTemplate="True">
+         <ListBox.ItemContainerStyle>
+            <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Top"/>
+                <Setter Property="materialDesign:ListBoxItemAssist.ShowSelection" Value="True"/>
+            </Style>
+         </ListBox.ItemContainerStyle>
          <ListBox.ItemsPanel>
-            <ItemsPanelTemplate>
-               <WrapPanel IsItemsHost="True"/>
-            </ItemsPanelTemplate>
+             <ItemsPanelTemplate>
+                 <WrapPanel IsItemsHost="True" />
+             </ItemsPanelTemplate>
          </ListBox.ItemsPanel>
          <ListBox.ItemTemplate>
             <DataTemplate>

@@ -349,6 +349,33 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blue Gems from 15 PvP.
+        /// </summary>
+        public static string BGFrom15PVP {
+            get {
+                return ResourceManager.GetString("BGFrom15PVP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blue Gems from Arena.
+        /// </summary>
+        public static string BGFromArena {
+            get {
+                return ResourceManager.GetString("BGFromArena", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BG from Daily Mission.
+        /// </summary>
+        public static string BGFromDailyMission {
+            get {
+                return ResourceManager.GetString("BGFromDailyMission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BG from Defense Mode.
         /// </summary>
         public static string BGFromDefenseMode {
@@ -367,11 +394,38 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blue Gems from PvP.
+        /// </summary>
+        public static string BGFromPVP {
+            get {
+                return ResourceManager.GetString("BGFromPVP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BG from selling heroes.
         /// </summary>
         public static string BGFromSellingHeroes {
             get {
                 return ResourceManager.GetString("BGFromSellingHeroes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blue Gems from Vulcanus.
+        /// </summary>
+        public static string BGFromVulc {
+            get {
+                return ResourceManager.GetString("BGFromVulc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BG from Weekly Mission.
+        /// </summary>
+        public static string BGFromWeeklyMission {
+            get {
+                return ResourceManager.GetString("BGFromWeeklyMission", resourceCulture);
             }
         }
         
@@ -399,51 +453,6 @@ namespace GCManagementApp.Properties {
         public static string BlueGems {
             get {
                 return ResourceManager.GetString("BlueGems", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Blue Gems from 15 PvP.
-        /// </summary>
-        public static string BlueGemsFrom15PVP {
-            get {
-                return ResourceManager.GetString("BlueGemsFrom15PVP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Blue Gems from Arena.
-        /// </summary>
-        public static string BlueGemsFromArena {
-            get {
-                return ResourceManager.GetString("BlueGemsFromArena", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to BG from Daily Mission.
-        /// </summary>
-        public static string BlueGemsFromDailyMission {
-            get {
-                return ResourceManager.GetString("BlueGemsFromDailyMission", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Blue Gems from PvP.
-        /// </summary>
-        public static string BlueGemsFromPVP {
-            get {
-                return ResourceManager.GetString("BlueGemsFromPVP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to BG from Weekly Mission.
-        /// </summary>
-        public static string BlueGemsFromWeeklyMission {
-            get {
-                return ResourceManager.GetString("BlueGemsFromWeeklyMission", resourceCulture);
             }
         }
         
@@ -1357,11 +1366,11 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter how many Vulcanus ranks weekly are You clearing and what Division do You usually end in..
+        ///   Looks up a localized string similar to Enter what division do you usually end in. (Press OK to save).
         /// </summary>
-        public static string EnterHowManyVulcanusRanks {
+        public static string EnterVulcanusDivision {
             get {
-                return ResourceManager.GetString("EnterHowManyVulcanusRanks", resourceCulture);
+                return ResourceManager.GetString("EnterVulcanusDivision", resourceCulture);
             }
         }
         
@@ -2689,7 +2698,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Team builders.
+        ///   Looks up a localized string similar to Team Builders.
         /// </summary>
         public static string TeamBuilder {
             get {
@@ -2900,7 +2909,7 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vulcanus division.
+        ///   Looks up a localized string similar to Vulcanus Division.
         /// </summary>
         public static string VulcanusDivision {
             get {
