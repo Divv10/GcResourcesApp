@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:properties="clr-namespace:GCManagementApp.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
    <Grid Margin="10">
@@ -17,8 +18,8 @@
          <ColumnDefinition />
       </Grid.ColumnDefinitions>
 
-      <TextBox Text="{Binding EmulatorIp}" Margin="5" md:HintAssist.Hint="Emulator IP" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-      <TextBox Grid.Row="1" Text="{Binding EmulatorPort}" Margin="5" md:HintAssist.Hint="Emulator port" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+      <TextBox Text="{Binding EmulatorIp}" Margin="5" md:HintAssist.Hint="{x:Static properties:Resources.EmuIP}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+      <TextBox Grid.Row="1" Text="{Binding EmulatorPort}" Margin="5" md:HintAssist.Hint="{x:Static properties:Resources.EmuPort}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
 
       <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Content="{Binding ConnectText}" Margin="0, 30" Command="{Binding ConnectCommand}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
 

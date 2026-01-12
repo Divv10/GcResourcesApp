@@ -1,4 +1,5 @@
-﻿using GCManagementApp.Helpers;
+﻿using GCManagementApp.Enums;
+using GCManagementApp.Helpers;
 using GCManagementApp.Static;
 using System;
 using System.Collections.Generic;
@@ -141,7 +142,19 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _ring, value);
         }
 
-        public int RingUpgradeSum => ((int)Ring.AccessoryTier + 1) * Ring.AccessoryUpgradeLevel;
+        public int RingUpgradeSum
+        {
+            get
+            {
+                if (Ring.AccessorySet.ToString() == "None")
+                {
+                    return 0;
+                } else
+                {
+                    return ((int)Ring.AccessoryTier + 1) * Ring.AccessoryUpgradeLevel;
+                }
+            }
+        }
 
         private Accessory _necklace;
         public Accessory Necklace
@@ -150,7 +163,19 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _necklace, value);
         }
 
-        public int NecklaceUpgradeSum => ((int)Necklace.AccessoryTier + 1) * Necklace.AccessoryUpgradeLevel;
+        public int NecklaceUpgradeSum
+        {
+            get
+            {
+                if (Necklace.AccessorySet.ToString() == "None")
+                {
+                    return 0;
+                } else
+                {
+                    return ((int)Necklace.AccessoryTier + 1) * Necklace.AccessoryUpgradeLevel;
+                }
+            }
+        }
 
         private Accessory _earrings;
         public Accessory Earrings
@@ -166,7 +191,19 @@ namespace GCManagementApp.Models
             set => SetProperty(ref equipment, value);
         }
 
-        public int EarringsUpgradeSum => ((int)Earrings.AccessoryTier + 1) * Earrings.AccessoryUpgradeLevel;
+        public int EarringsUpgradeSum
+        {
+            get
+            {
+                if (Earrings.AccessorySet.ToString() == "None")
+                {
+                    return 0;
+                } else
+                {
+                    return ((int)Earrings.AccessoryTier + 1) * Earrings.AccessoryUpgradeLevel;
+                }
+            }
+        }
 
         public int TotalAccessoryUpgradeSum => RingUpgradeSum + NecklaceUpgradeSum + EarringsUpgradeSum;
 

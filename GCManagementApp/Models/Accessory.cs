@@ -1,4 +1,5 @@
 ﻿using GCManagementApp.Enums;
+using GCManagementApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _accessorySet, value);
         }
 
-        public string AccessoryUpgradeDisplayLevel => AccessorySet == AccessorySetEnum.None ? "None" : AccessoryUpgradeLevel.ToString();
+        public string AccessoryUpgradeDisplayLevel => AccessorySet == AccessorySetEnum.None ? AccessorySetEnum.None.GetDescription() : AccessoryUpgradeLevel.ToString();
         public string AccessoryDisplayTier => AccessorySet == AccessorySetEnum.None ? "-" : AccessoryTier.ToString();
     }
 }

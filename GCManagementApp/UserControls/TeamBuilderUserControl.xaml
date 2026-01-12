@@ -43,27 +43,38 @@
          <RowDefinition Height="auto"/>
       </Grid.RowDefinitions>
       <ScrollViewer Margin="10" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" x:Name="ContentTeamsScroller">
-         <Grid HorizontalAlignment="Center" Width="760" x:Name="ContentTeams" Background="{DynamicResource MaterialDesignPaper}" VerticalAlignment="Top">
+         <Grid HorizontalAlignment="Center" Width="1000" x:Name="ContentTeams" Background="{DynamicResource MaterialDesignPaper}" VerticalAlignment="Top">
             <Grid.RowDefinitions>
                <RowDefinition Height="auto"/>
                <RowDefinition />
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-               <Label HorizontalAlignment="Right" Content="Content:" Margin="5" FontSize="16"/>
+               <Label HorizontalAlignment="Right" Content="{x:Static properties:Resources.ContentLabel}" Margin="5" FontSize="16"/>
                <TextBox Grid.Column="1" Text="{Binding ContentText}" Margin="5" Width="200" HorizontalContentAlignment="Stretch" FontSize="16"/>
             </StackPanel>
             <ItemsControl Grid.Row="1" ItemsSource="{Binding ContentTeams}">
                <ItemsControl.ItemTemplate>
                   <DataTemplate>
-                     <Grid Margin="5" Height="100" Width="750" HorizontalAlignment="Left">
+                     <Grid Margin="5" Height="100" Width="900" HorizontalAlignment="Left">
                         <Grid.ColumnDefinitions>
-                           <ColumnDefinition Width="80" />
-                           <ColumnDefinition />
-                           <ColumnDefinition Width="30" />
+                           <ColumnDefinition Width="100"/>
+                           <ColumnDefinition Width="*"/>
+                           <ColumnDefinition Width="50" />
                         </Grid.ColumnDefinitions>
                         <Border Grid.ColumnSpan="1" Background="{Binding Element, Converter={StaticResource ElementToColorConverter}}" />
                         <Border BorderBrush="{Binding Element, Converter={StaticResource ElementToColorConverter}}" Grid.ColumnSpan="2" BorderThickness="5" />
-                        <ComboBox Text="Rank 7" HorizontalAlignment="Stretch" FontSize="15" Margin="5,10,5,0" VerticalAlignment="Top" SelectedItem="{Binding Element}" ItemsSource="{Binding DataContext.Elements, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                        <ComboBox Text="Rank 7" HorizontalAlignment="Center" FontSize="15" Margin="5,10,5,0" VerticalAlignment="Top" SelectedItem="{Binding Element}" ItemsSource="{Binding contentElements, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                        <ComboBox.ItemTemplate>
+                           <DataTemplate>
+                              <Grid>
+                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                 </Grid.ColumnDefinitions>
+                                 <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+                              </Grid>
+                           </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <Image Source="{Binding Element, Converter={StaticResource ElementToImageConverter}}" Width="40" Margin="0,35,0,0"/>
 
                         <ListBox Grid.Column="1" Background="{DynamicResource MaterialDesignPaper}" Margin="0,5,5,5" ItemsSource="{Binding Heroes}"                        
@@ -128,7 +139,7 @@
       <GridSplitter Grid.Row="1" Height="5" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
       <Border Grid.ColumnSpan="3" Grid.Row="2" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="{StaticResource MaterialDesignBody}" Margin="25,0,25,0"/>
-      <TextBlock Grid.ColumnSpan="3" Grid.Row="2" Text="Available heroes (Drag and drop on any team):" FontSize="15" Margin="25,10" HorizontalAlignment="Left" Background="{DynamicResource MaterialDesignPaper}" Padding="10,0" />
+      <TextBlock Grid.ColumnSpan="3" Grid.Row="2" Text="{x:Static properties:Resources.DragDropHeroes}" FontSize="15" Margin="25,10" HorizontalAlignment="Left" Background="{DynamicResource MaterialDesignPaper}" Padding="10,0" />
 
       <!-- Heroes -->
       <ListBox Grid.ColumnSpan="3" Grid.Row="3" Margin="15,0,15,15" ItemsSource="{Binding HeroesView}"                        
@@ -173,10 +184,10 @@
       </ListBox>
        
       <StackPanel Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
-         <Button Content="Save" Command="{Binding SaveCommand}" />
-         <Button Content="Add new team" Command="{Binding AddNewTeamCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
-         <Button Content="Remove all teams" Command="{Binding RemoveAllCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
-         <Button Content="Save to clipboard" Command="{Binding SaveToClipboardCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}" CommandParameter="{Binding ElementName=ContentTeams}"/>
+         <Button Content="{x:Static properties:Resources.Save}" Command="{Binding SaveCommand}" />
+         <Button Content="{x:Static properties:Resources.AddTeam}" Command="{Binding AddNewTeamCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
+         <Button Content="{x:Static properties:Resources.TeamRemoval}" Command="{Binding RemoveAllCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
+         <Button Content="{x:Static properties:Resources.SaveToClipboard}" Command="{Binding SaveToClipboardCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}" CommandParameter="{Binding ElementName=ContentTeams}"/>
       </StackPanel>
    </Grid>
 </UserControl>

@@ -146,7 +146,7 @@
             </TabItem>
             <TabItem Header="{x:Static properties:Resources.TeamBuilder}">
                 <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
-                    <TabItem ToolTip="Vulcanus Team Builder">
+                    <TabItem ToolTip="{x:Static properties:Resources.VulcTeamBuilderLabel}">
                         <TabItem.Header>
                             <materialDesign:PackIcon Kind="Fire" Height="40" Width="40"/>
                         </TabItem.Header>
@@ -155,13 +155,13 @@
                             <uc:VulcanusPlannerUserControl Visibility="{Binding IsVerticalVulcaEnabled, Converter={StaticResource TrueConv}, RelativeSource={RelativeSource AncestorType=Window}}"/>
                         </Grid>
                     </TabItem>
-                    <TabItem ToolTip="Any Content Team Builder">
+                    <TabItem ToolTip="{x:Static properties:Resources.TeamContentBuilder}">
                         <TabItem.Header>
                             <materialDesign:PackIcon Kind="AccountGroup" Height="40" Width="40"/>
                         </TabItem.Header>
                         <uc:TeamBuilderUserControl />
                     </TabItem>
-                    <TabItem ToolTip="Tier List Builder">
+                    <TabItem ToolTip="{x:Static properties:Resources.TierListBuilder}">
                         <TabItem.Header>
                             <materialDesign:PackIcon Kind="AccountDetails" Height="40" Width="40"/>
                         </TabItem.Header>

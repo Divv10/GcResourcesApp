@@ -101,7 +101,7 @@
 
          <Slider Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Maximum="{x:Static static:StaticValues.MaxTranscendenceLevel}" Value="{Binding PlaceholderHero.TranscendenceLevel, RelativeSource={RelativeSource AncestorType=UserControl}}" Foreground="{DynamicResource TranscendenceBrush}" IsTabStop="False"/>
 
-         <Button Content="Remove" Grid.Column="2" Grid.RowSpan="2" Margin="20"  HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding RemoveStatCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+         <Button Content="{x:Static properties:Resources.Remove}" Grid.Column="2" Grid.RowSpan="2" Margin="20"  HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding RemoveStatCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
       </Grid>
    </DataTemplate>
 

@@ -211,7 +211,7 @@
     <value>Gemas Azuis da venda de heróis</value>
   </data>
   <data name="Blue" xml:space="preserve">
-    <value>EQUILÍB</value>
+    <value>Equilíbri</value>
   </data>
   <data name="BlueAccSet" xml:space="preserve">
     <value>Azul - Proteção da Vida</value>
@@ -409,7 +409,7 @@
     <value>Doar</value>
   </data>
   <data name="Done" xml:space="preserve">
-    <value>Feito</value>
+    <value>Completo</value>
   </data>
   <data name="DownloadProgressFromGoogleDrive" xml:space="preserve">
     <value>Download do progresso do Google Drive</value>
@@ -449,6 +449,9 @@
   </data>
   <data name="EnergyPackageOptions" xml:space="preserve">
     <value>Opções de pacotes de energia</value>
+  </data>
+  <data name="EnergyPackWithBGBoost" xml:space="preserve">
+    <value>Pacote de energia com boost de Gemas azuis</value>
   </data>
   <data name="EnergyPerRun" xml:space="preserve">
     <value>Energia por Entrada</value>
@@ -523,7 +526,7 @@
     <value>Ouro</value>
   </data>
   <data name="Green" xml:space="preserve">
-    <value>VIDA</value>
+    <value>Vida</value>
   </data>
   <data name="Growth" xml:space="preserve">
     <value>Crescimento</value>
@@ -598,10 +601,13 @@
     <value>Lvl{0}</value>
   </data>
   <data name="LX" xml:space="preserve">
-    <value>Nv.</value>
+    <value>Nv.{0}</value>
   </data>
   <data name="Mage" xml:space="preserve">
     <value>Mago</value>
+  </data>
+  <data name="MarkIfYouAreBuyingPackWithBGBoost" xml:space="preserve">
+    <value>Marque se você está comprando pacote com boost de Gemas Azuis</value>
   </data>
   <data name="MarkIfYouWantToOverride" xml:space="preserve">
     <value>Marque se quiser substituir</value>
@@ -658,7 +664,7 @@
     <value>Normal</value>
   </data>
   <data name="NotDone" xml:space="preserve">
-    <value>Não realizado</value>
+    <value>Não iniciado</value>
   </data>
   <data name="NoticeSIIncludesCost" xml:space="preserve">
     <value>Aviso: SI5, SI10 e SI15 incluem o custo das Essências da Alma para abrir todas as nove características em cada nó</value>
@@ -690,6 +696,9 @@
   <data name="OwnedHeroesX" xml:space="preserve">
     <value>Heróis de propriedade: {0}</value>
   </data>
+  <data name="OwnedHeroSpecificGCCubes" xml:space="preserve">
+    <value>Cubos de Crescimento exclusivos obtidos</value>
+  </data>
   <data name="PerformanceMode" xml:space="preserve">
     <value>Modo de desempenho</value>
   </data>
@@ -715,7 +724,7 @@
     <value>Progresso baixado! O aplicativo será fechado agora. Reinicie o aplicativo para recarregar os dados.</value>
   </data>
   <data name="Purple" xml:space="preserve">
-    <value>DESTRUI</value>
+    <value>Destruição</value>
   </data>
   <data name="PurpleAccSet" xml:space="preserve">
     <value>Roxo - Golpe da Vontade</value>
@@ -733,10 +742,10 @@
     <value>Imediatamente</value>
   </data>
   <data name="ReadyIn" xml:space="preserve">
-    <value>Pronto em</value>
+    <value>Pronto em:</value>
   </data>
   <data name="Red" xml:space="preserve">
-    <value>PUN</value>
+    <value>Punição</value>
   </data>
   <data name="Rename" xml:space="preserve">
     <value>RENOMEAR</value>
@@ -746,6 +755,9 @@
   </data>
   <data name="ResetWithGems" xml:space="preserve">
     <value>Redefinir com gemas (+3)</value>
+  </data>
+  <data name="ResetWithGems1" xml:space="preserve">
+    <value>Redefinir com gemas (+1)</value>
   </data>
   <data name="RewardFromVulcanus" xml:space="preserve">
     <value>Recompensa do Vulcanus</value>
@@ -882,6 +894,9 @@
   <data name="TotalBlueGemsWeekly" xml:space="preserve">
     <value>Total Gemas Azuis semanalmente:</value>
   </data>
+  <data name="TotalGEWeekly" xml:space="preserve">
+    <value>Essência semanal total</value>
+  </data>
   <data name="TotalEnergyFromPackages" xml:space="preserve">
     <value>Energia total dos pacotes:</value>
   </data>
@@ -915,6 +930,9 @@
   <data name="UseOwnBlueGemsAmount" xml:space="preserve">
     <value>Use a própria quantidade de Gemas Azuis</value>
   </data>
+  <data name="VerticalVulcaPlanner" xml:space="preserve">
+    <value>Planejamento vertical do Vulcanus</value>
+  </data>
   <data name="Vulcanus" xml:space="preserve">
     <value>Vulcanus</value>
   </data>
@@ -939,6 +957,9 @@
   <data name="WeeklyBGGain" xml:space="preserve">
     <value>Ganho semanal de Gemas Azuis</value>
   </data>
+  <data name="WeeklyBoVGain" xml:space="preserve">
+    <value>Ganho da Bênção da Bravura semanal</value>
+  </data>
   <data name="WeeklyChaserCrystalsGain" xml:space="preserve">
     <value>Ganho semanal de Cristal Chaser</value>
   </data>
@@ -958,7 +979,7 @@
     <value>Ganho semanal de Essência da Alma</value>
   </data>
   <data name="WeeklySoulImprintGain" xml:space="preserve">
-    <value>Ganho semanal de Selo da Alma</value>
+    <value>Ganho semanal de cubo de crescimento</value>
   </data>
   <data name="WeeksForFullSI" xml:space="preserve">
     <value>Semanas para um SI Completo</value>
@@ -973,7 +994,7 @@
     <value>Com 100 cubos do evento</value>
   </data>
   <data name="Working" xml:space="preserve">
-    <value>Trabalhando</value>
+    <value>Andamento</value>
   </data>
   <data name="XGrowthCubes" xml:space="preserve">
     <value>{0} Cubo Chase</value>
@@ -997,7 +1018,7 @@
     <value>{0} Essências da Alma</value>
   </data>
   <data name="Yellow" xml:space="preserve">
-    <value>CIRCUL</value>
+    <value>Circulação</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Sim</value>
@@ -1038,9 +1059,8 @@
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
     <value>Cubos SI específicos do herói</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BGFromArena" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="BGFromArena" xml:space="preserve">
+    <value>Gemas azuis da Arena</value>
   </data>
   <data name="GEFromEnergy" xml:space="preserve">
     <value>Essência de Crescimento obtida pelas energias</value>
@@ -1054,6 +1074,12 @@
   <data name="MarkIfYouAreBuyingPackWithAcBoost" xml:space="preserve">
     <value>Marque se você está comprando pacote com boost de Cubos de Despertar</value>
   </data>
+  <data name="ArtiT5" xml:space="preserve">
+    <value>T5 (Pedra do Perpétua)</value>
+  </data>
+  <data name="TransPercentage" xml:space="preserve">
+    <value>% de Transcendência</value>
+  </data>
   <data name="AllT4" xml:space="preserve">
     <value>T4</value>
   </data>
@@ -1066,64 +1092,404 @@
   <data name="TeamBuilder" xml:space="preserve">
     <value>Construtor de equipes</value>
   </data>
-  <data name="D10" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="D10" xml:space="preserve">
+    <value>D10</value>
+  </data>
+  <data name="DX" xml:space="preserve">
+    <value>D{0}</value>
+  </data>
+  <data name="CostInGECubes" xml:space="preserve">
+    <value>Custo em cubo de crescimento</value>
+  </data>
+  <data name="CurrentDescentLevel" xml:space="preserve">
+    <value>Nível de descendência atual</value>
+  </data>
+  <data name="DescentCostCalculator" xml:space="preserve">
+    <value>Calculadora de custo de Descendência</value>
+  </data>
+  <data name="DesiredDescentLevel" xml:space="preserve">
+    <value>Nível de descendência desejado</value>
+  </data>
+  <data name="XDivineCrystals" xml:space="preserve">
+    <value>{0} Cristais Divinos</value>
+  </data>
+  <data name="ClickHereToShowFullDTable" xml:space="preserve">
+    <value>Clique aqui para mostrar a tabela de custo total da Descendência</value>
+  </data>
+  <data name="NoticeDIncludesCost" xml:space="preserve">
+    <value>Aviso: D0 inclui o custo para abrir o sistema</value>
+  </data>
+  <data name="DivineCrystals" xml:space="preserve">
+    <value>Cristais Divinos</value>
+  </data>
+  <data name="DL" xml:space="preserve">
+    <value>Nível de Descendência</value>
+  </data>
+  <data name="Descent" xml:space="preserve">
+    <value>Descendência</value>
+  </data>
+  <data name="D0-2" xml:space="preserve">
+    <value>D0-2</value>
+  </data>
+  <data name="D3-4" xml:space="preserve">
+    <value>D3-4</value>
+  </data>
+  <data name="D5-7" xml:space="preserve">
+    <value>D5-7</value>
+  </data>
+  <data name="D8-9" xml:space="preserve">
+    <value>D8-9</value>
+  </data>
+  <data name="D10X" xml:space="preserve">
+    <value>D10: {0}</value>
+  </data>
+  <data name="HeroRelease" xml:space="preserve">
     <value />
   </data>
-  <data name="DX" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="DescentLevel" xml:space="preserve">
+    <value>Nível de Descendência</value>
+  </data>
+  <data name="BGFromVulc" xml:space="preserve">
+    <value>Gemas azuis da Vulcanus</value>
+  </data>
+  <data name="TeamRemoval" xml:space="preserve">
+    <value>Remover todos os times</value>
+  </data>
+  <data name="SaveToClipboard" xml:space="preserve">
+    <value>Salvar como cópia</value>
+  </data>
+  <data name="AddTeam" xml:space="preserve">
+    <value>Adicionar novo time</value>
+  </data>
+  <data name="ResolutionMonitor" xml:space="preserve">
+    <value>Compensação para resoluções de monitores diferentes</value>
+  </data>
+  <data name="OpenLog" xml:space="preserve">
+    <value>Abri Logs</value>
+  </data>
+  <data name="Brammashell" xml:space="preserve">
+    <value>Brahmashell</value>
+  </data>
+  <data name="Callisto" xml:space="preserve">
+    <value>Calisto</value>
+  </data>
+  <data name="Decanee" xml:space="preserve">
+    <value>Decane</value>
+  </data>
+  <data name="Deia" xml:space="preserve">
+    <value>Déa</value>
+  </data>
+  <data name="Myrielle" xml:space="preserve">
+    <value>Myriel</value>
+  </data>
+  <data name="Ganymede" xml:space="preserve">
+    <value>Ganimedes</value>
+  </data>
+  <data name="Nelia" xml:space="preserve">
+    <value>Nellia</value>
+  </data>
+  <data name="Nepteon" xml:space="preserve">
+    <value>Neption</value>
+  </data>
+  <data name="Ragnar" xml:space="preserve">
+    <value>Ragna</value>
+  </data>
+  <data name="RecommendBuild" xml:space="preserve">
+    <value>Build Recomendada</value>
+  </data>
+  <data name="Artifact" xml:space="preserve">
+    <value>Artefatos</value>
+  </data>
+  <data name="AuthorBuild" xml:space="preserve">
+    <value>Autor: mvvze. @ Discord</value>
+  </data>
+  <data name="LinkSource" xml:space="preserve">
+    <value>Fonte</value>
+  </data>
+  <data name="EditType" xml:space="preserve">
+    <value>Tipo de edição</value>
+  </data>
+  <data name="AddStat" xml:space="preserve">
+    <value>+ Adicionar outro atributo</value>
+  </data>
+  <data name="ModifyStat" xml:space="preserve">
+    <value>Modificar atributos dos heróis selecionados</value>
+  </data>
+  <data name="Pet" xml:space="preserve">
+    <value>Mascote</value>
+  </data>
+  <data name="AccessoryEarrings" xml:space="preserve">
+    <value>Acessório - Brinco</value>
+  </data>
+  <data name="AccessoryNecklace" xml:space="preserve">
+    <value>Acessório - Colar</value>
+  </data>
+  <data name="AccessoryRing" xml:space="preserve">
+    <value>Acessório - Anel</value>
+  </data>
+  <data name="WeeklyGEGain" xml:space="preserve">
+    <value>Ganho de Essência de Crescimento semanal</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="WeeklyECGain" xml:space="preserve">
+    <value>Ganho de Cubo de Evolução semanal</value>
+  </data>
+  <data name="ECFromEnergy" xml:space="preserve">
+    <value>CE de energia</value>
+  </data>
+  <data name="ECFromLab" xml:space="preserve">
+    <value>CE semanal do Lab</value>
+  </data>
+  <data name="TotalECFromAdventure" xml:space="preserve">
+    <value>Total de CE da Aventura</value>
+  </data>
+  <data name="WeeklyECFromLab" xml:space="preserve">
+    <value>Semanalmente de CE do Lab</value>
+  </data>
+  <data name="WeeklyECFromExped" xml:space="preserve">
+    <value>Semanalmente de CE da expedição</value>
+  </data>
+  <data name="ECFromExped" xml:space="preserve">
+    <value>CE semanal da expedição</value>
+  </data>
+  <data name="ECFromAdds" xml:space="preserve">
+    <value>CE Adicional</value>
+  </data>
+  <data name="IncomeOtherSource" xml:space="preserve">
+    <value>Vindo de outras fontes</value>
+  </data>
+  <data name="BoVFromMerc" xml:space="preserve">
     <value />
   </data>
-  <data name="CostInGECubes" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="BoVFromShop" xml:space="preserve">
+    <value>BoV da loja</value>
+  </data>
+  <data name="BoVFromWeeklyPackage" xml:space="preserve">
+    <value>BoV do pacote semanal</value>
+  </data>
+  <data name="WeeklyAHGain" xml:space="preserve">
+    <value>Tickets semanais do Martelo de Ernasis</value>
+  </data>
+  <data name="AHTicketFromEC" xml:space="preserve">
+    <value>Tickets de CE</value>
+  </data>
+  <data name="AHCraftableTickets" xml:space="preserve">
+    <value>Tickets criáveis do AH</value>
+  </data>
+  <data name="AHRunsFromTickets" xml:space="preserve">
     <value />
   </data>
-  <data name="CurrentDescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="AHCrystalObtained" xml:space="preserve">
     <value />
   </data>
-  <data name="DescentCostCalculator" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="AHTotalCrystals" xml:space="preserve">
     <value />
   </data>
-  <data name="DesiredDescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="AHPurpleCrystal" xml:space="preserve">
+    <value>Roxo</value>
+  </data>
+  <data name="AHGreenCrystal" xml:space="preserve">
     <value />
   </data>
-  <data name="XDivineCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="AHBlueCrystalObtained" xml:space="preserve">
     <value />
   </data>
-  <data name="ClickHereToShowFullDTable" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="AHPurpleCrystalObtained" xml:space="preserve">
     <value />
   </data>
-  <data name="NoticeDIncludesCost" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="WeeklyDCGain" xml:space="preserve">
+    <value>Ganho de Cristal Divinos semanal</value>
+  </data>
+  <data name="AHBlueCrystal" xml:space="preserve">
+    <value>Azul</value>
+  </data>
+  <data name="AHGreenCrystalObtained" xml:space="preserve">
     <value />
   </data>
-  <data name="DivineCrystals" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="DupesDescent" xml:space="preserve">
+    <value>Cópias(Descendência)</value>
+  </data>
+  <data name="DupesTranscendence" xml:space="preserve">
+    <value>Cópias(Transcendência)</value>
+  </data>
+  <data name="XD" xml:space="preserve">
+    <value> ({0} D)</value>
+  </data>
+  <data name="OwnedHeroSpecificDescentCubes" xml:space="preserve">
+    <value>Cristais divinos exclusivos obtidos</value>
+  </data>
+  <data name="RedAttribute" xml:space="preserve">
+    <value>Punição Atributo</value>
+  </data>
+  <data name="BlueAttribute" xml:space="preserve">
+    <value>Equilíbri Atributo</value>
+  </data>
+  <data name="GreenAttribute" xml:space="preserve">
+    <value>Vida Atributo</value>
+  </data>
+  <data name="DragDropHeroes" xml:space="preserve">
+    <value>Heróis disponíveis (Segure e arraste para qualquer time):</value>
+  </data>
+  <data name="ContentLabel" xml:space="preserve">
+    <value>Conteúdo:</value>
+  </data>
+  <data name="CreditLabel" xml:space="preserve">
+    <value>Créditos: </value>
+  </data>
+  <data name="AddTier" xml:space="preserve">
+    <value>Adicionar novo tier</value>
+  </data>
+  <data name="TierRemoval" xml:space="preserve">
+    <value>Remover todos os tiers</value>
+  </data>
+  <data name="CurrentMaxLevel" xml:space="preserve">
+    <value>Nível máximo atual</value>
+  </data>
+  <data name="NeededLabel" xml:space="preserve">
+    <value>Necessário:</value>
+  </data>
+  <data name="TotalBoVNeeded" xml:space="preserve">
+    <value>Total BoV necessário:</value>
+  </data>
+  <data name="TotalDaysNeeded" xml:space="preserve">
+    <value>Dias necessários:</value>
+  </data>
+  <data name="FromOtherSource" xml:space="preserve">
+    <value>+{0} De outras fontes</value>
+  </data>
+  <data name="WeeklyBoVOtherSource" xml:space="preserve">
+    <value>BoV semanais obtidos de outras fontes</value>
+  </data>
+  <data name="VulcTeamBuilderLabel" xml:space="preserve">
+    <value>Vulcanus Team Builder</value>
+  </data>
+  <data name="TeamContentBuilder" xml:space="preserve">
+    <value>Criador de time para qualquer conteúdo</value>
+  </data>
+  <data name="TierListBuilder" xml:space="preserve">
+    <value>Criador de tierlist</value>
+  </data>
+  <data name="PurpleAttribute" xml:space="preserve">
+    <value>Destruição Atributo</value>
+  </data>
+  <data name="YellowAttribute" xml:space="preserve">
+    <value>Circulação Atributo</value>
+  </data>
+  <data name="BlueAcc" xml:space="preserve">
+    <value>Azul</value>
+  </data>
+  <data name="PurpleAcc" xml:space="preserve">
+    <value>Roxo</value>
+  </data>
+  <data name="Legendary" xml:space="preserve">
+    <value>Lendário</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Ancient" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="DL" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="D" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="EW" xml:space="preserve">
+    <value>EW</value>
+  </data>
+  <data name="RingTier" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="Descent" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="RingLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="D0-2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="RingType" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="D3-4" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="NecklaceTier" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="D5-7" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="NecklaceType" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="D8-9" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="NecklaceLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="D10X" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="EarringType" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="HeroRelease" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="EarringTier" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="DescentLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="EarringLevel" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
-  <data name="BGFromVulc" type="System.Resources.ResXNullRef, System.Windows.Forms">
+  <data name="Update" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Conectar</value>
+  </data>
+  <data name="Disconnect" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="EmuIP" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="EmuPort" xml:space="preserve">
+    <value>Porta do emulador</value>
+  </data>
+  <data name="TestClick" xml:space="preserve">
+    <value>Testar Clique</value>
+  </data>
+  <data name="BatchSwipeOnCommand" xml:space="preserve">
+    <value>Deslizar com comando batch</value>
+  </data>
+  <data name="TestSwipe" xml:space="preserve">
+    <value>Testar Deslize</value>
+  </data>
+  <data name="TakeScreenshot" xml:space="preserve">
+    <value>Captura de tela</value>
+  </data>
+  <data name="OpenScreenshotFolder" xml:space="preserve">
+    <value>Abrir pasta de capturas de tela</value>
+  </data>
+  <data name="GameLanguage" xml:space="preserve">
+    <value>Idioma do jogo</value>
+  </data>
+  <data name="HeroMatchAlgor" xml:space="preserve">
+    <value>Algoritmo de identificação de herói</value>
+  </data>
+  <data name="HeroImageFindThres" xml:space="preserve">
+    <value>Ponto de similaridade de herói</value>
+  </data>
+  <data name="SwipeGap" xml:space="preserve">
+    <value>Distancia do deslize</value>
+  </data>
+  <data name="Percise" xml:space="preserve">
+    <value>Preciso</value>
+  </data>
+  <data name="Quick" xml:space="preserve">
+    <value>Rápido</value>
+  </data>
+  <data name="Sync" xml:space="preserve">
+    <value>Sincronizar</value>
+  </data>
+  <data name="NumberHeroesScan" xml:space="preserve">
+    <value>Numero de heróis para escanear</value>
+  </data>
+  <data name="XHeroesFirstRow" xml:space="preserve">
+    <value>{0} heróis da primeira linha</value>
+  </data>
+  <data name="SaveScreenshotImproveTool" xml:space="preserve">
+    <value>Salvar prints para ajudar a melhorar a ferramenta</value>
+  </data>
+  <data name="SelectedHeroDataScan" xml:space="preserve">
+    <value>Sincronizar para o herói selecionado</value>
+  </data>
+  <data name="Stop" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Iniciar sincronização</value>
   </data>
 </root>

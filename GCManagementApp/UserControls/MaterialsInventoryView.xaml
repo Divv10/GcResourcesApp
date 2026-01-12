@@ -37,7 +37,7 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.ColumnSpan="5" Margin="10,10" Style="{StaticResource MaterialDesignHeadline6Label}" Content="{x:Static properties:Resources.Material}" />
             <uc:MeterialsItemInput Grid.Row="1" Title="{x:Static properties:Resources.GrowthCubes}" ImageSource="/GCManagementApp;component/Resources/Materials/GrowthCube.png" ItemCount="{Binding Inventory.GrowthCubes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <uc:MeterialsItemInput Grid.Row="1" Grid.Column="1" Title="Divine Crystals" ImageSource="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" ItemCount="{Binding Inventory.DivineCrystals, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <uc:MeterialsItemInput Grid.Row="1" Grid.Column="1" Title="{x:Static properties:Resources.DivineCrystals}" ImageSource="/GCManagementApp;component/Resources/Materials/DivineCrystal.png" ItemCount="{Binding Inventory.DivineCrystals, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <uc:MeterialsItemInput Grid.Row="1" Grid.Column="2" Title="{x:Static properties:Resources.BlueGems}" ImageSource="/GCManagementApp;component/Resources/Materials/BlueGem.png" ItemCount="{Binding Inventory.BlueGems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <materialDesign:PackIcon Kind="HelpCircle" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Margin="20" ToolTip="{Binding Inventory.BlueGemsToolTip}"/>
             <uc:MeterialsItemInput Grid.Row="1" Grid.Column="3" Title="{x:Static properties:Resources.Gold}" ImageSource="/GCManagementApp;component/Resources/Materials/Gold.png" ItemCount="{Binding Inventory.GoldFormatted, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>

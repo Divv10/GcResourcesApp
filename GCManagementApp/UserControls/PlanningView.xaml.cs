@@ -32,6 +32,7 @@ namespace GCManagementApp.UserControls
         public int GEGain => GrowthEssences.GrowthEssenceTotalWeekly / 7 ;
         public int DCGain => DivineCrystals.CrystalsTotalWeekly / 7;
         public int GrowthCubesFromBg => Inventory.GrowthCubesFromBlueGems;
+        public int FinalDupesofDescent;
 
         private ObservableCollection<HeroPlan> _heroPlans;
         public ObservableCollection<HeroPlan> HeroPlans
@@ -98,6 +99,7 @@ namespace GCManagementApp.UserControls
 
                 RecalculateGrowthCubesCost(hp, phg);
                 RecalculateDivineCrystalsCost(hp, phg);
+                RecalculateTransDupeCost(hp, phg);
 
                 HeroPlans.Add(hp);
             }
@@ -152,6 +154,7 @@ namespace GCManagementApp.UserControls
 
                     RecalculateGrowthCubesCost(hp, phg);
                     RecalculateDivineCrystalsCost(hp, phg);
+                    RecalculateTransDupeCost(hp, phg);
 
                     HeroPlans.Add(hp);
                 }
@@ -230,6 +233,7 @@ namespace GCManagementApp.UserControls
 
                 RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
                 RecalculateDivineCrystalsCost(hp, ownedHeroGrowth);
+                RecalculateTransDupeCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Add(hp);
 
@@ -314,6 +318,7 @@ namespace GCManagementApp.UserControls
                 DesiredGrowth = new GrowthPlan()
                 {
                     TranscendenceLevel = heroPlan.DesiredGrowth.TranscendenceLevel,
+                    DupesForTrans = heroPlan.DesiredGrowth.DupesForTrans,
                     ChaserLevel = heroPlan.DesiredGrowth.ChaserLevel,
                     SiLevel = heroPlan.DesiredGrowth.SiLevel,
                     DupesForSi = heroPlan.DesiredGrowth.DupesForSi,
@@ -322,6 +327,7 @@ namespace GCManagementApp.UserControls
                     HeroSpecificDivineCrystalsOwned = heroPlan.DesiredGrowth.HeroSpecificDivineCrystalsOwned,
                     TraitsOpen = heroPlan.DesiredGrowth.TraitsOpen,
                     DescentLevel = heroPlan.DesiredGrowth.DescentLevel,
+                    DupesForDescent = heroPlan.DesiredGrowth.DupesForDescent,
                 },
             };
 
@@ -396,6 +402,7 @@ namespace GCManagementApp.UserControls
 
                 RecalculateGrowthCubesCost(hp, ownedHeroGrowth);
                 RecalculateDivineCrystalsCost(hp, ownedHeroGrowth);
+                RecalculateTransDupeCost(hp, ownedHeroGrowth);
 
                 HeroPlans.Insert(HeroPlans.IndexOf(heroPlan), hp);
                 HeroPlans.Remove(heroPlan);
@@ -406,8 +413,24 @@ namespace GCManagementApp.UserControls
 
         private void RecalculateDivineCrystalsCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
         {
-            var crystalsCost = hp.DCost.DivineCrystalsCost - hp.DesiredGrowth.HeroSpecificDivineCrystalsOwned;
-            hp.DCost = new DescendCosts(hp.DCost.Level, crystalsCost < 0 ? 0 : crystalsCost, hp.DCost.GrowthEssenceCost, hp.DCost.GoldCost);
+            hp.DCost.DivineCrystalsCost = hp.DCost.DivineCrystalsCost - (hp.DesiredGrowth.DupesForDescent * 1500) - hp.DesiredGrowth.HeroSpecificDivineCrystalsOwned;
+            if (hp.DCost.DivineCrystalsCost < 0)
+            {
+                hp.DCost.DivineCrystalsCost = 0;
+            }
+            
+            hp.DCost = new DescendCosts(hp.DCost.Level, hp.DCost.DivineCrystalsCost < 0 ? 0 : hp.DCost.DivineCrystalsCost, hp.DCost.GrowthEssenceCost, hp.DCost.GoldCost);
+            hp.DCost.DupesForDescent = hp.DCost.DivineCrystalsCost / 1500;
+        }
+
+        private void RecalculateTransDupeCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
+        {
+            hp.TCost.DupesCost = hp.TCost.DupesCost - hp.DesiredGrowth.DupesForTrans;
+            if (hp.TCost.DupesCost < 0)
+            {
+                hp.TCost.DupesCost = 0;
+            }
+            hp.TCost = new TranscendenceCost(hp.TCost.Level, hp.TCost.DupesCost < 0 ? 0 : hp.TCost.DupesCost, hp.TCost.GoldCost);
         }
 
         private void RecalculateGrowthCubesCost(HeroPlan hp, HeroGrowth ownedHeroGrowth)
@@ -433,8 +456,8 @@ namespace GCManagementApp.UserControls
             {
                 //hp.SiLevelCost.SiCubesCost -= 250;
             }
-
             hp.SiLevelCost = new SiLevelCost(hp.SiLevelCost.Level, hp.SiLevelCost.GrowthCubesCost < 0 ? 0 : hp.SiLevelCost.GrowthCubesCost, hp.SiLevelCost.GeCost, hp.SiLevelCost.GoldCost);
+            hp.SiLevelCost.DupesForSi = hp.SiLevelCost.GrowthCubesCost / 250;
         }
 
         private void DeleteHeroPlan(object param)
@@ -491,6 +514,7 @@ namespace GCManagementApp.UserControls
 
                 RecalculateGrowthCubesCost(hp, phg);
                 RecalculateDivineCrystalsCost(hp, phg);
+                RecalculateTransDupeCost(hp, phg);
             }
         }
 

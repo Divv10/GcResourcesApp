@@ -134,7 +134,7 @@
                               <ColumnDefinition Width="40"/>
                               <ColumnDefinition Width="130"/>
                               <ColumnDefinition Width="40"/>
-                              <ColumnDefinition Width="60"/>
+                              <ColumnDefinition Width="Auto"/>
                               <ColumnDefinition Width="*"/>
                               <ColumnDefinition Width="Auto"/>
                               <ColumnDefinition Width="Auto"/>
@@ -169,12 +169,15 @@
 
                            <!-- -->
                            <TextBlock Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Text="{x:Static properties:Resources.Cost}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                           <materialDesign:PackIcon Grid.Row="0" Grid.Column="7" Grid.RowSpan="2" Foreground="DarkOrange" Kind="AlertBox" Margin="-180,0,0,10" VerticalAlignment="Center"/>
+                           <TextBlock Text="Growth Cubes will count additional SI Dupe from Chaser" Foreground="DarkOrange" FontWeight="Bold" Margin="-200,25,0,10" Grid.Row="0" Grid.Column="8" Grid.RowSpan="2" />
                            <Image Grid.Row="1" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="3"/>
                            <TextBlock Grid.Row="1" Grid.Column="8" Text="{Binding SiLevelCost.GrowthCubesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            <Image Grid.Row="1" Grid.Column="9" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" Margin="2"/>
                            <StackPanel Grid.Row="1" Grid.Column="10" Orientation="Horizontal">
                               <TextBlock Text="{Binding TCost.DupesCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                              <TextBlock Text="{Binding DesiredGrowth.DupesForSi, StringFormat='{x:Static properties:Resources.XSI}'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                              <TextBlock Text="{Binding SiLevelCost.DupesForSi, StringFormat='{x:Static properties:Resources.XSI}'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                              <TextBlock Text="{Binding DCost.DupesForDescent, StringFormat='{x:Static properties:Resources.XD}'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            </StackPanel>
                            <Image Grid.Row="2" Grid.Column="7" Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToGeImageConverter}}" />
                            <TextBlock Grid.Row="2" Grid.Column="8" Text="{Binding SiLevelCost.GeCost}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />

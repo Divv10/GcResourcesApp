@@ -30,7 +30,7 @@
                <Image Source="/GCManagementApp;component/Resources/Materials/LabTicket.png" Height="35" Margin="0,0,0,0"/>
                <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DailyBoVWL,StringFormat='{} {0} '}" Margin="0,0,0,0"/>
                <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DailyBoVAdditional,StringFormat='+ {0} '}" Margin="0,0,0,0"/>
-               <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DailyBoVOther,StringFormat='+ {0} from other sources)'}" Margin="0,0,0,0"/>
+               <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding DailyBoVOther,StringFormat='{x:Static properties:Resources.FromOtherSource}'}" Margin="0,0,0,0"/>
                <materialDesign:PopupBox StaysOpen="True">
                   <Grid Width="400" Margin="8,8,8,8">
                      <Grid.RowDefinitions>
@@ -42,7 +42,7 @@
                         <ColumnDefinition Width="*"/>
                      </Grid.ColumnDefinitions>
                      <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="35" Margin="0,5"/>
-                     <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Weekly BoV from other sources" />
+                     <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.WeeklyBoVOtherSource}" />
                      <TextBox Grid.Column="2" Height="30" VerticalContentAlignment="Center" Margin="10,0,0,0" Text="{Binding WeeklyBoVOther, UpdateSourceTrigger=PropertyChanged}"/>
                   </Grid>
                </materialDesign:PopupBox>
@@ -92,7 +92,7 @@
             <materialDesign:PackIcon Grid.Column="1" VerticalAlignment="Center" Kind="ArrowRight" />
             <TextBox Grid.Column="2" Text="{Binding AssaultDL, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center"/>
          </Grid>
-         <Button Grid.Row="3" Margin="5" Content="Current max level" Command="{Binding SetMaxLevelCommand}" CommandParameter="assault"/>
+         <Button Grid.Row="3" Margin="5" Content="{x:Static properties:Resources.CurrentMaxLevel}" Command="{Binding SetMaxLevelCommand}" CommandParameter="assault"/>
          <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                <ColumnDefinition/>
@@ -104,11 +104,11 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
                <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="25"/>
-               <Label Content="Needed:" />
+               <Label Content="{x:Static properties:Resources.NeededLabel}" />
             </StackPanel>
             <Label Content="{Binding AssaultBoVNeeded}" Grid.Column="1" HorizontalAlignment="Right" />
-            <Label Content="Ready in:" Grid.Row="1" HorizontalAlignment="Left" />
-            <Label Content="{Binding AssaultBoVReadyIn}" ContentStringFormat="{}{0} days" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
+            <Label Content="{x:Static properties:Resources.ReadyIn}" Grid.Row="1" HorizontalAlignment="Left" />
+            <Label Content="{Binding AssaultBoVReadyIn}" ContentStringFormat="{x:Static properties:Resources.XDays}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
          </Grid>
 
          <Grid Grid.Column="1" Grid.Row="2" Margin="15,0">
@@ -121,7 +121,7 @@
             <materialDesign:PackIcon Grid.Column="1" VerticalAlignment="Center" Kind="ArrowRight" />
             <TextBox Grid.Column="2" Text="{Binding RangerDL, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center"/>
          </Grid>
-         <Button Grid.Column="1" Grid.Row="3" Margin="15" Content="Current max level" Command="{Binding SetMaxLevelCommand}" CommandParameter="ranger"/>
+         <Button Grid.Column="1" Grid.Row="3" Margin="15" Content="{x:Static properties:Resources.CurrentMaxLevel}" Command="{Binding SetMaxLevelCommand}" CommandParameter="ranger"/>
          <Grid Grid.Column="1" Grid.Row="4" Margin="15,0">
             <Grid.ColumnDefinitions>
                <ColumnDefinition/>
@@ -133,11 +133,11 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
                <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="25"/>
-               <Label Content="Needed:" />
+               <Label Content="{x:Static properties:Resources.NeededLabel}" />
             </StackPanel>
             <Label Content="{Binding RangerBoVNeeded}" Grid.Column="1" HorizontalAlignment="Right" />
-            <Label Content="Ready in:" Grid.Row="1" HorizontalAlignment="Left" />
-            <Label Content="{Binding RangerBoVReadyIn}" ContentStringFormat="{}{0} days" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
+            <Label Content="{x:Static properties:Resources.ReadyIn}" Grid.Row="1" HorizontalAlignment="Left" />
+            <Label Content="{Binding RangerBoVReadyIn}" ContentStringFormat="{x:Static properties:Resources.XDays}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
          </Grid>
 
          <Grid Grid.Column="2" Grid.Row="2" Margin="5,0">
@@ -150,7 +150,7 @@
             <materialDesign:PackIcon Grid.Column="1" VerticalAlignment="Center" Kind="ArrowRight" />
             <TextBox Grid.Column="2" Text="{Binding TankDL, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center"/>
          </Grid>
-         <Button Grid.Column="2" Grid.Row="3" Margin="5" Content="Current max level" Command="{Binding SetMaxLevelCommand}" CommandParameter="tank"/>
+         <Button Grid.Column="2" Grid.Row="3" Margin="5" Content="{x:Static properties:Resources.CurrentMaxLevel}" Command="{Binding SetMaxLevelCommand}" CommandParameter="tank"/>
          <Grid Grid.Column="2" Grid.Row="4">
             <Grid.ColumnDefinitions>
                <ColumnDefinition/>
@@ -162,11 +162,11 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
                <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="25"/>
-               <Label Content="Needed:" />
+               <Label Content="{x:Static properties:Resources.NeededLabel}" />
             </StackPanel>
             <Label Content="{Binding TankBoVNeeded}" Grid.Column="1" HorizontalAlignment="Right" />
-            <Label Content="Ready in:" Grid.Row="1" HorizontalAlignment="Left" />
-            <Label Content="{Binding TankBoVReadyIn}" ContentStringFormat="{}{0} days" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
+            <Label Content="{x:Static properties:Resources.ReadyIn}" Grid.Row="1" HorizontalAlignment="Left" />
+            <Label Content="{Binding TankBoVReadyIn}" ContentStringFormat="{x:Static properties:Resources.XDays}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
          </Grid>
 
          <Grid Grid.Column="3" Grid.Row="2" Margin="15,0">
@@ -179,7 +179,7 @@
             <materialDesign:PackIcon Grid.Column="1" VerticalAlignment="Center" Kind="ArrowRight" />
             <TextBox Grid.Column="2" Text="{Binding HealerDL, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center"/>
          </Grid>
-         <Button Grid.Column="3" Grid.Row="3" Margin="15" Content="Current max level" Command="{Binding SetMaxLevelCommand}" CommandParameter="healer"/>
+         <Button Grid.Column="3" Grid.Row="3" Margin="15" Content="{x:Static properties:Resources.CurrentMaxLevel}" Command="{Binding SetMaxLevelCommand}" CommandParameter="healer"/>
          <Grid Grid.Column="3" Grid.Row="4" Margin="15,0">
             <Grid.ColumnDefinitions>
                <ColumnDefinition/>
@@ -191,11 +191,11 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
                <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="25"/>
-               <Label Content="Needed:" />
+               <Label Content="{x:Static properties:Resources.NeededLabel}" />
             </StackPanel>
             <Label Content="{Binding HealerBoVNeeded}" Grid.Column="1" HorizontalAlignment="Right" />
-            <Label Content="Ready in:" Grid.Row="1" HorizontalAlignment="Left" />
-            <Label Content="{Binding HealerBoVReadyIn}" ContentStringFormat="{}{0} days" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
+            <Label Content="{x:Static properties:Resources.ReadyIn}" Grid.Row="1" HorizontalAlignment="Left" />
+            <Label Content="{Binding HealerBoVReadyIn}" ContentStringFormat="{x:Static properties:Resources.XDays}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
          </Grid>
 
          <Grid Grid.Column="4" Grid.Row="2" Margin="5,0">
@@ -208,7 +208,7 @@
             <materialDesign:PackIcon Grid.Column="1" VerticalAlignment="Center" Kind="ArrowRight" />
             <TextBox Grid.Column="2" Text="{Binding MageDL, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center"/>
          </Grid>
-         <Button Grid.Column="4" Grid.Row="3" Margin="5" Content="Current max level" Command="{Binding SetMaxLevelCommand}" CommandParameter="mage"/>
+         <Button Grid.Column="4" Grid.Row="3" Margin="5" Content="{x:Static properties:Resources.CurrentMaxLevel}" Command="{Binding SetMaxLevelCommand}" CommandParameter="mage"/>
          <Grid Grid.Column="4" Grid.Row="4">
             <Grid.ColumnDefinitions>
                <ColumnDefinition/>
@@ -220,11 +220,11 @@
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal">
                <Image Source="/GCManagementApp;component/Resources/Materials/BlessingOfValor.png" Height="25"/>
-               <Label Content="Needed:" />
+               <Label Content="{x:Static properties:Resources.NeededLabel}" />
             </StackPanel>
             <Label Content="{Binding MageBoVNeeded}" Grid.Column="1" HorizontalAlignment="Right" />
-            <Label Content="Ready in:" Grid.Row="1" HorizontalAlignment="Left" />
-            <Label Content="{Binding MageBoVReadyIn}" ContentStringFormat="{}{0} days" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
+            <Label Content="{x:Static properties:Resources.ReadyIn}" Grid.Row="1" HorizontalAlignment="Left" />
+            <Label Content="{Binding MageBoVReadyIn}" ContentStringFormat="{x:Static properties:Resources.XDays}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" />
          </Grid>
          <Grid Grid.Row="5" Grid.ColumnSpan="5" HorizontalAlignment="Center" Margin="0,100,0,0">
             <Grid.ColumnDefinitions>
@@ -236,11 +236,11 @@
                <RowDefinition/>
                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="Total BoV needed:" HorizontalAlignment="Left" />
-            <Label Grid.Row="1" Content="Days needed:" HorizontalAlignment="Left" />
+            <Label Content="{x:Static properties:Resources.TotalBoVNeeded}" HorizontalAlignment="Left" />
+            <Label Grid.Row="1" Content="{x:Static properties:Resources.TotalDaysNeeded}" HorizontalAlignment="Left" />
 
             <Label Grid.Column="2" HorizontalAlignment="Right" Content="{Binding TotalBoVNeeded}" />
-            <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Content="{Binding DaysNeeded}" ContentStringFormat="{}{0} days" />
+            <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Content="{Binding DaysNeeded}" ContentStringFormat="{x:Static properties:Resources.XDays}" />
          </Grid>
       </Grid>
    </Grid>

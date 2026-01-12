@@ -42,6 +42,7 @@ namespace GCManagementApp.Static
         public int DivineCrystalsCost { get; set; }
         public int GrowthEssenceCost { get; set; }
         public int GoldCost { get; set; }
+        public int DupesForDescent { get; set; }
 
         public DescendCosts(int level, int divineCrystalsCost, int growthEssenceCost, int goldCost)
         {

@@ -22,12 +22,12 @@
       <Grid.ColumnDefinitions>
          <ColumnDefinition />
       </Grid.ColumnDefinitions>
-      <TextBox Text="{Binding HeroesCount, UpdateSourceTrigger=PropertyChanged}" Margin="5" md:HintAssist.Hint="Number of heroes to scan" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+      <TextBox Text="{Binding HeroesCount, UpdateSourceTrigger=PropertyChanged}" Margin="5" md:HintAssist.Hint="{x:Static properties:Resources.NumberHeroesScan}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
       <TextBlock Grid.Row="1" Margin="5" Text="{Binding HeroesCountFormatted}" TextWrapping="Wrap"/>
-      <CheckBox Grid.Row="2" Margin="5" Content="Save screenshots to help improve the tool" IsChecked="{Binding SaveScreenshots}"/>
+      <CheckBox Grid.Row="2" Margin="5" Content="{x:Static properties:Resources.SaveScreenshotImproveTool}" IsChecked="{Binding SaveScreenshots}"/>
       <Button Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Content="{Binding StartTestContent}" Margin="0, 30, 0, 50" Command="{Binding StartCommand}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
       <ComboBox Grid.Row="4" materialDesign:HintAssist.Hint="{x:Static properties:Resources.SelectHero}" HorizontalAlignment="Stretch" Margin="0,20,0,5" DisplayMemberPath="DisplayName" ItemsSource="{Binding HeroesCollection}" SelectedItem="{Binding SelectedHero}" Style="{StaticResource MaterialDesignOutlinedComboBox}"/>
-      <Button Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Content="Scan data for selected hero" Margin="0, 10, 0, 10" Command="{Binding SingleScanCommand}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
+      <Button Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Content="{x:Static properties:Resources.SelectedHeroDataScan}" Margin="0, 10, 0, 10" Command="{Binding SingleScanCommand}" Style="{StaticResource MaterialDesignOutlinedButton}"/>
 
    </Grid>
 </UserControl>

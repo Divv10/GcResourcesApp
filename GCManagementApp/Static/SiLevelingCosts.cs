@@ -117,6 +117,7 @@ namespace GCManagementApp.Static
         public int GrowthCubesCost { get; set; }
         public int GeCost { get; set; }
         public int GoldCost { get; set; }
+        public int DupesForSi { get; set; }
 
         public SiLevelCost(double level, int growthCubesCost, int geCost, int goldCost)
         {

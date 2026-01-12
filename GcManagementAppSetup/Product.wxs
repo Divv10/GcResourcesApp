@@ -1,5 +1,5 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
-	<Package Name="GrandChase Resource Management" Language="1033" Version="4.7.5.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
+	<Package Name="GrandChase Resource Management" Language="1033" Version="4.7.8.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
 
 
 		<Property Id="INSTALLFOLDER">
@@ -579,6 +579,9 @@
 			<Component Id="Brammashell.png">
 				<File Id="Brammashell.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Brammashell.png" />
 			</Component>
+			<Component Id="Myrielle.png">
+				<File Id="Myrielle.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Myrielle.png" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -845,6 +848,15 @@
 			<Component Id="Vice.png_kr">
 				<File Id="Vice.png_kr" Name="Vice.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
+			<Component Id="Myrielle.png_kr">
+				<File Id="Myrielle.png_kr" Name="Myrielle.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+			</Component>
+			<Component Id="GrandielT.png_kr">
+				<File Id="GrandielT.png_kr" Name="GrandielT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+			</Component>
+			<Component Id="DeiaT.png_kr">
+				<File Id="DeiaT.png_kr" Name="DeiaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -1110,6 +1122,9 @@
 			</Component>
 			<Component Id="Vice.png_br">
 				<File Id="Vice.png_br" Name="Vice.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
+			</Component>
+			<Component Id="Myrielle.png_br">
+				<File Id="Myrielle.png_br" Name="Myrielle.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
 			</Component>
 		</ComponentGroup>
 	</Fragment>

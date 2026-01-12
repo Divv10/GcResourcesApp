@@ -1,4 +1,5 @@
-﻿using GCManagementApp.Models;
+﻿using GCManagementApp.Enums;
+using GCManagementApp.Models;
 using GCManagementApp.Static;
 using GCManagementApp.ViewModels;
 using GongSolutions.Wpf.DragDrop;
@@ -32,8 +33,11 @@ namespace GCManagementApp.UserControls
     /// </summary>
     public partial class TeamBuilderUserControl : UserControl
     {     
+        public ContentAttributeEnum[] contentElements { get; } = (ContentAttributeEnum[])Enum.GetValues(typeof(ContentAttributeEnum));
+
         public TeamBuilderUserControl()
         {
+
             InitializeComponent();
             DataContext = new TeamBuilderViewModel();            
         }        

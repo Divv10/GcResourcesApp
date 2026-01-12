@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:properties="clr-namespace:GCManagementApp.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="800">
     <Grid Margin="10">
@@ -19,15 +20,21 @@
       </Grid.ColumnDefinitions>
 
       <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
-         <Button Content="Test click" Margin="10" Command="{Binding ClickCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
-         <CheckBox Content="Swipe with batch command" Margin="10" IsChecked="{Binding UseBatchCmdToSwipe}" />
-         <Button Content="Test swipe" Margin="10" Command="{Binding SwipeCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
-         <Button Content="Take screenshot" Margin="10" Command="{Binding ScreenshotCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
-         <Button Content="Open screenshots folder" Margin="10" Command="{Binding OpenScreenshotsFolderCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
-         <ComboBox Margin="10" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" materialDesign:HintAssist.Hint="Game language" Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
-         <ComboBox Margin="10" ItemsSource="{Binding Algorithms}" SelectedItem="{Binding SelectedAlgorithm}" materialDesign:HintAssist.Hint="Hero matching algorithm" Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
-         <TextBox Margin="10" Text="{Binding Confidence}" materialDesign:HintAssist.Hint="Hero image find threshold" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-         <TextBox Margin="10" Text="{Binding SwipeGap}" materialDesign:HintAssist.Hint="Swipe gap (distance)" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+         <Button Content="{x:Static properties:Resources.TestClick}" Margin="10" Command="{Binding ClickCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
+         <CheckBox Content="{x:Static properties:Resources.BatchSwipeOnCommand}" Margin="10" IsChecked="{Binding UseBatchCmdToSwipe}" />
+         <Button Content="{x:Static properties:Resources.TestSwipe}" Margin="10" Command="{Binding SwipeCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
+         <Button Content="{x:Static properties:Resources.TakeScreenshot}" Margin="10" Command="{Binding ScreenshotCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
+         <Button Content="{x:Static properties:Resources.OpenScreenshotFolder}" Margin="10" Command="{Binding OpenScreenshotsFolderCommand}"  Style="{StaticResource MaterialDesignOutlinedButton}"/>
+         <ComboBox Margin="10" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.GameLanguage}" Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
+         <ComboBox Margin="10" ItemsSource="{Binding Algorithms}" SelectedItem="{Binding SelectedAlgorithm}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.HeroMatchAlgor}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBox.ItemTemplate>
+               <DataTemplate>
+                  <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}"/>
+               </DataTemplate>
+            </ComboBox.ItemTemplate>
+         </ComboBox>
+         <TextBox Margin="10" Text="{Binding Confidence}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.HeroImageFindThres}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+         <TextBox Margin="10" Text="{Binding SwipeGap}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.SwipeGap}" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
       </StackPanel>
    </Grid>
 </UserControl>

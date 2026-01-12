@@ -30,6 +30,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
@@ -45,6 +46,18 @@
                 <ListBoxItem Content="{x:Static properties:Resources.NotDone}" />
                 <ListBoxItem Content="{x:Static properties:Resources.All}" />
             </ListBox>
+           <!-- <Menu>
+                <MenuItem Header="{x:Static properties:Resources.Sort}">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Filter" VerticalAlignment="Center" />
+                    </MenuItem.Icon>
+                    <MenuItem Header="{x:Static properties:Resources.Done}" Command="{Binding SortByDone}" />
+                    <MenuItem Header="{x:Static properties:Resources.Working}" />
+                    <MenuItem Header="{x:Static properties:Resources.NotDone}" />
+                    <MenuItem Header="{x:Static properties:Resources.All}" />
+                </MenuItem>
+            </Menu>
+            -->
             <materialDesign:PackIcon Kind="SortNumericAscending" Margin="15,0,0,0" VerticalAlignment="Center"/>
             <ListBox SelectedIndex="{Binding SelectedOrderIndex}" Style="{StaticResource MaterialDesignToolToggleListBox}" Margin="5">
                 <i:Interaction.Behaviors>
@@ -76,231 +89,230 @@
                     <behaviors:KeepOneItemSelectedBehavior />
                 </i:Interaction.Behaviors>
                 <ListBoxItem Content="{x:Static properties:Resources.Orange}" />
-                <ListBoxItem Content="{x:Static properties:Resources.Blue}" />
-                <ListBoxItem Content="{x:Static properties:Resources.Purple}" />
+                <ListBoxItem Content="{x:Static properties:Resources.BlueAcc}" />
+                <ListBoxItem Content="{x:Static properties:Resources.PurpleAcc}" />
                 <ListBoxItem Content="{x:Static properties:Resources.Mixed}" />
                 <ListBoxItem Content="{x:Static properties:Resources.All}" />
             </ListBox>
-            <materialDesign:PackIcon x:Name="iconWarningUpdateAcc" Foreground="DarkOrange" Kind="AlertBox" Margin="15,0,0,0" VerticalAlignment="Center"/>
-            <TextBlock x:Name="txtWarningUpdateAcc"
-                Text=""
-                Foreground="DarkOrange"
-                FontWeight="Bold"
-                Margin="10"
-                />
         </StackPanel>
-        <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="1">
+        <materialDesign:PackIcon Grid.Row="1" x:Name="iconWarningUpdateAcc" Foreground="DarkOrange" Kind="AlertBox" Margin="10,0,0,0" VerticalAlignment="Center"/>
+        <TextBlock x:Name="txtWarningUpdateAcc"
+            Text=""
+            Foreground="DarkOrange"
+            FontWeight="Bold"
+            Margin="30,10,0,10"
+            Grid.Row="1"
+            
+        />
+        <Border BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="2" Grid.Row="2">
             <Grid x:Name="GridAccTab">
-                <ScrollViewer PanningMode="Both">
-                    <ItemsControl Focusable="True" ItemsSource="{Binding HeroesView}" Margin="20" x:Name="ItemsC">
-                        <ItemsControl.Style>
-                            <Style TargetType="ItemsControl">
-                                <Setter Property="ItemsPanel">
-                                    <Setter.Value>
-                                        <ItemsPanelTemplate>
-                                            <lib:AnimatingTilePanel lib:AnimatingTilePanel.ItemHeight="225" lib:AnimatingTilePanel.ItemWidth="310"/>
-                                        </ItemsPanelTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsPerformanceModeEnabled}" Value="True">
-                                        <Setter Property="ItemsPanel">
-                                            <Setter.Value>
-                                                <ItemsPanelTemplate>
-                                                    <local:StretchyWrapPanel VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.IsVirtualizing="True" DesiredItemHeight="{Binding DesiredItemHeight}" DesiredItemWidth="270"/>
-                                                </ItemsPanelTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ItemsControl.Style>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <materialDesign:Flipper Width="300" materialDesign:ElevationAssist.Elevation="Dp6" Style="{DynamicResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
-                                    <materialDesign:Flipper.FrontContent>
-                                        <Grid Width="300" Height="200" Margin="10" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="120" />
-                                                <ColumnDefinition Width="auto" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                                <RowDefinition />
-                                            </Grid.RowDefinitions>
-                                            <Image Margin="10,10,10,5" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" />
-                                            <Label Grid.Row="2" Content="{Binding DisplayName}" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+               <ScrollViewer PanningMode="Both">
+                   <ItemsControl Focusable="True" ItemsSource="{Binding HeroesView}" Margin="20" x:Name="ItemsC">
+                       <ItemsControl.Style>
+                           <Style TargetType="ItemsControl">
+                               <Setter Property="ItemsPanel">
+                                   <Setter.Value>
+                                       <ItemsPanelTemplate>
+                                           <lib:AnimatingTilePanel lib:AnimatingTilePanel.ItemHeight="225" lib:AnimatingTilePanel.ItemWidth="310"/>
+                                       </ItemsPanelTemplate>
+                                   </Setter.Value>
+                               </Setter>
+                               <Style.Triggers>
+                                   <DataTrigger Binding="{Binding IsPerformanceModeEnabled}" Value="True">
+                                       <Setter Property="ItemsPanel">
+                                           <Setter.Value>
+                                               <ItemsPanelTemplate>
+                                                   <local:StretchyWrapPanel VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.IsVirtualizing="True" DesiredItemHeight="{Binding DesiredItemHeight}" DesiredItemWidth="270"/>
+                                               </ItemsPanelTemplate>
+                                           </Setter.Value>
+                                       </Setter>
+                                   </DataTrigger>
+                               </Style.Triggers>
+                           </Style>
+                       </ItemsControl.Style>
+                       <ItemsControl.ItemTemplate>
+                           <DataTemplate>
+                               <!-- <materialDesign:Flipper Width="350" materialDesign:ElevationAssist.Elevation="Dp3" Style="{DynamicResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged"> -->
+                               <materialDesign:Flipper Width="300" materialDesign:ElevationAssist.Elevation="Dp3" Style="{DynamicResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
+                                   <materialDesign:Flipper.FrontContent>
+                                       <Grid Width="300" Height="250" Margin="10" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
+                                           <Grid.ColumnDefinitions>
+                                               <ColumnDefinition Width="120" />
+                                               <ColumnDefinition Width="auto" />
+                                               <ColumnDefinition Width="*" />
+                                           </Grid.ColumnDefinitions>
+                                           <Grid.RowDefinitions>
+                                               <RowDefinition />
+                                               <RowDefinition Height="auto"/>
+                                               <RowDefinition Height="*"/>
+                                           </Grid.RowDefinitions>
+                                           <Image Margin="10,35,10,5" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" />
+                                           <Label Grid.Row="2" Content="{Binding DisplayName}" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                             <materialDesign:PackIcon Grid.Column="1" Kind="Ring" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-                                            <materialDesign:Chip Grid.Column="2" Icon="{Binding Ring.AccessoryDisplayTier}" Content="{Binding Ring.AccessoryUpgradeDisplayLevel}" IconBackground="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}"/>
-
+                                           <materialDesign:Chip Grid.Column="2" Icon="{Binding Ring.AccessoryDisplayTier}" Content="{Binding Ring.AccessoryUpgradeDisplayLevel}" IconBackground="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}"/>
                                             <materialDesign:PackIcon Grid.Column="1" Grid.Row="1" Width="28" Height="28" Kind="Necklace" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" />
                                             <materialDesign:Chip Grid.Column="2" Grid.Row="1" Icon="{Binding Necklace.AccessoryDisplayTier}" Content="{Binding Necklace.AccessoryUpgradeDisplayLevel}" IconBackground="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}"/>
-
                                             <materialDesign:PackIcon Grid.Column="1" Grid.Row="2" Width="28" Height="28" Kind="GlobeLightOutline" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" />
-                                            <materialDesign:Chip Grid.Column="2" Grid.Row="2" Icon="{Binding Earrings.AccessoryDisplayTier}" Content="{Binding Earrings.AccessoryUpgradeDisplayLevel}" IconBackground="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}"/>
-
-                                            <Button Grid.ColumnSpan="3" Grid.RowSpan="3" Height="200" Command="{x:Static materialDesign:Flipper.FlipCommand}" VerticalAlignment="Stretch">
-                                                <Button.Style>
-                                                    <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="False">
-                                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible"/>
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </Button.Style>
-                                                <Grid>
-                                                    <Button IsEnabled="False" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Opacity="1" >
-                                                        <materialDesign:PackIcon Kind="TextBoxEditOutline" Height="25" Width="25" />
-                                                    </Button>
-                                                </Grid>
-                                            </Button>
-                                        </Grid>
-                                    </materialDesign:Flipper.FrontContent>
-                                    <materialDesign:Flipper.BackContent >
-                                        <Grid Width="300" Height="200" Margin="10" Background="{DynamicResource MaterialDesignCardBackground}">
+                                           <materialDesign:Chip Grid.Column="2" Grid.Row="2" Icon="{Binding Earrings.AccessoryDisplayTier}" Content="{Binding Earrings.AccessoryUpgradeDisplayLevel}" IconBackground="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}"/>
+                                            <Button Grid.ColumnSpan="3" Grid.RowSpan="3" Height="300" Command="{x:Static materialDesign:Flipper.FlipCommand}" VerticalAlignment="Center">
+                                               <Button.Style>
+                                                   <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                                                       <Style.Triggers>
+                                                           <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="False">
+                                                               <Setter Property="Visibility" Value="Collapsed"/>
+                                                           </DataTrigger>
+                                                           <DataTrigger Binding="{Binding IsMouseOver, ElementName=CardContainer}" Value="True">
+                                                               <Setter Property="Visibility" Value="Visible"/>
+                                                           </DataTrigger>
+                                                       </Style.Triggers>
+                                                   </Style>
+                                               </Button.Style>
+                                               <Grid>
+                                                   <Button IsEnabled="False" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" Opacity="1" >
+                                                       <materialDesign:PackIcon Kind="TextBoxEditOutline" Height="25" Width="25" />
+                                                   </Button>
+                                               </Grid>
+                                           </Button>
+                                       </Grid>
+                                   </materialDesign:Flipper.FrontContent>
+                                   <materialDesign:Flipper.BackContent >
+                                       <!--<Grid Width="320" Height="250" Margin="10" Background="{DynamicResource MaterialDesignCardBackground}"> (T5 Accessory Release) -->
+                                        <Grid Width="280" Height="250" Margin="10" Background="{DynamicResource MaterialDesignCardBackground}">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition />
-                                                <RowDefinition Height="auto"/>
-                                            </Grid.RowDefinitions>
-
+                                               <RowDefinition />
+                                               <RowDefinition Height="auto"/>
+                                           </Grid.RowDefinitions>
                                             <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" materialDesign:ColorZoneAssist.Mode="Standard" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left" VerticalAlignment="Center">
+                                               <TabItem>
+                                                   <TabItem.Header>
+                                                       <materialDesign:PackIcon Kind="Ring" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                   </TabItem.Header>
+                                                   <Grid>
+                                                       <Grid.RowDefinitions>
+                                                           <RowDefinition />
+                                                           <RowDefinition />
+                                                           <RowDefinition />
+                                                       </Grid.RowDefinitions>
+                                                       <ListBox Grid.Row="2" SelectedIndex="{Binding Ring.AccessoryTier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource AccessoryTierToIntConverter}}" Style="{StaticResource MaterialDesignToolToggleListBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,10,0" Visibility="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}">
+                                                           <i:Interaction.Behaviors>
+                                                               <behaviors:KeepOneItemSelectedBehavior />
+                                                           </i:Interaction.Behaviors>
+                                                           <ListBoxItem Content="T1" Width="45" HorizontalContentAlignment="Center"/>
+                                                           <ListBoxItem Content="T2" Width="45" HorizontalContentAlignment="Center"/>
+                                                           <ListBoxItem Content="T3" Width="45" HorizontalContentAlignment="Center"/>
+                                                           <ListBoxItem Content="T4" Width="45" HorizontalContentAlignment="Center"/>
+                                                           <!-- <ListBoxItem Content="T5" Width="45" HorizontalContentAlignment="Center" /> -->
+                                                       </ListBox>
+                                                       <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Value="{Binding Ring.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="50" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}" Margin="10,0,15,0"/>
+                                                       <ComboBox MinWidth="170" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
+                                                   ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
+                                                   SelectedItem="{Binding Ring.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                           <ComboBox.ItemTemplate>
+                                                               <DataTemplate>
+                                                                   <Grid>
+                                                                       <Grid.ColumnDefinitions>
+                                                                           <ColumnDefinition Width="20"/>
+                                                                           <ColumnDefinition/>
+                                                                       </Grid.ColumnDefinitions>
+                                                                       <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource AccessorySetToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
+                                                                       <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
+                                                                   </Grid>
+                                                               </DataTemplate>
+                                                           </ComboBox.ItemTemplate>
+                                                       </ComboBox>
+                                                   </Grid>
+                                               </TabItem>
                                                 <TabItem>
-                                                    <TabItem.Header>
-                                                        <materialDesign:PackIcon Kind="Ring" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                    </TabItem.Header>
-                                                    <Grid>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition />
-                                                            <RowDefinition />
-                                                            <RowDefinition />
-                                                        </Grid.RowDefinitions>
-                                                        <ListBox Grid.Row="2" SelectedIndex="{Binding Ring.AccessoryTier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource AccessoryTierToIntConverter}}" Style="{StaticResource MaterialDesignToolToggleListBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0" Visibility="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}">
-                                                            <i:Interaction.Behaviors>
-                                                                <behaviors:KeepOneItemSelectedBehavior />
-                                                            </i:Interaction.Behaviors>
-                                                            <ListBoxItem Content="T1" Width="68" HorizontalContentAlignment="Center"/>
-                                                            <ListBoxItem Content="T2" Width="68" HorizontalContentAlignment="Center"/>
-                                                            <ListBoxItem Content="T3" Width="68" HorizontalContentAlignment="Center"/>
-                                                            <ListBoxItem Content="T4" Width="68" HorizontalContentAlignment="Center"/>
-                                                        </ListBox>
-                                                        <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Value="{Binding Ring.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="50" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}" Margin="10,0,15,0"/>
-                                                        <ComboBox MinWidth="170" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
-                                                    ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
-                                                    SelectedItem="{Binding Ring.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                                            <ComboBox.ItemTemplate>
-                                                                <DataTemplate>
-                                                                    <Grid>
-                                                                        <Grid.ColumnDefinitions>
-                                                                            <ColumnDefinition Width="20"/>
-                                                                            <ColumnDefinition/>
-                                                                        </Grid.ColumnDefinitions>
-                                                                        <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource AccessorySetToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
-                                                                        <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
-                                                                    </Grid>
-                                                                </DataTemplate>
-                                                            </ComboBox.ItemTemplate>
-                                                        </ComboBox>
-                                                    </Grid>
-                                                </TabItem>
-
-                                                <TabItem>
-                                                    <TabItem.Header>
+                                                   <TabItem.Header>
                                                         <materialDesign:PackIcon Kind="Necklace" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                    </TabItem.Header>
-                                                    <Grid>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition />
-                                                            <RowDefinition />
-                                                            <RowDefinition />
-                                                        </Grid.RowDefinitions>
-                                                        <ListBox Grid.Row="2" SelectedIndex="{Binding Necklace.AccessoryTier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource AccessoryTierToIntConverter}}" Style="{StaticResource MaterialDesignToolToggleListBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0" Visibility="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}">
-                                                            <i:Interaction.Behaviors>
-                                                                <behaviors:KeepOneItemSelectedBehavior />
-                                                            </i:Interaction.Behaviors>
-                                                            <ListBoxItem Content="T1" Width="68" HorizontalContentAlignment="Center" />
-                                                            <ListBoxItem Content="T2" Width="68" HorizontalContentAlignment="Center" />
-                                                            <ListBoxItem Content="T3" Width="68" HorizontalContentAlignment="Center" />
-                                                            <ListBoxItem Content="T4" Width="68" HorizontalContentAlignment="Center" />
-                                                        </ListBox>
-                                                        <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Necklace.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
-                                                        <ComboBox Grid.Row="0" MinWidth="190" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
-                                                    ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
-                                                    SelectedItem="{Binding Necklace.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                                            <ComboBox.ItemTemplate>
-                                                                <DataTemplate>
-                                                                    <Grid>
-                                                                        <Grid.ColumnDefinitions>
-                                                                            <ColumnDefinition Width="20"/>
-                                                                            <ColumnDefinition/>
-                                                                        </Grid.ColumnDefinitions>
-                                                                        <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource AccessorySetToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
-                                                                        <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
-                                                                    </Grid>
-                                                                </DataTemplate>
-                                                            </ComboBox.ItemTemplate>
-                                                        </ComboBox>
-                                                    </Grid>
-                                                </TabItem>
-
+                                                   </TabItem.Header>
+                                                   <Grid>
+                                                       <Grid.RowDefinitions>
+                                                           <RowDefinition />
+                                                           <RowDefinition />
+                                                           <RowDefinition />
+                                                       </Grid.RowDefinitions>
+                                                       <ListBox Grid.Row="2" SelectedIndex="{Binding Necklace.AccessoryTier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource AccessoryTierToIntConverter}}" Style="{StaticResource MaterialDesignToolToggleListBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,10,0" Visibility="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}">
+                                                           <i:Interaction.Behaviors>
+                                                               <behaviors:KeepOneItemSelectedBehavior />
+                                                           </i:Interaction.Behaviors>
+                                                           <ListBoxItem Content="T1" Width="45" HorizontalContentAlignment="Center" />
+                                                           <ListBoxItem Content="T2" Width="45" HorizontalContentAlignment="Center" />
+                                                           <ListBoxItem Content="T3" Width="45" HorizontalContentAlignment="Center" />
+                                                           <ListBoxItem Content="T4" Width="45" HorizontalContentAlignment="Center" />
+                                                           <!-- <ListBoxItem Content="T5" Width="45" HorizontalContentAlignment="Center" /> -->
+                                                       </ListBox>
+                                                       <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Necklace.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
+                                                       <ComboBox Grid.Row="0" MinWidth="170" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
+                                                   ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
+                                                   SelectedItem="{Binding Necklace.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                           <ComboBox.ItemTemplate>
+                                                               <DataTemplate>
+                                                                   <Grid>
+                                                                       <Grid.ColumnDefinitions>
+                                                                           <ColumnDefinition Width="20"/>
+                                                                           <ColumnDefinition/>
+                                                                       </Grid.ColumnDefinitions>
+                                                                       <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource AccessorySetToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
+                                                                       <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
+                                                                   </Grid>
+                                                               </DataTemplate>
+                                                           </ComboBox.ItemTemplate>
+                                                       </ComboBox>
+                                                   </Grid>
+                                               </TabItem>
                                                 <TabItem>
-                                                    <TabItem.Header>
-                                                        <materialDesign:PackIcon Kind="GlobeLightOutline" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                    </TabItem.Header>
-                                                    <Grid>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition />
-                                                            <RowDefinition />
-                                                            <RowDefinition />
-                                                        </Grid.RowDefinitions>
-                                                        <ListBox Grid.Row="2" SelectedIndex="{Binding Earrings.AccessoryTier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource AccessoryTierToIntConverter}}" Style="{StaticResource MaterialDesignToolToggleListBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,0" Visibility="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}">
-                                                            <i:Interaction.Behaviors>
-                                                                <behaviors:KeepOneItemSelectedBehavior />
-                                                            </i:Interaction.Behaviors>
-                                                            <ListBoxItem Content="T1" Width="68" HorizontalContentAlignment="Center" />
-                                                            <ListBoxItem Content="T2" Width="68" HorizontalContentAlignment="Center" />
-                                                            <ListBoxItem Content="T3" Width="68" HorizontalContentAlignment="Center" />
-                                                            <ListBoxItem Content="T4" Width="68" HorizontalContentAlignment="Center" />
-                                                        </ListBox>
-                                                        <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Earrings.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
-                                                        <ComboBox Grid.Row="0" MinWidth="190" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
-                                              ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
-                                              SelectedItem="{Binding Earrings.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                                            <ComboBox.ItemTemplate>
-                                                                <DataTemplate>
-                                                                    <Grid>
-                                                                        <Grid.ColumnDefinitions>
-                                                                            <ColumnDefinition Width="20"/>
-                                                                            <ColumnDefinition/>
-                                                                        </Grid.ColumnDefinitions>
-                                                                        <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource AccessorySetToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
-                                                                        <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
-                                                                    </Grid>
-                                                                </DataTemplate>
-                                                            </ComboBox.ItemTemplate>
-                                                        </ComboBox>
-                                                    </Grid>
-                                                </TabItem>
-                                            </TabControl>
-
-                                            <Button Grid.Row="1" Margin="0,0" Command="{x:Static materialDesign:Flipper.FlipCommand}" Content="BACK" Style="{StaticResource MaterialDesignFlatButton}" />
-                                        </Grid>
-                                    </materialDesign:Flipper.BackContent>
-                                </materialDesign:Flipper>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
+                                                   <TabItem.Header>
+                                                       <materialDesign:PackIcon Kind="GlobeLightOutline" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                   </TabItem.Header>
+                                                   <Grid>
+                                                       <Grid.RowDefinitions>
+                                                           <RowDefinition />
+                                                           <RowDefinition />
+                                                           <RowDefinition />
+                                                       </Grid.RowDefinitions>
+                                                       <ListBox Grid.Row="2" SelectedIndex="{Binding Earrings.AccessoryTier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource AccessoryTierToIntConverter}}" Style="{StaticResource MaterialDesignToolToggleListBox}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,10,0" Visibility="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}">
+                                                           <i:Interaction.Behaviors>
+                                                               <behaviors:KeepOneItemSelectedBehavior />
+                                                           </i:Interaction.Behaviors>
+                                                           <ListBoxItem Content="T1" Width="45" HorizontalContentAlignment="Center" />
+                                                           <ListBoxItem Content="T2" Width="45" HorizontalContentAlignment="Center" />
+                                                           <ListBoxItem Content="T3" Width="45" HorizontalContentAlignment="Center" />
+                                                           <ListBoxItem Content="T4" Width="45" HorizontalContentAlignment="Center" />
+                                                           <!-- <ListBoxItem Content="T5" Width="45" HorizontalContentAlignment="Center" /> -->
+                                                       </ListBox>
+                                                       <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Earrings.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Earrings.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
+                                                       <ComboBox Grid.Row="0" MinWidth="170" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
+                                             ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
+                                             SelectedItem="{Binding Earrings.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                           <ComboBox.ItemTemplate>
+                                                               <DataTemplate>
+                                                                   <Grid>
+                                                                       <Grid.ColumnDefinitions>
+                                                                           <ColumnDefinition Width="20"/>
+                                                                           <ColumnDefinition/>
+                                                                       </Grid.ColumnDefinitions>
+                                                                       <Border HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource MaterialDesignBody}" Background="{Binding Converter={StaticResource AccessorySetToBrushConverter}}" CornerRadius="25" Width="15" Height="15" />
+                                                                       <TextBlock Grid.Column="1" Text="{Binding Converter={StaticResource EnumDescriptionConverter}}" Margin="5,0,0,0"/>
+                                                                   </Grid>
+                                                               </DataTemplate>
+                                                           </ComboBox.ItemTemplate>
+                                                       </ComboBox>
+                                                   </Grid>
+                                               </TabItem>
+                                           </TabControl>
+                                            <Button Grid.Row="1" Margin="0,0" Command="{x:Static materialDesign:Flipper.FlipCommand}" Content="{x:Static properties:Resources.Back}" Style="{StaticResource MaterialDesignFlatButton}" />
+                                       </Grid>
+                                   </materialDesign:Flipper.BackContent>
+                               </materialDesign:Flipper>
+                           </DataTemplate>
+                       </ItemsControl.ItemTemplate>
+                   </ItemsControl>
+               </ScrollViewer>
             </Grid>
         </Border>
 
-        <ToolBarTray Grid.Row="2">
+        <ToolBarTray Grid.Row="3">
             <ToolBar>
                 <Label Content="{Binding SetsDone}" ContentStringFormat="Sets done: {0}" Foreground="Green"/>
                 <Separator/>

@@ -15,12 +15,13 @@ namespace GCManagementApp.Enums
         ChaserTranscendence,
         [Description("LevelPetLevel")]
         LevelPetLevel,
-        [Description("Accessory")]
+        [Description("Accessories")]
         Accessory,
         [Description("ExclusiveWeapon")]
         ExclusiveWeapon,
         [Description("Artifact")]
         Artifact,
+        [Description("Descent")]
         Descent,
     }
 }

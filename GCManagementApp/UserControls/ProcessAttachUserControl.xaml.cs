@@ -40,7 +40,7 @@ namespace GCManagementApp.UserControls
         }
 
         public List<EmulatorLanguageEnum> Languages { get; } = Enum.GetValues<EmulatorLanguageEnum>().ToList();
-        public List<HeroMatchAlgorithmEnum> Algorithms { get; } = Enum.GetValues<HeroMatchAlgorithmEnum>().ToList();
+        public HeroMatchAlgorithmEnum[] Algorithms { get; } = (HeroMatchAlgorithmEnum[])Enum.GetValues(typeof(HeroMatchAlgorithmEnum));
 
         public EmulatorLanguageEnum SelectedLanguage
         {

@@ -38,6 +38,16 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _transcendenceLevel, value);
         }
 
+        private int _dupesForTrans;
+        public int DupesForTrans
+        {
+            get => _dupesForTrans;
+            set
+            {
+                SetProperty(ref _dupesForTrans, value);
+            }
+        }
+
         private int _dupesForSi;
         public int DupesForSi
         {
@@ -55,6 +65,16 @@ namespace GCManagementApp.Models
                 {
                     TraitsOpen = (int)min;
                 }
+            }
+        }
+
+        private int _dupesForDescent;
+        public int DupesForDescent
+        {
+            get => _dupesForDescent;
+            set
+            {
+                SetProperty(ref _dupesForDescent, value);
             }
         }
 

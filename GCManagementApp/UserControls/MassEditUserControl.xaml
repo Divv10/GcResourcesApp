@@ -196,7 +196,7 @@
                   <RowDefinition />
                </Grid.RowDefinitions>
 
-               <TextBlock Grid.Row="2" Text="Descent" VerticalAlignment="Center"/>
+               <TextBlock Grid.Row="2" Text="{x:Static properties:Resources.Descent}" VerticalAlignment="Center"/>
                <TextBox Grid.Column="2" Grid.Row="2" Text="{Binding DescentLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="40" HorizontalContentAlignment="Center" />
 
                <Slider Grid.Row="3" Grid.ColumnSpan="2" Maximum="{x:Static static:StaticValues.MaxDescentLevel}" Value="{Binding DescentLevel, UpdateSourceTrigger=PropertyChanged}" Foreground="{StaticResource DescentBrush}" IsTabStop="False"/>
@@ -536,7 +536,7 @@
 	  <ToolBarTray/>
 	  <ToolBarTray HorizontalAlignment="Left">
 			<ToolBar ClipToBounds="False" Style="{StaticResource MaterialDesignToolBar}">
-			   <ComboBox ItemsSource="{Binding EditTypes}" SelectedItem="{Binding SelectedEditType}" materialDesign:HintAssist.Hint="Edit type" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="20,0" HorizontalAlignment="Left" MinWidth="300">
+			   <ComboBox ItemsSource="{Binding EditTypes}" SelectedItem="{Binding SelectedEditType}" materialDesign:HintAssist.Hint="{x:Static properties:Resources.EditType}" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="20,0" HorizontalAlignment="Left" MinWidth="300">
 				  <ComboBox.ItemTemplate>
 					 <DataTemplate>
 						<TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}"/>
@@ -560,7 +560,7 @@
 				  <MenuItem Header="{x:Static properties:Resources.HeroLevel}" Command="{Binding SortByLevel}"/>
 				  <MenuItem Header="{x:Static properties:Resources.PetLevel}" Command="{Binding SortByPet}"/>
 				  <MenuItem Header="{x:Static properties:Resources.BP}" Command="{Binding SortByBp}"/>
-				  <MenuItem Header="Descent level" Command="{Binding SortByDescent}"/>
+				  <MenuItem Header="{x:Static properties:Resources.Descent}" Command="{Binding SortByDescent}"/>
 			   </MenuItem>
 			</Menu>
 			<StackPanel Orientation="Horizontal">

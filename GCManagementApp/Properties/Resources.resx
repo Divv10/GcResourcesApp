@@ -175,13 +175,13 @@
     <value>Any T3</value>
   </data>
   <data name="ArtifactLevel" xml:space="preserve">
-    <value>Artifact level</value>
+    <value>Artifact Level</value>
   </data>
   <data name="ArtifactTier" xml:space="preserve">
-    <value>Artifact tier</value>
+    <value>Artifact Tier</value>
   </data>
   <data name="ArtifactType" xml:space="preserve">
-    <value>Artifact type</value>
+    <value>Artifact Type</value>
   </data>
   <data name="ArtiT1" xml:space="preserve">
     <value>T1 (Rock of Time)</value>
@@ -326,7 +326,7 @@
     <comment>Space at the beggining</comment>
   </data>
   <data name="Cost" xml:space="preserve">
-    <value>Cost</value>
+    <value>Cost (Chaser will add one additional Duplicate to SI due to Growth Cubes)</value>
   </data>
   <data name="CostOfLevels" xml:space="preserve">
     <value>Cost of {0} levels:</value>
@@ -745,7 +745,7 @@
     <value>Ready</value>
   </data>
   <data name="ReadyIn" xml:space="preserve">
-    <value>Ready in</value>
+    <value>Ready in:</value>
   </data>
   <data name="Red" xml:space="preserve">
     <value>Red</value>
@@ -972,19 +972,19 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value>Weekly Aernas Grace Income:</value>
   </data>
   <data name="WeeklyBGGain" xml:space="preserve">
-    <value>Weekly Blue Gems gain</value>
+    <value>Weekly Blue Gems Gain</value>
   </data>
   <data name="WeeklyBoVGain" xml:space="preserve">
-    <value>Weekly Blessing of Valor gain</value>
+    <value>Weekly Blessing of Valor Gain</value>
   </data>
   <data name="WeeklyChaserCrystalsGain" xml:space="preserve">
-    <value>Weekly Chaser Crystals gain</value>
+    <value>Weekly Chaser Crystals Gain</value>
   </data>
   <data name="WeeklyColon" xml:space="preserve">
     <value>Weekly:</value>
   </data>
   <data name="WeeklyEnergyGain" xml:space="preserve">
-    <value>Weekly energy gain</value>
+    <value>Weekly Energy Gain</value>
   </data>
   <data name="WeeklyFromAnnihilation" xml:space="preserve">
     <value>Weekly from Annihilation</value>
@@ -993,10 +993,10 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value>Weekly missions and login</value>
   </data>
   <data name="WeeklySoulEssenceGain" xml:space="preserve">
-    <value>Weekly Soul Essence gain</value>
+    <value>Weekly Soul Essence Gain</value>
   </data>
   <data name="WeeklySoulImprintGain" xml:space="preserve">
-    <value>Weekly Soul Imprint gain</value>
+    <value>Weekly Soul Imprint Gain</value>
   </data>
   <data name="WeeksForFullSI" xml:space="preserve">
     <value>Weeks for a Full SI</value>
@@ -1076,7 +1076,7 @@ If You like using the app and find it usefull, please consider clicking on the K
     <value>CL25 (T) Cost</value>
   </data>
   <data name="OwnedHeroSpecificSICubes" xml:space="preserve">
-    <value />
+    <value>Owned Hero Specific SI Cubes</value>
   </data>
   <data name="BGFromArena" xml:space="preserve">
     <value>Blue Gems from Arena</value>
@@ -1170,5 +1170,344 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="BGFromVulc" xml:space="preserve">
     <value>Blue Gems from Vulcanus</value>
+  </data>
+  <data name="TeamRemoval" xml:space="preserve">
+    <value>Remove All Teams</value>
+  </data>
+  <data name="SaveToClipboard" xml:space="preserve">
+    <value>Save to clipboard</value>
+  </data>
+  <data name="AddTeam" xml:space="preserve">
+    <value>Add New Team</value>
+  </data>
+  <data name="ResolutionMonitor" xml:space="preserve">
+    <value>Different Resolution Monitors Compensation</value>
+  </data>
+  <data name="OpenLog" xml:space="preserve">
+    <value>Open Logs</value>
+  </data>
+  <data name="Brammashell" xml:space="preserve">
+    <value>Brammashell</value>
+  </data>
+  <data name="Callisto" xml:space="preserve">
+    <value>Callisto</value>
+  </data>
+  <data name="Decanee" xml:space="preserve">
+    <value>Decanee</value>
+  </data>
+  <data name="Deia" xml:space="preserve">
+    <value>Deia</value>
+  </data>
+  <data name="Myrielle" xml:space="preserve">
+    <value>Myrielle</value>
+  </data>
+  <data name="Ganymede" xml:space="preserve">
+    <value>Ganymede</value>
+  </data>
+  <data name="Nelia" xml:space="preserve">
+    <value>Nelia</value>
+  </data>
+  <data name="Nepteon" xml:space="preserve">
+    <value>Nepteon</value>
+  </data>
+  <data name="Ragnar" xml:space="preserve">
+    <value>Ragnar</value>
+  </data>
+  <data name="RecommendBuild" xml:space="preserve">
+    <value>Recommended Build</value>
+  </data>
+  <data name="Artifact" xml:space="preserve">
+    <value>Artifact</value>
+  </data>
+  <data name="AuthorBuild" xml:space="preserve">
+    <value>Author: mvvze. @ Discord</value>
+  </data>
+  <data name="LinkSource" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="EditType" xml:space="preserve">
+    <value>Edit Type</value>
+  </data>
+  <data name="AddStat" xml:space="preserve">
+    <value>+ Add Another Stat</value>
+  </data>
+  <data name="ModifyStat" xml:space="preserve">
+    <value>Modify Stats for Selected Heroes</value>
+  </data>
+  <data name="Pet" xml:space="preserve">
+    <value>Pet</value>
+  </data>
+  <data name="AccessoryEarrings" xml:space="preserve">
+    <value>Accessory - Earrings</value>
+  </data>
+  <data name="AccessoryNecklace" xml:space="preserve">
+    <value>Accessory - Necklace</value>
+  </data>
+  <data name="AccessoryRing" xml:space="preserve">
+    <value>Accessory - Ring</value>
+  </data>
+  <data name="WeeklyGEGain" xml:space="preserve">
+    <value>Weekly Growth Essence Gain</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="WeeklyECGain" xml:space="preserve">
+    <value>Weekly Evolution Cubes Gain</value>
+  </data>
+  <data name="ECFromEnergy" xml:space="preserve">
+    <value>EC from Energy</value>
+  </data>
+  <data name="ECFromLab" xml:space="preserve">
+    <value>EC from WL</value>
+  </data>
+  <data name="TotalECFromAdventure" xml:space="preserve">
+    <value>Total EC from Adventure</value>
+  </data>
+  <data name="WeeklyECFromLab" xml:space="preserve">
+    <value>Weekly EC from Lab</value>
+  </data>
+  <data name="WeeklyECFromExped" xml:space="preserve">
+    <value>Weekly EC from Expedition</value>
+  </data>
+  <data name="ECFromExped" xml:space="preserve">
+    <value>EC from Expeditions</value>
+  </data>
+  <data name="ECFromAdds" xml:space="preserve">
+    <value>Additional EC</value>
+  </data>
+  <data name="IncomeOtherSource" xml:space="preserve">
+    <value>Income from Other Sources</value>
+  </data>
+  <data name="BoVFromMerc" xml:space="preserve">
+    <value>BoV from Mercuria Shop</value>
+  </data>
+  <data name="BoVFromShop" xml:space="preserve">
+    <value>BoV from Shop</value>
+  </data>
+  <data name="BoVFromWeeklyPackage" xml:space="preserve">
+    <value>BoV from Weekly Package</value>
+  </data>
+  <data name="WeeklyAHGain" xml:space="preserve">
+    <value>Weekly Aernasis Hammer Gain</value>
+  </data>
+  <data name="AHTicketFromEC" xml:space="preserve">
+    <value>Tickets from EC</value>
+  </data>
+  <data name="AHCraftableTickets" xml:space="preserve">
+    <value>Craftable Tickets from AH</value>
+  </data>
+  <data name="AHRunsFromTickets" xml:space="preserve">
+    <value>Runs from Tickets</value>
+  </data>
+  <data name="AHCrystalObtained" xml:space="preserve">
+    <value>Crystals Obtained</value>
+  </data>
+  <data name="AHTotalCrystals" xml:space="preserve">
+    <value>Total Crystals Obtained</value>
+  </data>
+  <data name="AHPurpleCrystal" xml:space="preserve">
+    <value>Purples</value>
+  </data>
+  <data name="AHGreenCrystal" xml:space="preserve">
+    <value>Greens</value>
+  </data>
+  <data name="AHBlueCrystalObtained" xml:space="preserve">
+    <value>Blue Crystals Obtained</value>
+  </data>
+  <data name="AHPurpleCrystalObtained" xml:space="preserve">
+    <value>Purple Crystals Obtained</value>
+  </data>
+  <data name="WeeklyDCGain" xml:space="preserve">
+    <value>Weekly Divine Crystals Gain</value>
+  </data>
+  <data name="AHBlueCrystal" xml:space="preserve">
+    <value>Blues</value>
+  </data>
+  <data name="AHGreenCrystalObtained" xml:space="preserve">
+    <value>Green Crystals Obtained</value>
+  </data>
+  <data name="DupesDescent" xml:space="preserve">
+    <value>Dupes(Descent)</value>
+  </data>
+  <data name="DupesTranscendence" xml:space="preserve">
+    <value>Dupes(Transcendence)</value>
+  </data>
+  <data name="XD" xml:space="preserve">
+    <value> ({0} D)</value>
+  </data>
+  <data name="OwnedHeroSpecificDescentCubes" xml:space="preserve">
+    <value>Owned Hero Specific Divine Crystals</value>
+  </data>
+  <data name="RedAttribute" xml:space="preserve">
+    <value>Retribution Attribute</value>
+  </data>
+  <data name="BlueAttribute" xml:space="preserve">
+    <value>Balance Attribute</value>
+  </data>
+  <data name="GreenAttribute" xml:space="preserve">
+    <value>Life Attribute</value>
+  </data>
+  <data name="DragDropHeroes" xml:space="preserve">
+    <value>Available Heroes (Drag and Drop on Any Team):</value>
+  </data>
+  <data name="ContentLabel" xml:space="preserve">
+    <value>Content:</value>
+  </data>
+  <data name="CreditLabel" xml:space="preserve">
+    <value>Credits: </value>
+  </data>
+  <data name="AddTier" xml:space="preserve">
+    <value>Add New Tier</value>
+  </data>
+  <data name="TierRemoval" xml:space="preserve">
+    <value>Remove All Tiers</value>
+  </data>
+  <data name="CurrentMaxLevel" xml:space="preserve">
+    <value>Current Max level</value>
+  </data>
+  <data name="NeededLabel" xml:space="preserve">
+    <value>Needed:</value>
+  </data>
+  <data name="TotalBoVNeeded" xml:space="preserve">
+    <value>Total BoV Needed:</value>
+  </data>
+  <data name="TotalDaysNeeded" xml:space="preserve">
+    <value>Days Needed:</value>
+  </data>
+  <data name="FromOtherSource" xml:space="preserve">
+    <value>+ {0} From Other Sources</value>
+  </data>
+  <data name="WeeklyBoVOtherSource" xml:space="preserve">
+    <value>Weekly BoV From Other Sources</value>
+  </data>
+  <data name="VulcTeamBuilderLabel" xml:space="preserve">
+    <value>Vulcanus Team Builder</value>
+  </data>
+  <data name="TeamContentBuilder" xml:space="preserve">
+    <value>Any Content Team Builder</value>
+  </data>
+  <data name="TierListBuilder" xml:space="preserve">
+    <value>Tier List Builder</value>
+  </data>
+  <data name="PurpleAttribute" xml:space="preserve">
+    <value>Ruin Attribute</value>
+  </data>
+  <data name="YellowAttribute" xml:space="preserve">
+    <value>Cycle Attribute</value>
+  </data>
+  <data name="BlueAcc" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="PurpleAcc" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="Legendary" xml:space="preserve">
+    <value>Legendary</value>
+  </data>
+  <data name="Ancient" xml:space="preserve">
+    <value>Ancient</value>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>D</value>
+  </data>
+  <data name="EW" xml:space="preserve">
+    <value>EW</value>
+  </data>
+  <data name="RingTier" xml:space="preserve">
+    <value>Ring Tier</value>
+  </data>
+  <data name="RingLevel" xml:space="preserve">
+    <value>Ring Level</value>
+  </data>
+  <data name="RingType" xml:space="preserve">
+    <value>Ring Type</value>
+  </data>
+  <data name="NecklaceTier" xml:space="preserve">
+    <value>Necklace Tier</value>
+  </data>
+  <data name="NecklaceType" xml:space="preserve">
+    <value>Necklace Type</value>
+  </data>
+  <data name="NecklaceLevel" xml:space="preserve">
+    <value>Necklace Level</value>
+  </data>
+  <data name="EarringType" xml:space="preserve">
+    <value>Earring Type</value>
+  </data>
+  <data name="EarringTier" xml:space="preserve">
+    <value>Earring Tier</value>
+  </data>
+  <data name="EarringLevel" xml:space="preserve">
+    <value>Earring Level</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
+  <data name="Disconnect" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="EmuIP" xml:space="preserve">
+    <value>Emulator IP</value>
+  </data>
+  <data name="EmuPort" xml:space="preserve">
+    <value>Emulator Port</value>
+  </data>
+  <data name="TestClick" xml:space="preserve">
+    <value>Test Click</value>
+  </data>
+  <data name="BatchSwipeOnCommand" xml:space="preserve">
+    <value>Swipe with Batch Command</value>
+  </data>
+  <data name="TestSwipe" xml:space="preserve">
+    <value>Test Swipe</value>
+  </data>
+  <data name="TakeScreenshot" xml:space="preserve">
+    <value>Take Screenshot</value>
+  </data>
+  <data name="OpenScreenshotFolder" xml:space="preserve">
+    <value>Open Screenshots Folder</value>
+  </data>
+  <data name="GameLanguage" xml:space="preserve">
+    <value>Game Language</value>
+  </data>
+  <data name="HeroMatchAlgor" xml:space="preserve">
+    <value>Hero Matching Algorithm</value>
+  </data>
+  <data name="HeroImageFindThres" xml:space="preserve">
+    <value>Hero Image Find Threshold</value>
+  </data>
+  <data name="SwipeGap" xml:space="preserve">
+    <value>Swipe Gap (Distance)</value>
+  </data>
+  <data name="Percise" xml:space="preserve">
+    <value>Percise</value>
+  </data>
+  <data name="Quick" xml:space="preserve">
+    <value>Quick</value>
+  </data>
+  <data name="Sync" xml:space="preserve">
+    <value>Sync</value>
+  </data>
+  <data name="NumberHeroesScan" xml:space="preserve">
+    <value>Number of Heroes to Scan</value>
+  </data>
+  <data name="XHeroesFirstRow" xml:space="preserve">
+    <value>Thats {0} heroes from first row</value>
+  </data>
+  <data name="SaveScreenshotImproveTool" xml:space="preserve">
+    <value>Save screenshots to help improve the tool</value>
+  </data>
+  <data name="SelectedHeroDataScan" xml:space="preserve">
+    <value>Scan data for selected hero</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start Consecutive Scan</value>
   </data>
 </root>

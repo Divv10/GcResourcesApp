@@ -121,9 +121,9 @@ namespace GCManagementApp.UserControls
 
         public VisibilityFilterEnum SelectedVisibility => (VisibilityFilterEnum)SelectedVisibilityIndex;
 
-        public int SetsDone => Heroes.Where(h => h.TotalAccessoryUpgradeSum == 3 * 18).Count();
+        public int SetsDone => Heroes.Where(h => h.TotalAccessoryUpgradeSum == (3 * 36)).Count();
 
-        public int SetsWorking => Heroes.Where(h =>  h.TotalAccessoryUpgradeSum < 3 * 18 && h.TotalAccessoryUpgradeSum > 0).Count();
+        public int SetsWorking => Heroes.Where(h =>  h.TotalAccessoryUpgradeSum < (3 * 36) && h.TotalAccessoryUpgradeSum > 0).Count();
 
         public int SetsNotDone => Heroes.Where(h => h.TotalAccessoryUpgradeSum == 0).Count();
 

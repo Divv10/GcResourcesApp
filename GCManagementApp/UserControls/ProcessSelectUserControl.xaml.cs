@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using GCManagementApp.Helpers;
 using GCManagementApp.Models;
 using GCManagementApp.Operations;
 using GCManagementApp.Static;
@@ -31,7 +32,7 @@ namespace GCManagementApp.UserControls {
 
 		public bool IsConnected => EmulatorConnectionInfo.IsConnected;
 
-		public string ConnectText => IsConnected ? "Disconnect" : "Connect";
+		public string ConnectText => IsConnected ? ConnectDisconnectEnum.Disconnect.GetDescription() : ConnectDisconnectEnum.Connect.GetDescription();
 
 		public ProcessSelectUserControl() {
 			InitializeComponent();
@@ -102,5 +103,13 @@ namespace GCManagementApp.UserControls {
 			}
 
 		#endregion
+
+		private enum ConnectDisconnectEnum
+		{
+			[Description("Connect")]
+			Connect = 0,
+			[Description("Disconnect")]
+			Disconnect = 1,
 		}
 	}
+}

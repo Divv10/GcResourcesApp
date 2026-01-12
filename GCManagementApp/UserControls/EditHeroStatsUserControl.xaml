@@ -195,7 +195,7 @@
                   <RowDefinition />
                </Grid.RowDefinitions>
 
-               <TextBlock Text="Descent" VerticalAlignment="Center"/>
+               <TextBlock Text="{x:Static properties:Resources.Descent}" VerticalAlignment="Center"/>
                <TextBox Grid.Column="1" Text="{Binding SelectedHeroGrowth.DescentLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="40" HorizontalContentAlignment="Center" IsEnabled="{Binding SelectedHeroGrowth.IsOwned}" TabIndex="3"/>
 
                <Slider Grid.Row="1" Grid.ColumnSpan="2" Maximum="{x:Static static:StaticValues.MaxDescentLevel}" Value="{Binding SelectedHeroGrowth.DescentLevel, UpdateSourceTrigger=PropertyChanged}" Foreground="{StaticResource DescentBrush}" IsTabStop="False"/>

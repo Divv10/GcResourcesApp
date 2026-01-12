@@ -45,6 +45,8 @@ namespace GCManagementApp.Enums
         T56 = 56,
         [Description("T59")]
         T59 = 59,
+        [Description("T62")]
+        T62 = 62,
  
     }
 }

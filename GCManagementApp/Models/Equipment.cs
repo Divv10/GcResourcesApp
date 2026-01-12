@@ -1,5 +1,6 @@
 ﻿using GCManagementApp.Enums;
 using GCManagementApp.Helpers;
+using GCManagementApp.UserControls;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -127,7 +128,7 @@ namespace GCManagementApp.Models
 
         [XmlIgnore]
         [JsonIgnore]
-        public string EwSummary => IsExclusiveWeaponOwned ? $"+{ExclusiveWeaponUpgrade}" : "None";
+        public string EwSummary => IsExclusiveWeaponOwned ? $"+{ExclusiveWeaponUpgrade}" : GearSet.None.GetDescription();
 
         [XmlIgnore]
         [JsonIgnore]

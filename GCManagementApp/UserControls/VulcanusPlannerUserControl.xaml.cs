@@ -2,6 +2,7 @@
 using GCManagementApp.Static;
 using GongSolutions.Wpf.DragDrop;
 using Microsoft.Practices.Prism;
+using Org.BouncyCastle.Operators;
 using PixelLab.Common;
 using System;
 using System.Collections.Generic;

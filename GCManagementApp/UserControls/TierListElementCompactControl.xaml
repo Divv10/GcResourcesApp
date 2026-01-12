@@ -40,7 +40,7 @@
       <ItemsControl ItemsSource="{Binding Collection}" Grid.Column="2">
          <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-               <WrapPanel ItemHeight="150" ItemWidth="235"/>
+               <WrapPanel ItemHeight="150" ItemWidth="250"/>
             </ItemsPanelTemplate>
          </ItemsControl.ItemsPanel>
          <ItemsControl.ItemTemplate>

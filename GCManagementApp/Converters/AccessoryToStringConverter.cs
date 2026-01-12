@@ -1,4 +1,5 @@
 ﻿using GCManagementApp.Enums;
+using GCManagementApp.Helpers;
 using GCManagementApp.Models;
 using GCManagementApp.Static;
 using System;
@@ -12,7 +13,7 @@ namespace GCManagementApp.Converters
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values == null || values.Length != 3)
-                return "None";
+                return AccessorySetEnum.None.GetDescription();
 
             try
             {
@@ -20,7 +21,7 @@ namespace GCManagementApp.Converters
                 int level = (int)values[1];
                 AccessorySetEnum set = (AccessorySetEnum)values[2];
 
-                return set == AccessorySetEnum.None ? "None" : $"{tier} +{level}";
+                return set == AccessorySetEnum.None ? AccessorySetEnum.None.GetDescription() : $"{tier} +{level}";
             }
             catch 
             {

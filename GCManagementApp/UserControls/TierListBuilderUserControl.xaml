@@ -110,7 +110,7 @@
                </ItemsControl.ItemTemplate>
             </ItemsControl>
             <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal">
-               <Label Content="Credits: " FontSize="16" />
+               <Label Content="{x:Static properties:Resources.CreditLabel}" FontSize="16" />
                <TextBox Text="{Binding CreditsText}" FontSize="16" Width="150" />
             </StackPanel>
          </Grid>
@@ -155,10 +155,10 @@
       </ListBox>
 
       <StackPanel Grid.ColumnSpan="3" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
-         <Button Content="Save" Command="{Binding SaveCommand}" />
-         <Button Content="Add new tier" Command="{Binding AddNewTeamCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
-         <Button Content="Remove all tiers" Command="{Binding RemoveAllCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
-         <Button Content="Save to clipboard" Command="{Binding SaveToClipboardCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}" CommandParameter="{Binding ElementName=Tiers}"/>
+         <Button Content="{x:Static properties:Resources.Save}" Command="{Binding SaveCommand}" />
+         <Button Content="{x:Static properties:Resources.AddTier}" Command="{Binding AddNewTeamCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
+         <Button Content="{x:Static properties:Resources.TierRemoval}" Command="{Binding RemoveAllCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}"/>
+         <Button Content="{x:Static properties:Resources.SaveToClipboard}" Command="{Binding SaveToClipboardCommand}" Margin="10,0,0,0" Style="{StaticResource MaterialDesignOutlinedSecondaryButton}" CommandParameter="{Binding ElementName=Tiers}"/>
       </StackPanel>
    </Grid>
 </UserControl>

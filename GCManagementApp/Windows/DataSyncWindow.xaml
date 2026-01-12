@@ -24,13 +24,13 @@
          </Grid.RowDefinitions>
 
          <TabControl>
-            <TabItem Header="Connect">
+            <TabItem Header="{x:Static properties:Resources.Connect}">
                <uc:ProcessSelectUserControl />
             </TabItem>
-            <TabItem Header="Settings">
+            <TabItem Header="{x:Static properties:Resources.Settings}">
                <uc:ProcessAttachUserControl />
             </TabItem>
-            <TabItem Header="Sync">
+            <TabItem Header="{x:Static properties:Resources.Sync}">
                <uc:HeroDetectionUserControl />
             </TabItem>
          </TabControl>

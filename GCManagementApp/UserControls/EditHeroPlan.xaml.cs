@@ -134,6 +134,7 @@ namespace GCManagementApp.UserControls
                 HeroPlan.DesiredGrowth.ChaserLevel = SelectedHeroDetails.ChaserLevel;
                 HeroPlan.DesiredGrowth.SiLevel = SelectedHeroDetails.SiLevel;
                 HeroPlan.DesiredGrowth.TraitsOpen = SelectedHeroDetails.TraitsOpen;
+                HeroPlan.DesiredGrowth.DescentLevel = SelectedHeroDetails.DescentLevel;
 
                 HeroPlan.CurrentGrowth = new GrowthPlan()
                 {
@@ -141,7 +142,8 @@ namespace GCManagementApp.UserControls
                     TranscendenceLevel = SelectedHeroDetails.TranscendenceLevel,
                     TraitsOpen = SelectedHeroDetails.TraitsOpen,
                     IsCoreOpen = SelectedHeroDetails.IsCoreOpen,
-                    ChaserLevel = SelectedHeroDetails.ChaserLevel,                    
+                    ChaserLevel = SelectedHeroDetails.ChaserLevel,
+                    DescentLevel = SelectedHeroDetails.DescentLevel,
                 };
 
                 OnPropertyChanged(nameof(IsHeroSelected));
@@ -157,6 +159,16 @@ namespace GCManagementApp.UserControls
 
         public bool CoreEnabled => CoreVisible && SelectedHeroDetails != null && !(HeroPlan.DesiredGrowth.SiLevel == SelectedHeroDetails.SiLevel && SelectedHeroDetails.IsCoreOpen);
 
+        public int MaxDupesForTrans
+        {
+            get
+            {
+                if (SelectedHeroDetails?.TranscendenceLevel == null)
+                return 0;
+                return TranscendingCosts.CalculateCost(SelectedHeroDetails.TranscendenceLevel, HeroPlan.DesiredGrowth.TranscendenceLevel).DupesCost;
+            }
+        }
+
         public int MaxDupesForSi
         {
             get
@@ -164,6 +176,16 @@ namespace GCManagementApp.UserControls
                 if (SelectedHeroDetails?.SiLevel == null)
                     return 0;
                 return SiLevelingCosts.CalculateCost(SelectedHeroDetails.SiLevel, HeroPlan.DesiredGrowth.SiLevel).GrowthCubesCost / 250;
+            }
+        }
+
+        public int MaxDupesForDescent
+        {
+            get
+            {
+                if (SelectedHeroDetails?.DescentLevel == null)
+                    return 0;
+                return DescendingCosts.CalculateCost(SelectedHeroDetails.DescentLevel, HeroPlan.DesiredGrowth.DescentLevel).DivineCrystalsCost / 1500;
             }
         }
 
@@ -221,6 +243,18 @@ namespace GCManagementApp.UserControls
             }
 
             UpdateCoreBindings();
+        }
+
+        private void DescentDesired_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            OnPropertyChanged(nameof(MaxDupesForDescent));
+            HeroPlan.DesiredGrowth.DupesForDescent = Math.Min(HeroPlan.DesiredGrowth.DupesForDescent, MaxDupesForDescent);
+        }
+
+        private void TranscendenceDesired_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            OnPropertyChanged(nameof(MaxDupesForTrans));
+            HeroPlan.DesiredGrowth.DupesForTrans = Math.Min(HeroPlan.DesiredGrowth.DupesForTrans, MaxDupesForTrans);
         }
 
         private void UpdateCoreBindings()

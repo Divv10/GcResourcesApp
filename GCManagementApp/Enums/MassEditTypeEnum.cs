@@ -4,21 +4,27 @@ namespace GCManagementApp.Enums
 {
     public enum MassEditTypeEnum
     {
+        [Description("Transcendence")]
         Transcendence,
+        [Description("Level")]
         Level,
-        [Description("Soul Imprint")]
+        [Description("SoulImprint")]
         SoulImprint,
+        [Description("Chaser")]
         Chaser,
+        [Description("Descent")]
         Descent,
+        [Description("Pet")]
         Pet,
-        [Description("Accessory - Earrings")]
+        [Description("AccessoryEarrings")]
         AccessoryEarring,
-        [Description("Accessory - Necklace")]
+        [Description("AccessoryNecklace")]
         AccessoryNecklace,
-        [Description("Accessory - Ring")]
+        [Description("AccessoryRing")]
         AccessoryRing,
-        [Description("Exclusive weapon")]
+        [Description("ExclusiveWeapon")]
         ExclusiveWeapon,
+        [Description("Artifact")]
         Artifact,
     }
 }
