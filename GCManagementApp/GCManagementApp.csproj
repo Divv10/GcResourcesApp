@@ -7,9 +7,9 @@
 		<NoWarn>NU1701</NoWarn>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<ApplicationIcon>LireSR.ico</ApplicationIcon>
-		<Version>4.7.8.0</Version>
-		<AssemblyVersion>4.7.8.0</AssemblyVersion>
-		<FileVersion>4.7.8.0</FileVersion>
+		<Version>4.7.9.0</Version>
+		<AssemblyVersion>4.7.9.0</AssemblyVersion>
+		<FileVersion>4.7.9.0</FileVersion>
 		<ApplicationManifest>app1.manifest</ApplicationManifest>
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
@@ -497,6 +497,9 @@
 		<None Update="Images\HeroNames\Deia.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images\HeroNames\DeiaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images\HeroNames\Dio.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -531,6 +534,9 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images\HeroNames\Grandiel.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\GrandielT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images\HeroNames\Harpe.png">
@@ -582,6 +588,9 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images\HeroNames\Lime.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images\HeroNames\LimeS.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images\HeroNames\LimeT.png">
@@ -830,6 +839,9 @@
 		<None Update="Images_br\HeroNames\Deia.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images_br\HeroNames\DeiaT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_br\HeroNames\Dio.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -865,6 +877,9 @@
 		</None>
 		<None Update="Images_br\HeroNames\Grandiel.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_br\HeroNames\GrandielT.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_br\HeroNames\Harpe.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -916,6 +931,9 @@
 		</None>
 		<None Update="Images_br\HeroNames\Lime.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_br\HeroNames\LimeS.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_br\HeroNames\LimeT.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1223,6 +1241,9 @@
 		<None Update="Images_kr\HeroNames\IoT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images_kr\HeroNames\Iyoung.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_kr\HeroNames\Jin.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -1254,6 +1275,9 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\HeroNames\Lime.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\HeroNames\LimeS.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\HeroNames\LimeT.png">

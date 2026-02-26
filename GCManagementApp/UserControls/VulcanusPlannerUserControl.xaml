@@ -289,7 +289,7 @@
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="6" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="3" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
@@ -345,7 +345,7 @@
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="7" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="4" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
@@ -401,7 +401,7 @@
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="8" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="5" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
@@ -459,7 +459,7 @@
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="6" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
@@ -515,7 +515,7 @@
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="7" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>
@@ -571,7 +571,7 @@
                      </DataTemplate>
                   </ListBox.ItemTemplate>
                </ListBox>
-               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="9" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+               <Button Grid.Column="2" Command="{Binding ClearRankCommand}" CommandParameter="8" Style="{StaticResource MaterialDesignIconButton}" Height="32" Width="32" Margin="0,0" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Clear team" Visibility="{Binding IsPrintMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                   <materialDesign:PackIcon Kind="Close"/>
                </Button>
             </Grid>

@@ -1,5 +1,5 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
-	<Package Name="GrandChase Resource Management" Language="1033" Version="4.7.8.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
+	<Package Name="GrandChase Resource Management" Language="1033" Version="4.7.9.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
 
 
 		<Property Id="INSTALLFOLDER">
@@ -582,6 +582,15 @@
 			<Component Id="Myrielle.png">
 				<File Id="Myrielle.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Myrielle.png" />
 			</Component>
+			<Component Id="GrandielT.png">
+				<File Id="GrandielT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="GrandielT.png" />
+			</Component>
+			<Component Id="DeiaT.png">
+				<File Id="DeiaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="DeiaT.png" />
+			</Component>
+			<Component Id="LimeS.png">
+				<File Id="LimeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LimeS.png" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -857,6 +866,12 @@
 			<Component Id="DeiaT.png_kr">
 				<File Id="DeiaT.png_kr" Name="DeiaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
+			<Component Id="LimeS.png_kr">
+				<File Id="LimeS.png_kr" Name="LimeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+			</Component>
+			<Component Id="Iyoung.png_kr">
+				<File Id="Iyoung.png_kr" Name="Iyoung.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -1125,6 +1140,15 @@
 			</Component>
 			<Component Id="Myrielle.png_br">
 				<File Id="Myrielle.png_br" Name="Myrielle.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
+			</Component>
+			<Component Id="GrandielT.png_br">
+				<File Id="GrandielT.png_br" Name="GrandielT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
+			</Component>
+			<Component Id="DeiaT.png_br">
+				<File Id="DeiaT.png_br" Name="DeiaT.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
+			</Component>
+			<Component Id="LimeS.png_br">
+				<File Id="LimeS.png_br" Name="LimeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
 			</Component>
 		</ComponentGroup>
 	</Fragment>

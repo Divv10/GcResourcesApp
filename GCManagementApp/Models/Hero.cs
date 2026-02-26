@@ -154,6 +154,8 @@ namespace GCManagementApp.Models
             new Hero(HeroEnum.Myrielle, HeroType.SR, HeroClass.Ranger, HeroAttribute.Red),
             new Hero(HeroEnum.Grandiel, HeroType.T, HeroClass.Mage, HeroAttribute.Green),
             new Hero(HeroEnum.Deia, HeroType.T, HeroClass.Healer, HeroAttribute.Green),
+            new Hero(HeroEnum.Lime, HeroType.S, HeroClass.Mage, HeroAttribute.Red),
+            new Hero(HeroEnum.Iyoung, HeroType.SR, HeroClass.Ranger, HeroAttribute.Green)
         };
 
         public string DisplayName =>  $"{Properties.Resources.ResourceManager.GetObject(HeroName.GetDescription()) ?? HeroName}{(HeroType == Enums.HeroType.T ? "(T)" : HeroType == HeroType.S ? "(S)" : "")}";

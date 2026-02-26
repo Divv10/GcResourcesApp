@@ -108,6 +108,8 @@ namespace GCManagementApp
             // Check on start, and the hookup on event
             CheckProfileForTransUpgrade(null, null);
             ProfileManager.ProfileChanged += CheckProfileForTransUpgrade;
+            CheckProfileForVulcanusTeamsUpdate(null, null);
+            ProfileManager.ProfileChanged += CheckProfileForVulcanusTeamsUpdate;
 
             InitializeComponent();
 
@@ -191,6 +193,24 @@ namespace GCManagementApp
                 _accessoryViewLoaded = true;
             }
         }
+
+        private void CheckProfileForVulcanusTeamsUpdate(object sender, EventArgs e)
+        {
+            if (ProfileGrowth.Profile.VulcanusTeams.Count > 9)
+            {
+                VulcanusUpdateCheck();
+                ProfileGrowth.SaveToFile();
+            }
+        }
+
+        private void VulcanusUpdateCheck()
+        {
+            var messageWindow = MessageBox.Show("Due to the recent update of Vulcanus revamp, the app will remove all vulcanus teams from your profile.", "Update Adjustment", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            ProfileGrowth.Profile.VulcanusTeams.Clear();
+            ProfileGrowth.InitializeAfterDownload();
+        }
+
         private void CheckProfileForTransUpgrade(object sender, EventArgs e)
         {
             if (ProfileGrowth.Heroes.Any(x => x.TranscendenceLevel > 6))
@@ -202,9 +222,9 @@ namespace GCManagementApp
 
         private void TransUpdateCheck()
         {
-            var result = MessageBox.Show("Due to the recent update of Transcendence Levels being changed. Would you like for the app to auto-adjust for you?", "Update Adjustment", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            var result = MessageBox.Show("Due to the recent update of Transcendence Levels being changed, the app will auto-adjust the transcendence levels for you.", "Update Adjustment", MessageBoxButton.OK, MessageBoxImage.Warning);
 
-            if (result == MessageBoxResult.Yes)
+            if (result == MessageBoxResult.OK)
             {
                 ProfileGrowth.Heroes.ForEach(h =>
                 {

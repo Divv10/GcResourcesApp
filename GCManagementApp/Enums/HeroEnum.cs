@@ -56,6 +56,7 @@ namespace GCManagementApp.Models
         Vice,
         Nepteon,
         Metatron,
-        Myrielle
+        Myrielle,
+        Iyoung
     }
 }
