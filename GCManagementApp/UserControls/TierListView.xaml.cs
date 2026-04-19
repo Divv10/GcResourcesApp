@@ -42,7 +42,7 @@ namespace GCManagementApp.UserControls
 
         public string[] TransLabels { get; set; } = new string[] { "T6", "T5", "T4", "T3", "T2", "T1", "T0", Properties.Resources.NotOwned };
 
-        public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT4, Properties.Resources.AnyT4, Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT2, Properties.Resources.AnyT2, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
+        public string[] AccessoryLabels { get; set; } = new string[] { Properties.Resources.AllT5, Properties.Resources.AnyT5, Properties.Resources.AllT4, Properties.Resources.AnyT4, Properties.Resources.AllT3, Properties.Resources.AnyT3, Properties.Resources.AllT1, Properties.Resources.AnyT1, Properties.Resources.NotOwned };
 
         public string[] EWLabels { get; set; } = new string[] { "+10 - +9" ,"+8", "+5 - +7", "+4", "+0 - +3", Properties.Resources.NotOwned};
 
@@ -154,17 +154,17 @@ namespace GCManagementApp.UserControls
 
             DCollections = new ObservableCollection<HeroGrowth>[] { d10, d8p, d5p, d3p, d0p, d0, dNO};
 
+            var allT5 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T5)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
+            var anyT5 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T5)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var allT4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T4)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var anyT4 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T4)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var allT3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T3)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var anyT3 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T3)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
-            var allT2 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T2)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
-            var anyT2 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T2)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var allT1 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AllSameTier(x, AccessoryTierEnum.T1)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var anyT1 = new ObservableCollection<HeroGrowth>(heroes.Where(x => AnyTier(x, AccessoryTierEnum.T1)).OrderByDescending(x => x.TotalAccessoryUpgradeSum).ThenBy(x => x.DisplayName));
             var rest = new ObservableCollection<HeroGrowth>(heroes.Where(x => !x.IsOwned).OrderBy(x => x.DisplayName));
 
-            AccessoryCollections = new ObservableCollection<HeroGrowth>[] { allT4, anyT4, allT3, anyT3, allT2, anyT2, allT1, anyT1, rest };
+            AccessoryCollections = new ObservableCollection<HeroGrowth>[] { allT5, anyT5, allT4, anyT4, allT3, anyT3, allT1, anyT1, rest };
 
             var ew8p = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.Equipment?.IsExclusiveWeaponOwned == true && x.Equipment?.ExclusiveWeaponUpgrade > 8).OrderByDescending(x => x.Equipment.ExclusiveWeaponUpgrade).ThenBy(x => x.DisplayName));
             var ew8 = new ObservableCollection<HeroGrowth>(heroes.Where(x => x.Equipment?.IsExclusiveWeaponOwned == true && x.Equipment?.ExclusiveWeaponUpgrade == 8).OrderBy(x => x.DisplayName));

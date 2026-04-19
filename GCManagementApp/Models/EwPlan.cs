@@ -97,6 +97,24 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _ewMatsNeeded, value);
         }
 
+        private double _daysForEWOrb;
+        [XmlIgnore]
+        [JsonIgnore]
+        public double DaysForEWOrb
+        {
+            get => _daysForEWOrb;
+            set => SetProperty(ref _daysForEWOrb, value);
+        }
+
+        private int _ewOrbMatsNeeded;
+        [XmlIgnore]
+        [JsonIgnore]
+        public int EwOrbMatsNeeded
+        {
+            get => _ewOrbMatsNeeded;
+            set => SetProperty(ref _ewOrbMatsNeeded, value);
+        }
+
         [JsonIgnore]
         public string DisplayName => $"{Properties.Resources.ResourceManager.GetObject(Hero.HeroName.GetDescription()) ?? Hero.HeroName}{(Hero.HeroType == Enums.HeroType.T ? "(T)" : Hero.HeroType == HeroType.S ? "(S)" : "")}";
 

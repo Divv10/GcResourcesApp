@@ -48,6 +48,12 @@
             <uc:MeterialsItemInput Grid.Row="3" Grid.Column="2" Title="{x:Static properties:Resources.Tank}" ImageSource="/GCManagementApp;component/Resources/Materials/GrowthEssenceTank.png" ItemCount="{Binding Inventory.TankGE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <uc:MeterialsItemInput Grid.Row="3" Grid.Column="3" Title="{x:Static properties:Resources.Healer}" ImageSource="/GCManagementApp;component/Resources/Materials/GrowthEssenceHealer.png" ItemCount="{Binding Inventory.HealerGE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <uc:MeterialsItemInput Grid.Row="3" Grid.Column="4" Title="{x:Static properties:Resources.Mage}" ImageSource="/GCManagementApp;component/Resources/Materials/GrowthEssenceMage.png" ItemCount="{Binding Inventory.MageGE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-      </Grid>
+            <Label Grid.Row="4" Grid.ColumnSpan="5" Margin="10,10" Style="{StaticResource MaterialDesignHeadline6Label}" Content="{x:Static properties:Resources.AernasThreeGrace}" />
+            <uc:MeterialsItemInput Grid.Row="5" Grid.Column="0" Title="{x:Static properties:Resources.Assault}" ImageSource="/GCManagementApp;component/Resources/Materials/EWOrbAssault.png" ItemCount="{Binding Inventory.AssaultEWOrb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <uc:MeterialsItemInput Grid.Row="5" Grid.Column="1" Title="{x:Static properties:Resources.Ranger}" ImageSource="/GCManagementApp;component/Resources/Materials/EWOrbRanger.png" ItemCount="{Binding Inventory.RangerEWOrb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <uc:MeterialsItemInput Grid.Row="5" Grid.Column="2" Title="{x:Static properties:Resources.Tank}" ImageSource="/GCManagementApp;component/Resources/Materials/EWOrbTank.png" ItemCount="{Binding Inventory.TankEWOrb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <uc:MeterialsItemInput Grid.Row="5" Grid.Column="3" Title="{x:Static properties:Resources.Healer}" ImageSource="/GCManagementApp;component/Resources/Materials/EWOrbHealer.png" ItemCount="{Binding Inventory.HealerEWOrb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <uc:MeterialsItemInput Grid.Row="5" Grid.Column="4" Title="{x:Static properties:Resources.Mage}" ImageSource="/GCManagementApp;component/Resources/Materials/EWOrbMage.png" ItemCount="{Binding Inventory.MageEWOrb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
     </ScrollViewer>
 </UserControl>

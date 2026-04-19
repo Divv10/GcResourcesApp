@@ -134,14 +134,12 @@
                         </TabItem.Header>
                         <uc:PlanningView />
                     </TabItem>
-                    <!--  // Removed due to ongoing bugs
                     <TabItem >
                         <TabItem.Header>
                             <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Height="60"/>
                         </TabItem.Header>
                         <uc:ExclusiveWeaponPlanningView />
                     </TabItem>
-                    -->
                 </TabControl>
             </TabItem>
             <TabItem Header="{x:Static properties:Resources.TeamBuilder}">

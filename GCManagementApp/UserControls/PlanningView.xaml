@@ -168,7 +168,7 @@
                            <TextBlock Grid.Row="4" Grid.Column="5" Text="{Binding DesiredGrowth.DescentLevel, StringFormat='D{0}'}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
 
                            <!-- -->
-                           <TextBlock Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Text="{x:Static properties:Resources.Cost}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                           <TextBlock Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Text="{x:Static properties:Resources.CostGCPlan}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            <materialDesign:PackIcon Grid.Row="0" Grid.Column="7" Grid.RowSpan="2" Foreground="DarkOrange" Kind="AlertBox" Margin="-180,0,0,10" VerticalAlignment="Center"/>
                            <TextBlock Text="Growth Cubes will count additional SI Dupe from Chaser" Foreground="DarkOrange" FontWeight="Bold" Margin="-200,25,0,10" Grid.Row="0" Grid.Column="8" Grid.RowSpan="2" />
                            <Image Grid.Row="1" Grid.Column="7" Source="/GCManagementApp;component/Resources/Materials/GrowthCube.png" Margin="3"/>

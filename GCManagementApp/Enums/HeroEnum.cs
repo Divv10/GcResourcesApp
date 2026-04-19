@@ -57,6 +57,7 @@ namespace GCManagementApp.Models
         Nepteon,
         Metatron,
         Myrielle,
-        Iyoung
+        Iyoung,
+        Ayla
     }
 }

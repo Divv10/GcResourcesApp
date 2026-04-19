@@ -7,9 +7,9 @@
 		<NoWarn>NU1701</NoWarn>
 		<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
 		<ApplicationIcon>LireSR.ico</ApplicationIcon>
-		<Version>4.7.9.0</Version>
-		<AssemblyVersion>4.7.9.0</AssemblyVersion>
-		<FileVersion>4.7.9.0</FileVersion>
+		<Version>4.8.1.0</Version>
+		<AssemblyVersion>4.8.1.0</AssemblyVersion>
+		<FileVersion>4.8.1.0</FileVersion>
 		<ApplicationManifest>app1.manifest</ApplicationManifest>
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
@@ -84,19 +84,8 @@
 		<None Remove="Resources\LevelTraits\TrueDamageIncrease.png" />
 		<None Remove="Resources\Materials\AernasisHammer.png" />
 		<None Remove="Resources\Materials\anni_coin.png" />
-		<None Remove="Resources\Materials\AwakeningCubeAssault.png" />
-		<None Remove="Resources\Materials\AwakeningCubeHealer.png" />
-		<None Remove="Resources\Materials\AwakeningCubeMage.png" />
-		<None Remove="Resources\Materials\AwakeningCubeRanger.png" />
-		<None Remove="Resources\Materials\AwakeningCubeTank.png" />
 		<None Remove="Resources\Materials\BlessingOfValor.png" />
 		<None Remove="Resources\Materials\BlueGem.png" />
-		<None Remove="Resources\Materials\ChaserCrystalAssault.png" />
-		<None Remove="Resources\Materials\ChaserCrystalHealer.png" />
-		<None Remove="Resources\Materials\ChaserCrystalMage.png" />
-		<None Remove="Resources\Materials\ChaserCrystalRanger.png" />
-		<None Remove="Resources\Materials\ChaserCrystalTank.png" />
-		<None Remove="Resources\Materials\ChaserCube.png" />
 		<None Remove="Resources\Materials\DivineCrystal.png" />
 		<None Remove="Resources\Materials\energy.png" />
 		<None Remove="Resources\Materials\EvoCube.png" />
@@ -109,13 +98,12 @@
 		<None Remove="Resources\Materials\GrowthEssenceMage.png" />
 		<None Remove="Resources\Materials\GrowthEssenceRanger.png" />
 		<None Remove="Resources\Materials\GrowthEssenceTank.png" />
+		<None Remove="Resources\Materials\EWOrbAssault.png" />
+		<None Remove="Resources\Materials\EWOrbHealer.png" />
+		<None Remove="Resources\Materials\EWOrbMage.png" />
+		<None Remove="Resources\Materials\EWOrbRanger.png" />
+		<None Remove="Resources\Materials\EWOrbTank.png" />
 		<None Remove="Resources\Materials\LabTicket.png" />
-		<None Remove="Resources\Materials\SoulEssenceAssault.png" />
-		<None Remove="Resources\Materials\SoulEssenceHealer.png" />
-		<None Remove="Resources\Materials\SoulEssenceMage.png" />
-		<None Remove="Resources\Materials\SoulEssenceRanger.png" />
-		<None Remove="Resources\Materials\SoulEssenceTank.png" />
-		<None Remove="Resources\Materials\SoulImprintCube.png" />
 		<None Remove="Resources\SiTemplates\SiBodyCoreTemplate.png" />
 		<None Remove="Resources\SiTemplates\SiMemCoreTemplate.png" />
 		<None Remove="Resources\SiTemplates\SiSoulCoreTemplate.png" />
@@ -200,6 +188,11 @@
 		<Resource Include="Resources\Materials\GrowthEssenceMage.png" />
 		<Resource Include="Resources\Materials\GrowthEssenceRanger.png" />
 		<Resource Include="Resources\Materials\GrowthEssenceTank.png" />
+		<Resource Include="Resources\Materials\EWOrbAssault.png" />
+		<Resource Include="Resources\Materials\EWOrbHealer.png" />
+		<Resource Include="Resources\Materials\EWOrbMage.png" />
+		<Resource Include="Resources\Materials\EWOrbRanger.png" />
+		<Resource Include="Resources\Materials\EWOrbTank.png" />
 		<Resource Include="Resources\Materials\LabTicket.png" />
 	</ItemGroup>
 	<ItemGroup>
@@ -557,6 +550,9 @@
 		<None Update="Images\HeroNames\IoT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images\HeroNames\Iyoung.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images\HeroNames\Jin.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -899,6 +895,9 @@
 		<None Update="Images_br\HeroNames\IoT.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images_br\HeroNames\Iyoung.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_br\HeroNames\Jin.png">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -1100,6 +1099,9 @@
 		<None Update="Images_kr\acc_t4.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images_kr\acc_t5.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_kr\acc_type1.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -1107,6 +1109,9 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\arti_cursed.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_cursed_t6.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\arti_frozen.png">
@@ -1125,6 +1130,9 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\arti_t5.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Images_kr\arti_t6.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 		<None Update="Images_kr\HeroNames\Ai.png">
@@ -1154,6 +1162,9 @@
 		<None Update="Images_kr\HeroNames\AsinT.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+		<None Update="Images_kr\HeroNames\Ayla.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_kr\HeroNames\Bastet.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
@@ -1169,9 +1180,9 @@
 		<None Update="Images_kr\HeroNames\Cindy.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-    <None Update="Images_kr\HeroNames\CindyT.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+		<None Update="Images_kr\HeroNames\CindyT.png">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="Images_kr\HeroNames\Decanee.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>

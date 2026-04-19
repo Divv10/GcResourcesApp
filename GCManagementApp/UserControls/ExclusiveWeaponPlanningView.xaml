@@ -16,6 +16,7 @@
       <converters:DaysLeftToForegroundConverter x:Key="DaysLeftToForegroundConverter"/>
       <converters:DaysLeftToStringConverter x:Key="DaysLeftToStringConverter"/>
       <converters:GoldToShortNumberConverter x:Key="GoldToShortNumberConverter"/>
+      <converters:ClassToEwOrbImageConverter x:Key="ClassToEwOrbImageConverter" />
    </UserControl.Resources>
    <materialDesign:DialogHost DialogTheme="Inherit" Identifier="EwPlanningDialog">
       <Grid>
@@ -34,11 +35,38 @@
                   <TextBlock Margin="10,5" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.InventoryColon}" />
                   <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Height="35"/>
                   <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.EwMats}" />
-                  
+                  <Image Source="/GCManagementApp;component/Resources/Materials/EWOrbAssault.png" Height="45" Margin="10,0,0,0"/>
+                  <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <Grid Width="120" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="auto" />
+                              <RowDefinition Height="auto" />
+                              <RowDefinition Height="auto" />
+                              <RowDefinition Height="auto" />
+                              <RowDefinition Height="auto" />
+                           </Grid.RowDefinitions>
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="auto"/>
+                              <ColumnDefinition Width="*"/>
+                           </Grid.ColumnDefinitions>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/EWOrbAssault.png" Height="45" />
+                           <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.AssaultEWOrb}" />
+                           <Image Grid.Row="1" Source="/GCManagementApp;component/Resources/Materials/EWOrbRanger.png" Height="45" />
+                           <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.RangerEWOrb}" />
+                           <Image Grid.Row="2" Source="/GCManagementApp;component/Resources/Materials/EWOrbTank.png" Height="45" />
+                           <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.TankEWOrb}" />
+                           <Image Grid.Row="3" Source="/GCManagementApp;component/Resources/Materials/EWOrbHealer.png" Height="45" />
+                           <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.HealerEWOrb}" />
+                           <Image Grid.Row="4" Source="/GCManagementApp;component/Resources/Materials/EWOrbMage.png" Height="45" />
+                           <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Inventory.MageEWOrb}" />
+                        </Grid>
+                     </materialDesign:PopupBox>
+                  </StackPanel>                   
                   <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                      <TextBlock Margin="30,5,10,5" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.WeeklyColon}"/>
                      <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Height="35" Margin="0,0,10,0"/>
-                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding WeeklyEwMatsIncome}" />
+                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding EWOrbGain}" />
                      <materialDesign:PopupBox StaysOpen="True">
                         <Grid Width="300" Margin="8,8,8,8">
                            <Grid.RowDefinitions>
@@ -52,6 +80,23 @@
                            <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Height="35" Margin="0,5"/>
                            <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.WeeklyAernasGraceIncome}" />
                            <TextBox Grid.Column="2" Height="30" VerticalContentAlignment="Center" Margin="10,0,0,0" Text="{Binding WeeklyEwMatsIncome, UpdateSourceTrigger=PropertyChanged}"/>
+                        </Grid>
+                     </materialDesign:PopupBox>
+                     <Image Source="/GCManagementApp;component/Resources/Materials/EWOrbAssault.png" Height="40" Margin="5,0,10,0" />
+                     <TextBlock Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding EWOrbClassGain}" />
+                     <materialDesign:PopupBox StaysOpen="True">
+                        <Grid Width="350" Margin="8,8,8,8">
+                           <Grid.RowDefinitions>
+                              <RowDefinition Height="auto" />
+                           </Grid.RowDefinitions>
+                           <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="auto"/>
+                              <ColumnDefinition Width="auto"/>
+                              <ColumnDefinition Width="*"/>
+                           </Grid.ColumnDefinitions>
+                           <Image Source="/GCManagementApp;component/Resources/Materials/EWOrbAssault.png" Height="35" Margin="0,5"/>
+                           <TextBlock Grid.Column="1" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{x:Static properties:Resources.WeeklyAernasGraceClassIncome}" />
+                           <TextBox Grid.Column="2" Height="30" VerticalContentAlignment="Center" Margin="10,0,0,0" Text="{Binding WeeklyEwMatsOrbIncome, UpdateSourceTrigger=PropertyChanged}"/>
                         </Grid>
                      </materialDesign:PopupBox>
                   </StackPanel>
@@ -86,7 +131,7 @@
                               <ColumnDefinition Width="30"/>
                               <ColumnDefinition Width="110"/>
                               <ColumnDefinition Width="*"/>
-                              <ColumnDefinition Width="50"/>
+                              <ColumnDefinition Width="70"/>
                               <ColumnDefinition Width="50"/>
                               <ColumnDefinition Width="150"/>
                               <ColumnDefinition Width="*"/>
@@ -116,10 +161,12 @@
                            <!-- -->
                            <TextBlock Grid.Row="0" Grid.Column="7" Grid.ColumnSpan="4" Text="{x:Static properties:Resources.Cost}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
 
-                           <StackPanel Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                              <Image Source="/GCManagementApp;component/Resources/Materials/EwMats.png"/>
-                              <TextBlock Text="{Binding WeaponCost.EwMatsCost}" Margin="10,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
-                           </StackPanel>
+                           <Image Grid.Row="2" Grid.Column="8" Source="/GCManagementApp;component/Resources/Materials/EwMats.png" Margin="10,0,0,0"/>
+                           <TextBlock Grid.Row="2" Grid.Column="9" Text="{Binding WeaponCost.EwMatsCost}" Margin="-30,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+
+                           <Image Grid.Row="3" Grid.Column="8" Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToEwOrbImageConverter}}" Height="45" Margin="10,0,0,0"/>
+                           <TextBlock Grid.Row="3" Grid.Column="9" Text="{Binding WeaponCost.EwOrbCost}" Margin="-30,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
+                           
                            <!-- -->
                            <TextBlock Grid.Row="0" Grid.Column="12" Text="{x:Static properties:Resources.ReadyIn}" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" />
                            
@@ -139,7 +186,22 @@
                                  </TextBlock.Style>
                               </TextBlock>
                            </StackPanel>
-
+                           <StackPanel Grid.Row="3" Grid.Column="12" HorizontalAlignment="Left" Orientation="Horizontal">
+                              <Image Source="{Binding Hero.HeroClass, Converter={StaticResource ClassToEwOrbImageConverter}}" />
+                              <TextBlock x:Name="DaysForEwOrbMats" Text="{Binding DaysForEWOrb, Converter={StaticResource DaysLeftToStringConverter}}" Margin="10,5,5,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody1TextBlockForeground}" Foreground="{Binding DaysForEWOrb, Converter={StaticResource DaysLeftToForegroundConverter}}" />
+                              <TextBlock Text="{Binding EwOrbMatsNeeded, StringFormat='({0})'}" Margin="0,5,0,0" VerticalAlignment="Center" Foreground="{Binding DaysForEWOrb, Converter={StaticResource DaysLeftToForegroundConverter}}">
+                                 <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource MaterialDesignBody1TextBlockForeground}">
+                                       <Setter Property="Visibility" Value="Visible"/>
+                                       <Style.Triggers>
+                                          <DataTrigger Binding="{Binding Text, ElementName=DaysForEwOrbMats}" Value="{x:Static properties:Resources.Ready}">
+                                             <Setter Property="Visibility" Value="Hidden"/>
+                                          </DataTrigger>
+                                       </Style.Triggers>
+                                    </Style>
+                                 </TextBlock.Style>
+                              </TextBlock>
+                           </StackPanel>
                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="15" Grid.RowSpan="5">
                               <Button Content="{x:Static properties:Resources.Edit}" Margin="0,5" Style="{StaticResource MaterialDesignOutlinedButton}" Command="{Binding EditEWCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"/>
                               <Button Content="{x:Static properties:Resources.Delete}" Margin="0,5" Style="{StaticResource MaterialDesignOutlinedButton}" Command="{Binding DeleteEWCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding}"/>

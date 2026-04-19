@@ -581,7 +581,9 @@ namespace GCManagementApp.UserControls
 			//var scoreT1 = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiT1, artiTierImg);
 			//Log.Verbose("Arti T1: " + scoreT1.ToString());
 
-			if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.85).IsEmpty && !(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.Portuguese) || !EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.92).IsEmpty)
+			if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT6, artiTierImg, 0.85).IsEmpty) 
+				result.ArtiTier = 6;
+			else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.85).IsEmpty && !(EmulatorConnectionInfo.GameLanguage == Enums.EmulatorLanguageEnum.Portuguese) || !EmguImageOperations.FindImageRegion(ImageResources.ArtiT5, artiTierImg, 0.92).IsEmpty)
 				result.ArtiTier = 5;
 			else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 0.85).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.ArtiT4, artiTierImg, 1).IsEmpty)
 				result.ArtiTier = 4;
@@ -619,7 +621,7 @@ namespace GCManagementApp.UserControls
 
 				if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiFrozen, artiTypeImg, 0.8).IsEmpty)
 					result.ArtiType = 3;
-				else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiCurse, artiTypeImg, 0.7).IsEmpty)
+				else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiCurse, artiTypeImg, 0.7).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.ArtiCurseT6, artiTypeImg, 0.7).IsEmpty)
 					result.ArtiType = 2;
 				else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiBurning, artiTypeImg, 0.8).IsEmpty)
 					result.ArtiType = 1;
@@ -637,7 +639,9 @@ namespace GCManagementApp.UserControls
 		{
 			var ringTierImg = img.CropImage(ImageRegions.RingTierArea);
 
-			if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, ringTierImg, 0.8).IsEmpty)
+			if (!EmguImageOperations.FindImageRegion(ImageResources.AccT5, ringTierImg, 0.8).IsEmpty)
+				result.RingTier = 5;
+			else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, ringTierImg, 0.8).IsEmpty)
 				result.RingTier = 4;
 			else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, ringTierImg, 0.8).IsEmpty)
 				result.RingTier = 3;
@@ -682,7 +686,9 @@ namespace GCManagementApp.UserControls
 		{
 			var accTierImg = img.CropImage(ImageRegions.NecklaceTierArea);
 
-			if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, accTierImg, 0.8).IsEmpty)
+			if (!EmguImageOperations.FindImageRegion(ImageResources.AccT5, accTierImg, 0.8).IsEmpty)
+				result.NecklaceTier = 5;
+			else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, accTierImg, 0.8).IsEmpty)
 				result.NecklaceTier = 4;
 			else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, accTierImg, 0.8).IsEmpty)
 				result.NecklaceTier = 3;
@@ -744,7 +750,9 @@ namespace GCManagementApp.UserControls
 		{
 			var accTierImg = img.CropImage(ImageRegions.EarringTierArea);
 
-			if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, accTierImg, 0.8).IsEmpty)
+			if (!EmguImageOperations.FindImageRegion(ImageResources.AccT5, accTierImg, 0.8).IsEmpty)
+				result.EarringTier = 5;
+			else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT4, accTierImg, 0.8).IsEmpty)
 				result.EarringTier = 4;
 			else if (!EmguImageOperations.FindImageRegion(ImageResources.AccT3, accTierImg, 0.8).IsEmpty)
 				result.EarringTier = 3;

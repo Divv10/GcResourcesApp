@@ -161,6 +161,13 @@ namespace GCManagementApp.Models
             set => SetProperty(ref _weeklyEwMatsIncome, value);
         }
 
+        private int _weeklyEWOrbIncome;
+        public int WeeklyEWOrbIncome
+        {
+            get => _weeklyEWOrbIncome;
+            set => SetProperty(ref _weeklyEWOrbIncome, value);
+        }
+
         private int _heroTrainingHealerLevel;
         public int HeroTrainingHealerLevel
         {

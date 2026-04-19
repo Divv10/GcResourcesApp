@@ -1,5 +1,5 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
-	<Package Name="GrandChase Resource Management" Language="1033" Version="4.7.9.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
+	<Package Name="GrandChase Resource Management" Language="1033" Version="4.8.1.0" Manufacturer="GCManagementApp" UpgradeCode="a072cc82-d77e-4f1c-bf72-a7b5382eb212" InstallerVersion="200">
 
 
 		<Property Id="INSTALLFOLDER">
@@ -194,11 +194,17 @@
 			<Component Id="acc_t4.png_kr">
 				<File Name="acc_t4.png" Id="acc_t4.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
 			</Component>
+			<Component Id="acc_t5.png_kr">
+				<File Name="acc_t5.png" Id="acc_t5.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
+			</Component>
 			<Component Id="arti_burning.png_kr">
 				<File Name="arti_burning.png" Id="arti_burning.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
 			</Component>
 			<Component Id="arti_cursed.png_kr">
 				<File Name="arti_cursed.png" Id="arti_cursed.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
+			</Component>
+			<Component Id="arti_cursed_t6.png_kr">
+				<File Name="arti_cursed_t6.png" Id="arti_cursed_t6.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
 			</Component>
 			<Component Id="arti_frozen.png_kr">
 				<File Name="arti_frozen.png" Id="arti_frozen.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
@@ -217,6 +223,9 @@
 			</Component>
 			<Component Id="arti_t5.png_kr">
 				<File Name="arti_t5.png" Id="arti_t5.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
+			</Component>
+			<Component Id="arti_t6.png_kr">
+				<File Name="arti_t6.png" Id="arti_t6.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
 			</Component>
 			<Component Id="inventory.png_kr">
 				<File Name="inventory.png" Id="inventory.png_kr" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\" />
@@ -591,6 +600,9 @@
 			<Component Id="LimeS.png">
 				<File Id="LimeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="LimeS.png" />
 			</Component>
+			<Component Id="Iyoung.png">
+				<File Id="Iyoung.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images\HeroNames\" Name="Iyoung.png" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -872,6 +884,9 @@
 			<Component Id="Iyoung.png_kr">
 				<File Id="Iyoung.png_kr" Name="Iyoung.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
 			</Component>
+			<Component Id="Ayla.png_kr">
+				<File Id="Ayla.png_kr" Name="Ayla.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_kr\HeroNames\" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
@@ -1149,6 +1164,9 @@
 			</Component>
 			<Component Id="LimeS.png_br">
 				<File Id="LimeS.png_br" Name="LimeS.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
+			</Component>
+			<Component Id="Iyoung.png_br">
+				<File Id="Iyoung.png_br" Name="Iyoung.png" KeyPath="yes" Source="$(var.GCManagementApp.TargetDir)\Images_br\HeroNames\" />
 			</Component>
 		</ComponentGroup>
 	</Fragment>

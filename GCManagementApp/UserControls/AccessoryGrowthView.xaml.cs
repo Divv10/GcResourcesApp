@@ -222,10 +222,12 @@ namespace GCManagementApp.UserControls
                     (SelectedVisibility == VisibilityFilterEnum.AnyT2 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T2)) ||
                     (SelectedVisibility == VisibilityFilterEnum.AnyT3 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T3)) ||
                     (SelectedVisibility == VisibilityFilterEnum.AnyT4 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T4)) ||
+                    (SelectedVisibility == VisibilityFilterEnum.AnyT5 && AnyAccessoryTier(heroGrowth, AccessoryTierEnum.T5)) ||
                     (SelectedVisibility == VisibilityFilterEnum.OnlyT1 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T1)) ||
                     (SelectedVisibility == VisibilityFilterEnum.OnlyT2 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T2)) ||
                     (SelectedVisibility == VisibilityFilterEnum.OnlyT3 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T3)) ||
-                    (SelectedVisibility == VisibilityFilterEnum.OnlyT4 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T4)))
+                    (SelectedVisibility == VisibilityFilterEnum.OnlyT4 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T4)) ||
+                    (SelectedVisibility == VisibilityFilterEnum.OnlyT5 && AllAccessoryTier(heroGrowth, AccessoryTierEnum.T5)))
                 && (SelectedSet == VisibilitySetEnum.All ||
                     (SelectedSet == VisibilitySetEnum.Blue && AllAccessorySet(heroGrowth, AccessorySetEnum.Blue)) ||
                     (SelectedSet == VisibilitySetEnum.Orange && AllAccessorySet(heroGrowth, AccessorySetEnum.Orange)) ||
@@ -369,11 +371,13 @@ namespace GCManagementApp.UserControls
         AnyT2 = 1,
         AnyT3 = 2,
         AnyT4 = 3,
-        OnlyT1 = 4,
-        OnlyT2 = 5,
-        OnlyT3 = 6,
-        OnlyT4 = 7,
-        All = 8,
+        AnyT5 = 4,
+        OnlyT1 = 5,
+        OnlyT2 = 6,
+        OnlyT3 = 7,
+        OnlyT4 = 8,
+        OnlyT5 = 9,
+        All = 10,
     }
 
     public enum VisibilitySetEnum

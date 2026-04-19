@@ -144,7 +144,7 @@
                               <Setter Property="Visibility" Value="Visible" />
                               <Style.Triggers>
                                  <DataTrigger Binding="{Binding Earrings.AccessorySet}" Value="None">
-                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                  </DataTrigger>
                                  <DataTrigger Binding="{Binding IsOwned}" Value="False">
                                     <Setter Property="Visibility" Value="Collapsed" />

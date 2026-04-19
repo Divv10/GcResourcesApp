@@ -205,6 +205,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aernasis Three Goddess&apos; Choice.
+        /// </summary>
+        public static string AernasThreeGrace {
+            get {
+                return ResourceManager.GetString("AernasThreeGrace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blues.
         /// </summary>
         public static string AHBlueCrystal {
@@ -358,6 +367,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All T5.
+        /// </summary>
+        public static string AllT5 {
+            get {
+                return ResourceManager.GetString("AllT5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ancient.
         /// </summary>
         public static string Ancient {
@@ -399,6 +417,15 @@ namespace GCManagementApp.Properties {
         public static string AnyT4 {
             get {
                 return ResourceManager.GetString("AnyT4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Any T5.
+        /// </summary>
+        public static string AnyT5 {
+            get {
+                return ResourceManager.GetString("AnyT5", resourceCulture);
             }
         }
         
@@ -480,6 +507,15 @@ namespace GCManagementApp.Properties {
         public static string ArtiT5 {
             get {
                 return ResourceManager.GetString("ArtiT5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T6 (Rock of Infinity).
+        /// </summary>
+        public static string ArtiT6 {
+            get {
+                return ResourceManager.GetString("ArtiT6", resourceCulture);
             }
         }
         
@@ -1042,11 +1078,20 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cost (Chaser will add one additional Duplicate to SI due to Growth Cubes).
+        ///   Looks up a localized string similar to Cost.
         /// </summary>
         public static string Cost {
             get {
                 return ResourceManager.GetString("Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cost (Chaser will add one additional Duplicate to SI due to Growth Cubes).
+        /// </summary>
+        public static string CostGCPlan {
+            get {
+                return ResourceManager.GetString("CostGCPlan", resourceCulture);
             }
         }
         
@@ -2716,6 +2761,15 @@ namespace GCManagementApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only T5.
+        /// </summary>
+        public static string OnlyT5 {
+            get {
+                return ResourceManager.GetString("OnlyT5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open Logs.
         /// </summary>
         public static string OpenLog {
@@ -3877,6 +3931,15 @@ namespace GCManagementApp.Properties {
         public static string WeeklyACFromDefense {
             get {
                 return ResourceManager.GetString("WeeklyACFromDefense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weekly Aernas Grace (Class) Income:.
+        /// </summary>
+        public static string WeeklyAernasGraceClassIncome {
+            get {
+                return ResourceManager.GetString("WeeklyAernasGraceClassIncome", resourceCulture);
             }
         }
         

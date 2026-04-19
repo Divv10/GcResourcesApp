@@ -23,7 +23,7 @@ namespace GCManagementApp.Static
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageBought ? 3 : 0) +
             (ProfileGrowth.Profile.Settings.IsDailyEntryPackageEssentialBought ? 1 : 0)) * 7;
         public static int BlueGemsFromEnergy => (int)(((double)Energy.EnergyTotalWeekly / 12) * BGFromEnergy * EnergyPackCubesMultiplier);
-        public static int BlueGemsFromArena = 4000;
+        public static int BlueGemsFromArena => 4000;
 
         public static int BlueGemsFromWeeklyMission => 3000;
 

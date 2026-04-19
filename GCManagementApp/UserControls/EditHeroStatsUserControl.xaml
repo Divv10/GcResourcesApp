@@ -297,7 +297,7 @@
 
                <Grid Grid.Row="0" Margin="0,5,0,0">
                   <Grid.ColumnDefinitions>
-                     <ColumnDefinition />
+                     <ColumnDefinition Width="*"/>
                      <ColumnDefinition Width="6*"/>
                   </Grid.ColumnDefinitions>
                   <Grid.RowDefinitions>
@@ -331,6 +331,7 @@
                         <ListBoxItem Content="T2" TabIndex="7"/>
                         <ListBoxItem Content="T3" TabIndex="8"/>
                         <ListBoxItem Content="T4" TabIndex="9"/>
+                        <ListBoxItem Content="T5" TabIndex="10"/>
                      </ListBox>
                      <TextBox Text="{Binding SelectedHeroGrowth.Ring.AccessoryUpgradeLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" MinWidth="40" HorizontalContentAlignment="Center" IsEnabled="{Binding SelectedHeroGrowth.IsOwned}" TabIndex="8" Visibility="{Binding SelectedHeroGrowth.Ring.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
                   </StackPanel>
@@ -370,10 +371,12 @@
                         <i:Interaction.Behaviors>
                            <behaviors:KeepOneItemSelectedBehavior />
                         </i:Interaction.Behaviors>
-                        <ListBoxItem Content="T1" TabIndex="9"/>
-                        <ListBoxItem Content="T2" TabIndex="10"/>
-                        <ListBoxItem Content="T3" TabIndex="11"/>
-                        <ListBoxItem Content="T4" TabIndex="12"/>
+                        <ListBoxItem Content="T1" TabIndex="10"/>
+                        <ListBoxItem Content="T2" TabIndex="11"/>
+                        <ListBoxItem Content="T3" TabIndex="12"/>
+                        <ListBoxItem Content="T4" TabIndex="13"/>
+                        <ListBoxItem Content="T5" TabIndex="14"/>
+                         
                      </ListBox>
                      <TextBox Text="{Binding SelectedHeroGrowth.Necklace.AccessoryUpgradeLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" MinWidth="40" HorizontalContentAlignment="Center" IsEnabled="{Binding SelectedHeroGrowth.IsOwned}" TabIndex="11" Visibility="{Binding SelectedHeroGrowth.Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
                   </StackPanel>
@@ -413,10 +416,11 @@
                         <i:Interaction.Behaviors>
                            <behaviors:KeepOneItemSelectedBehavior />
                         </i:Interaction.Behaviors>
-                        <ListBoxItem Content="T1" TabIndex="12"/>
-                        <ListBoxItem Content="T2" TabIndex="13"/>
-                        <ListBoxItem Content="T3" TabIndex="14"/>
-                        <ListBoxItem Content="T4" TabIndex="15"/>
+                        <ListBoxItem Content="T1" TabIndex="14"/>
+                        <ListBoxItem Content="T2" TabIndex="15"/>
+                        <ListBoxItem Content="T3" TabIndex="16"/>
+                        <ListBoxItem Content="T4" TabIndex="17"/>
+                        <ListBoxItem Content="T5" TabIndex="18"/>
                      </ListBox>
                      <TextBox Text="{Binding SelectedHeroGrowth.Earrings.AccessoryUpgradeLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0" MinWidth="40" HorizontalContentAlignment="Center" IsEnabled="{Binding SelectedHeroGrowth.IsOwned}" TabIndex="14" Visibility="{Binding SelectedHeroGrowth.Earrings.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
                   </StackPanel>

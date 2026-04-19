@@ -35,8 +35,11 @@ namespace GCManagementApp.UserControls
         public ICommand EditEWCommand { get; }
         public ICommand DeleteEWCommand { get; }
 
-        public Inventory Inventory => ProfileGrowth.Profile.MaterialsInventory;
+        public int EWOrbGain => ExclusiveWeaponMaterials.EwOrbWeeklyTotal;
+        public int EWOrbClassGain => ExclusiveWeaponMaterials.EwOrbClassWeeklyTotal;
 
+        public Inventory Inventory => ProfileGrowth.Profile.MaterialsInventory;
+       
         private ObservableCollection<EwPlan> _ewPlans;
         public ObservableCollection<EwPlan> EwPlans
         {
@@ -52,6 +55,17 @@ namespace GCManagementApp.UserControls
                 ProfileGrowth.Profile.Settings.WeeklyEwMatsIncome = value;
                 RecalculateDaysReady();
                 OnPropertyChanged(nameof(WeeklyEwMatsIncome));
+            }
+        }
+
+        public int WeeklyEwMatsOrbIncome
+        {
+            get => ProfileGrowth.Profile.Settings.WeeklyEWOrbIncome;
+            set
+            {
+                ProfileGrowth.Profile.Settings.WeeklyEWOrbIncome = value;
+                RecalculateDaysReady();
+                OnPropertyChanged(nameof(WeeklyEwMatsOrbIncome));
             }
         }
 
@@ -75,7 +89,7 @@ namespace GCManagementApp.UserControls
 
                 if (ew.CurrentLevel == ew.DesiredLevel && ew.CurrentLevel != 0 && ew.IsEwOwned)
                 {
-                    ew.WeaponCost = new ExclusiveWeaponCost(0, 0);
+                    ew.WeaponCost = new ExclusiveWeaponCost(0, 0, 0);
                 }
                 else
                 {
@@ -111,7 +125,7 @@ namespace GCManagementApp.UserControls
 
                     if (ew.CurrentLevel == ew.DesiredLevel && ew.CurrentLevel != 0 && ew.IsEwOwned)
                     {
-                        ew.WeaponCost = new ExclusiveWeaponCost(0, 0);
+                        ew.WeaponCost = new ExclusiveWeaponCost(0, 0, 0);
                     }
                     else
                     {
@@ -143,7 +157,7 @@ namespace GCManagementApp.UserControls
 
                 if (ewPlan.CurrentLevel == ewPlan.DesiredLevel && ewPlan.CurrentLevel != 0 && ewPlan.IsEwOwned)
                 {
-                    ewPlan.WeaponCost = new ExclusiveWeaponCost(0, 0);
+                    ewPlan.WeaponCost = new ExclusiveWeaponCost(0, 0, 0);
                 }
                 else
                 {
@@ -181,7 +195,7 @@ namespace GCManagementApp.UserControls
 
                 if (ewPlan.CurrentLevel == ewPlan.DesiredLevel && ewPlan.CurrentLevel != 0 && ewPlan.IsEwOwned)
                 {
-                    ewPlan.WeaponCost = new ExclusiveWeaponCost(0, 0);
+                    ewPlan.WeaponCost = new ExclusiveWeaponCost(0, 0, 0);
                 }
                 else
                 {
@@ -217,7 +231,7 @@ namespace GCManagementApp.UserControls
 
                 if (ew.CurrentLevel == ew.DesiredLevel && ew.CurrentLevel != 0 && ew.IsEwOwned)
                 {
-                    ew.WeaponCost = new ExclusiveWeaponCost(0, 0);
+                    ew.WeaponCost = new ExclusiveWeaponCost(0, 0, 0);
                 }
                 else
                 {
@@ -231,17 +245,54 @@ namespace GCManagementApp.UserControls
         private void RecalculateDaysReady()
         {
             var currentEwMats = Inventory.EwMats;
-            var dailyEwMats = WeeklyEwMatsIncome / 7;
+            var profileInventory = ProfileGrowth.Profile.MaterialsInventory;
+            var currentInventory = new Inventory()
+            {
+                AssaultEWOrb = profileInventory.AssaultEWOrb,
+                TankEWOrb = profileInventory.TankEWOrb,
+                RangerEWOrb = profileInventory.RangerEWOrb,
+                HealerEWOrb = profileInventory.HealerEWOrb,
+                MageEWOrb = profileInventory.MageEWOrb,
+            };
+
+            double dailyEwMats = 0;
+
+            if (WeeklyEwMatsIncome > 0) 
+            {
+                dailyEwMats = WeeklyEwMatsIncome / 7;
+            } else
+            {
+                dailyEwMats = ExclusiveWeaponMaterials.EwOrbWeeklyTotal / 7;
+            }
 
             foreach (var ew in EwPlans)
             {
-                ew.DaysForEW = (double)(ew.WeaponCost.EwMatsCost - currentEwMats) / ((double)WeeklyEwMatsIncome / 7);
+                ew.DaysForEW = (double)(ew.WeaponCost.EwMatsCost - currentEwMats) / dailyEwMats;
                 currentEwMats -= ew.WeaponCost.EwMatsCost;
                 ew.EwMatsNeeded = currentEwMats;
+
+                CalculateEWOrbMaterials(ew, ref currentInventory, ew.Hero.HeroClass);
             }
 
             ProfileGrowth.Profile.EwPlans = new List<EwPlan>(EwPlans);
             ProfileGrowth.Profile.SaveToJson();
+        }
+
+        private void CalculateEWOrbMaterials(EwPlan ew, ref Inventory currentInventory, HeroClass heroClass)
+        {
+            double dailyOrbClassEwMat = 0;
+
+            if (WeeklyEwMatsOrbIncome > 0)
+            {
+                dailyOrbClassEwMat = WeeklyEwMatsOrbIncome / 7;
+            } else
+            {
+                dailyOrbClassEwMat = ExclusiveWeaponMaterials.EwOrbClassWeeklyTotal;
+            }
+            ew.DaysForEWOrb = (double)(ew.WeaponCost.EwOrbCost - currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.EW }]) / dailyOrbClassEwMat;
+            
+            currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.EW }] -= ew.WeaponCost.EwOrbCost;
+            ew.EwOrbMatsNeeded = currentInventory[new InventoryType { heroClass = heroClass, materialType = MaterialType.EW }];
         }
 
         private void ReorderListBox_ReorderRequested(object sender, ReorderEventArgs e)

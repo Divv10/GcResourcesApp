@@ -1492,4 +1492,25 @@
   <data name="Start" xml:space="preserve">
     <value>Iniciar sincronização</value>
   </data>
+  <data name="AernasThreeGrace" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="CostGCPlan" xml:space="preserve">
+    <value>Custo</value>
+  </data>
+  <data name="WeeklyAernasGraceClassIncome" xml:space="preserve">
+    <value>Ganho semanal Graça de Ernas (Classe):</value>
+  </data>
+  <data name="AllT5" xml:space="preserve">
+    <value>T5</value>
+  </data>
+  <data name="AnyT5" xml:space="preserve">
+    <value>T5</value>
+  </data>
+  <data name="ArtiT6" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="OnlyT5" xml:space="preserve">
+    <value>Apenas T5</value>
+  </data>
 </root>

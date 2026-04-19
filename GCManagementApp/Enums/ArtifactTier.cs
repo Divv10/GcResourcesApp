@@ -16,5 +16,7 @@ namespace GCManagementApp.Enums
         IV,
         [Description("ArtiT5")]
         V,
+        [Description("ArtiT6")]
+        VI
     }
 }

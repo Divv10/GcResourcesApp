@@ -326,7 +326,7 @@
     <comment>Space at the beggining</comment>
   </data>
   <data name="Cost" xml:space="preserve">
-    <value>Cost (Chaser will add one additional Duplicate to SI due to Growth Cubes)</value>
+    <value>Cost</value>
   </data>
   <data name="CostOfLevels" xml:space="preserve">
     <value>Cost of {0} levels:</value>
@@ -1509,5 +1509,26 @@ If You like using the app and find it usefull, please consider clicking on the K
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start Consecutive Scan</value>
+  </data>
+  <data name="AernasThreeGrace" xml:space="preserve">
+    <value>Aernasis Three Goddess' Choice</value>
+  </data>
+  <data name="CostGCPlan" xml:space="preserve">
+    <value>Cost (Chaser will add one additional Duplicate to SI due to Growth Cubes)</value>
+  </data>
+  <data name="WeeklyAernasGraceClassIncome" xml:space="preserve">
+    <value>Weekly Aernas Grace (Class) Income:</value>
+  </data>
+  <data name="AllT5" xml:space="preserve">
+    <value>All T5</value>
+  </data>
+  <data name="AnyT5" xml:space="preserve">
+    <value>Any T5</value>
+  </data>
+  <data name="ArtiT6" xml:space="preserve">
+    <value>T6 (Rock of Infinity)</value>
+  </data>
+  <data name="OnlyT5" xml:space="preserve">
+    <value>Only T5</value>
   </data>
 </root>

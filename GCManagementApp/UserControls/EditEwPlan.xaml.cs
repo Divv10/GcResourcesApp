@@ -27,7 +27,7 @@ namespace GCManagementApp.UserControls
     /// </summary>
     public partial class EditEwPlan : UserControl, INotifyPropertyChanged
     {
-        public List<Hero> HeroesCollection { get; } = ProfileGrowth.Heroes.Where(h => !(h.Equipment.IsExclusiveWeaponOwned && h.Equipment.ExclusiveWeaponUpgrade == 8)).Select(h => h.Hero).OrderBy(h => h.DisplayName).ToList();
+        public List<Hero> HeroesCollection { get; } = ProfileGrowth.Heroes.Where(h => !(h.Equipment.IsExclusiveWeaponOwned && h.Equipment.ExclusiveWeaponUpgrade == 10)).Select(h => h.Hero).OrderBy(h => h.DisplayName).ToList();
 
         private Hero _selectedHero;
         public Hero SelectedHero

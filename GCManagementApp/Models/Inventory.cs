@@ -17,7 +17,7 @@ namespace GCManagementApp.Models
     {
         public override string ToString()
         {
-            return $"GC={GrowthCubes} | GE= {AssaultGE}A, {RangerGE}R, {TankGE}T, {HealerGE}H, {MageGE}M";
+            return $"DC={DivineCrystals}, GC={GrowthCubes} | GE= {AssaultGE}A, {RangerGE}R, {TankGE}T, {HealerGE}H, {MageGE}M | EW= {AssaultEWOrb}A, {RangerEWOrb}R, {TankEWOrb}T, {HealerEWOrb}H, {MageEWOrb}M";
         }
 
         private int _growthCubes;
@@ -89,6 +89,59 @@ namespace GCManagementApp.Models
             }
         }
 
+        private int _tankEWOrb;
+        public int TankEWOrb
+        {
+            get => _tankEWOrb;
+            set
+            {
+                SetProperty(ref _tankEWOrb, value);
+                OnPropertyChanged(nameof(ExclusiveWeapOrbOwned));
+            }
+        }
+
+        private int _assaultEWOrb;
+        public int AssaultEWOrb
+        {
+            get => _assaultEWOrb;
+            set
+            {
+                SetProperty(ref _assaultEWOrb, value);
+                OnPropertyChanged(nameof(ExclusiveWeapOrbOwned));
+            }
+        }
+
+        private int _mageEWOrb;
+        public int MageEWOrb
+        {
+            get => _mageEWOrb;
+            set
+            {
+                SetProperty(ref _mageEWOrb, value);
+                OnPropertyChanged(nameof(ExclusiveWeapOrbOwned));
+            }
+        }
+
+        private int _healerEWOrb;
+        public int HealerEWOrb
+        {
+            get => _healerEWOrb;
+            set
+            {
+                SetProperty(ref _healerEWOrb, value);
+                OnPropertyChanged(nameof(ExclusiveWeapOrbOwned));
+            }
+        }
+        private int _rangerEWOrb;
+        public int RangerEWOrb
+        {
+            get => _rangerEWOrb;
+            set
+            {
+                SetProperty(ref _rangerEWOrb, value);
+                OnPropertyChanged(nameof(ExclusiveWeapOrbOwned));
+            }
+        }
         private int _blueGems;
         public int BlueGems
         {
@@ -131,6 +184,7 @@ namespace GCManagementApp.Models
         }
 
         public string GrowthEssencesOwned => $"Assault: {AssaultGE} GE, Mage: {MageGE} GE, Ranger: {RangerGE} GE, Healer: {HealerGE} GE, Tank: {TankGE} GE";
+        public string ExclusiveWeapOrbOwned => $"Assault: {AssaultEWOrb} EW Orb, Healer: {HealerEWOrb} EW Orb, Mage: {MageEWOrb} EW Orb, Ranger: {RangerEWOrb} EW Orb, Tank: {TankEWOrb} EW Orb";
         public string BlueGemsToolTip => string.Format(Properties.Resources.EnoughBGToBuyGC, Math.Floor(BlueGems / 120d), Environment.NewLine, Math.Round((BlueGems / 120d) / 1200, 2));
         public int GrowthCubesFromBlueGems => (int)Math.Floor(BlueGems / 120d);
 
@@ -144,30 +198,35 @@ namespace GCManagementApp.Models
                         switch (type.materialType)
                         {
                             case MaterialType.GE: return HealerGE;
+                            case MaterialType.EW: return HealerEWOrb;
                             default: return 0;
                         }
                     case HeroClass.Ranger:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: return RangerGE;
+                            case MaterialType.EW: return RangerEWOrb;
                             default: return 0;
                         }
                     case HeroClass.Assault:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: return AssaultGE;
+                            case MaterialType.EW: return AssaultEWOrb;
                             default: return 0;
                         }
                     case HeroClass.Tank:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: return TankGE;
+                            case MaterialType.EW: return TankEWOrb;
                             default: return 0;
                         }
                     default:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: return MageGE;
+                            case MaterialType.EW: return MageEWOrb;
                             default: return 0;
                         }
                 }
@@ -180,30 +239,35 @@ namespace GCManagementApp.Models
                         switch (type.materialType)
                         {
                             case MaterialType.GE: HealerGE = value; break;
+                            case MaterialType.EW: HealerEWOrb = value; break;
                         }
                         return;
                     case HeroClass.Ranger:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: RangerGE = value; break;
+                            case MaterialType.EW: RangerEWOrb = value; break;
                         }
                         return;
                     case HeroClass.Assault:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: AssaultGE = value; break;
+                            case MaterialType.EW: AssaultEWOrb = value; break;
                         }
                         return;
                     case HeroClass.Tank:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: TankGE = value; break;
+                            case MaterialType.EW: TankEWOrb = value; break;
                         }
                         return;
                     default:
                         switch (type.materialType)
                         {
                             case MaterialType.GE: MageGE = value; break;
+                            case MaterialType.EW: MageEWOrb = value; break;
                         }
                         return;
                 }
@@ -262,6 +326,7 @@ namespace GCManagementApp.Models
 
     public enum MaterialType
     {
-        GE
+        GE,
+        EW
     }
 }
