@@ -183,11 +183,11 @@
 
                            <Grid x:Name="CardContainer">
                               <Grid.ColumnDefinitions>
-                                 <ColumnDefinition Width="120" />
-                                 <ColumnDefinition Width="225" />
+                                 <ColumnDefinition Width="110" />
+                                 <ColumnDefinition Width="210" />
                               </Grid.ColumnDefinitions>
                               <Grid.RowDefinitions>
-                                 <RowDefinition Height="120" />
+                                 <RowDefinition Height="125" />
                                  <RowDefinition Height="30" />
                                  <RowDefinition Height="40" />
                                  <RowDefinition Height="40" />
@@ -197,9 +197,9 @@
                               <Label Grid.Row="1" Content="{Binding BP}" ContentStringFormat="{}{0} BP" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,-5" FontSize="13" />
                               <Grid Grid.Column="1" Grid.RowSpan="2" >
                                  <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="60"/>
                                  </Grid.ColumnDefinitions>
                                  <Grid.RowDefinitions>
                                     <RowDefinition/>
@@ -211,7 +211,7 @@
                                  <uc:SiCoresOpenOverlay Grid.Column="1" Width="60" Height="60" SiLevel="{Binding SiLevel}" IsCoreOpen="{Binding IsCoreOpen}" />
                                  <Label Grid.Column="1" Content="{Binding SiLevel}" ContentStringFormat="{x:Static properties:Resources.SIX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
                                  <ProgressBar Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource ChaserBrush}" Value="{Binding ChaserLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Chaser}}"/>
-                                 <Label Grid.Column="0" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                                 <Label Grid.Column="0" Grid.Row="1" Content="{Binding ChaserLevel}" ContentStringFormat="{x:Static properties:Resources.CLX}" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
                                  <ProgressBar Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource LevelBrush}" Value="{Binding Level, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Level}}"/>
                                  <Label Content="{Binding Level}" ContentStringFormat="{x:Static properties:Resources.LvlX}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
                                  <ProgressBar Grid.Column="2" Style="{StaticResource MaterialDesignCircularProgressBar}" Width="60" Height="60" Foreground="{StaticResource DescentBrush}" Value="{Binding DescentLevel, Converter={StaticResource LevelToProgressValueConverter}, ConverterParameter={x:Static enums:GrowthLevelType.Descent}}"/>
@@ -219,9 +219,9 @@
                               </Grid>
                               <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center">
                                  <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                  </Grid.ColumnDefinitions>
                                  <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{DynamicResource MaterialDesignChipBackground}" Margin="0">
                                     <materialDesign:Chip.Icon>
@@ -245,9 +245,9 @@
                               </Grid>
                               <Grid Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
                                  <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                  </Grid.ColumnDefinitions>
                                  <materialDesign:Chip Grid.Column="0" Style="{StaticResource MaterialDesignOutlineChip}" IconBackground="{Binding Ring.AccessorySet, Converter={StaticResource AccessorySetToBrushConverter}}" IconForeground="{DynamicResource MaterialDesignBody}" Margin="0">
                                     <materialDesign:Chip.Icon>

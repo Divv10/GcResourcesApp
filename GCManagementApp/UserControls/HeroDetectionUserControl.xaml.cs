@@ -619,11 +619,11 @@ namespace GCManagementApp.UserControls
 				//var scoreBurn = EmguImageOperations.FindImageWithMaskScore(ImageResources.ArtiBurning, artiTypeImg);
 				//Log.Verbose("Arti Burn: " + scoreBurn.ToString());
 
-				if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiFrozen, artiTypeImg, 0.8).IsEmpty)
+				if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiFrozen, artiTypeImg, 0.8).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.ArtiFrozenT6, artiTypeImg, 0.7).IsEmpty)
 					result.ArtiType = 3;
 				else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiCurse, artiTypeImg, 0.7).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.ArtiCurseT6, artiTypeImg, 0.7).IsEmpty)
 					result.ArtiType = 2;
-				else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiBurning, artiTypeImg, 0.8).IsEmpty)
+				else if (!EmguImageOperations.FindImageRegion(ImageResources.ArtiBurning, artiTypeImg, 0.8).IsEmpty || !EmguImageOperations.FindImageRegion(ImageResources.ArtiBurningT6, artiTypeImg, 0.7).IsEmpty)
 					result.ArtiType = 1;
 				else
 					result.ArtiType = 0;

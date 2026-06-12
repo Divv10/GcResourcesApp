@@ -115,7 +115,7 @@
                                <Setter Property="ItemsPanel">
                                    <Setter.Value>
                                        <ItemsPanelTemplate>
-                                           <lib:AnimatingTilePanel lib:AnimatingTilePanel.ItemHeight="225" lib:AnimatingTilePanel.ItemWidth="310"/>
+                                           <lib:AnimatingTilePanel lib:AnimatingTilePanel.ItemHeight="250" lib:AnimatingTilePanel.ItemWidth="350"/>
                                        </ItemsPanelTemplate>
                                    </Setter.Value>
                                </Setter>
@@ -137,15 +137,15 @@
                                <!-- <materialDesign:Flipper Width="350" materialDesign:ElevationAssist.Elevation="Dp3" Style="{DynamicResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged"> -->
                                <materialDesign:Flipper Width="350" materialDesign:ElevationAssist.Elevation="Dp3" Style="{DynamicResource MaterialDesignCardFlipper}" Background="Transparent" IsFlippedChanged="Flipper_IsFlippedChanged">
                                    <materialDesign:Flipper.FrontContent>
-                                       <Grid Width="350" Height="250" Margin="10" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
+                                       <Grid Width="350" Height="250" Margin="5" x:Name="CardContainer" Background="{DynamicResource MaterialDesignCardBackground}">
                                            <Grid.ColumnDefinitions>
-                                               <ColumnDefinition Width="120" />
+                                               <ColumnDefinition Width="auto" />
                                                <ColumnDefinition Width="auto" />
                                                <ColumnDefinition Width="*" />
                                            </Grid.ColumnDefinitions>
                                            <Grid.RowDefinitions>
                                                <RowDefinition />
-                                               <RowDefinition Height="auto"/>
+                                               <RowDefinition Height="*"/>
                                                <RowDefinition Height="*"/>
                                            </Grid.RowDefinitions>
                                            <Image Margin="10,35,10,5" Grid.RowSpan="2" Source="{Binding ImageName, Converter={StaticResource HeroToImageConverter}}" />
@@ -178,7 +178,7 @@
                                        </Grid>
                                    </materialDesign:Flipper.FrontContent>
                                    <materialDesign:Flipper.BackContent >
-                                        <Grid Width="320" Height="250" Margin="10" Background="{DynamicResource MaterialDesignCardBackground}">
+                                        <Grid Width="325" Height="225" Margin="10" Background="{DynamicResource MaterialDesignCardBackground}">
                                             <Grid.RowDefinitions>
                                                <RowDefinition />
                                                <RowDefinition Height="auto"/>
@@ -244,7 +244,7 @@
                                                            <ListBoxItem Content="T5" Width="45" HorizontalContentAlignment="Center" />
                                                        </ListBox>
                                                        <local:NumericUpDown Grid.Row="1" Minimum="0" Maximum="9" Interval="1" Margin="10,0,15,0" Value="{Binding Necklace.AccessoryUpgradeLevel, Mode=TwoWay}" BorderThickness="0" MinWidth="80" MinHeight="30" Foreground="{DynamicResource MaterialDesignBody}" Visibility="{Binding Necklace.AccessorySet, Converter={StaticResource AccessorySetToVisibilityConverter}}"/>
-                                                       <ComboBox Grid.Row="0" MinWidth="170" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
+                                                       <ComboBox Grid.Row="0" MinWidth="150" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,0,15,0"
                                                    ItemsSource="{Binding Path=DataContext.AccessorySetValues, Mode=OneWay, Source={x:Reference StackPanelFilters}}"                                           
                                                    SelectedItem="{Binding Necklace.AccessorySet, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                                            <ComboBox.ItemTemplate>

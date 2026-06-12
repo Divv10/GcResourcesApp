@@ -1,5 +1,6 @@
-﻿using TesseractOCR.Enums;
+﻿using System;
 using TesseractOCR;
+using TesseractOCR.Enums;
 
 namespace GCManagementApp.Operations
 {
@@ -7,7 +8,11 @@ namespace GCManagementApp.Operations
     {
         public static string ReadText(byte[] imageBytes)
         {
-            using (var engine = new Engine(@"./tessdata", TesseractOCR.Enums.Language.English, EngineMode.Default))
+            string exePath = AppDomain.CurrentDomain.BaseDirectory;
+            string tessDataPath = System.IO.Path.Combine(exePath, "tessdata");
+            Environment.SetEnvironmentVariable("TESSDATA_PREFIX", null);
+
+            using (var engine = new Engine(tessDataPath, TesseractOCR.Enums.Language.English, EngineMode.Default))
             {
                 using (var img = TesseractOCR.Pix.Image.LoadFromMemory(imageBytes))
                 {
